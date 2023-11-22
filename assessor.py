@@ -116,7 +116,7 @@ def top_k_logits(logits, k):
         min_values = values[:, -1].unsqueeze(1)
         return torch.where(logits < min_values, torch.full_like(logits, float('-inf')), logits)
 
-def sample_sequence(model, length, start_token_id, temperature=1.0, top_k=None, vocab_size=10):
+def sample_sequence(model, length, start_token_id, temperature=1.0, top_k=None, etw = 1. , vocab_size=10):
     """
     Sample a sequence of tokens from the model.
 
@@ -139,22 +139,28 @@ def sample_sequence(model, length, start_token_id, temperature=1.0, top_k=None, 
     for _ in range(length - 1):
         logits = model(detached_tokens)  #(batch_num, vocab_size)
         next_token_logits = logits[:, :] / temperature
+
+        top_k = None #feature disabled
         if top_k is not None:
             # next_token_logits = top_k_logits(next_token_logits, top_k)
             next_token_logits = torch.topk(next_token_logits, top_k, 1)[0]  #(batch_num, top_k)
-        next_token = torch.multinomial(F.softmax(next_token_logits, dim=-1), num_samples=1)  #(batch_size, 1)
-        detached_tokens = torch.cat((detached_tokens, next_token), dim = 0)
+
+        sm = F.softmax(next_token_logits, dim=-1)
+        sm[:, end_token_id] *= etw
+
+        next_token = torch.multinomial(sm, num_samples=1)  #(batch_size, 1)
+        detached_tokens = torch.cat((detached_tokens, next_token.detach()), dim = 0)
         generated_logits = torch.cat((generated_logits, logits[0][next_token][0]), dim=0)
 
         if next_token[0, 0] in (start_token_id, end_token_id):
             break
-    return generated_logits.squeeze()
+    return detached_tokens, generated_logits
 
 # Parameters for the model
 vocab_size = 8# This should be the size of your vocabulary
 d_model = 512  # The dimension of the embeddings
-nhead = 8  # Number of heads in the multi-head attention mechanisms
-num_layers = 6  # Number of decoder layers
+nhead = 16  # Number of heads in the multi-head attention mechanisms
+num_layers = 8  # Number of decoder layers
 max_len = 22  # The length of sequence to generate, including the start and end tokens
 
 # # Instantiate the model with a specific number of layers
@@ -163,31 +169,50 @@ model = Transformer(vocab_size=vocab_size, d_model=d_model, nhead=nhead, num_lay
 # Parameters for inference
 start_token_id = 0  # Assuming 1 is the ID for the start token in your vocabulary
 end_token_id = 1
-token_texts = {2:"and", 3:"or", 4:"not", 5:"X1", 6:"X2", 7:"X3"}
-temperature = 0.7  # Can be adjusted for more or less randomness
+token_texts = {0:"ST", 1:"ET",  2:"and", 3:"or", 4:"not", 5:"X1", 6:"X2", 7:"X3"}
+temperature = 1 #0.7  # near 0 makes more deterministic
 top_k = None # Top-k filtering, should be less than the vocabulary size
 vocab_size = 10  # Vocabulary size of the model
 
-optimizer = optim.Adam(model.parameters(), lr=0.001)
+optimizer = optim.Adam(model.parameters(), lr=0.000001)
 model.train()
 
 #model.eval()
-for i in range(10):
+etw = 1.0
+last_hit = 200
+for i in range(5000):
     optimizer.zero_grad()
-    tokens_logs = sample_sequence(model, max_len, start_token_id, temperature, top_k, vocab_size)
-    targets = []
-    if (start_token_id in tokens_logs[1:]) or (sum([1 for i in tokens_logs if i == 1]) != 1):
+    # if i > 299 and (i % 100 == 0):
+    #         temperature /= 1.03
+    tokens, tokens_logs = sample_sequence(model, max_len, start_token_id, temperature, top_k, etw, vocab_size)
+    if tokens.shape[0] <= 2 or ((start_token_id in tokens[1:]) or (torch.sum(tokens == end_token_id).item() != 1)):
         valid = 0.
+    elif (4, 4) in zip(tokens.view(-1), tokens.view(-1)[1:]):
+        valid = 0.
+    elif i < 200:
+        valid = 1. #if is_polish_normal_form([token_texts[t] for t in tokens]) else 0.
     else:
-        valid = 1. if is_polish_normal_form([token_texts[t] for t in tokens_logs]) else 0.
-    #fixme
-    targets.append(valid)
+        valid = 1. if is_polish_normal_form([token_texts[t.item()] for t in tokens[1:-1]]) else 0.
 
-    loss = torch.sum(binary_cross_entropy_with_logits(tokens_logs, valid) for i in tokens_logs.shape[0])
+    if valid > 0.5 and i > 200:
+        print(f"{i} " + " ".join([token_texts[t.item()] for t in tokens]))
+
+    target = torch.full(tokens_logs.shape, valid)
+    w = 1
+    if valid > 0.5 and i > 200:
+        w = (i - last_hit) * max(tokens.shape[0] - 2 - ((i-200)/100)**0.5, 0)
+        if w == 0:
+            continue
+        last_hit = i
+
+    weight = torch.full(tokens_logs.shape, w)
+    loss = binary_cross_entropy_with_logits(weight=weight, input=tokens_logs, target=target)
+
     loss.backward()
     optimizer.step()
 
+torch.save(model.state_dict(), "state_dict-1.pt")
 #sample
-model.eval()
-tokens_logs = sample_sequence(model, length, start_token_id, temperature, top_k, vocab_size)
-print([token_texts[t] for t in tokens_logs])
+# model.eval()
+# tokens_logs = sample_sequence(model, max_length, start_token_id, temperature, top_k, vocab_size)
+# print([token_texts[t] for t in tokens_logs])
