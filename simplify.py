@@ -1,12 +1,12 @@
 import boolean
 
-def simplify(formula):
+def deMorgan(formula):
     # Base case: If the formula is a single variable or an empty list, return it.
     if not formula or isinstance(formula, str):
         return formula
 
     # Simplify all children first.
-    simplified_children = [simplify(child) for child in formula[1:]]
+    simplified_children = [deMorgan(child) for child in formula[1:]]
 
     # Now apply simplification rules to the current node.
     op = formula[0]
@@ -30,7 +30,7 @@ def simplify(formula):
 # formulas = [['and', ['not', ['not', 'x1']], ['not', 'x2']],
 #             ['and', ['not', 'x1'], ['not', 'x2']],]
 # for f in formulas:
-#     print(simplify(f))  # Output should be ['or', 'x1', ['not', 'x2']]
+#     print(deMorgan(f))  # Output should be ['or', 'x1', ['not', 'x2']]
 
 def build_tree(tokens):
     if not tokens:
@@ -50,21 +50,22 @@ def build_tree(tokens):
         # If the token is a variable, return it as is.
         return token, tokens
 
-def convert_to_nested_list(token_list):
+def to_nested_list(token_list):
     tree, remaining_tokens = build_tree(token_list)
     if remaining_tokens:
         raise ValueError("Invalid input: Unused tokens remain after parsing.")
     return tree
 
 # Example usage:
-# formulas = [['and', 'x1', 'not', 'x2'],
-#            ['x1'],
-#            [],
-#            ['x1', 'x2'],
-#            ]
-# for f in formulas:
-#     nested_list = convert_to_nested_list(f)
-#     print(nested_list)  # Should output: ['and', 'x1', ['not', 'x2']]
+formulas = [['and', 'and', 'X1', 'and', 'X1', 'X1', 'X3'],
+    ['and', 'x1', 'not', 'x2'],
+           ['x1'],
+           [],
+           ['x1', 'x2'],
+           ]
+for f in formulas:
+    nested_list = to_nested_list(f)
+    print(nested_list)  # Should output: ['and', 'x1', ['not', 'x2']]
 
 def flatten_tree(tree):
     if isinstance(tree, str):
@@ -97,12 +98,12 @@ def to_parenthesized_string(tree):
         return '(' + f" {operator} ".join(operands) + ')'
 
 # Example usage:
-nested_list = ['and', ['and', 'x1', ['not', 'x2']], ['or', 'x3', ['not', 'x4']]]
-output_string = to_parenthesized_string(nested_list)
-print(output_string)  # Expected output: "(x1 and not x2) and (x3 or not x4)"
+# nested_list = ['and', ['and', 'x1', ['not', 'x2']], ['or', 'x3', ['not', 'x4']]]
+# output_string = to_parenthesized_string(nested_list)
+# print(output_string)  # Expected output: "(x1 and not x2) and (x3 or not x4)"
 
-algebra = boolean.BooleanAlgebra()
-algebra.parse(output_string, simplify=False)
+# algebra = boolean.BooleanAlgebra()
+# algebra.parse(output_string, simplify=False)
 
 
 

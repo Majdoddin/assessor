@@ -3,6 +3,8 @@ import torch.nn as nn
 import torch.nn.functional as F
 from torch.nn.functional import binary_cross_entropy_with_logits
 import torch.optim as optim
+import simplify
+import boolean
 
 def is_polish_normal_form(sequence):
     """
@@ -194,13 +196,25 @@ for i in range(5000):
     else:
         valid = 1. if is_polish_normal_form([token_texts[t.item()] for t in tokens[1:-1]]) else 0.
 
-    if valid > 0.5 and i > 200:
-        print(f"{i} " + " ".join([token_texts[t.item()] for t in tokens]))
+    print(f"{i} " + " ".join([token_texts[t.item()] for t in tokens]))
+    tknst = [token_texts[t.item()] for t in tokens[1:-1]]
+    # if valid > 0.5 and i > 200:
+    #     print(f"{i} " + " ".join([token_texts[t.item()] for t in tokens]))
 
     target = torch.full(tokens_logs.shape, valid)
     w = 1
     if valid > 0.5 and i > 200:
-        w = (i - last_hit) * max(tokens.shape[0] - 2 - ((i-200)/100)**0.5, 0)
+        varn1 = len(set(s for s in tknst if s not in ['and', 'or', 'not']))
+        nl = simplify.to_nested_list(tknst) #nested list
+        nl = simplify.deMorgan(nl)
+        nl = simplify.to_parenthesized_string(nl)
+        algebra = boolean.BooleanAlgebra()
+        exp1 = algebra.parse(nl, simplify=False)
+        exp1 = exp1.simplify()
+        exp1 = exp1.simplify()
+        varn2 = len(exp1.symbols())
+
+        w = (i - last_hit) * max(varn2 - ((i-200)/100)**0.5, 0)
         if w == 0:
             continue
         last_hit = i
