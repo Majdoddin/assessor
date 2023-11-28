@@ -1,0 +1,423 @@
+ruhollah@majdoddin:~/ai/atp/assessor/cwd$ source /home/ruhollah/ai/atp/assessor/.venv/bin/activate
+(.venv) ruhollah@majdoddin:~/ai/atp/assessor/cwd$  /usr/bin/env /home/ruhollah/ai/atp/assessor/.venv/bin/python3.11 /home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher 54517 -- /home/ruhollah/ai/atp/assessor/assessor.py 
+/home/ruhollah/ai/atp/assessor/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 39, in <module>
+    cli.main()
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 430, in main
+    run()
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 321, in run_path
+    return _run_module_code(code, init_globals, run_name,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 135, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 124, in _run_code
+    exec(code, run_globals)
+  File "/home/ruhollah/ai/atp/assessor/assessor.py", line 170, in <module>
+    model = Transformer(vocab_size=vocab_size, d_model=d_model, nhead=nhead, num_layers=num_layers, max_len=max_len)
+                                   ^^^^^^^^^^
+NameError: name 'vocab_size' is not defined
+(.venv) ruhollah@majdoddin:~/ai/atp/assessor/cwd$ cd ..
+(.venv) ruhollah@majdoddin:~/ai/atp/assessor$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   assessor.py
+        modified:   simplify.py
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .venv/
+        __pycache__/
+
+no changes added to commit (use "git add" and/or "git commit -a")
+(.venv) ruhollah@majdoddin:~/ai/atp/assessor$  cd /home/ruhollah/ai/atp/assessor/cwd ; /usr/bin/env /home/ruhollah/ai/atp/assessor/.venv/bin/python3.11 /home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher 43721 -- /home/ruhollah/ai/atp/assessor/assessor.py 
+/home/ruhollah/ai/atp/assessor/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+(.venv) ruhollah@majdoddin:~/ai/atp/assessor/cwd$  cd /home/ruhollah/ai/atp/assessor/cwd ; /usr/bin/env /home/ruhollah/ai/atp/assessor/.venv/bin/python3.11 /home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher 45785 -- /home/ruhollah/ai/atp/assessor/assessor.py 
+/home/ruhollah/ai/atp/assessor/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+206 ST x3 ET
+206 ST x3 ET
+1 x3
+208 ST x3 ET
+208 ST x3 ET
+1 x3
+209 ST x4 ET
+209 ST x4 ET
+1 x4
+211 ST x4 ET
+211 ST x4 ET
+1 x4
+212 ST and x2 or x3 x5 ET
+212 ST and x2 or x3 x5 ET
+3 x2&(x3|x5)
+217 ST x1 ET
+217 ST x1 ET
+1 x1
+223 ST x3 ET
+223 ST x3 ET
+1 x3
+228 ST x5 ET
+228 ST x5 ET
+1 x5
+230 ST and x5 x2 ET
+(.venv) ruhollah@majdoddin:~/ai/atp/assessor/cwd$  cd /home/ruhollah/ai/atp/assessor/cwd ; /usr/bin/env /home/ruhollah/ai/atp/assessor/.venv/bin/python3.11 /home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher 34123 -- /home/ruhollah/ai/atp/assessor/assessor.py 
+/home/ruhollah/ai/atp/assessor/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+201 ST x4 ET
+201 ST x4 ET
+1 x4
+203 ST x1 ET
+203 ST x1 ET
+1 x1
+211 ST x5 ET
+211 ST x5 ET
+1 x5
+213 ST x4 ET
+213 ST x4 ET
+1 x4
+223 ST x4 ET
+223 ST x4 ET
+1 x4
+228 ST x5 ET
+228 ST x5 ET
+1 x5
+263 ST not x2 ET
+263 ST not x2 ET
+1 ~x2
+265 ST x3 ET
+265 ST x3 ET
+1 x3
+270 ST not x5 ET
+270 ST not x5 ET
+1 ~x5
+277 ST x5 ET
+277 ST x5 ET
+1 x5
+280 ST x5 ET
+280 ST x5 ET
+1 x5
+303 ST not x5 ET
+303 ST not x5 ET
+1 ~x5
+312 ST x2 ET
+314 ST x5 ET
+315 ST not x5 ET
+315 ST not x5 ET
+1 ~x5
+317 ST x2 ET
+370 ST not and x5 x2 ET
+370 ST not and x5 x2 ET
+2 ~(x2&x5)
+371 ST x1 ET
+386 ST x5 ET
+391 ST not x5 ET
+391 ST not x5 ET
+1 ~x5
+407 ST x4 ET
+416 ST x5 ET
+430 ST x5 ET
+432 ST not x5 ET
+432 ST not x5 ET
+1 ~x5
+453 ST not x5 ET
+453 ST not x5 ET
+1 ~x5
+495 ST x5 ET
+498 ST not x3 ET
+498 ST not x3 ET
+1 ~x3
+501 ST not x2 ET
+501 ST not x2 ET
+1 ~x2
+508 ST x5 ET
+511 ST and x5 not x1 ET
+511 ST and x5 not x1 ET
+2 ~x1&x5
+514 ST not x2 ET
+514 ST not x2 ET
+1 ~x2
+516 ST x4 ET
+527 ST not x5 ET
+527 ST not x5 ET
+1 ~x5
+529 ST not x5 ET
+529 ST not x5 ET
+1 ~x5
+531 ST not x5 ET
+531 ST not x5 ET
+1 ~x5
+532 ST x5 ET
+535 ST x5 ET
+544 ST x5 ET
+549 ST x5 ET
+556 ST not x2 ET
+556 ST not x2 ET
+1 ~x2
+566 ST x5 ET
+567 ST not x5 ET
+567 ST not x5 ET
+1 ~x5
+585 ST x5 ET
+588 ST not x3 ET
+588 ST not x3 ET
+1 ~x3
+589 ST not x1 ET
+589 ST not x1 ET
+1 ~x1
+591 ST not and x2 x1 ET
+591 ST not and x2 x1 ET
+2 ~(x1&x2)
+602 ST x4 ET
+608 ST x4 ET
+611 ST x4 ET
+637 ST x5 ET
+646 ST not x2 ET
+653 ST x5 ET
+655 ST x5 ET
+660 ST and x5 x3 ET
+660 ST and x5 x3 ET
+2 x3&x5
+663 ST x3 ET
+668 ST not x5 ET
+673 ST and and x1 x1 x4 ET
+673 ST and and x1 x1 x4 ET
+2 x1&x4
+685 ST x1 ET
+687 ST x2 ET
+693 ST x3 ET
+702 ST x5 ET
+730 ST x4 ET
+737 ST or x3 x3 ET
+737 ST or x3 x3 ET
+1 x3
+738 ST not or x3 x2 ET
+738 ST not or x3 x2 ET
+2 ~(x2|x3)
+739 ST x5 ET
+757 ST x1 ET
+762 ST or or x1 and not x5 x4 x3 ET
+762 ST or or x1 and not x5 x4 x3 ET
+4 x1|x3|(x4&~x5)
+789 ST not x5 ET
+798 ST or or x1 and x1 x1 x1 ET
+798 ST or or x1 and x1 x1 x1 ET
+1 x1
+808 ST x5 ET
+829 ST x5 ET
+855 ST not x5 ET
+869 ST x2 ET
+871 ST x5 ET
+881 ST x4 ET
+905 ST not x3 ET
+909 ST x1 ET
+911 ST not x3 ET
+918 ST x2 ET
+928 ST not x1 ET
+955 ST and x5 not or x1 and and x5 x2 and x3 x4 ET
+955 ST and x5 not or x1 and and x5 x2 and x3 x4 ET
+5 ~x1&x5&(~x2|~x3|~x4)
+968 ST x5 ET
+989 ST x4 ET
+1010 ST and x3 x1 ET
+1010 ST and x3 x1 ET
+2 x1&x3
+1028 ST or x3 x4 ET
+1028 ST or x3 x4 ET
+2 x3|x4
+1030 ST and or not and not x1 x4 x4 x5 ET
+1030 ST and or not and not x1 x4 x4 x5 ET
+1 x5
+1034 ST x1 ET
+1042 ST x4 ET
+1066 ST and or x5 and x5 and x1 x1 x4 ET
+1066 ST and or x5 and x5 and x1 x1 x4 ET
+2 x4&x5
+1085 ST x2 ET
+1125 ST x5 ET
+1159 ST x4 ET
+1163 ST or x3 x1 ET
+(.venv) ruhollah@majdoddin:~/ai/atp/assessor/cwd$  cd /home/ruhollah/ai/atp/assessor/cwd ; /usr/bin/env /home/ruhollah/ai/atp/assessor/.venv/bin/python3.11 /home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher 34605 -- /home/ruhollah/ai/atp/assessor/assessor.py 
+/home/ruhollah/ai/atp/assessor/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 39, in <module>
+    cli.main()
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 430, in main
+    run()
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 321, in run_path
+    return _run_module_code(code, init_globals, run_name,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 135, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 124, in _run_code
+    exec(code, run_globals)
+  File "/home/ruhollah/ai/atp/assessor/assessor.py", line 181, in <module>
+    checkpoint = torch.load('state.pt')
+                 ^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ruhollah/ai/atp/assessor/.venv/lib/python3.11/site-packages/torch/serialization.py", line 986, in load
+    with _open_file_like(f, 'rb') as opened_file:
+         ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ruhollah/ai/atp/assessor/.venv/lib/python3.11/site-packages/torch/serialization.py", line 435, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ruhollah/ai/atp/assessor/.venv/lib/python3.11/site-packages/torch/serialization.py", line 416, in __init__
+    super().__init__(open(name, mode))
+                     ^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: 'state.pt'
+(.venv) ruhollah@majdoddin:~/ai/atp/assessor/cwd$  cd /home/ruhollah/ai/atp/assessor/cwd ; /usr/bin/env /home/ruhollah/ai/atp/assessor/.venv/bin/python3.11 /home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher 49931 -- /home/ruhollah/ai/atp/assessor/assessor.py 
+/home/ruhollah/ai/atp/assessor/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+1178 ST x4 ET
+Traceback (most recent call last):
+  File "/usr/lib/python3.11/runpy.py", line 198, in _run_module_as_main
+    return _run_code(code, main_globals, None,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/usr/lib/python3.11/runpy.py", line 88, in _run_code
+    exec(code, run_globals)
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher/../../debugpy/__main__.py", line 39, in <module>
+    cli.main()
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 430, in main
+    run()
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher/../../debugpy/../debugpy/server/cli.py", line 284, in run_file
+    runpy.run_path(target, run_name="__main__")
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 321, in run_path
+    return _run_module_code(code, init_globals, run_name,
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 135, in _run_module_code
+    _run_code(code, mod_globals, init_globals,
+  File "/home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_runpy.py", line 124, in _run_code
+    exec(code, run_globals)
+  File "/home/ruhollah/ai/atp/assessor/assessor.py", line 227, in <module>
+    if (i > 500 and len(tknst == 1)):
+                    ^^^^^^^^^^^^^^^
+TypeError: object of type 'bool' has no len()
+(.venv) ruhollah@majdoddin:~/ai/atp/assessor/cwd$  cd /home/ruhollah/ai/atp/assessor/cwd ; /usr/bin/env /home/ruhollah/ai/atp/assessor/.venv/bin/python3.11 /home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher 43407 -- /home/ruhollah/ai/atp/assessor/assessor.py 
+/home/ruhollah/ai/atp/assessor/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+1160 ST x1 ET
+(.venv) ruhollah@majdoddin:~/ai/atp/assessor/cwd$  cd /home/ruhollah/ai/atp/assessor/cwd ; /usr/bin/env /home/ruhollah/ai/atp/assessor/.venv/bin/python3.11 /home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher 47037 -- /home/ruhollah/ai/atp/assessor/assessor.py 
+/home/ruhollah/ai/atp/assessor/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+1160 ST and x4 and and x2 and x1 x1 x2 ET
+3 x1&x2&x4
+1212 ST and x5 x3 ET
+2 x3&x5
+1281 ST not x2 ET
+1 ~x2
+1300 ST or x2 x5 ET
+2 x2|x5
+1302 ST and and x1 and x4 or x3 x1 not x5 ET
+3 x1&x4&~x5
+1309 ST or x2 x4 ET
+2 x2|x4
+1324 ST and and x1 x2 and or or and x1 x1 x5 x3 and and and x3 x2 x5 x2 ET
+4 x1&x2&x3&x5
+1365 ST and x5 x3 ET
+2 x3&x5
+1371 ST not and and x4 x1 x3 ET
+3 ~(x1&x3&x4)
+1400 ST or x5 x5 ET
+1 x5
+1403 ST and x1 and x1 x5 ET
+2 x1&x5
+1404 ST and x1 x3 ET
+2 x1&x3
+1417 ST and x5 x1 ET
+2 x1&x5
+1478 ST not x5 ET
+1 ~x5
+1516 ST and and x3 x3 x3 ET
+1 x3
+1520 ST or x2 and and and x4 and x1 x1 and and x5 x3 x5 x2 ET
+1 x2
+1554 ST and x2 x2 ET
+1 x2
+1634 ST and x3 x1 ET
+2 x1&x3
+1668 ST and x2 and x5 x1 ET
+3 x1&x2&x5
+1707 ST and not x1 x2 ET
+2 ~x1&x2
+1759 ST not and x2 or x1 x1 ET
+2 ~(x1&x2)
+1762 ST and or x1 and and x4 x1 x1 and x4 x4 ET
+2 x1&x4
+1769 ST not x1 ET
+1 ~x1
+(.venv) ruhollah@majdoddin:~/ai/atp/assessor/cwd$  cd /home/ruhollah/ai/atp/assessor/cwd ; /usr/bin/env /home/ruhollah/ai/atp/assessor/.venv/bin/python3.11 /home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher 40601 -- /home/ruhollah/ai/atp/assessor/assessor.py 
+/home/ruhollah/ai/atp/assessor/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+1840 ST not and x4 and and x2 and and x5 x3 x5 x3 ET
+4 ~(x2&x3&x4&x5)
+1881 ST and or not x1 x2 x3 ET
+3 x3&(~x1|x2)
+1945 ST and not and x2 or x5 or x3 not x3 x4 ET
+2 ~x2&x4
+2059 ST and x5 not x1 ET
+2 ~x1&x5
+2104 ST not and and x1 x1 x5 ET
+2 ~(x1&x5)
+2134 ST and or x5 and x5 x5 x5 ET
+1 x5
+(.venv) ruhollah@majdoddin:~/ai/atp/assessor/cwd$  cd /home/ruhollah/ai/atp/assessor/cwd ; /usr/bin/env /home/ruhollah/ai/atp/assessor/.venv/bin/python3.11 /home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher 53553 -- /home/ruhollah/ai/atp/assessor/assessor.py 
+/home/ruhollah/ai/atp/assessor/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+2170 ST and x5 x4 ET
+2 x4&x5
+2218 ST and and x3 x5 and x5 x2 ET
+3 x2&x3&x5
+2256 ST and or x1 x5 x2 ET
+3 x2&(x1|x5)
+2338 ST and x5 x3 ET
+2 x3&x5
+2430 ST and or x5 and not x3 x3 x3 ET
+2 x3&x5
+2457 ST or x3 x4 ET
+2 x3|x4
+2459 ST and x1 x3 ET
+2 x1&x3
+2470 ST and x5 and x4 x4 ET
+2 x4&x5
+2499 ST not and x5 x3 ET
+2 ~(x3&x5)
+2545 ST or x3 x4 ET
+2 x3|x4
+2620 ST and x2 x1 ET
+2 x1&x2
+2631 ST not and x2 and x4 x1 ET
+3 ~(x1&x2&x4)
+2657 ST and and x4 not and x1 x4 x3 ET
+3 ~x1&x3&x4
+2696 ST or x4 x3 ET
+2 x3|x4
+2720 ST and x4 and not x5 x4 ET
+2 x4&~x5
+2770 ST and x4 x4 ET
+1 x4
+2776 ST and x3 x1 ET
+2 x1&x3
+2786 ST or x2 and and x5 x2 x5 ET
+1 x2
+2792 ST or or x1 x2 x2 ET
+2 x1|x2
+^A
