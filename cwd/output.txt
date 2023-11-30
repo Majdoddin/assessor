@@ -420,4 +420,142 @@ TypeError: object of type 'bool' has no len()
 1 x2
 2792 ST or or x1 x2 x2 ET
 2 x1|x2
-^A
+2820 ST or x2 x3 ET
+2 x2|x3
+2854 ST not and and x3 x4 x3 ET
+2 ~(x3&x4)
+2892 ST not and x1 x3 ET
+2 ~(x1&x3)
+2920 ST or x5 x2 ET
+2 x2|x5
+2933 ST and x5 x1 ET
+2 x1&x5
+2954 ST not or x5 x3 ET
+2 ~(x3|x5)
+2957 ST or or x2 x1 x2 ET
+2 x1|x2
+2986 ST not and x2 x2 ET
+1 ~x2
+2995 ST or and x4 x3 and and and x1 x2 and x5 x5 x3 ET
+5 (x1&x2&x3&x5)|(x3&x4)
+2996 ST and x5 x1 ET
+2 x1&x5
+3037 ST and and x1 x5 x5 ET
+2 x1&x5
+3090 ST and not x5 x2 ET
+2 x2&~x5
+3092 ST and x5 x2 ET
+2 x2&x5
+3136 ST and x1 x4 ET
+2 x1&x4
+3228 ST and x3 x4 ET
+2 x3&x4
+3348 ST or x2 x4 ET
+2 x2|x4
+3385 ST and x1 x2 ET
+2 x1&x2
+3397 ST and and x4 x4 x3 ET
+2 x3&x4
+3432 ST and or x3 x5 and x1 and x1 x3 ET
+2 x1&x3
+3467 ST and and not x5 x3 x3 ET
+2 x3&~x5
+3528 ST or x4 not x2 ET
+2 ~x2|x4
+3558 ST or and x3 and or x1 x2 not and x3 x5 x5 ET
+4 x5|(x3&(x1|x2))
+3612 ST or x3 not x5 ET
+2 x3|~x5
+3614 ST and and x5 x3 x2 ET
+3 x2&x3&x5
+3637 ST and x5 x3 ET
+2 x3&x5
+3645 ST and and or x4 not x5 x5 x4 ET
+2 x4&x5
+3691 ST or x2 x4 ET
+2 x2|x4
+3721 ST or x3 x5 ET
+2 x3|x5
+3725 ST and and x5 x4 or x2 and x5 not x4 ET
+3 x4&x5&(x2|(~x4&x5))
+3781 ST and x3 not x5 ET
+2 x3&~x5
+3792 ST and x5 x2 ET
+2 x2&x5
+3862 ST and and x4 x5 x2 ET
+3 x2&x4&x5
+3922 ST and x2 x3 ET
+2 x2&x3
+3941 ST or and x4 x1 x5 ET
+3 x5|(x1&x4)
+3970 ST and x4 x3 ET
+2 x3&x4
+3982 ST or and or x4 x5 not and x5 x4 x3 ET
+3 x3|((x4|x5)&(~x4|~x5))
+3997 ST or x5 not x3 ET
+2 ~x3|x5
+
+#length * 0.8
+4032 ST and and x2 x1 x4 ET
+3 x1&x2&x4
+4080 ST or x2 not and or x1 and and x3 x3 not and x1 x5 x3 ET
+4 x2|~x3|(~x1&(~x3|(x1&x5)))
+4115 ST and or x3 x1 x4 ET
+3 x4&(x1|x3)
+4128 ST and x4 and x2 and x5 x4 ET
+3 x2&x4&x5
+4154 ST or and and and x2 x1 x2 and x1 and x4 not and and x5 x3 x5 not x2 ET
+5 ~x2|(x1&x4&(~x3|~x5))
+4316 ST and and x5 x1 x4 ET
+3 x1&x4&x5
+4383 ST and x5 and or x4 not x5 x3 ET
+3 x3&x4&x5
+4403 ST and x3 and not and x1 x5 x3 ET
+3 x3&(~x1|~x5)
+4518 ST not and x2 and and and x4 x1 x5 x5 ET
+4 ~(x1&x2&x4&x5)
+4697 ST not and x2 and x3 and x2 and x4 x3 ET
+3 ~(x2&x3&x4)
+4703 ST not and or x2 x5 and x1 and and x5 x3 not and or x1 x5 x3 ET
+3 ~(x1&x3&x5&(~x1&~x5))
+4921 ST and x5 and x5 and x1 x2 ET
+3 x1&x2&x5
+
+#length * 1
+4015 ST and x3 and x5 and x5 and x1 x4 ET
+4 1 x1&x3&x4&x5
+4059 ST or x4 and and and x1 x1 x5 x3 ET
+4 2 x4|(x1&x3&x5)
+4079 ST and x2 and x5 and and x4 x1 and x3 x3 ET
+5 1 x1&x2&x3&x4&x5
+4121 ST and x2 and and x3 x2 and x5 x2 ET
+3 1 x2&x3&x5
+4285 ST and and and x4 x3 x3 x2 ET
+3 1 x2&x3&x4
+4378 ST and or x1 and x5 x1 and x1 and x1 or and x4 x3 x2 ET
+4 3 x1&(x2|(x3&x4))
+4454 ST and and and not x5 x1 x2 x1 ET
+3 2 x1&x2&~x5
+4677 ST and x2 and x2 and x1 x5 ET
+3 1 x1&x2&x5
+4791 ST and and and x4 x5 x2 x5 ET
+3 1 x2&x4&x5
+
+#length * 1.2
+4169 ST or or x1 x2 not x3 ET
+3 2 x1|x2|~x3
+4191 ST and and not x2 not x5 or x1 x4 ET
+4 2 ~x2&~x5&(x1|x4)
+4294 ST and and or x3 x2 and x4 x1 x4 ET
+4 2 x1&x4&(x2|x3)
+4422 ST and and and x3 x1 x2 x1 ET
+3 1 x1&x2&x3
+4459 ST not and x3 and x4 x5 ET
+3 2 ~(x3&x4&x5)
+4613 ST and x4 and x1 and not x5 x2 ET
+4 2 x1&x2&x4&~x5
+4762 ST and not x3 or or x2 or x3 x3 x1 ET
+3 2 ~x3&(x1|x2)
+4783 ST and and x3 and x5 or x5 x2 and x2 not x4 ET
+4 2 x2&x3&~x4&x5
+

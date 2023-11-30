@@ -51,21 +51,21 @@ def build_tree(tokens):
         return token, tokens
 
 def to_nested_list(token_list):
-    tree, remaining_tokens = build_tree(token_list)
+    tree, remaining_tokens = build_tree(list(token_list))
     if remaining_tokens:
         raise ValueError("Invalid input: Unused tokens remain after parsing.")
     return tree
 
 # Example usage:
-formulas = [['and', 'and', 'X1', 'and', 'X1', 'X1', 'X3'],
-    ['and', 'x1', 'not', 'x2'],
-           ['x1'],
-           [],
-           ['x1', 'x2'],
-           ]
-for f in formulas:
-    nested_list = to_nested_list(f)
-    print(nested_list)  # Should output: ['and', 'x1', ['not', 'x2']]
+# formulas = [['and', 'and', 'X1', 'and', 'X1', 'X1', 'X3'],
+#     ['and', 'x1', 'not', 'x2'],
+#            ['x1'],
+#            [],
+#            ['x1', 'x2'],
+#            ]
+# for f in formulas:
+#     nested_list = to_nested_list(f)
+#     print(nested_list)  # Should output: ['and', 'x1', ['not', 'x2']]
 
 def flatten_tree(tree):
     if isinstance(tree, str):
@@ -96,6 +96,36 @@ def to_parenthesized_string(tree):
         # Otherwise, join the operands with the operator, applying recursion.
         operands = [to_parenthesized_string(operand) for operand in tree[1:]]
         return '(' + f" {operator} ".join(operands) + ')'
+
+def expression_depth(expr):
+    """
+    Calculate the depth of a Boolean expression.
+
+    :param expr: An expression from the boolean algebra module.
+    :return: The depth of the expression.
+    """
+    # Base case: if the expression is a symbol, its depth is 0
+    if isinstance(expr, boolean.Symbol):
+        return 0
+
+    # If the expression is a NOT operation, its depth is 1 + depth of the inner expression
+    if isinstance(expr, boolean.NOT):
+        return 1 + expression_depth(expr.args[0])
+
+    # If the expression is an AND or OR operation, calculate the depth of each argument
+    if isinstance(expr, (boolean.AND, boolean.OR)):
+        return 1 + max(expression_depth(arg) for arg in expr.args)
+
+    # For any other type of expression, return 0 as a default (though this should not happen)
+    return 0
+
+
+
+# Example usage of the function
+# algebra = boolean.BooleanAlgebra()
+# example_expr = algebra.parse('A and (B or C)')
+# depth = expression_depth(example_expr)
+# print(depth)
 
 # Example usage:
 # nested_list = ['and', ['and', 'x1', ['not', 'x2']], ['or', 'x3', ['not', 'x4']]]
