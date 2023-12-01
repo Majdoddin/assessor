@@ -1,0 +1,1197 @@
+205 or x2 x4
+2 1 x2|x4
+206 x4
+1 0 x4
+208 x1
+1 0 x1
+210 and not x1 x4
+2 2 ~x1&x4
+214 x5
+1 0 x5
+221 x4
+1 0 x4
+236 x1
+1 0 x1
+237 and x1 x4
+2 1 x1&x4
+243 or x3 x2
+2 1 x2|x3
+245 x2
+1 0 x2
+247 x3
+1 0 x3
+252 x3
+1 0 x3
+255 x1
+1 0 x1
+257 not x4
+1 1 ~x4
+261 x1
+1 0 x1
+263 x1
+1 0 x1
+267 x3
+1 0 x3
+274 x2
+1 0 x2
+277 or x4 x4
+1 0 x4
+279 x1
+1 0 x1
+293 x1
+1 0 x1
+295 x4
+1 0 x4
+299 x2
+1 0 x2
+301 x1
+1 0 x1
+311 not x2
+1 1 ~x2
+314 or x3 x1
+2 1 x1|x3
+316 x2
+1 0 x2
+319 x4
+1 0 x4
+320 x1
+1 0 x1
+331 x2
+1 0 x2
+332 x1
+1 0 x1
+335 x4
+1 0 x4
+337 x2
+1 0 x2
+339 x2
+1 0 x2
+342 x4
+1 0 x4
+344 x1
+1 0 x1
+345 x2
+1 0 x2
+347 x1
+1 0 x1
+354 x2
+1 0 x2
+357 x4
+1 0 x4
+362 x1
+1 0 x1
+366 x2
+1 0 x2
+370 x1
+1 0 x1
+371 x4
+1 0 x4
+374 x3
+1 0 x3
+375 or x2 x1
+2 1 x1|x2
+393 or x4 x2
+2 1 x2|x4
+396 x2
+1 0 x2
+398 x1
+1 0 x1
+405 x2
+1 0 x2
+407 x2
+1 0 x2
+409 x2
+1 0 x2
+410 x1
+1 0 x1
+411 x1
+1 0 x1
+420 x3
+1 0 x3
+424 x2
+1 0 x2
+426 x3
+1 0 x3
+430 x1
+1 0 x1
+432 x2
+1 0 x2
+435 x1
+1 0 x1
+438 x1
+1 0 x1
+439 x3
+1 0 x3
+447 x3
+1 0 x3
+451 x4
+1 0 x4
+453 or x3 x2
+2 1 x2|x3
+454 x1
+1 0 x1
+456 or x1 x4
+2 1 x1|x4
+460 x2
+1 0 x2
+463 x1
+1 0 x1
+466 x3
+1 0 x3
+469 or x1 x2
+2 1 x1|x2
+471 x1
+1 0 x1
+480 x1
+1 0 x1
+490 x2
+1 0 x2
+491 x2
+1 0 x2
+505 not x1
+1 1 ~x1
+548 or x2 not x2
+0 0 1
+566 or x4 x1
+2 1 x1|x4
+581 or x1 x4
+2 1 x1|x4
+633 or x1 x4
+2 1 x1|x4
+639 or x4 x1
+2 1 x1|x4
+647 or x1 x4
+2 1 x1|x4
+651 or x1 x1
+1 0 x1
+656 or or x2 or and x3 x1 x1 x1
+2 1 x1|x2
+658 or x1 x4
+2 1 x1|x4
+690 or x1 x1
+1 0 x1
+727 and x2 x2
+1 0 x2
+733 or x2 x4
+2 1 x2|x4
+742 and not x2 x2
+0 0 0
+774 or x4 x2
+2 1 x2|x4
+782 or x3 x1
+2 1 x1|x3
+783 or x1 x4
+2 1 x1|x4
+817 or x2 x4
+2 1 x2|x4
+826 or not or x2 x2 x1
+2 2 x1|~x2
+849 or x2 x2
+1 0 x2
+860 or x1 x2
+2 1 x1|x2
+883 or x1 x2
+2 1 x1|x2
+895 or or x4 x1 x4
+2 1 x1|x4
+902 or x1 x4
+2 1 x1|x4
+948 or or x4 x2 or x1 x1
+3 1 x1|x2|x4
+968 or x2 or x4 not x2
+0 0 1
+989 or x2 x4
+2 1 x2|x4
+998 or x1 x4
+2 1 x1|x4
+999 or x1 x1
+1 0 x1
+1011 or x1 x4
+2 1 x1|x4
+1039 or or x1 x1 or and x1 x3 or x2 not x1
+0 0 1
+1055 not or x1 x2
+2 2 ~(x1|x2)
+1056 or x1 not x1
+0 0 1
+1067 or not x1 x3
+2 2 ~x1|x3
+1083 or x1 x4
+2 1 x1|x4
+1084 or x2 x1
+2 1 x1|x2
+1111 and x4 x4
+1 0 x4
+1119 and x4 x4
+1 0 x4
+1126 or x1 x4
+2 1 x1|x4
+1138 or x2 x4
+2 1 x2|x4
+1151 or x4 x4
+1 0 x4
+1158 or x4 x1
+2 1 x1|x4
+1167 or x2 x1
+2 1 x1|x2
+1174 or x1 x4
+2 1 x1|x4
+1230 or x4 x2
+2 1 x2|x4
+1245 or x2 x2
+1 0 x2
+1248 or x1 x4
+2 1 x1|x4
+1270 or not x4 x4
+0 0 1
+1271 or x4 x4
+1 0 x4
+1277 and x1 x3
+2 1 x1&x3
+1284 or x2 x4
+2 1 x2|x4
+1289 or x1 x4
+2 1 x1|x4
+1299 or x4 x4
+1 0 x4
+1307 or or x2 not x1 and x1 x1
+0 0 1
+1308 or x1 x4
+2 1 x1|x4
+1311 or x1 x2
+2 1 x1|x2
+1312 or x1 x2
+2 1 x1|x2
+1317 or x2 x4
+2 1 x2|x4
+1319 or x4 x1
+2 1 x1|x4
+1335 or x2 x2
+1 0 x2
+1337 or not x1 x1
+0 0 1
+1343 and x4 x2
+2 1 x2&x4
+1363 or x1 x1
+1 0 x1
+1367 or x1 x1
+1 0 x1
+1379 not or x4 x4
+1 1 ~x4
+1396 or x2 x3
+2 1 x2|x3
+1421 or x4 x4
+1 0 x4
+1426 or x1 x4
+2 1 x1|x4
+1433 or x1 x2
+2 1 x1|x2
+1439 or not x1 x4
+2 2 ~x1|x4
+1475 or x4 x3
+2 1 x3|x4
+1479 and or x1 x2 x1
+1 0 x1
+1498 or x1 x3
+2 1 x1|x3
+1514 or x4 x4
+1 0 x4
+1515 or x4 x1
+2 1 x1|x4
+1522 or x4 x2
+2 1 x2|x4
+1534 or not x3 x1
+2 2 x1|~x3
+1551 not or x2 x2
+1 1 ~x2
+1566 or not x1 x2
+2 2 ~x1|x2
+1618 or x2 x2
+1 0 x2
+1632 or x3 x4
+2 1 x3|x4
+1633 or x3 x4
+2 1 x3|x4
+1635 or x1 not x1
+0 0 1
+1661 or x2 x4
+2 1 x2|x4
+1664 or x1 x4
+2 1 x1|x4
+1678 or x4 x4
+1 0 x4
+1681 or x2 x2
+1 0 x2
+1682 or x2 or x2 x2
+1 0 x2
+1684 or x4 x1
+2 1 x1|x4
+1690 or x1 x3
+2 1 x1|x3
+1699 or x3 x4
+2 1 x3|x4
+1702 or x4 x4
+1 0 x4
+1708 and x4 x1
+2 1 x1&x4
+1710 or x2 x5
+2 1 x2|x5
+1730 or x1 x4
+2 1 x1|x4
+1733 or x3 x1
+2 1 x1|x3
+1734 not or x3 x1
+2 2 ~(x1|x3)
+1744 or x4 x3
+2 1 x3|x4
+1745 or not x1 x3
+2 2 ~x1|x3
+1759 or x2 x3
+2 1 x2|x3
+1770 or not x2 x4
+2 2 ~x2|x4
+1806 or not x2 x4
+2 2 ~x2|x4
+1810 or x2 x2
+1 0 x2
+1813 or x1 x4
+2 1 x1|x4
+1832 or not x2 x1
+2 2 x1|~x2
+1834 or x1 x4
+2 1 x1|x4
+1845 or x4 x3
+2 1 x3|x4
+1872 or not x2 x3
+2 2 ~x2|x3
+1883 or x1 x3
+2 1 x1|x3
+1888 or x2 x3
+2 1 x2|x3
+1900 or x1 x3
+2 1 x1|x3
+1905 or not x2 x1
+2 2 x1|~x2
+1907 or x1 or x1 x1
+1 0 x1
+1917 or x4 x3
+2 1 x3|x4
+1939 or x1 x4
+2 1 x1|x4
+1972 or not x1 x4
+2 2 ~x1|x4
+1975 or x4 x2
+2 1 x2|x4
+1980 or x3 x4
+2 1 x3|x4
+1993 or x1 x4
+2 1 x1|x4
+1999 or x1 x1
+1 0 x1
+2013 or x4 x3
+2 1 x3|x4
+2022 or x2 x3
+2 1 x2|x3
+2039 or x3 x1
+2 1 x1|x3
+2061 or x2 x5
+2 1 x2|x5
+2064 or x4 x4
+1 0 x4
+2089 or not x1 x4
+2 2 ~x1|x4
+2105 or x2 x2
+1 0 x2
+2111 or or x4 x2 x2
+2 1 x2|x4
+2115 or not x3 x4
+2 2 ~x3|x4
+2117 or x3 x1
+2 1 x1|x3
+2121 or not x2 x2
+0 0 1
+2132 or x2 x4
+2 1 x2|x4
+2152 or x3 x2
+2 1 x2|x3
+2154 or x4 x3
+2 1 x3|x4
+2155 or x4 x4
+1 0 x4
+2182 or not x1 x4
+2 2 ~x1|x4
+2183 or x1 x3
+2 1 x1|x3
+2186 or x2 x4
+2 1 x2|x4
+2199 or not x3 x2
+2 2 x2|~x3
+2203 or not x2 x3
+2 2 ~x2|x3
+2224 or x3 or or x2 or or x4 x1 x3 x5
+5 1 x1|x2|x3|x4|x5
+2228 or x2 not x1
+2 2 ~x1|x2
+2231 or x1 x4
+2 1 x1|x4
+2235 or x1 x4
+2 1 x1|x4
+2236 or x1 x1
+1 0 x1
+2241 or x3 x2
+2 1 x2|x3
+2250 or x2 x3
+2 1 x2|x3
+2252 or x3 x4
+2 1 x3|x4
+2267 or x1 x3
+2 1 x1|x3
+2278 or x1 x4
+2 1 x1|x4
+2290 or x5 x4
+2 1 x4|x5
+2292 or x4 x3
+2 1 x3|x4
+2295 or x5 x4
+2 1 x4|x5
+2297 or x2 x3
+2 1 x2|x3
+2314 or not x1 x4
+2 2 ~x1|x4
+2321 or or x4 x4 x4
+1 0 x4
+2322 or not x1 x3
+2 2 ~x1|x3
+2336 and not or x2 or x1 not x1 not x1
+0 1 ~(1)
+2341 or x1 not x4
+2 2 x1|~x4
+2349 or x4 x4
+1 0 x4
+2359 or x3 x4
+2 1 x3|x4
+2365 or x1 x3
+2 1 x1|x3
+2367 or x1 x2
+2 1 x1|x2
+2374 not or x1 x4
+2 2 ~(x1|x4)
+2379 or x4 x3
+2 1 x3|x4
+2383 or x1 x2
+2 1 x1|x2
+2396 or x1 x4
+2 1 x1|x4
+2404 or x2 not x3
+2 2 x2|~x3
+2432 or x1 x3
+2 1 x1|x3
+2433 or not x3 or x2 x3
+0 0 1
+2453 or x3 not x2
+2 2 ~x2|x3
+2478 or x2 x5
+2 1 x2|x5
+2487 not or x4 x4
+1 1 ~x4
+2503 or not x2 or x2 x1
+0 0 1
+2506 or not x3 x1
+2 2 x1|~x3
+2517 or x4 x2
+2 1 x2|x4
+2522 or x2 x3
+2 1 x2|x3
+2533 or x3 x2
+2 1 x2|x3
+2534 or x3 x1
+2 1 x1|x3
+2547 or x4 x4
+1 0 x4
+2549 or not x2 x4
+2 2 ~x2|x4
+2550 or x3 x2
+2 1 x2|x3
+2553 or or x2 x4 x2
+2 1 x2|x4
+2554 or not x2 x5
+2 2 ~x2|x5
+2558 or not x2 x4
+2 2 ~x2|x4
+2562 or x4 x3
+2 1 x3|x4
+2566 not or x2 x4
+2 2 ~(x2|x4)
+2570 or not x2 x2
+0 0 1
+2571 or x1 x3
+2 1 x1|x3
+2581 or not x1 x4
+2 2 ~x1|x4
+2585 or not x5 x4
+2 2 x4|~x5
+2600 or x1 x4
+2 1 x1|x4
+2606 or not x2 x4
+2 2 ~x2|x4
+2634 or x1 x3
+2 1 x1|x3
+2638 or not x1 x1
+0 0 1
+2645 or not x1 x4
+2 2 ~x1|x4
+2650 not or x2 x2
+1 1 ~x2
+2660 or x1 x4
+2 1 x1|x4
+2670 or x1 x3
+2 1 x1|x3
+2671 or not x2 x2
+0 0 1
+2677 or x4 x2
+2 1 x2|x4
+2699 or x1 x4
+2 1 x1|x4
+2704 or x1 x4
+2 1 x1|x4
+2707 or x1 x4
+2 1 x1|x4
+2708 or x1 x3
+2 1 x1|x3
+2709 or not x3 x4
+2 2 ~x3|x4
+2710 or x1 x4
+2 1 x1|x4
+2717 or not x1 x5
+2 2 ~x1|x5
+2721 or x1 x4
+2 1 x1|x4
+2723 or x1 x4
+2 1 x1|x4
+2725 or x2 x1
+2 1 x1|x2
+2734 or x3 x4
+2 1 x3|x4
+2744 or x4 x1
+2 1 x1|x4
+2752 and or x2 x4 x2
+1 0 x2
+2756 not or x4 x2
+2 2 ~(x2|x4)
+2780 or x1 x4
+2 1 x1|x4
+2786 or x2 x4
+2 1 x2|x4
+2806 or x5 x1
+2 1 x1|x5
+2811 or x1 x2
+2 1 x1|x2
+2821 or x1 x3
+2 1 x1|x3
+2835 or x4 x1
+2 1 x1|x4
+2842 or x1 x4
+2 1 x1|x4
+2848 or not x5 x3
+2 2 x3|~x5
+2851 or not x4 x4
+0 0 1
+2861 or x5 x1
+2 1 x1|x5
+2868 or x1 x3
+2 1 x1|x3
+2871 or not or x2 x2 or x4 x4
+2 2 ~x2|x4
+2884 or x2 x4
+2 1 x2|x4
+2895 or x3 x4
+2 1 x3|x4
+2898 or x1 x5
+2 1 x1|x5
+2910 or x1 x4
+2 1 x1|x4
+2915 or not x2 x4
+2 2 ~x2|x4
+2917 or x1 x1
+1 0 x1
+2924 or x1 x1
+1 0 x1
+2926 or x2 x2
+1 0 x2
+2943 or not x2 x1
+2 2 x1|~x2
+2949 or x4 x1
+2 1 x1|x4
+2952 or not x3 x1
+2 2 x1|~x3
+2958 or x3 x4
+2 1 x3|x4
+2959 or x1 x4
+2 1 x1|x4
+2961 or not x1 x5
+2 2 ~x1|x5
+2966 or x1 x3
+2 1 x1|x3
+2968 or x1 x4
+2 1 x1|x4
+2972 or x4 x3
+2 1 x3|x4
+2977 or not x3 x2
+2 2 x2|~x3
+2979 or x4 not x3
+2 2 ~x3|x4
+2982 or x1 x4
+2 1 x1|x4
+2996 or x2 x3
+2 1 x2|x3
+3001 or x2 not x5
+2 2 x2|~x5
+3023 or x3 x2
+2 1 x2|x3
+3036 not or not x2 x3
+2 3 ~(~x2|x3)
+3045 or not or x3 x1 not x4
+3 3 ~(x4&(x1|x3))
+3052 or x1 x4
+2 1 x1|x4
+3053 not or x3 x5
+2 2 ~(x3|x5)
+3056 or not x1 not x3
+2 2 ~(x1&x3)
+3059 or x1 x3
+2 1 x1|x3
+3062 or x4 x4
+1 0 x4
+3066 or x3 x2
+2 1 x2|x3
+3070 or x2 not x4
+2 2 x2|~x4
+3097 or x2 not x4
+2 2 x2|~x4
+3098 or x2 x4
+2 1 x2|x4
+3099 or not x1 x3
+2 2 ~x1|x3
+3114 not or x2 x4
+2 2 ~(x2|x4)
+3118 or not x3 x2
+2 2 x2|~x3
+3141 or x2 x4
+2 1 x2|x4
+3142 or not x1 x2
+2 2 ~x1|x2
+3144 or not x5 x1
+2 2 x1|~x5
+3145 or not x3 x4
+2 2 ~x3|x4
+3172 or x2 x1
+2 1 x1|x2
+3174 or x2 x4
+2 1 x2|x4
+3175 and x1 x4
+2 1 x1&x4
+3178 and x1 x5
+2 1 x1&x5
+3179 or x2 or x4 x3
+3 1 x2|x3|x4
+3181 or x2 x4
+2 1 x2|x4
+3201 or x2 x3
+2 1 x2|x3
+3202 or x4 x2
+2 1 x2|x4
+3207 not or x4 x4
+1 1 ~x4
+3228 or not x1 x4
+2 2 ~x1|x4
+3237 not or not x1 x4
+2 3 ~(~x1|x4)
+3253 or x1 x2
+2 1 x1|x2
+3256 or not x4 x4
+0 0 1
+3264 or not x4 x3
+2 2 x3|~x4
+3267 or x1 x2
+2 1 x1|x2
+3279 or x2 x3
+2 1 x2|x3
+3284 or x1 x4
+2 1 x1|x4
+3288 or x2 x3
+2 1 x2|x3
+3313 or not x1 x4
+2 2 ~x1|x4
+3316 or x4 not x1
+2 2 ~x1|x4
+3319 or x3 x4
+2 1 x3|x4
+3323 or x3 x4
+2 1 x3|x4
+3329 or x1 x5
+2 1 x1|x5
+3343 or not x4 x1
+2 2 x1|~x4
+3347 or x2 x2
+1 0 x2
+3356 or not x2 x3
+2 2 ~x2|x3
+3358 and or x2 x3 x4
+3 2 x4&(x2|x3)
+3367 or x2 x2
+1 0 x2
+3370 or x3 not x2
+2 2 ~x2|x3
+3379 or not x2 x4
+2 2 ~x2|x4
+3383 or not x3 x5
+2 2 ~x3|x5
+3389 and x4 x4
+1 0 x4
+3395 or x2 x4
+2 1 x2|x4
+3410 or x1 not x3
+2 2 x1|~x3
+3427 or x1 x4
+2 1 x1|x4
+3444 or x1 x4
+2 1 x1|x4
+3479 or not x2 x4
+2 2 ~x2|x4
+3482 not or x4 x2
+2 2 ~(x2|x4)
+3484 or x4 x2
+2 1 x2|x4
+3495 or x2 x3
+2 1 x2|x3
+3512 or not x2 x2
+0 0 1
+3518 or not x2 x2
+0 0 1
+3524 or x5 not x1
+2 2 ~x1|x5
+3528 and not x1 x3
+2 2 ~x1&x3
+3549 or x4 x3
+2 1 x3|x4
+3558 or x4 x5
+2 1 x4|x5
+3562 not or or x4 x3 x4
+2 2 ~(x3|x4)
+3564 or x2 x5
+2 1 x2|x5
+3585 or not x1 x1
+0 0 1
+3587 not or x1 or not x1 x4
+0 1 ~(1)
+3598 or x3 x2
+2 1 x2|x3
+3602 or x1 x2
+2 1 x1|x2
+3604 or x4 x4
+1 0 x4
+3606 or not x2 x4
+2 2 ~x2|x4
+3615 or x4 not x2
+2 2 ~x2|x4
+3620 or x2 x4
+2 1 x2|x4
+3622 or not x2 x4
+2 2 ~x2|x4
+3631 or not x2 x3
+2 2 ~x2|x3
+3632 and x2 x1
+2 1 x1&x2
+3633 or not x2 x4
+2 2 ~x2|x4
+3635 not or x1 x2
+2 2 ~(x1|x2)
+3638 or x1 x4
+2 1 x1|x4
+3639 or not x1 or x1 not x2
+0 0 1
+3662 or x1 x1
+1 0 x1
+3677 or x4 x4
+1 0 x4
+3684 or x2 x5
+2 1 x2|x5
+3686 or not x5 x3
+2 2 x3|~x5
+3687 or x4 x1
+2 1 x1|x4
+3696 or not x3 x1
+2 2 x1|~x3
+3698 or x3 x2
+2 1 x2|x3
+3700 or x1 x2
+2 1 x1|x2
+3702 or x5 not x1
+2 2 ~x1|x5
+3712 or x4 not x1
+2 2 ~x1|x4
+3728 or x3 x3
+1 0 x3
+3738 or x1 x4
+2 1 x1|x4
+3739 or x4 x2
+2 1 x2|x4
+3752 or not x3 x4
+2 2 ~x3|x4
+3766 or x3 x3
+1 0 x3
+3769 and x1 x4
+2 1 x1&x4
+3773 or not x2 x4
+2 2 ~x2|x4
+3785 or not x5 x4
+2 2 x4|~x5
+3787 not or x1 x4
+2 2 ~(x1|x4)
+3788 not or not x5 or x5 x4
+0 1 ~(1)
+3806 or not x3 x2
+2 2 x2|~x3
+3821 or x1 x3
+2 1 x1|x3
+3823 or x4 x2
+2 1 x2|x4
+3831 or x4 x3
+2 1 x3|x4
+3838 or x2 not x4
+2 2 x2|~x4
+3860 or x4 not x2
+2 2 ~x2|x4
+3864 or not x3 x3
+0 0 1
+3886 or x5 not x1
+2 2 ~x1|x5
+3896 not or x1 x4
+2 2 ~(x1|x4)
+3898 not or x1 x4
+2 2 ~(x1|x4)
+3908 or x1 x3
+2 1 x1|x3
+3912 or x1 x1
+1 0 x1
+3928 and not x5 x2
+2 2 x2&~x5
+3943 or x2 not x1
+2 2 ~x1|x2
+3963 or x1 x4
+2 1 x1|x4
+3964 or not x2 x1
+2 2 x1|~x2
+3967 or not x1 x2
+2 2 ~x1|x2
+3993 or not x1 x4
+2 2 ~x1|x4
+4003 or not x5 x3
+2 2 x3|~x5
+4006 or x4 x1
+2 1 x1|x4
+4007 or not x1 x4
+2 2 ~x1|x4
+4029 or x1 x1
+1 0 x1
+4035 or not x5 x3
+2 2 x3|~x5
+4055 or not x2 x4
+2 2 ~x2|x4
+4056 or x3 not x4
+2 2 x3|~x4
+4069 or not x2 or x3 x2
+0 0 1
+4112 or x3 x2
+2 1 x2|x3
+4115 or not x1 x4
+2 2 ~x1|x4
+4120 or not x2 x1
+2 2 x1|~x2
+4131 or x4 x1
+2 1 x1|x4
+4135 not or x1 x5
+2 2 ~(x1|x5)
+4138 or x1 x3
+2 1 x1|x3
+4139 or not x1 x2
+2 2 ~x1|x2
+4141 or x1 x4
+2 1 x1|x4
+4155 or not x2 x1
+2 2 x1|~x2
+4159 or x1 x3
+2 1 x1|x3
+4162 or x1 x3
+2 1 x1|x3
+4165 or not x2 x2
+0 0 1
+4166 or not x5 x2
+2 2 x2|~x5
+4170 or x4 x4
+1 0 x4
+4193 or not x4 x1
+2 2 x1|~x4
+4201 or not x4 x4
+0 0 1
+4204 or x1 x4
+2 1 x1|x4
+4208 or not x5 x3
+2 2 x3|~x5
+4211 or or x4 x5 x2
+3 1 x2|x4|x5
+4212 or not x1 x4
+2 2 ~x1|x4
+4215 and not x5 and x1 x3
+3 2 x1&x3&~x5
+4219 or x3 x3
+1 0 x3
+4220 or x2 x2
+1 0 x2
+4224 or not x4 x4
+0 0 1
+4232 or not x4 x4
+0 0 1
+4237 or x1 not x2
+2 2 x1|~x2
+4239 or x5 x4
+2 1 x4|x5
+4242 or x3 x5
+2 1 x3|x5
+4243 or x1 x3
+2 1 x1|x3
+4270 or x4 not x2
+2 2 ~x2|x4
+4281 or not x3 x1
+2 2 x1|~x3
+4296 or x3 x5
+2 1 x3|x5
+4299 or x5 not x4
+2 2 ~x4|x5
+4303 or x2 x5
+2 1 x2|x5
+4304 or x3 x3
+1 0 x3
+4305 or x2 x1
+2 1 x1|x2
+4307 or x4 x4
+1 0 x4
+4311 or x2 not x2
+0 0 1
+4314 or x2 x4
+2 1 x2|x4
+4316 or x4 x2
+2 1 x2|x4
+4322 or x2 not x1
+2 2 ~x1|x2
+4329 or x4 x3
+2 1 x3|x4
+4331 or x3 x3
+1 0 x3
+4349 or x1 x1
+1 0 x1
+4353 or not x2 x3
+2 2 ~x2|x3
+4359 or x5 x2
+2 1 x2|x5
+4360 not or x5 x5
+1 1 ~x5
+4362 or x5 x5
+1 0 x5
+4372 not or x3 x4
+2 2 ~(x3|x4)
+4377 or x2 not x4
+2 2 x2|~x4
+4382 or x4 x3
+2 1 x3|x4
+4419 and x4 not x3
+2 2 ~x3&x4
+4424 or not x2 x2
+0 0 1
+4437 and x4 x2
+2 1 x2&x4
+4439 or x1 x3
+2 1 x1|x3
+4453 not and x2 x3
+2 2 ~(x2&x3)
+4458 not or x3 x3
+1 1 ~x3
+4459 or x1 not x2
+2 2 x1|~x2
+4460 or not x3 x4
+2 2 ~x3|x4
+4474 or not x2 x2
+0 0 1
+4475 or x4 x4
+1 0 x4
+4509 and not x3 x4
+2 2 ~x3&x4
+4513 not or x4 x5
+2 2 ~(x4|x5)
+4516 and not x5 x3
+2 2 x3&~x5
+4524 or not x3 x4
+2 2 ~x3|x4
+4561 or not x2 x4
+2 2 ~x2|x4
+4563 and and x2 x5 and x2 or and x4 x4 x1
+4 2 x2&x5&(x1|x4)
+4581 or x4 x2
+2 1 x2|x4
+4582 or not x5 x1
+2 2 x1|~x5
+4583 or not x3 x2
+2 2 x2|~x3
+4588 or x5 x3
+2 1 x3|x5
+4590 and not x3 x4
+2 2 ~x3&x4
+4591 and x5 x4
+2 1 x4&x5
+4593 or not x2 x2
+0 0 1
+4602 or x3 x3
+1 0 x3
+4609 or not x5 x3
+2 2 x3|~x5
+4612 or not x2 x3
+2 2 ~x2|x3
+4623 or not x3 x4
+2 2 ~x3|x4
+4634 or x1 x2
+2 1 x1|x2
+4640 or not x2 x3
+2 2 ~x2|x3
+4646 or or x5 or x2 x3 x3
+3 1 x2|x3|x5
+4649 and x4 x4
+1 0 x4
+4656 or x3 not x3
+0 0 1
+4660 and x3 not x3
+0 0 0
+4663 or not x2 x2
+0 0 1
+4669 or not x2 x1
+2 2 x1|~x2
+4674 and x2 x3
+2 1 x2&x3
+4678 or not x5 x2
+2 2 x2|~x5
+4686 and x2 x5
+2 1 x2&x5
+4705 or not x4 x1
+2 2 x1|~x4
+4715 or not x4 x3
+2 2 x3|~x4
+4721 and x2 x1
+2 1 x1&x2
+4725 or x4 not x2
+2 2 ~x2|x4
+4726 and x3 not x4
+2 2 x3&~x4
+4732 or not x1 x1
+0 0 1
+4733 or x2 x4
+2 1 x2|x4
+4742 and not x1 x1
+0 0 0
+4747 or x3 x3
+1 0 x3
+4754 or not x3 x1
+2 2 x1|~x3
+4759 or not x1 x4
+2 2 ~x1|x4
+4764 or not x1 x4
+2 2 ~x1|x4
+4772 or x4 x1
+2 1 x1|x4
+4779 or not x2 x4
+2 2 ~x2|x4
+4790 or x4 x2
+2 1 x2|x4
+4794 or not x1 x1
+0 0 1
+4806 and x4 not x1
+2 2 ~x1&x4
+4819 or not x2 x4
+2 2 ~x2|x4
+4830 and not x3 x1
+2 2 x1&~x3
+4844 and not x5 x2
+2 2 x2&~x5
+4846 or x2 x5
+2 1 x2|x5
+4857 or not x2 x1
+2 2 x1|~x2
+4887 or not x1 x3
+2 2 ~x1|x3
+4888 and x4 x2
+2 1 x2&x4
+4889 or x2 x5
+2 1 x2|x5
+4899 or not x2 x4
+2 2 ~x2|x4
+4900 or x3 x2
+2 1 x2|x3
+4907 or not x2 x3
+2 2 ~x2|x3
+4911 or x3 not x4
+2 2 x3|~x4
+4919 or x2 not x2
+0 0 1
+4923 or x1 x3
+2 1 x1|x3
+4930 or x1 not x1
+0 0 1
+4933 and x1 not x2
+2 2 x1&~x2
+4945 or x2 x3
+2 1 x2|x3
+4946 not or x1 x2
+2 2 ~(x1|x2)
+4951 or not x2 x4
+2 2 ~x2|x4
+4973 or not x1 x1
+0 0 1
+4976 or not x3 x4
+2 2 ~x3|x4
+4978 or not x1 x1
+0 0 1
+4982 or x4 x3
+2 1 x3|x4
+4983 or not x1 x4
+2 2 ~x1|x4
+4984 or x2 x2
+1 0 x2
+4987 and not x2 x3
+2 2 ~x2&x3
+4994 and x2 x3
+2 1 x2&x3
+4999 or x4 x2
+2 1 x2|x4
+0.87925
+
+
+        if invalid_token_n > 0:
+            w = invalid_token_n
+            invalid_token_n = 0
+        w *= max(1 + (len(tknst) - 1 if target_depth == 0 else (2 * target_depth)), 1) * 3 #could devide by expected length
+
+        if depth >= target_depth:
+            depth_success += 1
+
+        if depth_success == depth_needed:
+            depth_needed = 10
+            target_depth += 1
+            depth_decay = (i - depth_last_i)
+            depth_last_i = i
+            depth_success = 0
+
+        if depth < target_depth:
+            w *= 2 ** (-2 * ((target_depth - depth -1) + min((i - depth_last_i)/depth_decay, 1)))
+        else:
+            w *= 2 ** (depth-target_depth)
+
+    # elif i > 200:
+    #     invalid_token_n += len(tknst)

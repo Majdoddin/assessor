@@ -1,0 +1,338 @@
+(.venv) ruhollah@majdoddin:~/ai/atp/assessor/cwd$  cd /home/ruhollah/ai/atp/assessor/cwd ; /usr/bin/env /home/ruhollah/ai/atp/assessor/.venv/bin/python3.11 /home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher 45001 -- /home/ruhollah/ai/atp/assessor/assessor.py
+/home/ruhollah/ai/atp/assessor/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+201 x2
+1 0 x2
+203 x4
+1 0 x4
+213 x4
+1 0 x4
+246 x4
+1 0 x4
+250 x3
+1 0 x3
+251 x3
+1 0 x3
+253 x2
+1 0 x2
+255 x4
+1 0 x4
+263 not x4
+1 1 ~x4
+273 x4
+1 0 x4
+276 x4
+1 0 x4
+278 x4
+1 0 x4
+282 x4
+1 0 x4
+289 x2
+1 0 x2
+292 x4
+1 0 x4
+294 x4
+1 0 x4
+297 x5
+1 0 x5
+299 x4
+1 0 x4
+305 x4
+1 0 x4
+306 x3
+1 0 x3
+313 x4
+1 0 x4
+318 x5
+1 0 x5
+319 x2
+1 0 x2
+320 x3
+1 0 x3
+325 x4
+1 0 x4
+326 x4
+1 0 x4
+327 x4
+1 0 x4
+330 x2
+1 0 x2
+332 x5
+1 0 x5
+334 x4
+1 0 x4
+338 x5
+1 0 x5
+340 x4
+1 0 x4
+341 x4
+1 0 x4
+345 x4
+1 0 x4
+347 x5
+1 0 x5
+356 x4
+1 0 x4
+357 x4
+1 0 x4
+358 not x5
+1 1 ~x5
+359 x3
+1 0 x3
+360 x4
+1 0 x4
+362 x4
+1 0 x4
+363 x1
+1 0 x1
+366 x3
+1 0 x3
+375 x4
+1 0 x4
+382 x4
+1 0 x4
+387 x4
+1 0 x4
+390 x5
+1 0 x5
+393 x4
+1 0 x4
+397 x4
+1 0 x4
+400 x4
+1 0 x4
+401 x4
+1 0 x4
+402 x4
+1 0 x4
+403 x4
+1 0 x4
+404 x1
+1 0 x1
+408 x5
+1 0 x5
+410 x5
+1 0 x5
+411 x3
+1 0 x3
+413 not x1
+1 1 ~x1
+414 x3
+1 0 x3
+415 x1
+1 0 x1
+420 x4
+1 0 x4
+422 not x4
+1 1 ~x4
+424 x4
+1 0 x4
+426 not x4
+1 1 ~x4
+427 not x4
+1 1 ~x4
+428 x1
+1 0 x1
+431 x5
+1 0 x5
+432 x4
+1 0 x4
+433 x4
+1 0 x4
+439 and x2 x4
+2 1 x2&x4
+445 x4
+1 0 x4
+446 x5
+1 0 x5
+449 x4
+1 0 x4
+450 x1
+1 0 x1
+452 x3
+1 0 x3
+458 x1
+1 0 x1
+465 x4
+1 0 x4
+468 x4
+1 0 x4
+470 not x5
+1 1 ~x5
+472 x3
+1 0 x3
+478 x4
+1 0 x4
+479 x3
+1 0 x3
+481 not x4
+1 1 ~x4
+484 x3
+1 0 x3
+485 x3
+1 0 x3
+487 x4
+1 0 x4
+488 x2
+1 0 x2
+490 not x3
+1 1 ~x3
+491 x4
+1 0 x4
+498 x4
+1 0 x4
+499 x5
+1 0 x5
+629 or x2 x4
+2 1 x2|x4
+777 or or x2 or x5 x5 x4
+3 1 x2|x4|x5
+871 not or x5 x5
+1 1 ~x5
+937 and x3 x2
+2 1 x2&x3
+975 or or x1 x5 x4
+3 1 x1|x4|x5
+997 or x5 x5
+1 0 x5
+1024 or or x5 x4 x5
+2 1 x4|x5
+1082 or x5 x2
+2 1 x2|x5
+1092 or or or x4 x5 x2 x4
+3 1 x2|x4|x5
+1098 or x2 x1
+2 1 x1|x2
+1142 not or x5 x2
+2 2 ~(x2|x5)
+1190 not or x5 x4
+2 2 ~(x4|x5)
+1191 or not x2 x4
+2 2 ~x2|x4
+1217 not or x2 x4
+2 2 ~(x2|x4)
+1279 or x5 x4
+2 1 x4|x5
+1287 or not or x2 x5 x4
+3 3 x4|(~x2&~x5)
+1294 or x2 x5
+2 1 x2|x5
+1325 or x2 or x2 x4
+2 1 x2|x4
+1335 or x2 x4
+2 1 x2|x4
+1339 or and x4 x3 and x1 x4
+3 2 (x1&x4)|(x3&x4)
+1383 and x4 or x2 x2
+2 1 x2&x4
+1584 and x3 or x2 x1
+3 2 x3&(x1|x2)
+1614 or or x5 x3 x4
+3 1 x3|x4|x5
+1624 or x2 or x1 and x1 x2
+2 1 x1|x2
+1680 and x3 or x5 x4
+3 2 x3&(x4|x5)
+1766 not and x2 or x1 x5
+3 3 ~(x2&(x1|x5))
+1785 and x2 or x5 x4
+3 2 x2&(x4|x5)
+1796 or or or x5 not x3 x1 x4
+4 2 x1|~x3|x4|x5
+1811 or x5 x5
+1 0 x5
+1819 not and x2 x4
+2 2 ~(x2&x4)
+1846 or x1 x1
+1 0 x1
+1864 or x2 x4
+2 1 x2|x4
+1921 or and x3 x3 x5
+2 1 x3|x5
+1926 or or x2 x2 not x5
+2 2 x2|~x5
+1933 and x3 and not x5 x5
+0 0 0
+1954 or x2 x4
+2 1 x2|x4
+2012 not or x5 not x2
+2 3 ~(~x2|x5)
+2048 or x5 or x5 x4
+2 1 x4|x5
+2066 or x5 x4
+2 1 x4|x5
+2094 not or x5 x4
+2 2 ~(x4|x5)
+2160 and or x3 x2 x4
+3 2 x4&(x2|x3)
+2171 not or x1 x5
+2 2 ~(x1|x5)
+2235 not and x5 or x2 x2
+2 2 ~(x2&x5)
+2238 and x2 or and x3 x5 x5
+2 1 x2&x5
+2254 and x2 or x2 x4
+1 0 x2
+2386 or x3 x5
+2 1 x3|x5
+2425 not or and x2 x2 not x5
+2 3 ~(x2|~x5)
+2466 not or x2 x5
+2 2 ~(x2|x5)
+2491 or x1 x5
+2 1 x1|x5
+2492 and x5 x4
+2 1 x4&x5
+2516 or x2 or x3 x3
+2 1 x2|x3
+2531 and or x3 x2 x2
+1 0 x2
+2539 or x5 not x5
+0 0 1
+2559 or and x5 x4 x5
+1 0 x5
+2581 and x3 and x1 x5
+3 1 x1&x3&x5
+2585 or not x2 x5
+2 2 ~x2|x5
+2612 or x3 or and not x2 x5 not x2
+2 2 ~x2|x3
+2617 or x5 or not x4 x2
+3 2 x2|~x4|x5
+2631 not or or x4 x3 x5
+3 2 ~(x3|x4|x5)
+2650 and x2 x2
+1 0 x2
+2699 not and x2 x5
+2 2 ~(x2&x5)
+2714 and x3 x1
+2 1 x1&x3
+2732 and not x5 x4
+2 2 x4&~x5
+2739 or or x1 x5 x4
+3 1 x1|x4|x5
+2785 and x2 x4
+2 1 x2&x4
+2811 and x2 x5
+2 1 x2&x5
+2834 and x5 or not x2 x1
+3 3 x5&(x1|~x2)
+2839 not or or x2 x2 x5
+2 2 ~(x2|x5)
+2841 and x1 x5
+2 1 x1&x5
+2870 or x5 x5
+1 0 x5
+2915 not and not x2 x4
+2 3 ~(~x2&x4)
+2945 and x2 x2
+1 0 x2
+2951 or x3 or x4 x4
+2 1 x3|x4
+3046 or not x1 and x5 x2
+3 2 ~x1|(x2&x5)
+^A3062 not and x5 x5
+1 1 ~x5
+
+
+w *= max(1 + (len(tknst) - 1 if target_depth == 0 else (2 * target_depth)), 1) * 2

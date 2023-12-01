@@ -190,7 +190,11 @@ last_hit = 200
 invalid_num = 0
 start = 0
 end = 5000
-
+target_depth = 0
+depth_success = 0
+depth_needed = 10
+depth_last_i = 200
+invalid_token_n = 0
 for i in range(start, end):
     optimizer.zero_grad()
     # if i > 299 and (i % 100 == 0):
@@ -233,19 +237,37 @@ for i in range(start, end):
         # if (i > 1000 and varn2 == 0) or (i > 2000 and varn2 ==1):
         #     w = 0
         #w = (i - last_hit) * max(varn2 - ((i-200)/100)**0.4, 0)
-        w = (i - last_hit)
-        w *= max(tokens.shape[0] - 2 - ((i-200)/100)**0.3, 1) * 1.2
+        # if invalid_token_n > 0:
+        #     w = invalid_token_n
+        #     invalid_token_n = 0
+        w *= max(1 + (len(tknst) - 1 if target_depth == 0 else (2 * target_depth)), 1) * 3 #could devide by expected length
 
-#        if (i > 1000):
-        w *= 2.2**((depth + 1 - (i)/800))
-        w *= 1.5**((varn2 - 1 - (i)/800))
+        if depth >= target_depth:
+            depth_success += 1
+
+        if depth_success == depth_needed:
+            depth_needed = 10
+            target_depth += 1
+            depth_decay = (i - depth_last_i)
+            depth_last_i = i
+            depth_success = 0
+
+        if depth < target_depth:
+            w *= 2 ** (-2 * ((target_depth - depth -1) + min((i - depth_last_i)/depth_decay, 1)))
+        else:
+            w *= 2 ** (depth-target_depth)
+
+        #w *= 1.5**((varn2 - 1 - (i)/800))
 
         assert w != 0
         last_hit = i
         print(f"{i} " + " ".join([token_texts[t.item()] for t in tokens[1:-1]]))
         print(f"{varn2} {depth} {exp1}")
+    # elif i > 200:
+    #     invalid_token_n += len(tknst)
 
-    weight = torch.full(tokens_logs.shape, w)
+    weight = torch.full(tokens_logs.shape, w / max(1, len(tknst)))
+
     loss = binary_cross_entropy_with_logits(weight=weight, input=tokens_logs, target=target)
 
     loss.backward()
@@ -258,7 +280,7 @@ print (invalid_num/(end - start - 1000))
 # print([token_texts[t] for t in tokens_logs])
 
 
-4 torch.save({
+torch.save({
             'model_state_dict': model.state_dict(),
             'optimizer_state_dict': optimizer.state_dict(),
             }, 'state-5000.pt')
