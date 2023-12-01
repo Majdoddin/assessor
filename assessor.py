@@ -166,7 +166,7 @@ vocab_size = len(token_texts)  # Vocabulary size of the model
 d_model = 512  # The dimension of the embeddings
 nhead = 16  # Number of heads in the multi-head attention mechanisms
 num_layers = 8  # Number of decoder layers
-max_len = 22  # The length of sequence to generate, including the start and end tokens
+max_len = 42  # The length of sequence to generate, including the start and end tokens
 
 # # Instantiate the model with a specific number of layers
 model = Transformer(vocab_size=vocab_size, d_model=d_model, nhead=nhead, num_layers=num_layers, max_len=max_len)
@@ -178,16 +178,20 @@ temperature = 1 #0.7  # near 0 makes more deterministic
 top_k = None # Top-k filtering, should be less than the vocabulary size
 
 optimizer = optim.Adam(model.parameters(), lr=0.000001)
-checkpoint = torch.load('state-5000.pt')
-model.load_state_dict(checkpoint['model_state_dict'])
-optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+# checkpoint = torch.load('state-5000.pt')
+# model.load_state_dict(checkpoint['model_state_dict'])
+# optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
 model.train()
 
 #model.eval()
 etw = 1.0
 last_hit = 200
-for i in range(5000, 6000):
+invalid_num = 0
+start = 0
+end = 5000
+
+for i in range(start, end):
     optimizer.zero_grad()
     # if i > 299 and (i % 100 == 0):
     #         temperature /= 1.03
@@ -206,8 +210,14 @@ for i in range(5000, 6000):
     # if valid > 0.5 and i > 200:
     #     print(f"{i} " + " ".join([token_texts[t.item()] for t in tokens]))
 
+    if (i > 500 and len(tknst) == 1) or (i > 600 and len(tknst) == 2 and tknst[0] == 'not'):
+        valid = 0.
+
+    if (i > 1000 and valid < 0.5):
+        invalid_num += 1
+
     target = torch.full(tokens_logs.shape, valid)
-    w = 1
+    w = 1.
     if valid > 0.5 and i > 200:
         varn1 = len(set(s for s in tknst if s not in ['and', 'or', 'not']))
         nl = simplify.to_nested_list(tknst) #nested list
@@ -218,31 +228,22 @@ for i in range(5000, 6000):
         exp1 = exp1.simplify()
         exp1 = exp1.simplify()
         varn2 = len(exp1.symbols)
+        depth = simplify.expression_depth(exp1)
         #add demorgan again if needed
         # if (i > 1000 and varn2 == 0) or (i > 2000 and varn2 ==1):
         #     w = 0
         #w = (i - last_hit) * max(varn2 - ((i-200)/100)**0.4, 0)
         w = (i - last_hit)
-        w *= max(tokens.shape[0] - 2 - ((i-200)/100)**0.5, 1) * 1.2
-        w *= simplify.expression_depth(exp1)**3.
-        if (i > 500 and len(tknst) == 1) or (i > 600 and len(tknst) == 2 and tknst[0] == 'not'):
-            w = 0.
-        if (i > 1000 and varn2 == 0):
-            w *= max(0, (1 - (i-1000)/1000))
-        if (i > 2000 and varn2 == 1):
-            w *= max(0, (1 - (i-2000)/1000))
-        if (i > 3000 and varn2 == 2):
-            w *= max(0, (1 - (i-3000)/1000))
-        if (i > 4000 and varn2 == 3):
-            w *= max(0, (1 - (i-4000)/1000))
-        if (i < 2000 and varn2 == 2) or (i < 3000 and varn2 == 3) or (i < 4000 and varn2 == 4) or (i < 6000 and varn2 == 5):
-            w *= varn2**2
+        w *= max(tokens.shape[0] - 2 - ((i-200)/100)**0.3, 1) * 1.2
 
-        if w == 0:
-            continue
+#        if (i > 1000):
+        w *= 2.2**((depth + 1 - (i)/800))
+        w *= 1.5**((varn2 - 1 - (i)/800))
+
+        assert w != 0
         last_hit = i
-        print(f"{i} " + " ".join([token_texts[t.item()] for t in tokens]))
-        print(f"{varn2} {simplify.expression_depth(exp1)} {exp1}")
+        print(f"{i} " + " ".join([token_texts[t.item()] for t in tokens[1:-1]]))
+        print(f"{varn2} {depth} {exp1}")
 
     weight = torch.full(tokens_logs.shape, w)
     loss = binary_cross_entropy_with_logits(weight=weight, input=tokens_logs, target=target)
@@ -250,13 +251,14 @@ for i in range(5000, 6000):
     loss.backward()
     optimizer.step()
 
+print (invalid_num/(end - start - 1000))
 #sample
 # model.eval()
 # tokens_logs = sample_sequence(model, max_length, start_token_id, temperature, top_k, vocab_size)
 # print([token_texts[t] for t in tokens_logs])
 
 
-torch.save({
+4 torch.save({
             'model_state_dict': model.state_dict(),
             'optimizer_state_dict': optimizer.state_dict(),
             }, 'state-5000.pt')
