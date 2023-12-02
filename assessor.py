@@ -160,6 +160,19 @@ def sample_sequence(model, length, start_token_id, temperature=1.0, top_k=None, 
 
 # Parameters for the model
 
+class WarmupScheduler(torch.optim.lr_scheduler._LRScheduler):
+    def __init__(self, optimizer, warmup_steps, start_lr, end_lr, last_epoch=-1):
+        self.warmup_steps = warmup_steps
+        self.start_lr = start_lr
+        self.end_lr = end_lr
+        super(WarmupScheduler, self).__init__(optimizer, last_epoch)
+
+    def get_lr(self):
+        if self.last_epoch > self.warmup_steps:
+            return [base_lr for base_lr in self.base_lrs]
+        lr = self.start_lr + (self.end_lr - self.start_lr) * (self.last_epoch / self.warmup_steps)
+        return [lr for _ in self.base_lrs]
+
 token_texts = {0:"ST", 1:"ET",  2:"and", 3:"or", 4:"not", 5:"x1", 6:"x2", 7:"x3", 8:"x4", 9:"x5"}
 vocab_size = len(token_texts)  # Vocabulary size of the model
 
@@ -177,10 +190,12 @@ end_token_id = 1
 temperature = 1 #0.7  # near 0 makes more deterministic
 top_k = None # Top-k filtering, should be less than the vocabulary size
 
-optimizer = optim.Adam(model.parameters(), lr=0.000001)
-# checkpoint = torch.load('state-5000.pt')
-# model.load_state_dict(checkpoint['model_state_dict'])
-# optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+optimizer = optim.Adam(model.parameters(), lr=1e-7)
+warmup_steps = 3000
+#scheduler_warmup = WarmupScheduler(optimizer, warmup_steps, 1e-7, 2e-4)
+checkpoint = torch.load('state-5000-2.pt')
+model.load_state_dict(checkpoint['model_state_dict'])
+optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
 model.train()
 
@@ -190,12 +205,8 @@ last_hit = 200
 invalid_num = 0
 start = 0
 end = 5000
-target_depth = 0
-depth_success = 0
-depth_needed = 10
-depth_last_i = 200
-invalid_token_n = 0
-for i in range(start, end):
+
+for i in range(5000, 10000):
     optimizer.zero_grad()
     # if i > 299 and (i % 100 == 0):
     #         temperature /= 1.03
@@ -237,42 +248,29 @@ for i in range(start, end):
         # if (i > 1000 and varn2 == 0) or (i > 2000 and varn2 ==1):
         #     w = 0
         #w = (i - last_hit) * max(varn2 - ((i-200)/100)**0.4, 0)
-        # if invalid_token_n > 0:
-        #     w = invalid_token_n
-        #     invalid_token_n = 0
-        w *= max(1 + (len(tknst) - 1 if target_depth == 0 else (2 * target_depth)), 1) * 3 #could devide by expected length
+        w = (i - last_hit)
+        w *= max(tokens.shape[0] - 2 - ((i-200)/100)**0.3, 1) * 1.2
 
-        if depth >= target_depth:
-            depth_success += 1
+#        if (i > 1000):
 
-        if depth_success == depth_needed:
-            depth_needed = 10
-            target_depth += 1
-            depth_decay = (i - depth_last_i)
-            depth_last_i = i
-            depth_success = 0
+        if depth <= 2:
+            w *= 2.2**((depth + 1 - (i)/800))
+        elif depth >= 3:
+                 w *= 2.2**((depth - 1 - (i)/8000))
 
-        if depth < target_depth:
-            w *= 2 ** (-2 * ((target_depth - depth -1) + min((i - depth_last_i)/depth_decay, 1)))
-        else:
-            w *= 2 ** (depth-target_depth)
-
-        #w *= 1.5**((varn2 - 1 - (i)/800))
+        w *= max(1, 1.5**((varn2 - 1 - (i)/1500)))  #length and actual depth are punished/rewarded, no need to punish here.
 
         assert w != 0
         last_hit = i
         print(f"{i} " + " ".join([token_texts[t.item()] for t in tokens[1:-1]]))
         print(f"{varn2} {depth} {exp1}")
-    # elif i > 200:
-    #     invalid_token_n += len(tknst)
 
-    weight = torch.full(tokens_logs.shape, w / max(1, len(tknst)))
-
+    weight = torch.full(tokens_logs.shape, w)
     loss = binary_cross_entropy_with_logits(weight=weight, input=tokens_logs, target=target)
 
     loss.backward()
     optimizer.step()
-
+    #scheduler_warmup.step()
 print (invalid_num/(end - start - 1000))
 #sample
 # model.eval()
@@ -283,4 +281,4 @@ print (invalid_num/(end - start - 1000))
 torch.save({
             'model_state_dict': model.state_dict(),
             'optimizer_state_dict': optimizer.state_dict(),
-            }, 'state-5000.pt')
+            }, 'state-5000-3.pt')
