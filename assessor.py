@@ -191,23 +191,25 @@ temperature = 1 #0.7  # near 0 makes more deterministic
 top_k = None # Top-k filtering, should be less than the vocabulary size
 
 optimizer = optim.Adam(model.parameters(), lr=1e-7)
-warmup_steps = 3000
-#scheduler_warmup = WarmupScheduler(optimizer, warmup_steps, 1e-7, 2e-4)
-checkpoint = torch.load('state-5000-2.pt')
-model.load_state_dict(checkpoint['model_state_dict'])
-optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+warmup_steps = 2000
+scheduler_warmup = WarmupScheduler(optimizer, warmup_steps, 1e-7, (1e-5) /5)
+# checkpoint = torch.load('state-5000-2.pt')
+# model.load_state_dict(checkpoint['model_state_dict'])
+# optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
 model.train()
 
 #model.eval()
 etw = 1.0
-last_hit = 200
+last_hit = -1
 invalid_num = 0
 start = 0
-end = 5000
+end = 10000
+# last_average = 1
+total_loss = None
 
-for i in range(5000, 10000):
-    optimizer.zero_grad()
+for i in range(start, end):
+
     # if i > 299 and (i % 100 == 0):
     #         temperature /= 1.03
     tokens, tokens_logs = sample_sequence(model, max_len, start_token_id, temperature, top_k, etw, vocab_size)
@@ -232,45 +234,51 @@ for i in range(5000, 10000):
         invalid_num += 1
 
     target = torch.full(tokens_logs.shape, valid)
+
     w = 1.
     if valid > 0.5 and i > 200:
-        varn1 = len(set(s for s in tknst if s not in ['and', 'or', 'not']))
-        nl = simplify.to_nested_list(tknst) #nested list
-        nl = simplify.deMorgan(nl)
-        nl = simplify.to_parenthesized_string(nl)
-        algebra = boolean.BooleanAlgebra()
-        exp1 = algebra.parse(nl, simplify=False)
-        exp1 = exp1.simplify()
-        exp1 = exp1.simplify()
-        varn2 = len(exp1.symbols)
-        depth = simplify.expression_depth(exp1)
+        # varn1 = len(set(s for s in tknst if s not in ['and', 'or', 'not']))
+        # nl = simplify.to_nested_list(tknst) #nested list
+        # nl = simplify.deMorgan(nl)
+        # nl = simplify.to_parenthesized_string(nl)
+        # algebra = boolean.BooleanAlgebra()
+        # exp1 = algebra.parse(nl, simplify=False)
+        # exp1 = exp1.simplify()
+        # exp1 = exp1.simplify()
+        # varn2 = len(exp1.symbols)
+        # depth = simplify.expression_depth(exp1)
         #add demorgan again if needed
         # if (i > 1000 and varn2 == 0) or (i > 2000 and varn2 ==1):
         #     w = 0
         #w = (i - last_hit) * max(varn2 - ((i-200)/100)**0.4, 0)
-        w = (i - last_hit)
-        w *= max(tokens.shape[0] - 2 - ((i-200)/100)**0.3, 1) * 1.2
+        #w = 1.2**max(len(tknst) - ((i-200)/300), 1)
+        w = 1.2**len(tknst)
 
 #        if (i > 1000):
 
-        if depth <= 2:
-            w *= 2.2**((depth + 1 - (i)/800))
-        elif depth >= 3:
-                 w *= 2.2**((depth - 1 - (i)/8000))
+        # if depth <= 2:
+        #     w *= 2.2**((depth + 1 - (i)/800))
+        # elif depth >= 3:
+        #          w *= 2.2**((depth - 1 - (i)/8000))
 
-        w *= max(1, 1.5**((varn2 - 1 - (i)/1500)))  #length and actual depth are punished/rewarded, no need to punish here.
+        # w *= max(1, 1.5**((varn2 - 1 - (i)/1500)))  #length and actual depth are punished/rewarded, no need to punish here.
 
         assert w != 0
-        last_hit = i
-        print(f"{i} " + " ".join([token_texts[t.item()] for t in tokens[1:-1]]))
-        print(f"{varn2} {depth} {exp1}")
 
-    weight = torch.full(tokens_logs.shape, w)
-    loss = binary_cross_entropy_with_logits(weight=weight, input=tokens_logs, target=target)
+        print(f"\n{i} {len(tknst)} " + " ".join(tknst))
+        # print(f"{varn2} {depth} {exp1}")
+    # elif i > 200 and valid < 0.5:
+    #     print(f"{len(tknst)}", end=" ")
 
-    loss.backward()
-    optimizer.step()
-    #scheduler_warmup.step()
+    total_loss = ((w * (1+((i - last_hit) // 16))) if valid > 0.5 else 1.) * binary_cross_entropy_with_logits(input=tokens_logs, target=target) + (total_loss if total_loss else 0)
+    if ((i - last_hit) % 16 == 0) or (valid > 0.5):
+        optimizer.zero_grad()
+        total_loss.backward()
+        optimizer.step()
+        scheduler_warmup.step()
+        total_loss = None
+        if (valid > 0.5):
+            last_hit = i
 print (invalid_num/(end - start - 1000))
 #sample
 # model.eval()
@@ -281,4 +289,4 @@ print (invalid_num/(end - start - 1000))
 torch.save({
             'model_state_dict': model.state_dict(),
             'optimizer_state_dict': optimizer.state_dict(),
-            }, 'state-5000-3.pt')
+            }, 'state-length-1.pt')

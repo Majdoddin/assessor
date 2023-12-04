@@ -1,0 +1,440 @@
+ruhollah@majdoddin:~/ai/atp/assessor/cwd$ source /home/ruhollah/ai/atp/assessor/.venv/bin/activate
+(.venv) ruhollah@majdoddin:~/ai/atp/assessor/cwd$  /usr/bin/env /home/ruhollah/ai/atp/assessor/.venv/bin/python3.11 /home/ruhollah/.vscode/extensions/ms-python.python-2023.20.0/pythonFiles/lib/python/debugpy/adapter/../../debugpy/launcher 51923 -- /home/ruhollah/ai/atp/assessor/assessor.py 
+/home/ruhollah/ai/atp/assessor/.venv/lib/python3.11/site-packages/torch/nn/modules/transformer.py:20: UserWarning: Failed to initialize NumPy: No module named 'numpy' (Triggered internally at ../torch/csrc/utils/tensor_numpy.cpp:84.)
+  device: torch.device = torch.device(torch._C._get_default_device()),  # torch.device('cpu'),
+
+209 1 x4
+
+224 1 x4
+
+236 3 or x4 x4
+
+248 1 x4
+
+251 1 x4
+
+260 1 x4
+
+263 1 x2
+
+266 1 x3
+
+269 1 x3
+
+273 1 x3
+
+292 1 x3
+
+318 1 x2
+
+339 1 x4
+
+346 1 x4
+
+357 1 x4
+
+381 1 x1
+
+382 1 x4
+
+384 1 x5
+
+385 1 x3
+
+399 1 x4
+
+404 1 x3
+
+411 3 and x1 x4
+
+426 2 not x2
+
+434 1 x4
+
+474 1 x4
+
+477 1 x2
+
+498 1 x4
+
+587 4 and x4 not x2
+
+645 3 or x3 x3
+
+710 10 not or and x5 or x1 or x4 x3 x1
+
+795 3 or x2 x5
+
+857 3 or x5 x1
+
+922 3 and x5 x3
+
+978 3 and x2 x4
+
+1003 3 or x1 x4
+
+1039 5 or x1 and x5 x5
+
+1077 7 or and x2 and x4 x3 x4
+
+1167 3 or x5 x4
+
+1268 7 or and and x1 x5 x4 x4
+
+1543 3 and x4 x4
+
+1559 3 and x1 x5
+
+1670 5 or or x2 x5 x1
+
+1703 3 and x3 x5
+
+1715 4 and not x4 x3
+
+1736 9 and x2 or or and x3 x4 x3 x3
+
+1764 4 or not x1 x3
+
+1837 3 and x4 x2
+
+2075 9 and not x1 not or and x3 x2 x3
+
+2135 3 and x5 x4
+
+2222 4 and x1 not x4
+
+2370 7 and x3 and and x2 x2 x5
+
+2433 3 and x4 x3
+
+2483 5 or and x4 x2 x3
+
+2498 4 and x2 not x2
+
+2514 3 or x4 x4
+
+2531 6 and x4 and not x3 x4
+
+2547 7 or and and x3 x1 x1 x4
+
+2585 10 and and x5 and and x3 not x1 x1 x2
+
+2601 3 and x1 x5
+
+2708 8 or and x1 or not x4 x2 x5
+
+2720 7 and x1 and and x4 x1 x1
+
+2783 7 or x4 and and x5 x2 x4
+
+2805 8 not and and x1 and x3 x5 x3
+
+2821 3 or x1 x2
+
+2861 5 or x5 or x5 x4
+
+3085 3 and x3 x1
+
+3116 3 and x5 x2
+
+3211 3 or x2 x2
+
+3265 3 and x4 x2
+
+3395 7 or and or x4 x4 x1 x2
+
+3424 3 and x2 x4
+
+3426 5 and x1 and x2 x2
+
+3430 5 or and x3 x2 x1
+
+3445 5 or and x1 x1 x4
+
+3467 7 or and x2 and x2 x5 x1
+
+3480 4 and not x4 x2
+
+3507 3 and x4 x2
+
+3575 5 and x3 and x4 x2
+
+3601 8 or and x2 x5 or x2 not x5
+
+3916 5 and x3 and x2 x1
+
+4097 3 or x2 x4
+
+4193 3 or x4 x1
+
+4201 3 and x5 x4
+
+4225 8 and and or x2 x5 not x1 x3
+
+4241 4 and not x3 x4
+
+4275 4 and not x4 x1
+
+4365 3 and x5 x1
+
+4373 3 or x1 x2
+
+4385 4 and x3 not x4
+
+4416 3 or x2 x3
+
+4653 5 or and x1 x1 x5
+
+4661 9 not and or not x3 or x2 x5 x2
+
+4681 10 or or and not and x2 x2 x3 x1 x3
+
+4735 4 and not x3 x4
+
+4755 3 and x1 x1
+
+4800 3 or x1 x5
+
+4846 4 and not x4 x4
+
+4895 3 and x2 x1
+
+4911 8 and and x2 or x5 x4 not x2
+
+4924 5 or and x1 x3 x4
+
+4980 3 and x4 x4
+
+5033 4 and x5 not x5
+
+5181 7 and x2 and and x1 x1 x4
+
+5238 7 and or x5 and x3 x3 x1
+
+5243 3 or x1 x2
+
+5251 4 or not x4 x1
+
+5284 3 and x3 x4
+
+5448 3 and x2 x3
+
+5462 5 not and x1 not x5
+
+5486 3 and x3 x4
+
+5492 5 and x5 or x2 x4
+
+5550 3 or x1 x5
+
+5586 3 and x4 x4
+
+5595 5 or x2 and x5 x3
+
+5625 3 and x4 x4
+
+5743 7 and and and x4 x5 x1 x3
+
+5747 3 and x3 x5
+
+5767 5 and and x2 x5 x5
+
+5781 3 and x3 x3
+
+5818 5 and x4 or x2 x4
+
+5914 5 or or x2 x4 x3
+
+5927 3 and x2 x1
+
+5964 10 or and not or x1 and x4 x3 x1 x5
+
+5968 6 or x5 or x5 not x1
+
+5984 5 and x4 and x1 x1
+
+6076 3 and x4 x2
+
+6113 3 and x1 x5
+
+6125 3 or x3 x4
+
+6186 3 or x4 x5
+
+6194 5 or and x5 x4 x3
+
+6281 6 not and and x2 x5 x4
+
+6333 3 and x3 x5
+
+6335 3 or x5 x3
+
+6367 3 and x3 x3
+
+6395 3 or x1 x3
+
+6408 3 or x1 x5
+
+6423 3 and x3 x4
+
+6439 3 and x1 x4
+
+6461 3 and x4 x5
+
+6478 3 and x1 x4
+
+6558 5 or and x3 x4 x3
+
+6659 3 and x1 x2
+
+6675 4 or x5 not x1
+
+6725 3 and x1 x5
+
+6764 3 and x1 x4
+
+6794 5 or x2 or x1 x5
+
+6796 6 and not x5 or x3 x1
+
+6802 9 and x5 or or and x3 x3 x3 x3
+
+6933 9 or and x1 not x5 and x4 not x3
+
+6938 3 or x2 x2
+
+6967 4 not and x3 x2
+
+6977 7 and or x1 not x1 not x5
+
+7010 3 and x2 x2
+
+7069 3 and x3 x5
+
+7158 3 and x3 x5
+
+7215 3 and x4 x4
+
+7233 8 and x4 and and not x2 x5 x4
+
+7273 3 and x2 x2
+
+7360 3 and x1 x4
+
+7449 3 or x5 x4
+
+7456 3 or x5 x5
+
+7461 3 or x4 x2
+
+7532 3 and x4 x4
+
+7555 3 or x2 x5
+
+7669 3 or x4 x4
+
+7693 5 and x2 or x3 x2
+
+7747 3 and x1 x4
+
+7775 4 or not x2 x1
+
+7826 3 and x4 x4
+
+7839 3 or x1 x5
+
+7840 8 and x2 and not and x3 x4 x2
+
+7841 3 and x1 x4
+
+7873 7 and and x3 not x4 not x2
+
+7887 3 and x3 x1
+
+7970 9 or and x2 and x1 and x2 x5 x4
+
+8041 3 or x1 x2
+
+8083 3 and x1 x5
+
+8109 5 and and x5 x4 x3
+
+8133 9 and x4 not and not and x4 x5 x3
+
+8148 3 and x1 x4
+
+8163 3 and x3 x1
+
+8212 3 and x1 x4
+
+8237 3 and x4 x5
+
+8252 3 and x2 x5
+
+8274 3 or x5 x4
+
+8294 3 and x3 x3
+
+8299 5 or x1 and x5 x4
+
+8324 3 or x1 x2
+
+8330 10 and x4 or not or or x5 x3 x2 x5
+
+8360 9 not and and not x5 x1 and x3 x4
+
+8410 5 or x3 and x4 x3
+
+8425 4 not and x5 x3
+
+8481 5 or x2 and x4 x1
+
+8484 3 and x2 x2
+
+8516 5 and x1 or x5 x5
+
+8570 3 and x1 x1
+
+8646 3 and x2 x4
+
+8693 3 or x1 x3
+
+8734 5 or or x1 x3 x3
+
+8742 3 and x5 x5
+
+8747 3 and x1 x1
+
+8759 5 and x4 and x1 x2
+
+8776 3 and x3 x2
+
+8780 3 and x4 x4
+
+8794 3 or x5 x2
+
+8805 3 and x1 x2
+
+8807 4 or not x1 x3
+
+8834 3 or x1 x5
+
+8893 3 or x3 x3
+
+8900 7 and not x3 not or x2 x4
+
+8942 5 and and x4 x3 x1
+
+8955 5 and x5 or x4 x3
+
+9055 3 and x4 x4
+
+9079 4 and x4 not x2
+
+9089 3 and x2 x2
+
+
+batch_size 16
+optimizer = optim.Adam(model.parameters(), lr=1e-7)
+warmup_steps = 10000
+scheduler_warmup = WarmupScheduler(optimizer, warmup_steps, 1e-7, 1e-5)
