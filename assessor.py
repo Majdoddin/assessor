@@ -190,9 +190,9 @@ end_token_id = 1
 temperature = 1 #0.7  # near 0 makes more deterministic
 top_k = None # Top-k filtering, should be less than the vocabulary size
 
-optimizer = optim.Adam(model.parameters(), lr=1e-7)
-warmup_steps = 2000
-scheduler_warmup = WarmupScheduler(optimizer, warmup_steps, 1e-7, (1e-5) /5)
+optimizer = optim.Adam(model.parameters(), lr=1e-9)
+# warmup_steps = 2000
+# scheduler_warmup = WarmupScheduler(optimizer, warmup_steps, 1e-7, (1e-5) /5)
 # checkpoint = torch.load('state-5000-2.pt')
 # model.load_state_dict(checkpoint['model_state_dict'])
 # optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
@@ -201,15 +201,16 @@ model.train()
 
 #model.eval()
 etw = 1.0
-last_hit = -1
+neg_num = 0
 invalid_num = 0
-start = 0
+start = 1
 end = 10000
 # last_average = 1
-total_loss = None
+batch_loss = None
+pos_samples = []
+neg_samples = []
 
 for i in range(start, end):
-
     # if i > 299 and (i % 100 == 0):
     #         temperature /= 1.03
     tokens, tokens_logs = sample_sequence(model, max_len, start_token_id, temperature, top_k, etw, vocab_size)
@@ -236,7 +237,7 @@ for i in range(start, end):
     target = torch.full(tokens_logs.shape, valid)
 
     w = 1.
-    if valid > 0.5 and i > 200:
+    if valid > 0.5:# and i > 200:
         # varn1 = len(set(s for s in tknst if s not in ['and', 'or', 'not']))
         # nl = simplify.to_nested_list(tknst) #nested list
         # nl = simplify.deMorgan(nl)
@@ -270,15 +271,22 @@ for i in range(start, end):
     # elif i > 200 and valid < 0.5:
     #     print(f"{len(tknst)}", end=" ")
 
-    total_loss = ((w * (1+((i - last_hit) // 16))) if valid > 0.5 else 1.) * binary_cross_entropy_with_logits(input=tokens_logs, target=target) + (total_loss if total_loss else 0)
-    if ((i - last_hit) % 16 == 0) or (valid > 0.5):
-        optimizer.zero_grad()
-        total_loss.backward()
+    loss = binary_cross_entropy_with_logits(input=tokens_logs, target=target)
+    if (valid > 0.5):
+        pos_samples.append(w * loss)
+    else:
+        #print(len(tknst))
+        neg_samples.append(loss)
+    if (len(pos_samples) == 32 ):
+        batch_loss = sum(pos_samples) #* 16. / len(pos_samples) #len > 0
+        #batch_loss = batch_loss + sum(neg_samples) #* 16. / len(neg_samples)
+        batch_loss.backward()
         optimizer.step()
-        scheduler_warmup.step()
-        total_loss = None
-        if (valid > 0.5):
-            last_hit = i
+        #scheduler_warmup.step()
+        batch_loss = None
+        pos_samples = []
+        neg_samples = []
+        optimizer.zero_grad()
 print (invalid_num/(end - start - 1000))
 #sample
 # model.eval()
