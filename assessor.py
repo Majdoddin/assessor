@@ -1,10 +1,11 @@
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
-from torch.nn.functional import binary_cross_entropy_with_logits
+from torch.nn.functional import binary_cross_entropy_with_logits, cross_entropy
 import torch.optim as optim
 import simplify
 import boolean
+import random
 
 def is_polish_normal_form(sequence):
     """
@@ -137,7 +138,7 @@ def sample_sequence(model, length, start_token_id, temperature=1.0, top_k=None, 
         raise ValueError(f"top_k must be a positive integer less than the vocabulary size {vocab_size}")
 
     detached_tokens = torch.full((1, 1), start_token_id, dtype=torch.long, device=next(model.parameters()).device)
-    generated_logits = torch.empty(0)
+    generated_logits = []
     for _ in range(length - 1):
         logits = model(detached_tokens)  #(batch_num, vocab_size)
         next_token_logits = logits[:, :] / temperature
@@ -152,11 +153,11 @@ def sample_sequence(model, length, start_token_id, temperature=1.0, top_k=None, 
 
         next_token = torch.multinomial(sm, num_samples=1)  #(batch_size, 1)
         detached_tokens = torch.cat((detached_tokens, next_token.detach()), dim = 0)
-        generated_logits = torch.cat((generated_logits, logits[0][next_token][0]), dim=0)
+        generated_logits.append(logits[0])
 
         if next_token[0, 0] in (start_token_id, end_token_id):
             break
-    return detached_tokens, generated_logits
+    return detached_tokens, torch.stack(generated_logits, dim= 0)
 
 # Parameters for the model
 
@@ -193,9 +194,9 @@ top_k = None # Top-k filtering, should be less than the vocabulary size
 optimizer = optim.Adam(model.parameters(), lr=1e-9)
 # warmup_steps = 2000
 # scheduler_warmup = WarmupScheduler(optimizer, warmup_steps, 1e-7, (1e-5) /5)
-# checkpoint = torch.load('state-5000-2.pt')
-# model.load_state_dict(checkpoint['model_state_dict'])
-# optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+checkpoint = torch.load('state-length-2.pt')
+model.load_state_dict(checkpoint['model_state_dict'])
+optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
 model.train()
 
@@ -203,7 +204,7 @@ model.train()
 etw = 1.0
 neg_num = 0
 invalid_num = 0
-start = 1
+start = 3394
 end = 10000
 # last_average = 1
 batch_loss = None
@@ -214,27 +215,32 @@ for i in range(start, end):
     # if i > 299 and (i % 100 == 0):
     #         temperature /= 1.03
     tokens, tokens_logs = sample_sequence(model, max_len, start_token_id, temperature, top_k, etw, vocab_size)
+    tokens = tokens.squeeze()
     if tokens.shape[0] <= 2 or ((start_token_id in tokens[1:]) or (torch.sum(tokens == end_token_id).item() != 1)):
         valid = 0.
     elif (4, 4) in zip(tokens.view(-1), tokens.view(-1)[1:]):
         valid = 0.
-    elif i < 200:
-        valid = 1. #if is_polish_normal_form([token_texts[t] for t in tokens]) else 0.
+    # elif i < 200:
+    #     valid = 1. #if is_polish_normal_form([token_texts[t] for t in tokens]) else 0.
     else:
         valid = 1. if is_polish_normal_form([token_texts[t.item()] for t in tokens[1:-1]]) else 0.
 
-    #print(f"{i} " + " ".join([token_texts[t.item()] for t in tokens]))
     tknst = [token_texts[t.item()] for t in tokens[1:-1]]
-    # if valid > 0.5 and i > 200:
-    #     print(f"{i} " + " ".join([token_texts[t.item()] for t in tokens]))
-
-    if (i > 500 and len(tknst) == 1) or (i > 600 and len(tknst) == 2 and tknst[0] == 'not'):
-        valid = 0.
 
     if (i > 1000 and valid < 0.5):
         invalid_num += 1
 
-    target = torch.full(tokens_logs.shape, valid)
+    t = []
+    if valid:
+        for j in range(1, len(tokens)):
+            t.append(torch.zeros(vocab_size))
+            t[-1][tokens[j]] = 1.
+    else:
+        for j in range(1, len(tokens)):
+            t.append(torch.ones(vocab_size) / (vocab_size -1))
+            t[-1][tokens[j]] = 0.
+
+    target = torch.stack(t, dim=0)
 
     w = 1.
     if valid > 0.5:# and i > 200:
@@ -253,7 +259,15 @@ for i in range(start, end):
         #     w = 0
         #w = (i - last_hit) * max(varn2 - ((i-200)/100)**0.4, 0)
         #w = 1.2**max(len(tknst) - ((i-200)/300), 1)
-        w = 1.2**len(tknst)
+        if ((i > 200) and len(tknst) == 1):
+            continue
+        if ((i > 1300) and len(tknst) == 2):
+            continue
+        if ((i > 2100) and len(tknst) == 3):
+            continue
+        if ((i > 3300) and len(tknst) == 4):
+            continue
+        w = 1.5**len(tknst)
 
 #        if (i > 1000):
 
@@ -266,20 +280,27 @@ for i in range(start, end):
 
         assert w != 0
 
-        print(f"\n{i} {len(tknst)} " + " ".join(tknst))
+        print(f"{i} {len(tknst)} " + " ".join(tknst))
+    else:
+        if len(tknst) > 10:
+            continue
         # print(f"{varn2} {depth} {exp1}")
     # elif i > 200 and valid < 0.5:
     #     print(f"{len(tknst)}", end=" ")
 
-    loss = binary_cross_entropy_with_logits(input=tokens_logs, target=target)
+    loss = cross_entropy(input=tokens_logs, target=target)
     if (valid > 0.5):
         pos_samples.append(w * loss)
     else:
         #print(len(tknst))
         neg_samples.append(loss)
-    if (len(pos_samples) == 32 ):
-        batch_loss = sum(pos_samples) #* 16. / len(pos_samples) #len > 0
-        #batch_loss = batch_loss + sum(neg_samples) #* 16. / len(neg_samples)
+    if (len(pos_samples)>=8 and len(neg_samples) >= 8):
+
+        l = len(pos_samples) + len(neg_samples)
+        batch_loss = sum(pos_samples)
+        batch_loss = batch_loss + sum(random.sample(neg_samples, 8))
+        batch_loss = batch_loss / (len(pos_samples) + 8)
+
         batch_loss.backward()
         optimizer.step()
         #scheduler_warmup.step()
