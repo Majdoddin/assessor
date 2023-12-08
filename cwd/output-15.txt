@@ -1,0 +1,296 @@
+66 2 not x2
+76 3 and x1 x5
+79 2 not x4
+87 1 x5
+93 1 x4
+124 1 x1
+229 3 or x4 x5
+233 4 and x4 not x4
+265 1 x2
+271 1 x5
+-------------------------------------
+min_valid_len:1  max_invalid_len:7  iters: 283
+1:15 2:2 3:2 4:1
+-------------------------------------
+61 2 not x5
+68 1 x5
+92 5 or not x3 not x4
+95 1 x4
+162 3 or x4 x5
+179 3 and x3 x2
+180 1 x4
+188 1 x3
+-------------------------------------
+min_valid_len:1  max_invalid_len:7  iters: 188
+1:13 2:1 3:2 5:1
+-------------------------------------
+190 3 and x4 x1
+202 3 or x1 x3
+262 2 not x1
+296 2 not x1
+321 2 not x3
+425 3 and x5 x4
+448 2 not x5
+560 2 not x3
+-------------------------------------
+min_valid_len:2  max_invalid_len:7  iters: 379
+1:44 2:5 3:3
+-------------------------------------
+593 2 not x2
+607 2 not x2
+632 2 not x2
+743 3 and x4 x2
+824 3 or x5 x1
+849 6 and not x1 and x2 x4
+900 2 not x5
+902 2 not x4
+-------------------------------------
+min_valid_len:2  max_invalid_len:7  iters: 335
+1:20 2:5 3:2 6:1
+-------------------------------------
+964 2 not x1
+991 3 and x5 x4
+1019 3 and x4 x4
+1023 2 not x1
+1060 3 or x2 x5
+1082 2 not x5
+1086 2 not x5
+1089 2 not x2
+-------------------------------------
+min_valid_len:2  max_invalid_len:7  iters: 187
+1:19 2:5 3:3
+-------------------------------------
+1173 2 not x5
+1231 5 and or x4 x2 x1
+1256 2 not x3
+1315 2 not x4
+1319 2 not x2
+1350 2 not x1
+1353 4 or x5 not x5
+1359 2 not x4
+-------------------------------------
+min_valid_len:2  max_invalid_len:7  iters: 302
+1:30 2:6 4:1 5:1
+-------------------------------------
+1437 2 not x5
+1438 2 not x4
+1447 3 and x2 x5
+1453 2 not x1
+1513 2 not x3
+1568 2 not x5
+1580 2 not x4
+1582 2 not x4
+-------------------------------------
+min_valid_len:2  max_invalid_len:7  iters: 191
+1:14 2:7 3:1
+-------------------------------------
+1616 4 or not x4 x2
+1634 2 not x5
+1661 2 not x1
+1679 2 not x5
+1694 4 not and x4 x3
+1773 2 not x2
+1787 5 and x1 and x2 x4
+1808 2 not x2
+-------------------------------------
+min_valid_len:2  max_invalid_len:7  iters: 226
+1:26 2:5 4:2 5:1
+-------------------------------------
+1815 2 not x3
+1835 2 not x3
+1840 3 and x3 x4
+1850 3 or x1 x5
+1868 2 not x5
+1937 2 not x5
+1980 2 not x5
+2042 2 not x1
+-------------------------------------
+min_valid_len:2  max_invalid_len:7  iters: 234
+1:15 2:6 3:2
+-------------------------------------
+2051 2 not x2
+2093 2 not x1
+2153 4 or x4 not x4
+2191 2 not x1
+2203 2 not x1
+2239 4 and x3 not x1
+2292 2 not x1
+2391 2 not x3
+-------------------------------------
+min_valid_len:2  max_invalid_len:7  iters: 349
+1:26 2:6 4:2
+-------------------------------------
+191 2 not x4
+268 1 x5
+270 4 or x3 not x3
+282 8 and and x4 or x5 x4 not x3
+296 1 x4
+331 5 or x5 or x4 x5
+339 1 x1
+367 1 x5
+-------------------------------------
+min_valid_len:1  max_invalid_len:7  av-len:2.9 iters: 367
+1:9 2:1 4:1 5:1 8:1
+-------------------------------------
+375 3 or x1 x5
+510 7 not or not x3 and x3 x4
+547 7 and not or not x5 x5 x5
+576 3 and x4 x5
+605 2 not x3
+703 3 or x4 x5
+788 5 not or not x3 x5
+812 2 not x4
+-------------------------------------
+min_valid_len:2  max_invalid_len:8.875  av-len:4.0 iters: 445
+1:10 2:2 3:3 5:1 7:2
+-------------------------------------
+917 3 or x3 x4
+967 4 not or x2 x2
+970 3 or x5 x5
+1077 5 and or x2 x3 x4
+1121 6 not and x2 and x1 x2
+1169 3 or x1 x5
+1274 3 or x3 x2
+1306 3 or x2 x1
+-------------------------------------
+min_valid_len:3  max_invalid_len:10.0  av-len:3.8 iters: 494
+1:13 3:5 4:1 5:1 6:1
+-------------------------------------
+1339 8 or and and x5 not x4 x5 x5
+1519 6 and and not x4 x4 x2
+1541 4 and not x3 x2
+1565 3 or x5 x2
+1609 3 or x3 x4
+1686 3 or x2 x1
+1712 4 not or x1 x4
+1759 9 or x1 and x1 or and x5 x5 x5
+-------------------------------------
+min_valid_len:3  max_invalid_len:10.0  av-len:5.0 iters: 453
+1:7 3:3 4:2 6:1 8:1 9:1
+-------------------------------------
+1772 5 or x3 or x2 x3
+1852 5 or x3 and x3 x3
+1951 12 or x3 not and or x3 x4 or x4 and x3 x5
+2022 5 and x3 and x5 x2
+2031 6 and x3 or not x3 x3
+2111 6 not and x2 or x3 x5
+2265 6 and and x5 x2 not x4
+2512 10 or and x3 and x2 not x4 or x2 x2
+-------------------------------------
+min_valid_len:4  max_invalid_len:11.0  av-len:6.9 iters: 753
+1:27 2:3 3:3 5:3 6:3 10:1 12:1
+-------------------------------------
+2690 5 or and x3 x4 x5
+2943 6 not or and x5 x2 x3
+2989 5 and and x2 x5 x4
+3487 6 and and x1 x2 not x1
+3523 5 not and not x2 x3
+3878 6 and not x2 and x4 x2
+4043 6 and and x2 x4 not x5
+4053 7 and x3 or and x4 x3 x1
+-------------------------------------
+min_valid_len:5  max_invalid_len:12.875  av-len:5.8 iters: 1541
+1:48 2:5 3:12 4:7 5:3 6:4 7:1
+-------------------------------------
+4115 5 not or not x4 x5
+4226 6 or x4 and not x2 x5
+4533 6 or and x4 x3 not x4
+4879 5 and not x3 not x3
+4930 5 and or x1 x5 x5
+4971 5 or x3 and x4 x1
+5055 6 or or not x3 x4 x5
+5311 6 and not and x1 x2 x3
+-------------------------------------
+min_valid_len:5  max_invalid_len:12.875  av-len:5.5 iters: 1258
+1:34 2:10 3:10 4:5 5:4 6:4
+-------------------------------------
+5860 7 or not or not x1 x3 x5
+6097 5 not or not x2 x3
+6490 7 not and and not x3 x5 x2
+6528 5 and not x1 not x3
+6573 8 not and or not x2 not x5 x2
+6629 5 or x4 and x3 x2
+7278 7 or not and not x3 x5 x1
+7501 5 and and x3 x2 x3
+-------------------------------------
+min_valid_len:5  max_invalid_len:12.875  av-len:6.1 iters: 2190
+1:56 2:6 3:22 4:7 5:4 7:3 8:1
+-------------------------------------
+7552 6 or x5 not and x5 x4
+8798 14 and not and x3 and not and x3 x5 or not x3 x3 x3
+9321 11 and not x4 or x4 and and x1 not x4 x4
+9798 6 and not or x3 x5 x2
+10141 7 not and x2 not and x3 x5
+10182 23 not and or not and and or not and and x3 x2 x3 or x4 x5 and x3 x4 x1 x2 not x4
+10688 7 not and x1 or not x2 x5
+10696 7 or x3 or x3 and x5 x4
+-------------------------------------
+min_valid_len:6  max_invalid_len:12.875  av-len:10.1 iters: 3195
+1:82 2:13 3:22 4:7 5:6 6:2 7:3 11:1 14:1 23:1
+-------------------------------------
+10858 7 or not or x5 not x5 x1
+10916 9 and or x4 or x2 x3 or x5 x4
+11161 8 or not and and x2 x3 x4 x3
+11335 8 and not or x3 and x2 x5 x4
+11360 8 and and x2 not or x5 x3 x5
+11578 9 not and and not and x1 x5 x5 x2
+11948 7 or and or x3 x2 x2 x3
+12222 12 and and or not x1 and x3 x1 x5 and x4 x1
+-------------------------------------
+min_valid_len:7  max_invalid_len:16.125  av-len:8.5 iters: 1526
+1:34 2:6 3:8 4:4 5:1 6:3 7:2 8:3 9:2 12:1
+-------------------------------------
+12319 9 or and x2 x4 or or x4 x5 x3
+15045 10 or and x2 not x3 and x2 or x4 x1
+15123 15 not or or and x3 or not x5 x4 and or x3 x3 x4 x5
+16897 8 and not and x3 or x3 x3 x1
+17939 11 and or not or not x4 x2 x3 and x4 x4
+18139 12 and and or x2 and not x2 and x3 x4 x5 x5
+19157 8 or not or x2 x3 or x4 x2
+19213 8 or not x2 and x3 or x1 x5
+-------------------------------------
+min_valid_len:8  max_invalid_len:16.125  av-len:10.1 iters: 6991
+1:189 2:26 3:51 4:14 5:15 6:6 7:5 8:3 9:1 10:1 11:1 12:1 15:1
+-------------------------------------
+20610 11 and or or and and x4 x5 x2 x1 x1 x5
+20842 9 and not and not x2 x3 or x3 x2
+21313 11 or not or x4 or x4 x2 not and x4 x3
+22774 10 and and and x5 x2 x3 or not x4 x5
+24714 11 not and x5 or x4 or x3 not and x1 x1
+25253 12 or not or and x3 or x2 x3 or x1 x1 x5
+25930 10 or and or not and x3 x3 x5 x3 x4
+29004 9 and x5 and and x3 x2 or x5 x1
+-------------------------------------
+min_valid_len:9  max_invalid_len:16.125  av-len:10.4 iters: 9791
+1:243 2:41 3:71 4:32 5:24 6:14 7:7 8:3 9:2 10:2 11:3 12:1
+-------------------------------------
+30326 11 and or x1 x2 not and x2 not and x2 x5
+34001 10 and x4 not and and x2 x4 and x3 x1
+43097 12 and x2 and and x3 x4 and and x2 not x3 x5
+4476 5 or not x4 not x3
+5183 5 or not x4 not x5
+5266 7 not and not and x3 x3 x5
+4113 6 and x3 not and x5 x5
+4241 7 not and x1 and not x2 x2
+4549 7 not and not or x4 x2 x5
+4899 7 not and x2 or x2 not x3
+4918 6 or x2 or not x4 x3
+5002 9 and and not x1 and x5 x2 not x3
+5550 8 not and and or x5 x3 x3 x5
+5632 6 and not or x2 x3 x5
+-------------------------------------
+min_valid_len:5  max_invalid_len:11.8  av-len:7.0  iters: 5632
+1:41 2:5 3:9 4:4 6:3 7:3 8:1 9:1  sum:67  sum/iters:0.012
+-------------------------------------
+5848 6 or not or x3 x5 x5
+5939 11 not and and or not x2 and x5 x5 x4 x2
+5944 6 or not or x5 x5 x5
+6383 8 and or x2 or not x4 x4 x5
+6497 5 and or x5 x5 x2
+6662 5 and x4 or x3 x5
+6696 8 or and not or x3 x5 x3 x3
+6783 5 not or x2 not x5
+-------------------------------------
+min_valid_len:5  max_invalid_len:11.8  av-len:6.8  iters: 1151
+1:27 2:10 3:8 4:1 5:3 6:2 8:2 11:1  sum:54  sum/iters:0.047
+-------------------------------------

@@ -194,7 +194,7 @@ top_k = None # Top-k filtering, should be less than the vocabulary size
 optimizer = optim.Adam(model.parameters(), lr=1e-9)
 # warmup_steps = 2000
 # scheduler_warmup = WarmupScheduler(optimizer, warmup_steps, 1e-7, (1e-5) /5)
-checkpoint = torch.load('state-length-2.pt')
+checkpoint = torch.load('state-length-4053.pt')
 model.load_state_dict(checkpoint['model_state_dict'])
 optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
@@ -204,14 +204,25 @@ model.train()
 etw = 1.0
 neg_num = 0
 invalid_num = 0
-start = 3394
-end = 10000
+start = 4053#1
+end = 50000
 # last_average = 1
 batch_loss = None
 pos_samples = []
 neg_samples = []
-
+max_invalid_len = 11.8#7
+min_valid_len = 5 #1
+ppp=0
+init_neg_drop = 0.05
+initial_long = 0
+pos_lens = [0 for i in range(max_len)]
+lasti = 0
+fname = 'output-15.txt'
+# with open('filename.txt', 'w') as file:pass
 for i in range(start, end):
+    # if i % 500 == 0:
+    #     max_invalid_len += 1
+
     # if i > 299 and (i % 100 == 0):
     #         temperature /= 1.03
     tokens, tokens_logs = sample_sequence(model, max_len, start_token_id, temperature, top_k, etw, vocab_size)
@@ -259,15 +270,19 @@ for i in range(start, end):
         #     w = 0
         #w = (i - last_hit) * max(varn2 - ((i-200)/100)**0.4, 0)
         #w = 1.2**max(len(tknst) - ((i-200)/300), 1)
-        if ((i > 200) and len(tknst) == 1):
+
+        # if ((i > 200) and min_valid_len == 1):
+        #     min_valid_len = 2
+        # if ((i > 500)and min_valid_len == 2):
+        #     min_valid_len = 3
+        # if ((i > 1200)and min_valid_len == 3):
+        #     min_valid_len = 4
+        # if ((i > 2400)and min_valid_len == 4):
+        #     min_valid_len = 5
+        pos_lens[len(tknst)] += 1
+        if len(tknst)<min_valid_len:
             continue
-        if ((i > 1300) and len(tknst) == 2):
-            continue
-        if ((i > 2100) and len(tknst) == 3):
-            continue
-        if ((i > 3300) and len(tknst) == 4):
-            continue
-        w = 1.5**len(tknst)
+        w = 1.5**(len(tknst)+1-min_valid_len)
 
 #        if (i > 1000):
 
@@ -278,11 +293,20 @@ for i in range(start, end):
 
         # w *= max(1, 1.5**((varn2 - 1 - (i)/1500)))  #length and actual depth are punished/rewarded, no need to punish here.
 
+        if min_valid_len == 1:
+            if len(tknst) > 1:
+                initial_long += 1
+            else:
+                if (len(pos_samples) - initial_long >= initial_long):
+                    continue
         assert w != 0
 
         print(f"{i} {len(tknst)} " + " ".join(tknst))
+        with open(fname, 'a') as f:
+            f.write(f"{i} {len(tknst)} " + " ".join(tknst) + "\n")
+
     else:
-        if len(tknst) > 10:
+        if len(tknst) > max_invalid_len:  #??based on loss?
             continue
         # print(f"{varn2} {depth} {exp1}")
     # elif i > 200 and valid < 0.5:
@@ -290,13 +314,26 @@ for i in range(start, end):
 
     loss = cross_entropy(input=tokens_logs, target=target)
     if (valid > 0.5):
+        ppp += len(tknst)
         pos_samples.append(w * loss)
     else:
         #print(len(tknst))
-        neg_samples.append(loss)
+        if (random.random()<init_neg_drop): # to save memmory
+            neg_samples.append(loss)
     if (len(pos_samples)>=8 and len(neg_samples) >= 8):
+        with open(fname, 'a') as f:
+            s = "-------------------------------------\n" + \
+                f"min_valid_len:{min_valid_len}  max_invalid_len:{max_invalid_len}  av-len:{ppp/len(pos_samples):.1f}  iters: {i - lasti}\n" + \
+                ' '.join(f"{i}:{pos_lens[i]}" for i in range(len(pos_lens)) if pos_lens[i] != 0) + f'  sum:{sum(pos_lens[1:])}  sum/iters:{sum(pos_lens[1:])/(i - lasti):.3f}'\
+                "\n-------------------------------------"
+            f.write(s + '\n')
+            print(s)
+        pos_lens=[0 for i in range(max_len)]
+        lasti = i
 
-        l = len(pos_samples) + len(neg_samples)
+        if (min_valid_len < ppp//len(pos_samples)):
+            min_valid_len += 1
+        max_invalid_len = max(ppp/len(pos_samples) + 6, 7)
         batch_loss = sum(pos_samples)
         batch_loss = batch_loss + sum(random.sample(neg_samples, 8))
         batch_loss = batch_loss / (len(pos_samples) + 8)
@@ -304,10 +341,16 @@ for i in range(start, end):
         batch_loss.backward()
         optimizer.step()
         #scheduler_warmup.step()
+        optimizer.zero_grad()
+
         batch_loss = None
         pos_samples = []
         neg_samples = []
-        optimizer.zero_grad()
+        ppp=0
+        torch.save({
+            'model_state_dict': model.state_dict(),
+            'optimizer_state_dict': optimizer.state_dict(),
+            }, f'state-length-{i}.pt')
 print (invalid_num/(end - start - 1000))
 #sample
 # model.eval()

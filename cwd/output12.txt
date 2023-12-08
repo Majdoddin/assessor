@@ -1,0 +1,40 @@
+19 1 x5
+28 1 x2
+42 1 x3
+68 2 not x4
+187 1 x2
+236 3 and x2 x1
+338 2 not x3
+362 4 and not x2 x4
+1237 4 not and x1 x1
+1384 5 and x4 and x3 x4
+1542 4 or x5 not x4
+1859 6 or x3 and x4 not x4
+1866 4 not and x1 x2
+1911 5 or x1 and x2 x2
+2077 5 or x2 and x2 x4
+2107 4 or x1 not x1
+2459 9 or and or or x1 x1 x2 x1 x2
+2669 5 or x4 and x2 x4
+2748 9 or x4 or x1 and x1 or x5 x1
+5283 5 and x2 or x5 x4
+5340 5 and x1 and x2 x3
+5370 6 not or and x1 x2 x2
+5504 8 not and or x4 or x2 x4 x3
+5829 6 and not x3 or x4 x4
+6911 5 or x2 and x2 x2
+7021 8 or x1 not or and x3 x5 x2
+7473 11 and and x1 x1 and x4 and x1 and x1 x3
+7780 5 and x2 and x1 x4
+8959 8 or or x2 not x1 or x5 x4
+9504 6 or not x4 or x3 x4
+9565 7 or and x1 x1 and x4 x2
+10432 5 and and x2 x2 x2
+12363 10 and x3 not or x1 and x4 and x5 x2
+13202 9 and x1 and x4 or or x4 x4 x2
+14467 7 and x1 or and x5 x2 x2
+14800 6 and x4 not or x4 x1
+15942 7 or x4 or and x2 x3 x3
+17232 8 and not x4 and x4 and x5 x2
+18351 6 or or x4 not x4 x1
+18549 9 or x1 and x5 or x4 or x3 x4

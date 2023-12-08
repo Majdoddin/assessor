@@ -38,3 +38,7 @@
 5274 6 or x5 or x3 not x5
 5410 7 or not or x3 not x3 x4
 5530 12 not or or and not x3 x1 or not x5 x2 x4
+
+
+
+max_invalid_len = 10
