@@ -194,7 +194,7 @@ top_k = None # Top-k filtering, should be less than the vocabulary size
 optimizer = optim.Adam(model.parameters(), lr=1e-9)
 # warmup_steps = 2000
 # scheduler_warmup = WarmupScheduler(optimizer, warmup_steps, 1e-7, (1e-5) /5)
-checkpoint = torch.load('state-length-4053.pt')
+checkpoint = torch.load('state-length-4394.pt')
 model.load_state_dict(checkpoint['model_state_dict'])
 optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
@@ -204,19 +204,19 @@ model.train()
 etw = 1.0
 neg_num = 0
 invalid_num = 0
-start = 4053#1
-end = 50000
+lasti = start = 4395#1
+end = 100000
 # last_average = 1
 batch_loss = None
 pos_samples = []
 neg_samples = []
-max_invalid_len = 11.8#7
-min_valid_len = 5 #1
+max_invalid_len = 10#7
+min_valid_len = 4 #1
 ppp=0
 init_neg_drop = 0.05
 initial_long = 0
 pos_lens = [0 for i in range(max_len)]
-lasti = 0
+
 fname = 'output-15.txt'
 # with open('filename.txt', 'w') as file:pass
 for i in range(start, end):
@@ -282,7 +282,7 @@ for i in range(start, end):
         pos_lens[len(tknst)] += 1
         if len(tknst)<min_valid_len:
             continue
-        w = 1.5**(len(tknst)+1-min_valid_len)
+        w = (len(tknst)+1-min_valid_len)**0.3   #1.5**
 
 #        if (i > 1000):
 
@@ -324,18 +324,20 @@ for i in range(start, end):
         with open(fname, 'a') as f:
             s = "-------------------------------------\n" + \
                 f"min_valid_len:{min_valid_len}  max_invalid_len:{max_invalid_len}  av-len:{ppp/len(pos_samples):.1f}  iters: {i - lasti}\n" + \
-                ' '.join(f"{i}:{pos_lens[i]}" for i in range(len(pos_lens)) if pos_lens[i] != 0) + f'  sum:{sum(pos_lens[1:])}  sum/iters:{sum(pos_lens[1:])/(i - lasti):.3f}'\
+                ' '.join(f"{i}:{pos_lens[i]}" for i in range(len(pos_lens)) if pos_lens[i] != 0) + f'  sum:{sum(pos_lens[2:])}  sum/iters:{sum(pos_lens[1:])/(i - lasti):.3f}'\
                 "\n-------------------------------------"
             f.write(s + '\n')
             print(s)
-        pos_lens=[0 for i in range(max_len)]
-        lasti = i
-
-        if (min_valid_len < ppp//len(pos_samples)):
-            min_valid_len += 1
-        max_invalid_len = max(ppp/len(pos_samples) + 6, 7)
-        batch_loss = sum(pos_samples)
-        batch_loss = batch_loss + sum(random.sample(neg_samples, 8))
+            if (min_valid_len <= 4) or ((pos_lens[min_valid_len-1]+8) / (i - lasti)) > 8/500:  #make sure it is better than random
+                if (min_valid_len < ppp//len(pos_samples)):   #fixme: at least 4 have length min+2
+                    min_valid_len += 1
+                if (max_invalid_len < ppp//len(pos_samples) + 6):
+                    max_invalid_len += 1
+        #max_invalid_len = max(ppp/len(pos_samples) + 6, 7)
+        p_batch_loss = sum(pos_samples)
+        n_batch_loss = sum(random.sample(neg_samples, 8))
+        p_batch_loss = p_batch_loss * torch.min(torch.tensor(1.0), 1.2 * n_batch_loss / p_batch_loss).item()
+        batch_loss = p_batch_loss + n_batch_loss
         batch_loss = batch_loss / (len(pos_samples) + 8)
 
         batch_loss.backward()
@@ -344,6 +346,9 @@ for i in range(start, end):
         optimizer.zero_grad()
 
         batch_loss = None
+
+        pos_lens=[0 for i in range(max_len)]
+        lasti = i
         pos_samples = []
         neg_samples = []
         ppp=0
