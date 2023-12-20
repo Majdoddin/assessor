@@ -76,7 +76,7 @@ def flatten_tree(tree):
     for operand in tree[1:]:
         # Recursively flatten each operand and add it to the flat list.
         flat_list.extend(flatten_tree(operand))
-    
+
     return flat_list
 
 # Example usage:
