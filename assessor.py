@@ -256,6 +256,8 @@ pos_lens = [0 for i in range(block_size)]
 
 fname = 'output-15.txt'
 # with open('filename.txt', 'w') as file:pass
+#TODO: when increasing min_depth say from 2 to 3, the model can generate depth 2 efficiently. to avoid a schock: depth = 2 ignore, depth > 2 +, depth < 2 -
+#TODO: start from min_depth = 1
 total_w = 0
 min_depth = 2
 b_size = 16 #*2
