@@ -5,6 +5,7 @@ from torch.nn.functional import binary_cross_entropy_with_logits, cross_entropy
 import torch.optim as optim
 import simplify
 import boolean
+
 import random
 import sys
 
@@ -147,7 +148,7 @@ def top_k_logits(logits, k):
         min_values = values[:, -1].unsqueeze(1)
         return torch.where(logits < min_values, torch.full_like(logits, float('-inf')), logits)
 
-def sample_sequence(model, length, start_token_id, temperature=1.0, top_k=None, vocab_size=10):
+def sample_sequence(model, length, start_token_id, temperature=1.0, top_k=None, vocab_size=10, no_single_var = False):
     if top_k is not None and (top_k <= 0 or top_k >= vocab_size):
         raise ValueError(f"top_k must be a positive integer less than the vocabulary size {vocab_size}")
     detached_tokens = None
@@ -155,7 +156,7 @@ def sample_sequence(model, length, start_token_id, temperature=1.0, top_k=None, 
         if detached_tokens != None: print(f"too long: {[itos[t.item()] for t in detached_tokens[0]]}")
         detached_tokens = torch.full((1, 1), start_token_id, dtype=torch.long, device=next(model.parameters()).device)
         generated_logits = []
-        for _ in range(length - 1):
+        for idx in range(length - 1):
             logits, loss = model(detached_tokens, targets = None)  #(batch_num, vocab_size)
             logits = logits[0, -1, :].unsqueeze(0)
             next_token_logits = logits / temperature
@@ -165,9 +166,12 @@ def sample_sequence(model, length, start_token_id, temperature=1.0, top_k=None, 
                 # next_token_logits = top_k_logits(next_token_logits, top_k)
                 next_token_logits = torch.topk(next_token_logits, top_k, 1)[0]  #(batch_num, top_k)
 
+            #if no_single_var, first generated token should not be a var
             sm = F.softmax(next_token_logits, dim=-1)
-
-            sm[0, start_token_id] = 0
+            #no start_token
+            sm[:, start_token_id] = 0
+            if (idx == 0 and no_single_var):
+                sm[:, 4:] = 0 #consider this by backward
             next_token = torch.multinomial(sm, num_samples=1)  #(batch_size, 1)
             detached_tokens = torch.cat((detached_tokens, next_token.detach()), dim = 1)
             generated_logits.append(logits[0])
@@ -175,7 +179,26 @@ def sample_sequence(model, length, start_token_id, temperature=1.0, top_k=None, 
             if is_polish_normal_form([itos[t.item()] for t in detached_tokens[0, 1:]]):
                 return detached_tokens[0], torch.stack(generated_logits, dim= 0)
 
-# Parameters for the model
+from boolean import NOT, AND, OR
+def to_pnf(expr):
+
+    if isinstance(expr, Symbol):
+
+        return [str(expr)]
+
+    elif isinstance(expr, NOT):
+
+        return ['NOT'] + to_pnf(expr.args[0])
+
+    elif isinstance(expr, AND) or isinstance(expr, OR):
+
+        return [expr.operator] + [sub_expr for arg in expr.args for sub_expr in to_pnf(arg)]
+
+    else:
+
+        raise TypeError("Unsupported expression type for PNF conversion")
+
+
 
 class WarmupScheduler(torch.optim.lr_scheduler._LRScheduler):
     def __init__(self, optimizer, warmup_steps, start_lr, end_lr, last_epoch=-1):
@@ -208,7 +231,6 @@ if init_from == 'scratch':
                   bias=False, vocab_size=vocab_size, dropout=0)    #dropout, for pretraining 0 is good, for finetuning try 0.1+
     gptconf = GPTConfig(**model_args)
     model = GPT(gptconf)
-#model = Transformer(vocab_size=vocab_size, d_model=d_model, nhead=nhead, num_layers=num_layers, max_len=max_len)
 
 # Parameters for inference
 temperature = 1 #0.7  # near 0 makes more deterministic
@@ -225,7 +247,7 @@ optimizer = model.configure_optimizers(weight_decay, learning_rate, (beta1, beta
 
 # warmup_steps = 2000
 # scheduler_warmup = WarmupScheduler(optimizer, warmup_steps, 1e-7, (1e-5) /5)
-# checkpoint = torch.load('state-length-4394.pt')
+# checkpoint = torch.load('state-depth-2.pt')
 # model.load_state_dict(checkpoint['model_state_dict'])
 # optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
@@ -244,7 +266,7 @@ neg_samples = []
 max_invalid_len = 10#7
 min_valid_len = 4 #1
 ppp=0
-init_neg_drop = 0.5
+init_neg_drop = 1
 initial_long = 0
 pos_lens = [0 for i in range(block_size)]
 
@@ -256,28 +278,33 @@ pos_lens = [0 for i in range(block_size)]
 
 fname = 'output-15.txt'
 # with open('filename.txt', 'w') as file:pass
-#TODO: when increasing min_depth say from 2 to 3, the model can generate depth 2 efficiently. to avoid a schock: depth = 2 ignore, depth > 2 +, depth < 2 -
-#TODO: start from min_depth = 1
 total_w = 0
-min_depth = 2
-b_size = 16 #*2
+min_depth = 1
+b_size = 32 #*2
+ctrl_1=False
 for i in range(start, end):
     hard = False
-    tokens, tokens_logs = sample_sequence(model, block_size, start_token_id, temperature=temperature, top_k=None, vocab_size=vocab_size)
+    tokens, tokens_logs = sample_sequence(model, block_size, start_token_id, temperature=temperature, top_k=None, vocab_size=vocab_size, no_single_var=min_depth>=2)
     tokens = tokens[1:] #soc token was not generated
     tknst = [itos[t.item()] for t in tokens]
 
     varn1 = len(set(s for s in tknst if s not in ['and', 'or', 'not']))
     nl = simplify.to_nested_list(tknst) #nested list
-    nl = simplify.deMorgan(nl)
+    #nl = simplify.deMorgan(nl)
     nl = simplify.to_parenthesized_string(nl)
     algebra = boolean.BooleanAlgebra()
     exp1 = algebra.parse(nl, simplify=False)
+    exp1 = exp1.literalize()
     exp1 = exp1.simplify()
     exp1 = exp1.simplify()
+    exp1 = exp1.literalize()
+
     varn2 = len(exp1.symbols)
     depth = simplify.expression_depth(exp1)
+    if min_depth > 1 and depth == min_depth - 1:
+            continue #to avoid a shock
     hard = depth >= min_depth
+
     print(tknst)
     print(f"{depth} {exp1}")
     t = []
@@ -352,7 +379,7 @@ for i in range(start, end):
             neg_samples.append(loss)
 
 #    if (len(pos_samples) >= b_size and len(neg_samples) >= b_size):
-    if (total_w >= b_size and len(neg_samples) >= total_w):
+    if (total_w >= b_size) :#fixme change line 372 to sample only if too many negative samples
         # with open(fname, 'a') as f:
             # s = "-------------------------------------\n" + \
             #     f"min_valid_len:{min_valid_len}  max_invalid_len:{max_invalid_len}  av-len:{ppp/len(pos_samples):.1f}  iters: {i - lasti}\n" + \
@@ -367,10 +394,15 @@ for i in range(start, end):
             #         max_invalid_len += 1
         #max_invalid_len = max(ppp/len(pos_samples) + 6, 7)
         p_batch_loss = sum(pos_samples)
-        n_batch_loss = sum(random.sample(neg_samples, total_w))
-        p_batch_loss = p_batch_loss * torch.max(torch.tensor(1.0), 1.2 * n_batch_loss / p_batch_loss).item() #why 1.2
+        n_batch_loss = sum(neg_samples if len(neg_samples) < total_w else random.sample(neg_samples, total_w))
+        p_batch_loss = p_batch_loss * torch.max(torch.tensor(1.0), 1.2 * n_batch_loss / p_batch_loss).item() #why 1.2?
         batch_loss = p_batch_loss + n_batch_loss
         batch_loss = batch_loss / (2 * total_w)
+
+        if total_w >= len(neg_samples):
+            min_depth += 1
+            print(f"min_depth = {min_depth}, i = {i}")
+
 
         batch_loss.backward()
         optimizer.step()
