@@ -87,7 +87,7 @@ def flatten_tree(tree):
 def to_parenthesized_string(tree):
     if isinstance(tree, str):
         return tree
-    
+
     operator = tree[0]
     if operator == 'not':
         # For 'not', apply it to the single operand.
@@ -137,4 +137,80 @@ def expression_depth(expr):
 
 
 
+
+
+def is_completable_to_polish_normal_form(sequence):
+    operand_stack = []
+
+    for token in reversed(sequence):
+        if token in {"and", "or"}:
+            if operand_stack:
+                operand_stack.pop()
+            if operand_stack:
+                operand_stack.pop()
+            operand_stack.append(1)
+        elif token == "not":
+            # Unary operator requires one operand
+            if operand_stack:
+                # Pop one operand and push one as result of the unary operation
+                operand_stack.pop()
+            operand_stack.append(1)
+        else:
+            # Variables and literals count as operands
+            operand_stack.append(1)
+
+    # Valid formula in Polish notation should leave exactly one operand on the stack
+    return len(operand_stack) == 1
+
+def is_polish_normal_form(sequence):
+    """
+    Checks if the given sequence is a Boolean Formula in Polish normal form.
+
+    The Polish notation (prefix notation) for Boolean formulas requires that:
+    - Each operator must come before its operands.
+    - Binary operators 'And', 'Or' take exactly two operands.
+    - Unary operator 'Not' takes exactly one operand.
+    - 'X1', 'X2', ..., 'Xn' are considered as variables and operands.
+
+    Args:
+    sequence (list): A sequence of strings representing the formula.
+
+    Returns:
+    bool: True if the sequence is a Boolean Formula in Polish normal form, False otherwise.
+    Example usage:
+    sequence = ["And", "Or", "X1", "Not", "X2", "X3"]
+    is_valid = is_polish_normal_form(sequence)
+    is_valid
+    """
+
+    # Stack to hold the count of operands needed for each operator
+    operand_stack = []
+
+    # Process the sequence in reverse order
+    for token in reversed(sequence):
+        if token in {"and", "or"}:
+            # Binary operators require two operands
+            if len(operand_stack) >= 2:
+                # Pop two operands and push one as result of the binary operation
+                operand_stack.pop()
+                operand_stack.pop()
+                operand_stack.append(1)
+            else:
+                # Not enough operands for a binary operator
+                return False
+        elif token == "not":
+            # Unary operator requires one operand
+            if operand_stack:
+                # Pop one operand and push one as result of the unary operation
+                operand_stack.pop()
+                operand_stack.append(1)
+            else:
+                # Not enough operands for a unary operator
+                return False
+        else:
+            # Variables and literals count as operands
+            operand_stack.append(1)
+
+    # Valid formula in Polish notation should leave exactly one operand on the stack
+    return len(operand_stack) == 1
 
