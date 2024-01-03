@@ -175,9 +175,10 @@ device = 'cpu'
 device_type = 'cuda' if 'cuda' in device else 'cpu' # for later use in torch.autocast
 optimizer = model.configure_optimizers(weight_decay, learning_rate, (beta1, beta2), device_type)
 
-checkpoint = None #'name_of_checkpoint.pt'
+# checkpoint = None
+checkpoint = 'state-depth-2-2.pt' #'name_of_checkpoint.pt'
 if checkpoint:
-    checkpoint = torch.load('state-depth-4.pt')
+    checkpoint = torch.load(checkpoint)
     model.load_state_dict(checkpoint['model_state_dict'])
     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
@@ -185,9 +186,9 @@ if checkpoint:
 temperature = 1 #0.7  # near 0 makes more deterministic
 top_k = None # Top-k filtering, should be less than the vocabulary size
 
-fname = 'output-17.txt'
+fname = 'output-18.txt'
 
-lasti = start = 0
+lasti = start = 20437
 end = 10000000
 batch_loss = None
 pos_samples = []
@@ -195,7 +196,7 @@ neg_samples = []
 init_neg_drop = 1
 
 total_w = 0
-min_depth = 4
+min_depth = 3
 b_size = 32 #*2
 
 eval = False
@@ -206,8 +207,11 @@ else:
 
 ctx = torch.no_grad() if eval else nullcontext()
 
-with ctx:
-    for i in range(start, end):
+eval_num = 200
+sec_round = False
+
+for i in range(start, end):
+    with ctx:
         hard = False
         tokens, tokens_logs = sample_sequence(model, block_size, start_token_id, temperature=temperature, top_k=top_k, vocab_size=vocab_size, no_single_var=min_depth>=2)
         tokens = tokens[1:] #token ST was not generated
@@ -232,10 +236,7 @@ with ctx:
             f.write(f"{tknst}\n")
             f.write(f"{depth} {varn2} {exp1}\n")
 
-        if eval:
-            continue
-
-        if min_depth > 1 and depth == min_depth - 1:
+        if min_depth > 1 and (depth == min_depth - 1) and not sec_round:
                 continue #to avoid a shock
 
         hard = depth >= min_depth
@@ -261,30 +262,47 @@ with ctx:
             if (random.random()<init_neg_drop): # to save memmory
                 neg_samples.append(loss)
 
-        if (total_w >= b_size) :
+        if eval:
+            if (i - lasti) > eval_num:
+                eval = False
+                model.train()
+                ctx=nullcontext()
+                if len(pos_samples) >= len(neg_samples):
+                    torch.save({
+                    'model_state_dict': model.state_dict(),
+                    'optimizer_state_dict': optimizer.state_dict(),
+                    }, f'state-depth-{min_depth}-{"2" if sec_round else "1"}.pt')
+                    if (sec_round):
+                        min_depth += 1
+                        sec_round = False
+                    else:
+                        sec_round = True
+                    print(f"min_depth = {min_depth}, {'sec_round' if sec_round else 'first_round'}, i = {i}")
+                    with open(fname, 'a') as f:
+                        f.write(f"min_depth = {min_depth}, {'sec_round' if sec_round else 'first_round'}, i = {i}")
+                lasti = i
+                pos_samples = []
+                neg_samples = []
+                total_w = 0
+        elif (total_w >= b_size) :
             p_batch_loss = sum(pos_samples)
             n_batch_loss = sum(neg_samples if len(neg_samples) < total_w else random.sample(neg_samples, total_w))
             p_batch_loss = p_batch_loss * torch.max(torch.tensor(1.0), 1.2 * n_batch_loss / p_batch_loss).item() #why 1.2?
             batch_loss = p_batch_loss + n_batch_loss
             batch_loss = batch_loss / (2 * total_w)
 
-            if len(pos_samples) >= len(neg_samples):
-                torch.save({
-                'model_state_dict': model.state_dict(),
-                'optimizer_state_dict': optimizer.state_dict(),
-                }, f'state-depth-{min_depth}.pt')
-                min_depth += 1
-                print(f"min_depth = {min_depth}, i = {i}")
-                with open(fname, 'a') as f:
-                    f.write(f"min_depth = {min_depth}, i = {i}\n")
-
             batch_loss.backward()
             optimizer.step()
             optimizer.zero_grad()
 
             batch_loss = None
-
             lasti = i
+
+            if len(pos_samples) >= len(neg_samples):
+                ctx = torch.no_grad()
+                eval = True
+                model.eval()
+
             pos_samples = []
             neg_samples = []
             total_w = 0
