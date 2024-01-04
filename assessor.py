@@ -66,9 +66,9 @@ def is_polish_normal_form(sequence):
     # Valid formula in Polish notation should leave exactly one operand on the stack
     return len(operand_stack) == 1
 
-def sample_sequence(model, length, start_token_id, temperature=1.0, top_k=None, vocab_size=10, no_single_var = False):
-    if top_k is not None and (top_k <= 0 or top_k >= vocab_size):
-        raise ValueError(f"top_k must be a positive integer less than the vocabulary size {vocab_size}")
+def sample_sequence(model, length, start_token_id, temperature=1.0, top_p=None, vocab_size=10, no_single_var = False):
+    if top_p is not None and (top_p <= 0 or top_p >= 1):
+        raise ValueError(f"top_k must in (0, ]")
     detached_tokens = None
     while True:
         if detached_tokens != None: print(f"too long: {[itos[t.item()] for t in detached_tokens[0]]}")
@@ -79,18 +79,22 @@ def sample_sequence(model, length, start_token_id, temperature=1.0, top_k=None, 
             logits = logits[0, -1, :].unsqueeze(0)
             next_token_logits = logits / temperature
 
-            top_k = None #feature disabled
-            if top_k is not None:
-                # next_token_logits = top_k_logits(next_token_logits, top_k)
-                next_token_logits = torch.topk(next_token_logits, top_k, 1)[0]  #(batch_num, top_k)
-
             #if no_single_var, first generated token should not be a var
             sm = F.softmax(next_token_logits, dim=-1)
             #no start_token
             sm[:, start_token_id] = 0
             if (idx == 0 and no_single_var):
                 sm[:, 4:] = 0 #consider this by backward
-            next_token = torch.multinomial(sm, num_samples=1)  #(batch_size, 1)
+
+            if top_p is not None:
+                sorted_prob, sorted_idx = torch.sort(sm.squeeze(), descending=True)
+                cp = torch.cumsum(sorted_prob, dim=-1)  #cumulative_probs
+                sorted_prob[1:][cp[:-1] >= top_p] = 0
+                next_token = torch.multinomial(sorted_prob, num_samples=1)
+                next_token = sorted_idx[next_token].unsqueeze(0)
+            else:
+                next_token = torch.multinomial(sm, num_samples=1)  #(batch_size, 1)
+
             detached_tokens = torch.cat((detached_tokens, next_token.detach()), dim = 1)
             generated_logits.append(logits[0])
 
@@ -175,8 +179,8 @@ device = 'cpu'
 device_type = 'cuda' if 'cuda' in device else 'cpu' # for later use in torch.autocast
 optimizer = model.configure_optimizers(weight_decay, learning_rate, (beta1, beta2), device_type)
 
-# checkpoint = None
-checkpoint = 'state-depth-2-2.pt' #'name_of_checkpoint.pt'
+checkpoint = None
+#checkpoint = 'state-depth-3-2.pt' #'name_of_checkpoint.pt'
 if checkpoint:
     checkpoint = torch.load(checkpoint)
     model.load_state_dict(checkpoint['model_state_dict'])
@@ -184,11 +188,11 @@ if checkpoint:
 
 # Parameters for inference
 temperature = 1 #0.7  # near 0 makes more deterministic
-top_k = None # Top-k filtering, should be less than the vocabulary size
+top_p = 0.9 # Top-k filtering, should be less than the vocabulary size
 
 fname = 'output-18.txt'
 
-lasti = start = 20437
+lasti = start = 46751
 end = 10000000
 batch_loss = None
 pos_samples = []
@@ -196,7 +200,7 @@ neg_samples = []
 init_neg_drop = 1
 
 total_w = 0
-min_depth = 3
+min_depth = 4
 b_size = 32 #*2
 
 eval = False
@@ -213,7 +217,7 @@ sec_round = False
 for i in range(start, end):
     with ctx:
         hard = False
-        tokens, tokens_logs = sample_sequence(model, block_size, start_token_id, temperature=temperature, top_k=top_k, vocab_size=vocab_size, no_single_var=min_depth>=2)
+        tokens, tokens_logs = sample_sequence(model, block_size, start_token_id, temperature=temperature, top_p=top_p if eval else None, vocab_size=vocab_size, no_single_var=min_depth>=2)
         tokens = tokens[1:] #token ST was not generated
         tknst = [itos[t.item()] for t in tokens]
 
@@ -279,7 +283,7 @@ for i in range(start, end):
                         sec_round = True
                     print(f"min_depth = {min_depth}, {'sec_round' if sec_round else 'first_round'}, i = {i}")
                     with open(fname, 'a') as f:
-                        f.write(f"min_depth = {min_depth}, {'sec_round' if sec_round else 'first_round'}, i = {i}")
+                        f.write(f"min_depth = {min_depth}, {'sec_round' if sec_round else 'first_round'}, i = {i}\n")
                 lasti = i
                 pos_samples = []
                 neg_samples = []
