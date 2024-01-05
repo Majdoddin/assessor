@@ -8,9 +8,7 @@ from contextlib import nullcontext
 import random
 import sys
 
-#importing model.py from nanoGPT
-nanogpt_path = '/home/ruhollah/ai/nanoGPT'
-sys.path.append(nanogpt_path)
+#export PYTHONPATH="${PYTHONPATH}:path/to/nanoGPT"
 import model
 from model import GPT, GPTConfig
 
@@ -163,8 +161,7 @@ def expression_depth(expr):
 itos = {0:"ST", 1:"and", 2:"or", 3:"not", 4:"x1", 5:"x2", 6:"x3", 7:"x4", 8:"x5", 9:"x6", 10:"x7", 11:"x8", 12:"x9", 13:"x10", 14:"x11", 15:"x12"}
 start_token_id = 0
 vocab_size = len(itos)
-
-block_size = 200  # max length of sequence to generate, including the start token
+block_size=200
 
 model_args = dict(n_layer=8, n_head=16, n_embd=512, block_size=block_size,
                 bias=False, vocab_size=vocab_size, dropout=0)    #dropout, for pretraining 0 is good, for finetuning try 0.1+
@@ -175,54 +172,59 @@ weight_decay = 1e-1
 learning_rate = 1e-6
 beta1 = 0.9
 beta2 = 0.95
-device = 'cpu'
+device = 'cpu' #current version tested only on cpu
 device_type = 'cuda' if 'cuda' in device else 'cpu' # for later use in torch.autocast
 optimizer = model.configure_optimizers(weight_decay, learning_rate, (beta1, beta2), device_type)
-
-checkpoint = None
-#checkpoint = 'state-depth-3-2.pt' #'name_of_checkpoint.pt'
-if checkpoint:
-    checkpoint = torch.load(checkpoint)
-    model.load_state_dict(checkpoint['model_state_dict'])
-    optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
 # Parameters for inference
 temperature = 1 #0.7  # near 0 makes more deterministic
 top_p = 0.9 # Top-k filtering, should be less than the vocabulary size
 
-fname = 'output-18.txt'
-
-lasti = start = 46751
+lasti = start = 0
 end = 10000000
 batch_loss = None
 pos_samples = []
 neg_samples = []
-init_neg_drop = 1
 
 total_w = 0
 min_depth = 4
 b_size = 32 #*2
 
 eval = False
-if eval:
-    model.eval()
-else:
-    model.train()
-
-ctx = torch.no_grad() if eval else nullcontext()
-
 eval_num = 200
-sec_round = False
+
+checkpoint = None
+sec_round = False   #True iff checkpoint ends wiht 2
+
+#uncomment to_test_a_checkpoint
+checkpoint = 'state-depth-6-2.pt'
+sec_round = True #True iff checkpoint ends wiht 2
+min_depth = 6 #first number in checkpoint
+eval = True
+start = 0
+end = eval_num = 1000
+
+#checkpoint = 'state-depth-6-2.pt' #'name_of_checkpoint.pt'
+if checkpoint:
+    checkpoint = torch.load(checkpoint)
+    model.load_state_dict(checkpoint['model_state_dict'])
+    optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
+
+logf = 'output.txt'
 
 for i in range(start, end):
+    if eval:
+        model.eval()
+    else:
+        model.train()
+    ctx = torch.no_grad() if eval else nullcontext()
     with ctx:
-        hard = False
         tokens, tokens_logs = sample_sequence(model, block_size, start_token_id, temperature=temperature, top_p=top_p if eval else None, vocab_size=vocab_size, no_single_var=min_depth>=2)
         tokens = tokens[1:] #token ST was not generated
         tknst = [itos[t.item()] for t in tokens]
 
         varn1 = len(set(s for s in tknst if s not in ['and', 'or', 'not']))
-        nl = to_nested_list(tknst) #nested list
+        nl = to_nested_list(tknst)
         nl = to_parenthesized_string(nl)
         algebra = boolean.BooleanAlgebra()
         exp1 = algebra.parse(nl, simplify=False)
@@ -235,13 +237,13 @@ for i in range(start, end):
         depth = expression_depth(exp1)
 
         print(tknst)
-        print(f"{depth} {varn2} {exp1}")
-        with open(fname, 'a') as f:
+        print(f"depth:{depth} var_num:{varn2} simpified: {exp1}")
+        with open(logf, 'a') as f:
             f.write(f"{tknst}\n")
-            f.write(f"{depth} {varn2} {exp1}\n")
+            f.write(f"depth:{depth} var_num:{varn2} simpified: {exp1}\n")
 
         if min_depth > 1 and (depth == min_depth - 1) and not sec_round:
-                continue #to avoid a shock
+            continue #to avoid a shock
 
         hard = depth >= min_depth
 
@@ -263,14 +265,11 @@ for i in range(start, end):
         if hard:
             pos_samples.append(w * loss)
         else:
-            if (random.random()<init_neg_drop): # to save memmory
-                neg_samples.append(loss)
+            neg_samples.append(loss)
 
         if eval:
             if (i - lasti) > eval_num:
                 eval = False
-                model.train()
-                ctx=nullcontext()
                 if len(pos_samples) >= len(neg_samples):
                     torch.save({
                     'model_state_dict': model.state_dict(),
@@ -282,13 +281,13 @@ for i in range(start, end):
                     else:
                         sec_round = True
                     print(f"min_depth = {min_depth}, {'sec_round' if sec_round else 'first_round'}, i = {i}")
-                    with open(fname, 'a') as f:
+                    with open(logf, 'a') as f:
                         f.write(f"min_depth = {min_depth}, {'sec_round' if sec_round else 'first_round'}, i = {i}\n")
                 lasti = i
                 pos_samples = []
                 neg_samples = []
                 total_w = 0
-        elif (total_w >= b_size) :
+        elif (total_w >= b_size):
             p_batch_loss = sum(pos_samples)
             n_batch_loss = sum(neg_samples if len(neg_samples) < total_w else random.sample(neg_samples, total_w))
             p_batch_loss = p_batch_loss * torch.max(torch.tensor(1.0), 1.2 * n_batch_loss / p_batch_loss).item() #why 1.2?
@@ -302,10 +301,7 @@ for i in range(start, end):
             batch_loss = None
             lasti = i
 
-            if len(pos_samples) >= len(neg_samples):
-                ctx = torch.no_grad()
-                eval = True
-                model.eval()
+            eval = len(pos_samples) >= len(neg_samples)
 
             pos_samples = []
             neg_samples = []

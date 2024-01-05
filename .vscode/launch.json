@@ -20,7 +20,10 @@
             "console": "integratedTerminal",
             "justMyCode": false,
             "python": "${workspaceFolder}/.venv/bin/python3.11",
-            "cwd": "${workspaceFolder}/cwd"
+            "cwd": "${workspaceFolder}/cwd",
+            "env": {
+                "PYTHONPATH": "${env:PYTHONPATH}:/home/ruhollah/ai/atp/nanoGPT"
+            }
         }
     ]
 }
