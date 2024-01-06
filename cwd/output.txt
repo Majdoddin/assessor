@@ -1,0 +1,2000 @@
+['and', 'x12', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x7', 'x3', 'x1', 'x6', 'x2', 'x4', 'x11', 'not', 'x2', 'x5', 'x4', 'x11', 'x10', 'x5', 'x9']
+depth:14 var_num:11 simpified: x12&x9&(x5|(x10&(x11|(x4&(x5|(~x2&(x11|(x4&(x2|(x6&(x1|(x3&(x5|x7)))))))))))))
+['not', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x3', 'x7', 'x4', 'x5', 'x6', 'or', 'x7', 'x2', 'x8', 'x9', 'x10', 'x9', 'x8', 'x1', 'x7', 'x5', 'x9']
+depth:14 var_num:10 simpified: x9|(x5&(x7|(x1&(x8|(x9&(x10|(x9&(x8|((x2|x7)&(x6|(x5&(x4|(x3&x7)))))))))))))
+['and', 'x2', 'x12']
+depth:1 var_num:2 simpified: x12&x2
+['and', 'x5', 'or', 'x1', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x3', 'x11', 'x9', 'x10', 'x2', 'x9', 'x12', 'x9', 'x2', 'x12', 'x3', 'x7', 'x4', 'x10', 'x12']
+depth:16 var_num:10 simpified: x5&(x1|x12|(x10&(x4|(x7&(x3|(x12&(x2|(x9&(x12|(x9&(x2|(x10&(x9|(x11&(x1|x3)))))))))))))))
+['or', 'x10', 'x8']
+depth:1 var_num:2 simpified: x10|x8
+['and', 'x1', 'or', 'and', 'x3', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x6', 'x2', 'x10', 'x7', 'x4', 'x11', 'x5', 'x2', 'x12', 'x5', 'x8']
+depth:12 var_num:11 simpified: x1&(x8|(x3&(x5|(x12&(x2|(x5&(x11|(x4&(x7|(x10&(x2|x6)))))))))))
+['and', 'x12', 'x11']
+depth:1 var_num:2 simpified: x11&x12
+['and', 'x1', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x8', 'not', 'x3', 'x1', 'x7', 'x5', 'x10', 'x3', 'x10', 'x12', 'not', 'x10', 'x9', 'x1', 'x6']
+depth:14 var_num:10 simpified: x1&(x6|(~x9&(x10|(~x12&(~x10|(~x3&(~x10|(~x5&(~x7|(~x1&(x3|(~x2&~x8))))))))))))
+['not', 'x3']
+depth:1 var_num:1 simpified: ~x3
+['or', 'x11', 'x2']
+depth:1 var_num:2 simpified: x11|x2
+['or', 'x4', 'x5']
+depth:1 var_num:2 simpified: x4|x5
+['or', 'x8', 'x4']
+depth:1 var_num:2 simpified: x4|x8
+['and', 'x5', 'x4']
+depth:1 var_num:2 simpified: x4&x5
+['or', 'or', 'x5', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'not', 'or', 'x1', 'x7', 'not', 'x3', 'x12', 'x3', 'x2', 'x10', 'x9', 'x10', 'x4', 'x5', 'x11']
+depth:1 var_num:2 simpified: x11|x5
+['or', 'x5', 'x3']
+depth:1 var_num:2 simpified: x3|x5
+['not', 'x9']
+depth:1 var_num:1 simpified: ~x9
+['and', 'or', 'x2', 'x9', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x6', 'x4', 'x5', 'x8', 'x10', 'x12', 'or', 'x6', 'x10', 'x9', 'x8']
+depth:9 var_num:9 simpified: x8&(x2|x9)&(x9|((x10|x6)&(x12|(x10&(x8|(x5&(x4|(x1&x6))))))))
+['and', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x4', 'x2', 'x10', 'x2', 'x1', 'x7', 'x2', 'x12', 'not', 'or', 'x7', 'x2', 'x5', 'x8', 'x9', 'not', 'x11', 'x9']
+depth:2 var_num:2 simpified: ~x11&x9
+['or', 'x2', 'x11']
+depth:1 var_num:2 simpified: x11|x2
+['or', 'x1', 'x11']
+depth:1 var_num:2 simpified: x1|x11
+['not', 'x2']
+depth:1 var_num:1 simpified: ~x2
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x8', 'x1', 'x5', 'x4', 'x4', 'x11', 'x12', 'x8', 'x10', 'x7', 'x4', 'x9', 'x1', 'x7', 'x10', 'x7']
+depth:1 var_num:2 simpified: x10|x7
+['and', 'x4', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'x1', 'x8', 'x9', 'x5', 'x8', 'x7', 'x2', 'x1', 'x7', 'x12', 'x7']
+depth:10 var_num:8 simpified: x4&(x7|(x12&(x7|(x1&(x2|x7|(x8&(x5|(x9&(x1|x8)))))))))
+['or', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x5', 'x1', 'x2', 'not', 'x10', 'x2', 'x7', 'x4', 'x11', 'x5', 'x8', 'x1', 'x5', 'x4', 'x5', 'x10']
+depth:13 var_num:8 simpified: x10|x5|(x4&(x5|(x1&(x5|x8|(x11&(x4|(x7&(x2|(~x10&(x2|(x1&(x5|x7))))))))))))
+['or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x2', 'x9', 'x10', 'x12', 'x9', 'x4', 'x1', 'x10', 'x9', 'x6', 'x1', 'not', 'x9', 'x7', 'x2']
+depth:12 var_num:8 simpified: x2|(x7&~x9&(x1|(x6&(x9|(x10&(x1|(x4&(x9|(x12&(x10|(x2&x9)))))))))))
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'and', 'or', 'or', 'x4', 'x7', 'x2', 'x5', 'x6', 'x1', 'x10', 'x12', 'x9', 'x10', 'x1']
+depth:8 var_num:9 simpified: x1&x10&(x9|(x12&(x10|(x1&(x6|(x1&x5&(x2|x4|x7)))))))
+['not', 'x11']
+depth:1 var_num:1 simpified: ~x11
+['not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x10', 'x12', 'x6', 'x4', 'x5', 'x1', 'x2', 'x11', 'x9', 'x1', 'x11', 'x9', 'x1']
+depth:14 var_num:9 simpified: ~x1|(~x9&(~x11|(~x1&(~x9|(~x11&(~x2|(~x1&(~x5|(~x4&(~x6|(~x12&(~x1|~x10))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x10', 'x1', 'x9', 'or', 'and', 'x12', 'x2', 'x1', 'x7', 'x10', 'x2', 'x3', 'x7', 'x2', 'x3']
+depth:9 var_num:6 simpified: x3&(x2|(x7&(x3|(x2&(x10|(x7&(x1|(x12&x2))))))))
+['not', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x6', 'and', 'x4', 'x5', 'x6', 'x4', 'x4', 'x12', 'x5', 'or', 'x2', 'x7', 'x2', 'x10', 'x5', 'x10', 'x1', 'x5', 'x10']
+depth:10 var_num:7 simpified: ~x10|~x5|(~x1&(~x10|(~x5&(~x10|(~x2&((~x2&~x7)|(~x5&(~x12|~x4))))))))
+['and', 'and', 'not', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'x1', 'x4', 'x3', 'x12', 'x1', 'and', 'or', 'x1', 'x10', 'x9', 'x10', 'x11', 'x10', 'x5', 'x7', 'x12']
+depth:9 var_num:9 simpified: x12&~x5&x7&(~x10|(~x11&(~x10|((x1|(x12&(x3|(x1&x4))))&(~x9|(~x1&~x10))))))
+['or', 'x12', 'x1']
+depth:1 var_num:2 simpified: x1|x12
+['or', 'x4', 'or', 'x10', 'x6']
+depth:1 var_num:3 simpified: x10|x4|x6
+['or', 'x10', 'not', 'or', 'and', 'or', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'not', 'x10', 'x4', 'x1', 'x8', 'x9', 'x2', 'x3', 'x5', 'x10', 'x4', 'x11']
+depth:12 var_num:9 simpified: x10|(~x11&(~x4|(~x10&~x3&~x5&(~x2|(~x9&(~x8|(~x1&(~x4|(x10&(~x1|~x2))))))))))
+['or', 'and', 'x12', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'or', 'and', 'or', 'and', 'x1', 'x7', 'x4', 'x10', 'x8', 'x1', 'x2', 'x1', 'x7', 'x5', 'x12', 'x9', 'x5', 'x3']
+depth:7 var_num:6 simpified: x3|(x12&(x5|(x9&(x12|(x5&(x1|x7))))))
+['or', 'x11', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x10', 'x7', 'not', 'x1', 'x3', 'x7', 'x4', 'or', 'and', 'or', 'x7', 'x2', 'x4', 'x11', 'x2', 'not', 'x10', 'x5', 'x7', 'x1', 'x8', 'x9', 'x7']
+depth:15 var_num:10 simpified: x11|~x7|(~x9&(~x8|(~x1&(~x7|(~x5&(x10|(~x2&((~x11&(~x4|(~x2&~x7)))|(~x4&(~x7|(~x3&(x1|(~x10&~x7)))))))))))))
+['or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x6', 'x8', 'or', 'x1', 'x7', 'x2', 'x5', 'x2', 'x4', 'x11', 'x1', 'x4', 'x7', 'x2', 'x5', 'x4']
+depth:14 var_num:8 simpified: x4|(x5&(x2|(~x7&(~x4|(~x1&(~x11|(~x4&(~x2|(~x5&(~x2|(~x1&~x7&(~x6|~x8))))))))))))
+['and', 'x10', 'not', 'and', 'x1', 'x2']
+depth:3 var_num:3 simpified: x10&(~x1|~x2)
+['or', 'not', 'or', 'x7', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x10', 'x9', 'x4', 'x7', 'x2', 'or', 'and', 'or', 'x12', 'not', 'x10', 'x7', 'x10', 'x6', 'x2', 'x8', 'x4', 'x1', 'x5', 'x8', 'x4']
+depth:15 var_num:10 simpified: x4|(~x7&(x8|(x5&(x1|(x4&(x8|(x2&(x6|((x10|(x7&(~x10|x12)))&(x2|(x7&(x4|(x9&(x10|x7))))))))))))))
+['or', 'x4', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x11', 'or', 'x1', 'x7', 'x5', 'x10', 'x7', 'x2', 'x7', 'x1', 'x5', 'x4', 'x9', 'x2', 'x1', 'x3']
+depth:13 var_num:9 simpified: x3|x4|(x1&(x2|x9|(x4&(x5|(x1&(x7|(x2&(x7|(x10&(x5|(x11&(x1|x7))))))))))))
+['or', 'x4', 'x9']
+depth:1 var_num:2 simpified: x4|x9
+['not', 'x12']
+depth:1 var_num:1 simpified: ~x12
+['or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x12', 'x4', 'x6', 'x12', 'x3', 'x4', 'x11', 'x5', 'x11', 'x7', 'x10', 'x4', 'x7', 'x10']
+depth:12 var_num:8 simpified: x10|(x4&x7&(x10|(x7&(x11|(x5&(x11|(x4&(x3|(x12&(x6|(x12&x4)))))))))))
+['and', 'x11', 'and', 'x3', 'x3']
+depth:1 var_num:2 simpified: x11&x3
+['or', 'x7', 'or', 'x6', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x8', 'x4', 'x7', 'x5', 'x8', 'x4', 'x10', 'x7', 'x2', 'x4']
+depth:9 var_num:7 simpified: x6|x7|(x4&(x2|(x7&(x10|(x4&(x8|(x5&(x4|x7))))))))
+['and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x12', 'x10', 'x9', 'x1', 'x3', 'x4', 'x7', 'x3', 'not', 'x12', 'x7']
+depth:9 var_num:7 simpified: x7&(~x12|x3|(x7&(x4|(x3&(x1|(x9&(x10|~x12)))))))
+['and', 'x8', 'x9']
+depth:1 var_num:2 simpified: x8&x9
+['not', 'x5']
+depth:1 var_num:1 simpified: ~x5
+['and', 'x10', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x4', 'x1', 'x2', 'or', 'x5', 'and', 'x4', 'x11', 'x1', 'x12', 'x4', 'x5', 'x6', 'x12']
+depth:10 var_num:8 simpified: x10&x12&(x6|(x5&(x4|(x12&(x1|((x2|(x1&(x2|x4)))&(x5|(x11&x4))))))))
+['or', 'x12', 'x12']
+depth:0 var_num:1 simpified: x12
+['or', 'x10', 'x7']
+depth:1 var_num:2 simpified: x10|x7
+['and', 'x8', 'x3']
+depth:1 var_num:2 simpified: x3&x8
+['or', 'x12', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x6', 'x12', 'x9', 'x7', 'x5', 'x11', 'x5', 'x11', 'x10', 'x7', 'x1', 'x9']
+depth:12 var_num:8 simpified: x12|x9|(x1&(x7|(x10&(x11|(x5&(x11|(x5&(x7|(x9&(x12|~x6))))))))))
+['and', 'x11', 'x10']
+depth:1 var_num:2 simpified: x10&x11
+['and', 'and', 'or', 'and', 'or', 'and', 'and', 'or', 'and', 'or', 'x4', 'x1', 'x2', 'x10', 'x4', 'x11', 'not', 'x1', 'x2', 'x6', 'x7', 'x2']
+depth:8 var_num:7 simpified: x2&x7&(x6|(x2&(~x1|(x11&x4&(x10|(x2&(x1|x4)))))))
+['not', 'x4']
+depth:1 var_num:1 simpified: ~x4
+['and', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x3', 'x5', 'x2', 'not', 'x4', 'x11', 'x12', 'x5', 'x3', 'x1', 'x5']
+depth:1 var_num:2 simpified: x1&x5
+['or', 'not', 'and', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'and', 'x8', 'x7', 'x5', 'x3', 'x7', 'x5', 'x1', 'x8', 'x1', 'x12', 'x7', 'x5', 'x1', 'x2']
+depth:12 var_num:8 simpified: ~x1|x2|~x5|(~x12&~x7&(~x1|(~x8&(~x1|(~x5&(~x7|(~x3&(~x5|(~x4&(~x7|~x8))))))))))
+['or', 'x1', 'x8']
+depth:1 var_num:2 simpified: x1|x8
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x4', 'x4', 'x5', 'x2', 'x10', 'not', 'x2', 'x4', 'x11', 'x4', 'x7']
+depth:8 var_num:6 simpified: x7&(x4|(x11&(x4|(~x2&(x10|(x2&(x4|x5)))))))
+['or', 'x5', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'and', 'or', 'and', 'x5', 'x4', 'x11', 'x7', 'x4', 'x11', 'x10', 'x5', 'x4', 'x5', 'x3', 'x5', 'x9', 'x1']
+depth:14 var_num:8 simpified: x5|(x1&(x9|(x5&(x3|(x5&(x4|(x5&(x10|(x11&(x4|(x1&x7&(x11|(x4&x5)))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x1', 'x7', 'x4', 'x2', 'x4', 'x1', 'x10', 'x2', 'x1', 'x12', 'x3', 'x4', 'x2']
+depth:13 var_num:7 simpified: x2&(x4|(x3&(x12|(x1&(x2|(x10&(x1|(x4&(x2|(x4&(~x1|x7)))))))))))
+['or', 'x12', 'x5']
+depth:1 var_num:2 simpified: x12|x5
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x10', 'and', 'x6', 'x1', 'x2', 'x7', 'x5', 'x2', 'x1', 'x5', 'x11', 'x2', 'x8']
+depth:10 var_num:7 simpified: x8|(x2&(x11|(x5&(x1|(x2&(x5|(x7&(x2|(x1&x6)))))))))
+['or', 'x6', 'x12']
+depth:1 var_num:2 simpified: x12|x6
+['not', 'x6']
+depth:1 var_num:1 simpified: ~x6
+['or', 'x3', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x4', 'x2', 'x12', 'x10', 'x3', 'x11', 'x2', 'x5', 'x4', 'not', 'x8', 'x4', 'x7']
+depth:13 var_num:9 simpified: x3|(x7&(x4|(~x8&(x4|(x5&(x2|(x11&(x3|(x10&(x12|(x2&(x4|x5))))))))))))
+['or', 'x7', 'and', 'x11', 'x5']
+depth:2 var_num:3 simpified: x7|(x11&x5)
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x7', 'x4', 'and', 'x1', 'x5', 'x2', 'not', 'x4', 'x10', 'x9', 'x2', 'x10', 'x9']
+depth:10 var_num:7 simpified: x9&(x10|(x2&(x9|(x10&(~x4|(x2&((x1&x5)|(x4&(x1|x7)))))))))
+['not', 'x5']
+depth:1 var_num:1 simpified: ~x5
+['not', 'x9']
+depth:1 var_num:1 simpified: ~x9
+['not', 'x5']
+depth:1 var_num:1 simpified: ~x5
+['or', 'x3', 'x3']
+depth:0 var_num:1 simpified: x3
+['and', 'x6', 'x7']
+depth:1 var_num:2 simpified: x6&x7
+['or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x12', 'x1', 'x7', 'x4', 'x9', 'x6', 'x5', 'x11', 'x2', 'x7', 'x4', 'x10', 'x7', 'x4', 'x10', 'x1']
+depth:14 var_num:10 simpified: x1|(x10&x4&(x7|(x10&(x4|(x7&(x2|(x11&(x5|(x6&(x9|(x4&(x7|(x1&x12)))))))))))))
+['and', 'x3', 'x7']
+depth:1 var_num:2 simpified: x3&x7
+['or', 'not', 'x2', 'x5']
+depth:2 var_num:2 simpified: ~x2|x5
+['or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x10', 'x4', 'x10', 'x7', 'x1', 'x7', 'x2', 'x11', 'x2', 'x12', 'x3', 'not', 'x1', 'x7', 'x5', 'x8', 'x1', 'x11']
+depth:14 var_num:9 simpified: ~x1|x11|(~x8&(~x5|(~x7&(x1|(~x3&(~x12|(~x2&(~x11|(~x2&(~x7|(~x1&(~x10|~x7))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x1', 'x4', 'x7', 'x3', 'not', 'x4', 'x8', 'x5', 'x8', 'x1', 'x12']
+depth:9 var_num:7 simpified: x12&(x1|(x8&(x5|(x8&(~x4|(x3&(x7|(x1&x4))))))))
+['and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x7', 'x9', 'x8', 'x2', 'x4', 'x1', 'x10', 'x11', 'x9', 'x1', 'x9', 'x10', 'x2']
+depth:14 var_num:9 simpified: x2&(x10|(~x9&(~x1|(~x9&(~x11|(~x10&(~x1|(~x4&(~x2|(~x8&(~x9|(~x3&~x7))))))))))))
+['or', 'x3', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'x2', 'or', 'and', 'or', 'and', 'x2', 'x1', 'x10', 'x4', 'x7', 'not', 'x10', 'x5', 'x1', 'x1', 'x9', 'x6', 'x9', 'x8', 'not', 'x10', 'x5']
+depth:5 var_num:6 simpified: x3|(x5&(~x10|(x8&(x6|x9))))
+['and', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x3', 'x1', 'x7', 'or', 'x5', 'x4', 'x11', 'x1', 'x7', 'x9', 'x2', 'x3', 'x2', 'x8']
+depth:1 var_num:3 simpified: x2&x3&x8
+['not', 'x2']
+depth:1 var_num:1 simpified: ~x2
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x1', 'x7', 'x10', 'x12', 'x5', 'x4', 'x3', 'x7', 'x5', 'x1', 'x2', 'not', 'x12']
+depth:12 var_num:9 simpified: ~x12&(x2|(x1&(x5|(x7&(x3|(x4&(x5|(x12&(x10|(x7&(x1|x9)))))))))))
+['or', 'x12', 'x9']
+depth:1 var_num:2 simpified: x12|x9
+['and', 'x2', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x8', 'and', 'or', 'x7', 'x2', 'x9', 'x1', 'and', 'or', 'x8', 'x9', 'x4', 'x10', 'x3', 'x10', 'x5', 'x1']
+depth:10 var_num:9 simpified: ~x1&x2&(~x5|(~x10&(~x3|(~x10&(~x4|(~x1&(x8|~x9|(~x2&~x7)))|(~x8&~x9))))))
+['not', 'and', 'x3', 'x5']
+depth:2 var_num:2 simpified: ~x3|~x5
+['and', 'x9', 'x3']
+depth:1 var_num:2 simpified: x3&x9
+['or', 'and', 'x3', 'and', 'or', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x7', 'x5', 'x4', 'x12', 'x3', 'x5', 'x4', 'x10', 'x2', 'x4', 'x1', 'x6', 'x1', 'x5', 'x6']
+depth:15 var_num:9 simpified: x6|(x3&x5&(x1|(x6&(x1|~x4|(~x2&(~x10|(~x4&(~x5|(~x3&(~x12|(~x4&(~x5|(~x2&~x7)))))))))))))
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x7', 'x2', 'x1', 'x5', 'x8', 'x5', 'x11', 'x8', 'x11', 'x3', 'x1', 'x4', 'x7', 'x2', 'x6', 'x12']
+depth:15 var_num:11 simpified: x12|x6|(x2&(x7|(x4&(x1|(x3&(x11|(x8&(x11|(x5&(x8|(x5&(x1|(x2&(x7|x9))))))))))))))
+['or', 'x12', 'x3']
+depth:1 var_num:2 simpified: x12|x3
+['and', 'not', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x6', 'x2', 'x5', 'x10', 'x9', 'x5', 'x9', 'x4', 'x11', 'x9', 'x1', 'x5', 'x3', 'x2', 'x1']
+depth:14 var_num:9 simpified: x1&x2&(x3|(x5&(x1|(x9&(x11|(x4&(x9|(x5&(x9|(x10&(x5|(x2&(x5|x6)))))))))))))
+['not', 'x5']
+depth:1 var_num:1 simpified: ~x5
+['and', 'or', 'and', 'x4', 'x3', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x12', 'x9', 'x5', 'not', 'x6', 'x12', 'x3', 'x7', 'x2', 'x1', 'x11', 'x12', 'x10']
+depth:11 var_num:11 simpified: x10&(x12|(x11&(x1|(x2&(x7|(x3&(x12|(~x6&(x5|(x12&x9)))))))))|(x3&x4))
+['or', 'x5', 'or', 'and', 'or', 'and', 'or', 'not', 'and', 'or', 'or', 'and', 'or', 'and', 'x1', 'x5', 'or', 'and', 'x4', 'x11', 'not', 'x10', 'x12', 'x3', 'not', 'x2', 'x7', 'x2', 'x10', 'x9', 'x3', 'x1']
+depth:6 var_num:7 simpified: x1|x5|(x3&(x9|(x10&(x2|~x7))))
+['or', 'x5', 'not', 'or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'or', 'x10', 'x12', 'not', 'x10', 'x11', 'x5', 'x2', 'x10', 'x6', 'x12', 'x9', 'x1']
+depth:11 var_num:9 simpified: x5|(~x1&(~x12|~x9|(~x6&(~x10|(~x2&(~x5|(~x11&(x10|(~x12&~x4)))))))))
+['or', 'x5', 'or', 'x1', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'and', 'x10', 'x7', 'x6', 'x1', 'x10', 'x3', 'or', 'and', 'x5', 'not', 'x12', 'not', 'x7', 'x3', 'x7', 'x1', 'x11']
+depth:9 var_num:8 simpified: x1|~x11|x5|(~x7|(~x3&((~x3&(~x10|(~x1&(~x6|~x7))))|(x7&(x12|~x5)))))
+['not', 'and', 'or', 'x3', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x5', 'x3', 'x7', 'x2', 'x4', 'x7', 'x1', 'x4', 'x11', 'x3', 'x2', 'x1', 'x2', 'x1']
+depth:13 var_num:6 simpified: ~x1|(~x2&~x3&(~x1|(~x2&(~x3|(~x11&(~x4|(~x1&(~x7|(~x4&(~x2|(~x3&~x7)))))))))))
+['and', 'x4', 'and', 'x10', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x12', 'x5', 'x7', 'x12', 'x1', 'x4', 'x1', 'x7', 'x12', 'x1', 'x3', 'x6', 'x2', 'x9', 'x3', 'x7']
+depth:17 var_num:10 simpified: x10&x4&(x7|(~x3&(~x9|(~x2&(~x6|(~x3&(~x1|(~x12&(~x7|(~x1&(~x4|(~x1&(~x12|(~x7&(~x12|~x5)))))))))))))))
+['and', 'x6', 'x12']
+depth:1 var_num:2 simpified: x12&x6
+['not', 'x11']
+depth:1 var_num:1 simpified: ~x11
+['or', 'x3', 'x2']
+depth:1 var_num:2 simpified: x2|x3
+['not', 'or', 'x7', 'or', 'not', 'x3', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x12', 'x9', 'x4', 'or', 'x12', 'x6', 'x1', 'x12', 'x10', 'x5', 'x7', 'x1', 'x5']
+depth:13 var_num:9 simpified: x3&~x7&(~x5|(~x1&(~x7|(~x5&(~x10|(~x12&(~x1|(~x12&~x6&(~x4|(~x9&(~x1|~x12)))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x1', 'x4', 'x10', 'x5', 'x4', 'x11', 'x2', 'x12', 'x3', 'x7', 'x2', 'x1', 'x1', 'x12', 'x10', 'x9', 'x1']
+depth:4 var_num:4 simpified: x1&(x9|(x10&(x1|x12)))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x12', 'x4', 'x5', 'x7', 'x2', 'x1', 'x8', 'x1', 'x2', 'x10', 'x12', 'x11', 'x9']
+depth:12 var_num:10 simpified: x9&(x11|(x12&(x10|(x2&(x1|(x8&(x1|(x2&(x7|(x5&(x12|x4)))))))))))
+['and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x4', 'x1', 'x5', 'x4', 'x2', 'x9', 'x6', 'x9', 'x10']
+depth:2 var_num:3 simpified: x10&(x6|x9)
+['or', 'x6', 'x3']
+depth:1 var_num:2 simpified: x3|x6
+['or', 'and', 'not', 'x5', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x2', 'x7', 'x1', 'x5', 'x12', 'x2', 'x1', 'x10', 'x4', 'x10', 'x3', 'x7', 'x9', 'x1']
+depth:14 var_num:9 simpified: x1|(~x5&x9&(x7|(x3&(x10|(x4&(x10|(x1&(x2|(x12&(x5|(x1&(x7|(x2&x9)))))))))))))
+['or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x6', 'not', 'x1', 'x3', 'x9', 'x3', 'x1', 'x12', 'x5', 'x1', 'x2', 'x1', 'x11', 'x2', 'x5', 'x10', 'x5', 'x1', 'x2']
+depth:17 var_num:9 simpified: ~x1|x2|(~x5&(~x10|(~x5&(~x2|(~x11&(~x1|(~x2&(~x1|(~x5&(~x12|(~x1&(~x3|(~x9&(~x3|(x1&~x6)))))))))))))))
+['not', 'x1']
+depth:1 var_num:1 simpified: ~x1
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x2', 'x5', 'not', 'x9', 'x5', 'x3', 'x7', 'x10', 'x4', 'x11', 'x9', 'x10', 'x4', 'x9']
+depth:12 var_num:8 simpified: x4&x9&(x10|(x9&(x11|(x4&(x10|(x7&(x3|(x5&(~x9|(x5&(x2|x7)))))))))))
+['and', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x8', 'x10', 'x9', 'x4', 'x2', 'x7', 'x1', 'x5', 'x10', 'x4', 'x7']
+depth:9 var_num:8 simpified: x10&x4&x7&(x5|(x1&(x7|(x2&(x4|(x9&(x10|(x1&x8))))))))
+['or', 'or', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x7', 'x2', 'x5', 'x2', 'x7', 'x4', 'x1', 'x11', 'x5', 'x4', 'x1', 'x11']
+depth:1 var_num:4 simpified: x1|x11|x4|x5
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x12', 'x3', 'x12', 'x6', 'x12', 'x1', 'x4', 'x11', 'x8', 'x4']
+depth:7 var_num:7 simpified: x4&x8&(x11|(x4&(x1|(x12&(x6|(x12&x3))))))
+['or', 'and', 'or', 'x4', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x5', 'not', 'or', 'and', 'or', 'x5', 'x4', 'x8', 'x2', 'x11', 'x2', 'x1', 'x12', 'x2', 'not', 'x10', 'x12', 'x5', 'x1', 'x7']
+depth:15 var_num:10 simpified: x7|(x1&(x4|x5|(x12&(~x10|(x2&(x12|(x1&(x2|(x11&((~x2&(~x8|(~x4&~x5)))|(x5&x9)))))))))))
+['and', 'x9', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'or', 'and', 'or', 'x3', 'x5', 'not', 'x6', 'x12', 'x9', 'x11', 'x9', 'x1', 'x5', 'x9', 'x3', 'x4', 'x1']
+depth:14 var_num:8 simpified: x9&(~x1|(~x4&(~x3|(~x9&(~x5|(~x1&(~x9|(~x11&(~x9|(~x1&~x12&(x6|(~x3&~x5))))))))))))
+['or', 'x2', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'or', 'and', 'x2', 'x7', 'x2', 'x7', 'x1', 'x10', 'x9', 'x11', 'x9', 'x5', 'x1', 'x2']
+depth:0 var_num:0 simpified: 1
+['or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'or', 'x1', 'x7', 'x5', 'x12', 'x2', 'x7', 'x10', 'x4', 'x9', 'x1', 'x11', 'x4', 'x8']
+depth:9 var_num:10 simpified: x8|(x4&(x1|x11|(x9&(x4|(x10&(x7|(x2&(x12|x5))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'or', 'x4', 'x7', 'x2', 'x1', 'x2', 'x10', 'x7', 'not', 'x6', 'not', 'x4', 'x11', 'x10']
+depth:6 var_num:6 simpified: x10&(x11|(~x4&(~x6|(x7&(x10|x2)))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x4', 'x7', 'x1', 'x4', 'x11', 'x5', 'x1', 'x12', 'x11', 'x3', 'x1', 'x2', 'x5', 'x7', 'x6', 'x12', 'x3']
+depth:17 var_num:9 simpified: x3&(x12|(x6&(x7|(x5&(x2|(x1&(x3|(~x11&(~x12|(~x1&(~x5|(~x11&(~x4|(~x1&(x4|~x7)))))))))))))))
+['or', 'x7', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x2', 'x1', 'x4', 'x4', 'x2', 'x3', 'x5', 'x4', 'x5', 'x9', 'x2', 'x4', 'x11', 'x9', 'x6']
+depth:7 var_num:7 simpified: x7|(x6&(x9|(x11&(x4|(x2&(x5|x9))))))
+['or', 'and', 'or', 'x5', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x4', 'and', 'x10', 'x4', 'x7', 'x3', 'x9', 'not', 'x2', 'x7', 'x2', 'x10', 'x12']
+depth:10 var_num:8 simpified: x12|(x10&(x5|(x2&(x7|(~x2&(x9|(x3&(x7|(x10&x4)))))))))
+['or', 'not', 'x3', 'x9']
+depth:2 var_num:2 simpified: ~x3|x9
+['and', 'x3', 'not', 'x12']
+depth:2 var_num:2 simpified: ~x12&x3
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x10', 'x2', 'x5', 'x2', 'x11', 'x12', 'x2', 'x11', 'x2', 'x1', 'x4', 'x5', 'x1', 'x7', 'x2', 'x8']
+depth:15 var_num:9 simpified: x8&(x2|(x7&(x1|(x5&(x4|(x1&(x2|(x11&(x2|(x12&(x11|(x2&(x5|(x10&x2))))))))))))))
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x6', 'x11', 'x1', 'x7', 'x5', 'x11', 'x5', 'x11', 'x10', 'x8', 'x7', 'x1', 'x2', 'x5', 'x8']
+depth:14 var_num:8 simpified: x5|x8|(x2&(x1|(x7&(x8|(x10&(x11|(x5&(x11|(x5&(x7|(x1&(x11|(x5&x6)))))))))))))
+['or', 'x6', 'x10']
+depth:1 var_num:2 simpified: x10|x6
+['and', 'or', 'not', 'x12', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'and', 'x9', 'x10', 'x2', 'x1', 'x5', 'x6', 'x11', 'x2', 'x4', 'x7', 'x2', 'x9', 'x12']
+depth:12 var_num:10 simpified: x12&(x9&(x2|(x7&(x4|(x2&(x11|(x6&(x5|(x1&(~x10|x2|~x9))))))))))
+['and', 'not', 'x6', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x2', 'x11', 'x1', 'x2', 'x1', 'x7', 'x4', 'x5', 'x1', 'x9', 'x5', 'not', 'x8', 'x1', 'x12']
+depth:14 var_num:10 simpified: ~x6&(x12|(x1&(x5|~x8|(x9&(x1|(x5&(x4|(x7&(x1|(x2&(x1|(x11&(x1|x2)))))))))))))
+['and', 'x6', 'x3']
+depth:1 var_num:2 simpified: x3&x6
+['not', 'x12']
+depth:1 var_num:1 simpified: ~x12
+['or', 'and', 'x12', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x4', 'x5', 'x1', 'x10', 'x12', 'x3', 'x7', 'x5', 'not', 'x10', 'x9', 'x5', 'x4', 'x1', 'x11', 'x8']
+depth:15 var_num:10 simpified: x8|(x11&x12&(x1|(x4&(x5|(x9&(~x10|(x5&(x7|(x3&(x12|(x10&(x1|(x5&(x1|x4))))))))))))))
+['or', 'and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'x12', 'x2', 'x1', 'x2', 'x4', 'x8', 'x5', 'x11', 'x2', 'x12', 'x6', 'x5', 'x9', 'x2', 'x4']
+depth:13 var_num:9 simpified: x4|(x2&~x9&(~x5|(~x6&(~x12|(~x2&(~x11|(~x5&~x8&(~x4|(~x2&(~x1|(~x12&~x2)))))))))))
+['or', 'x1', 'x6']
+depth:1 var_num:2 simpified: x1|x6
+['or', 'x1', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x12', 'x7', 'x9', 'x10', 'x5', 'or', 'x5', 'x1', 'x11', 'x9', 'x5', 'x10', 'not', 'x4', 'x1', 'x2', 'x7', 'x2']
+depth:14 var_num:9 simpified: x1|x2|(x7&(x2|(x1&(~x4|(x10&(x5|(x9&(x11|((x1|x5)&(x5|(x10&(x9|(x12&x7)))))))))))))
+['or', 'not', 'x6', 'x3']
+depth:2 var_num:2 simpified: x3|~x6
+['and', 'x3', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'x4', 'x7', 'x2', 'x6', 'x4', 'x7', 'x2', 'x5', 'x12', 'x8', 'x7']
+depth:10 var_num:8 simpified: x3&(x7|(x8&(x12|(x5&(x2|x7|(x4&(x6|(x2&(x4|x7)))))))))
+['not', 'x8']
+depth:1 var_num:1 simpified: ~x8
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x8', 'x1', 'x7', 'x2', 'x12', 'x4', 'x11', 'x9', 'x2', 'x4', 'x2', 'x9']
+depth:12 var_num:9 simpified: x9&(x2|(x4&(x2|(x9&(x11|(x4&(x12|(x2&(x7|(x1&(x5|x8)))))))))))
+['and', 'or', 'x5', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'and', 'or', 'x3', 'x11', 'x4', 'not', 'x8', 'x4', 'x11', 'x1', 'x10', 'x11', 'x2', 'x9', 'x2', 'x1', 'x2']
+depth:14 var_num:9 simpified: x2&(x5|(x1&(x2|(x9&(x2|(x11&(x10|(x1&(x11|(x4&(~x8|(~x11&~x3))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x8', 'x9', 'x7', 'x2', 'x3', 'x4', 'x10', 'x7', 'x2', 'not', 'x10', 'x12', 'x5', 'x2', 'x12']
+depth:14 var_num:10 simpified: x12&(x2|(x5&(x12|(~x10&(x2|(x7&(x10|(x4&(x3|(x2&(x7|(x9&(x1|x8)))))))))))))
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'not', 'x10', 'x8', 'x11', 'x10', 'x4', 'x11', 'not', 'x5', 'x2', 'x11', 'x12', 'x2', 'x9']
+depth:12 var_num:8 simpified: x2|x9|(x12&(x11|(x2&(~x5|(x11&(x4|(x10&(x11|(x8&(~x10|x4))))))))))
+['or', 'x1', 'and', 'x5', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x8', 'x1', 'x12', 'x11', 'x9', 'x5', 'x1', 'x2', 'x1', 'x6', 'not', 'x2', 'not', 'x3']
+depth:15 var_num:10 simpified: x1|(x5&(x3|(x2&(~x6|(~x1&(~x2|(~x1&(~x5|(~x9&(~x11|(~x12&(~x1|(~x4&~x8)))))))))))))
+['or', 'x2', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x10', 'x9', 'x11', 'x9', 'x1', 'x7', 'x5', 'x1', 'x8', 'x4', 'x9', 'x1', 'x8', 'x9', 'x5', 'x2']
+depth:0 var_num:1 simpified: x2
+['and', 'x6', 'x2']
+depth:1 var_num:2 simpified: x2&x6
+['not', 'x1']
+depth:1 var_num:1 simpified: ~x1
+['not', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x5', 'x7', 'x8', 'x4', 'or', 'x12', 'x9', 'x10', 'x4', 'x11', 'x9', 'x11', 'x5', 'x2']
+depth:12 var_num:10 simpified: ~x2|~x5|(~x11&(~x9|(~x11&(~x4|(~x10&((~x12&~x9)|(~x4&(~x8|(~x7&(~x1|~x5))))))))))
+['not', 'x10']
+depth:1 var_num:1 simpified: ~x10
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'and', 'or', 'not', 'or', 'x12', 'x5', 'x6', 'x10', 'x9', 'x1', 'x5', 'x4', 'x6', 'x10', 'x3', 'x4']
+depth:12 var_num:8 simpified: x4&(x3|(x10&(x6|(x4&(x5|(x1&(x9|(x1&x10&(x6|(~x12&~x5))))))))))
+['or', 'and', 'x11', 'x3', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'or', 'not', 'x12', 'x4', 'x1', 'x12', 'x6', 'x1', 'x3', 'x1', 'x10', 'x8']
+depth:9 var_num:8 simpified: (x11&x3)|(x8&(x10|(x1&(x3|(x1&(x6|(x12&(x1|x4))))))))
+['and', 'x6', 'not', 'x10']
+depth:2 var_num:2 simpified: ~x10&x6
+['or', 'x10', 'x3']
+depth:1 var_num:2 simpified: x10|x3
+['not', 'x2']
+depth:1 var_num:1 simpified: ~x2
+['and', 'x5', 'x12']
+depth:1 var_num:2 simpified: x12&x5
+['or', 'x7', 'x1']
+depth:1 var_num:2 simpified: x1|x7
+['and', 'x5', 'and', 'or', 'x3', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x4', 'x1', 'or', 'and', 'x7', 'x1', 'x9', 'or', 'not', 'x10', 'x11', 'x2', 'x9', 'x9', 'x5', 'not', 'x4']
+depth:2 var_num:2 simpified: ~x4&x5
+['or', 'x7', 'or', 'and', 'x6', 'x10', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x3', 'x5', 'x4', 'x11', 'x5', 'x2', 'x10', 'x11', 'x12', 'x10']
+depth:10 var_num:9 simpified: ~x10|x6|x7|(~x12&(~x11|(~x10&(~x2|(~x5&(~x11|(~x4&(~x3|~x5))))))))
+['and', 'x5', 'and', 'x4', 'or', 'and', 'or', 'and', 'x4', 'or', 'and', 'or', 'and', 'x4', 'and', 'or', 'and', 'x8', 'x4', 'x8', 'x6', 'or', 'x7', 'x1', 'not', 'x4', 'x11', 'x10', 'x2', 'x10']
+depth:9 var_num:9 simpified: x4&x5&(x10|(x2&(x10|(x4&(x11|(~x4&(x1|x7|(x4&x6&x8))))))))
+['not', 'x2']
+depth:1 var_num:1 simpified: ~x2
+['not', 'not', 'and', 'x1', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'and', 'or', 'x4', 'x1', 'x9', 'x5', 'x2', 'x1', 'x7', 'x12', 'x1', 'x9', 'x1', 'x2', 'x7', 'x5', 'x1']
+depth:0 var_num:1 simpified: x1
+['or', 'x5', 'x12']
+depth:1 var_num:2 simpified: x12|x5
+['and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x5', 'x7', 'x12', 'x9', 'x10', 'x5', 'x1', 'x3', 'x2', 'x11', 'x5', 'x9', 'x7', 'x2']
+depth:13 var_num:9 simpified: x2&(x7|x9|(x5&(x11|(x2&(x3|(x1&(x5|(x10&(x9|(x12&(~x5|x7)))))))))))
+['and', 'x2', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x12', 'x5', 'x12', 'x10', 'x1', 'x12', 'x8', 'x9', 'x11', 'x2', 'x1', 'x2', 'x1', 'x12', 'x4']
+depth:14 var_num:8 simpified: x2&(~x4|(~x12&(~x1|(~x2&(~x1|(~x2&(~x11|(~x9&(~x8|(~x12&(~x1|(~x10&~x12))))))))))))
+['and', 'x5', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x10', 'x4', 'x10', 'x7', 'x1', 'x9', 'or', 'x5', 'x1', 'x2', 'x1', 'x2', 'x1', 'x9', 'x5', 'x8', 'x4']
+depth:13 var_num:8 simpified: ~x4&x5&(~x8|(~x5&(~x9|(~x1&(~x2|(~x1&(~x2|(~x1&~x5&(~x9|(~x1&(~x10|~x7)))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x9', 'x8', 'x1', 'not', 'or', 'and', 'or', 'and', 'x7', 'x6', 'x10', 'x4', 'x3', 'x5', 'x10', 'x7', 'x1', 'x12']
+depth:11 var_num:10 simpified: x12&(x1|(x7&(x10|(x5&((x1&(x8|(x1&x9)))|(~x3&(~x4|(~x10&(~x6|~x7)))))))))
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'and', 'or', 'and', 'or', 'x4', 'x12', 'or', 'x7', 'x3', 'x10', 'not', 'not', 'x5', 'x1', 'x6', 'x5', 'x4', 'x11', 'x5', 'x3', 'x12']
+depth:10 var_num:9 simpified: x12&x3&(x5|(x11&(x4|(x5&(x6|(x1&x5&(x10|((x12|x4)&(x3|x7)))))))))
+['not', 'x1']
+depth:1 var_num:1 simpified: ~x1
+['or', 'x5', 'x12']
+depth:1 var_num:2 simpified: x12|x5
+['and', 'x10', 'x2']
+depth:1 var_num:2 simpified: x10&x2
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'and', 'or', 'x12', 'x1', 'x8', 'x1', 'x7', 'x4', 'x6', 'x12', 'x2', 'or', 'x9', 'x10', 'x1', 'x2', 'x1', 'x12']
+depth:10 var_num:8 simpified: x12&(x1|(x2&(x1|((x10|x9)&(x2|(x12&(x6|(x4&(x1|x7)))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x1', 'x5', 'x8', 'x12', 'x5', 'x7', 'x5', 'x10', 'x7', 'x6', 'x12', 'x2', 'x3']
+depth:13 var_num:10 simpified: x3&(x2|(x12&(x6|(x7&(x10|(x5&(x7|(x5&(x12|(x8&(x5|(x1&x4))))))))))))
+['not', 'x5']
+depth:1 var_num:1 simpified: ~x5
+['and', 'x1', 'x2']
+depth:1 var_num:2 simpified: x1&x2
+['not', 'not', 'x8']
+depth:0 var_num:1 simpified: x8
+['or', 'and', 'x11', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x2', 'x8', 'x1', 'and', 'or', 'and', 'x10', 'x4', 'x3', 'x7', 'x3', 'x7', 'x2', 'x9', 'x10', 'x5', 'x4']
+depth:13 var_num:10 simpified: x4|(x11&(~x5|(~x10&(~x9|(~x2&(~x7|(~x3&(~x7|(~x1&(~x8|(~x2&~x7)))|(~x3&(~x10|~x4))))))))))
+['or', 'x1', 'x9']
+depth:1 var_num:2 simpified: x1|x9
+['or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x4', 'x7', 'x2', 'not', 'x12', 'x1', 'x2', 'x4', 'x5', 'x8', 'x7', 'x2']
+depth:10 var_num:7 simpified: x2|(x7&(x5|x8|(x4&(x2|(x1&(~x12|(x2&(x7|(x4&x5)))))))))
+['and', 'x6', 'x1']
+depth:1 var_num:2 simpified: x1&x6
+['or', 'x6', 'x10']
+depth:1 var_num:2 simpified: x10|x6
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'and', 'or', 'x5', 'not', 'x6', 'x4', 'x10', 'x4', 'x7', 'x12', 'x1', 'x12', 'not', 'x12', 'x6', 'x4', 'x11', 'x2', 'x3']
+depth:14 var_num:10 simpified: x3&(x2|(x11&(x4|(x6&(~x12|(x1|(x12&(x7|(x4&(x10|(x4&(x5|~x6))))))))))))
+['and', 'x4', 'x6']
+depth:1 var_num:2 simpified: x4&x6
+['or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x7', 'x9', 'x4', 'x10', 'x11', 'x5', 'x4', 'x12', 'x5', 'not', 'x10', 'x2', 'x1', 'x2', 'x7', 'x1', 'x9']
+depth:14 var_num:9 simpified: x9|(x1&(x2|x7|(x1&(x2|(~x10&(x5|(x12&(x4|(x5&(x11|(x10&(x4|(x7&x9)))))))))))))
+['not', 'x12']
+depth:1 var_num:1 simpified: ~x12
+['and', 'or', 'or', 'and', 'or', 'x3', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x3', 'x1', 'x2', 'x7', 'x5', 'x4', 'x5', 'x6', 'x12', 'x4', 'x11']
+depth:8 var_num:9 simpified: x11&(x12|x4|(x6&(x3|x5|(x4&(x5|(x7&(x1|x2)))))))
+['and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'x9', 'x8', 'x4', 'not', 'x9', 'x10', 'x9', 'x4', 'x10', 'x9', 'x5', 'x12', 'x3', 'x5', 'x2', 'x10']
+depth:14 var_num:8 simpified: x10&(~x2|(~x5&(~x3|(~x12&(~x5|(~x9&(~x10|(~x4&(~x9|(~x10&(~x9|(x4&(x8|x9)))))))))))))
+['and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x4', 'x7', 'x2', 'or', 'x1', 'x7', 'x2', 'x1', 'x10', 'x6', 'x3', 'x4']
+depth:10 var_num:7 simpified: x4&(~x3|(~x6&(~x10|(~x1&(~x2|(~x1&~x7&(~x2|(~x4&~x7))))))))
+['or', 'x1', 'x4']
+depth:1 var_num:2 simpified: x1|x4
+['and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x3', 'x7', 'x12', 'not', 'x6', 'x9', 'x5', 'x8', 'x12', 'x11', 'x10', 'x9', 'x10', 'x1']
+depth:2 var_num:3 simpified: x1&(x10|x9)
+['and', 'or', 'x5', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x6', 'x1', 'x4', 'x2', 'x11', 'x1', 'x8', 'x1', 'x11', 'x10', 'x2', 'x9', 'x5', 'x1']
+depth:0 var_num:1 simpified: x1
+['or', 'x11', 'or', 'x3', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x7', 'x2', 'x8', 'x6', 'x2', 'x7', 'x5', 'x2', 'x5', 'x4', 'x3', 'x5', 'x3']
+depth:13 var_num:9 simpified: x11|x3|(x5&(x3|(x4&(x5|(x2&(x5|(x7&(x2|(x6&(x8|(x2&(x1|x7))))))))))))
+['or', 'x8', 'x4']
+depth:1 var_num:2 simpified: x4|x8
+['and', 'x12', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x11', 'x2', 'x10', 'x9', 'x8', 'x1', 'x5', 'x8', 'x6', 'x12', 'x3', 'x10', 'not', 'x7', 'x6', 'x11']
+depth:16 var_num:11 simpified: ~x11&x12&(~x6|(x7&(~x10|(~x3&(~x12|(~x6&(~x8|(~x5&(~x1|(~x8&(~x9|(~x10&(~x2|(~x11&~x9))))))))))))))
+['and', 'x9', 'x10']
+depth:1 var_num:2 simpified: x10&x9
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x3', 'x7', 'x12', 'x4', 'x12', 'x11', 'x1', 'x2', 'x1', 'x7', 'x3', 'x1', 'x5', 'x5', 'x4']
+depth:1 var_num:2 simpified: x4|x5
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x1', 'x5', 'x3', 'x1', 'x7', 'x12', 'x3', 'x11', 'x9', 'x4', 'x3']
+depth:12 var_num:9 simpified: ~x3&(~x4|(~x9&(~x11|(~x3&(~x12|(~x7&(~x1|(~x3&(~x5|(~x1&~x2))))))))))
+['and', 'x4', 'and', 'or', 'x3', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x12', 'not', 'x8', 'x12', 'x9', 'x1', 'x5', 'x2', 'x1', 'x8', 'x7', 'x10', 'x4', 'x7']
+depth:1 var_num:2 simpified: x4&x7
+['not', 'or', 'x1', 'or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'or', 'x9', 'or', 'x9', 'x1', 'x12', 'x11', 'x1', 'x8', 'x6', 'x12', 'or', 'x4', 'x7', 'x12']
+depth:2 var_num:2 simpified: ~x1&~x12
+['and', 'x8', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'or', 'and', 'x10', 'x4', 'x5', 'x7', 'x2', 'x10', 'x1', 'x12', 'x5', 'x2', 'not', 'x2', 'x9', 'x1']
+depth:12 var_num:9 simpified: x8&(x1|(x9&(~x2|(x5|(x12&(x1|(x10&(x2|(x7&(x1|x5|(x10&x4)))))))))))
+['and', 'or', 'x1', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x10', 'x5', 'x2', 'x10', 'x6', 'x5', 'x1', 'x2', 'x4']
+depth:2 var_num:3 simpified: x4&(x1|x2)
+['or', 'not', 'or', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x3', 'x7', 'x3', 'x9', 'x1', 'x8', 'x1', 'x11', 'x4', 'x11', 'x5', 'x8']
+depth:14 var_num:8 simpified: x8|(~x4&(~x5|(~x11&(~x4|(~x11&(~x1|(~x8&(~x1|(~x9&(~x3|(~x7&(~x1|~x3))))))))))))
+['and', 'or', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x9', 'x5', 'x4', 'x7', 'x4', 'x5', 'x7', 'x12', 'x3', 'x7', 'x10', 'x12', 'x11', 'x1']
+depth:12 var_num:9 simpified: x1&(x11|x12|(x10&(x3|x7|(x12&(x7|(x5&(x4|(x7&(x4|(x5&~x9))))))))))
+['or', 'x11', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x8', 'x2', 'x4', 'x11', 'x12', 'x1', 'x3', 'x5', 'x1', 'x12', 'x2', 'not', 'x4', 'x11']
+depth:13 var_num:9 simpified: x11|(~x4&(x2|(x12&(x1|(x5&(x3|(x1&(x12|(x11&(x4|(x2&(x7|x8))))))))))))
+['and', 'x2', 'x8']
+depth:1 var_num:2 simpified: x2&x8
+['and', 'or', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'or', 'and', 'x5', 'or', 'and', 'x1', 'x2', 'x4', 'x3', 'x12', 'x9', 'not', 'x4', 'x1', 'x7', 'x12', 'x5', 'not', 'x1', 'x2']
+depth:15 var_num:8 simpified: x2&(x4|(~x1&(x5|(x12&(x7|(x1&(~x4|(x9&(x12|(x1&(x3|(x5&(x4|(x1&x2))))))))))))))
+['and', 'x4', 'not', 'x3']
+depth:2 var_num:2 simpified: ~x3&x4
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x12', 'x1', 'x4', 'not', 'x4', 'x1', 'x9', 'x8', 'x4', 'x1', 'x4', 'x7']
+depth:8 var_num:6 simpified: x4&x7&(x1|(x4&(x8|(x9&(x1|(~x4&(x1&x12)))))))
+['or', 'x12', 'or', 'x9', 'x11']
+depth:1 var_num:3 simpified: x11|x12|x9
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x12', 'x1', 'and', 'or', 'and', 'or', 'and', 'x9', 'x12', 'x11', 'x8', 'x4', 'x10', 'x8', 'x7', 'x2', 'x7', 'x2', 'x1']
+depth:12 var_num:10 simpified: x1|(x2&(x7|(x2&(x7|(x8&((x1&(x12|x5))|(x10&(x4|(x8&(x11|(x12&x9)))))))))))
+['not', 'x11']
+depth:1 var_num:1 simpified: ~x11
+['not', 'x5']
+depth:1 var_num:1 simpified: ~x5
+['and', 'x12', 'or', 'x6', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x1', 'x7', 'x4', 'x11', 'x2', 'x6', 'x7', 'x2', 'x8', 'x9', 'x3']
+depth:12 var_num:10 simpified: x12&(x3|x6|(x9&(x8|(x2&(x7|(x6&(x2|(x11&(x4|(x7&(x1|x4)))))))))))
+['or', 'not', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'or', 'x2', 'x12', 'x5', 'x1', 'x4', 'x10', 'x12', 'not', 'x9', 'x1', 'x7', 'x4', 'x10', 'x12']
+depth:11 var_num:8 simpified: x10|x12|(x4&(x7|(x1&(~x9|(x12&(x10|(x4&(x1|(x5&(x1|x12|x2))))))))))
+['and', 'and', 'x11', 'not', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'not', 'x9', 'x1', 'x12', 'x5', 'x1', 'x8', 'x1', 'x5', 'x7', 'x10', 'x5', 'not', 'x12', 'x5']
+depth:0 var_num:0 simpified: 0
+['not', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'x7', 'x3', 'x11', 'x9', 'x5', 'x4', 'x11', 'x9', 'x8', 'x1', 'x10', 'x5', 'x10', 'x3', 'x5']
+depth:14 var_num:9 simpified: x5|(x3&(x10|(x5&(x10|(x1&(x8|(x9&(x11|~x4|(~x5&(~x9|(~x11&(~x3|~x7))))))))))))
+['and', 'and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x12', 'x1', 'x2', 'not', 'x4', 'x11', 'x9', 'x4', 'x9', 'x4', 'x8', 'x1', 'x5']
+depth:11 var_num:8 simpified: x1&x5&~x8&(~x4|(~x9&(~x4|(~x9&(~x11|(x4&(~x2|(~x1&(~x12|~x9)))))))))
+['and', 'or', 'x1', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x1', 'x5', 'x8', 'x9', 'x1', 'x11', 'x1', 'x5', 'x1', 'x3', 'x1', 'x3', 'x5', 'x3']
+depth:13 var_num:6 simpified: x3&(x1|x5|(x3&(x1|(x3&(x1|(x5&(x1|(x11&(x1|(x9&(x8|(x1&x5))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'or', 'x2', 'x4', 'x4', 'x11', 'x4', 'x1', 'x7', 'x2', 'x4', 'x5', 'x8', 'x9', 'x5']
+depth:8 var_num:7 simpified: x5&(x9|(x8&(x5|(x4&(x2|(x7&(x1|x4)))))))
+['and', 'x3', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x5', 'not', 'x2', 'x10', 'x12', 'x4', 'x6', 'x1', 'x7', 'x2', 'x9']
+depth:12 var_num:10 simpified: x3&(~x9|(~x2&(~x7|(~x1&(~x6|(~x4&(~x12|(~x10&(x2|(~x5&~x9))))))))))
+['and', 'x9', 'x8']
+depth:1 var_num:2 simpified: x8&x9
+['not', 'x1']
+depth:1 var_num:1 simpified: ~x1
+['or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x4', 'x9', 'x7', 'x8', 'x5', 'x8', 'x4', 'x11', 'x8', 'not', 'x2', 'x10', 'x5', 'x2']
+depth:13 var_num:8 simpified: x2|~x5|(~x10&(x2|(~x8&(~x11|(~x4&(~x8|(~x5&(~x8|(~x7&(~x9|(~x4&~x5)))))))))))
+['or', 'x1', 'x10']
+depth:1 var_num:2 simpified: x1|x10
+['or', 'x7', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'or', 'and', 'or', 'x5', 'or', 'x5', 'not', 'x9', 'not', 'x3', 'x7', 'x9', 'x5', 'x12', 'x1', 'x5', 'x1', 'x10', 'x3', 'x5']
+depth:13 var_num:7 simpified: x7|(x5&(x3|(x10&(x1|(x5&(x1|(x12&(x5|(~x7&x9&(x3|(~x5&x9)))))))))))
+['or', 'x7', 'or', 'x10', 'x3']
+depth:1 var_num:3 simpified: x10|x3|x7
+['or', 'not', 'x10', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x12', 'x3', 'and', 'or', 'and', 'or', 'x1', 'x7', 'x2', 'x11', 'x1', 'x4', 'x9', 'x1', 'x6', 'x12', 'x3', 'not', 'x3']
+depth:12 var_num:10 simpified: ~x10|x3|(~x12|(~x6&(~x1|(~x9&(~x4|((~x1|(~x11&(~x2|(~x1&~x7))))&(~x3|(~x12&(~x1|~x2)))))))))
+['not', 'x6']
+depth:1 var_num:1 simpified: ~x6
+['or', 'x8', 'x8']
+depth:0 var_num:1 simpified: x8
+['and', 'x4', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x7', 'x2', 'not', 'x1', 'x3', 'x7', 'x9', 'x2', 'x6', 'x3', 'x12', 'x3', 'x5']
+depth:13 var_num:9 simpified: x4&(x5|(x3&(x12|(x3&(x6|(x2&(x9|(x7&(x3|(~x1&(x2|(x4&x7))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x6', 'x12', 'x9', 'x10', 'x11', 'x4', 'x10', 'x5', 'x4', 'x8', 'x1', 'x8', 'x5', 'not', 'x4']
+depth:14 var_num:10 simpified: ~x4&(x5|(x8&(x1|(x8&(x4|(x5&(x10|(x4&(x11|(x10&(x9|(x12&(x2|x6)))))))))))))
+['and', 'x9', 'x2']
+depth:1 var_num:2 simpified: x2&x9
+['and', 'x10', 'or', 'x6', 'x5']
+depth:2 var_num:3 simpified: x10&(x5|x6)
+['and', 'x6', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'x10', 'x4', 'x5', 'x4', 'x9', 'x8', 'x6', 'x4', 'x1', 'x2', 'x9']
+depth:8 var_num:8 simpified: x2&x6&x9&(x1|(x4&(x6|(x8&(x4|x9|(x5&(x10|x4)))))))
+['or', 'x4', 'not', 'x2']
+depth:2 var_num:2 simpified: ~x2|x4
+['and', 'x11', 'not', 'x4']
+depth:2 var_num:2 simpified: x11&~x4
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'not', 'x10', 'x9', 'x12', 'x5', 'x11', 'x4', 'x2', 'x1', 'x2', 'x3', 'x7', 'x5', 'x3', 'x8', 'x2']
+depth:16 var_num:11 simpified: x2|(x8&(x3|(x5&(x7|(x3&(x2|(x1&(x2|(x4&(x11|(x5&(x12|(x9&(~x10|x5))))))))))))))
+['not', 'x6']
+depth:1 var_num:1 simpified: ~x6
+['or', 'or', 'and', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x4', 'x10', 'x4', 'x5', 'x1', 'x10', 'x7', 'x3', 'x7', 'x2', 'x7', 'x2', 'x1']
+depth:12 var_num:7 simpified: x1|x2|(x4&x7&(x2|(x7&(x3|(x7&(x10|(x1&(x5|(x4&(x10|(x1&x4)))))))))))
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x4', 'x5', 'x10', 'x11', 'x7', 'x4', 'x9', 'x1', 'x12', 'x4', 'x1', 'x10']
+depth:10 var_num:8 simpified: x10|(x1&(x4|(x12&(x1|(x9&(x4|(x7&(x11|(x10&x5)))))))))
+['not', 'x4']
+depth:1 var_num:1 simpified: ~x4
+['and', 'x10', 'x9']
+depth:1 var_num:2 simpified: x10&x9
+['and', 'x4', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'x12', 'x1', 'x11', 'x5', 'x12', 'x8', 'x9', 'x1', 'x5', 'x1', 'x7', 'x9', 'x10', 'x4', 'x5', 'x3']
+depth:15 var_num:10 simpified: x4&(x3|(x5&(x4|(x10&(x9|(x7&(x1|(x5&(x1|x9|(x8&(x12|(x5&(x11|(x1&x12))))))))))))))
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x4', 'x2', 'not', 'x8', 'not', 'x1', 'x3', 'x11', 'x10', 'x7', 'x4', 'x8', 'x5', 'x9', 'x2', 'x6', 'x9', 'x1']
+depth:15 var_num:11 simpified: x1|x9|(x6&(x2|(x9&(x5|(x8&(x4|(x7&(x10|(x11&(x3|(~x1&(~x8|(x2&(x4|x5))))))))))))))
+['and', 'or', 'and', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x4', 'or', 'x7', 'x8', 'x2', 'x7', 'not', 'x12', 'x1', 'x6', 'x7', 'x2', 'x8', 'x5']
+depth:9 var_num:9 simpified: x5&(x8|(x2&x7&(x1|x6|(~x12&(x7|(x2&(x7|x8|(x4&x9))))))))
+['and', 'x6', 'or', 'x3', 'x5']
+depth:2 var_num:3 simpified: x6&(x3|x5)
+['or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x10', 'x5', 'not', 'x1', 'x2', 'x7', 'x3', 'x1', 'x6', 'x10', 'x4', 'x7', 'not', 'x11']
+depth:11 var_num:9 simpified: ~x11|(x7&(x4|(x10&(x1|x6|(x3&(x7|(x2&(~x1|(~x10&x5)))))))))
+['or', 'x1', 'x11']
+depth:1 var_num:2 simpified: x1|x11
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'x2', 'x11', 'x12', 'x7', 'x6', 'x12', 'x1', 'x11', 'x9', 'x12', 'not', 'x4', 'x5', 'x1', 'x2']
+depth:14 var_num:9 simpified: x2|(x1&(x5|(~x4&(x12|(x9&(x11|(x1&(x12|(~x6&(~x7|(~x12&(~x11|~x2))))))))))))
+['or', 'and', 'x8', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x3', 'x4', 'x5', 'x9', 'x10', 'x3', 'x9', 'x12', 'x7', 'x2', 'x7', 'x6']
+depth:2 var_num:3 simpified: x6|(x7&x8)
+['and', 'not', 'or', 'x4', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x10', 'x3', 'x7', 'x5', 'x9', 'x12', 'x3', 'x2', 'x1', 'x12', 'x3', 'x11', 'x2', 'x1']
+depth:14 var_num:10 simpified: x1&~x2&~x4&(~x11|(~x3&(~x12|(~x1&(~x2|(~x3&(~x12|(~x9&(~x5|(~x7&(~x3|(~x10&~x7))))))))))))
+['or', 'and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x4', 'x2', 'x10', 'x7', 'x1', 'x4', 'x3', 'x2', 'not', 'x9', 'x10', 'x1', 'x12', 'x9']
+depth:13 var_num:8 simpified: x9|(~x1&x12&(~x10|(x9&(~x2|(~x3&(~x4|(~x1&(~x7|(~x10&(~x2|(~x3&~x4)))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x12', 'x6', 'x12', 'x1', 'x4', 'x11', 'x2', 'x10', 'x8', 'x4', 'x5']
+depth:8 var_num:8 simpified: x5&(x4|(x8&(x10|(x2&(x11|(x4&(x1|x12)))))))
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x1', 'x12', 'x10', 'x4', 'x5', 'x6', 'x10', 'x9', 'x1', 'x2', 'x12', 'not', 'x5', 'x6', 'x1']
+depth:13 var_num:9 simpified: x1|x6|(~x5&(x12|(x2&(x1|(x9&(x10|(x6&(x5|(x4&(x10|(x12&(x1|x7))))))))))))
+['and', 'x6', 'not', 'x9']
+depth:2 var_num:2 simpified: x6&~x9
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x9', 'and', 'x4', 'x1', 'x8', 'x10', 'x4', 'x12', 'x1', 'x11', 'x10', 'x8', 'or', 'and', 'x2', 'x1', 'x11']
+depth:10 var_num:9 simpified: x8&(x10|(x11&(x1|(x12&(x4|(x10&(x8|(x1&x4&(x3|x9)))))))))&(x11|(x1&x2))
+['not', 'not', 'x5']
+depth:0 var_num:1 simpified: x5
+['or', 'x5', 'x11']
+depth:1 var_num:2 simpified: x11|x5
+['not', 'x5']
+depth:1 var_num:1 simpified: ~x5
+['and', 'x2', 'x8']
+depth:1 var_num:2 simpified: x2&x8
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x1', 'x10', 'x2', 'x1', 'x7', 'x5', 'x1', 'x5', 'x1', 'x7', 'x5', 'x1', 'x7', 'x1', 'x7']
+depth:15 var_num:6 simpified: x7&(x1|(x7&(x1|(x5&(x7|(x1&(x5|(x1&(x5|(x7&(x1|(x2&(x10|(x1&x4))))))))))))))
+['or', 'or', 'x5', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x10', 'x12', 'x1', 'x6', 'x4', 'x8', 'x10', 'x12', 'not', 'x6', 'x7', 'x5', 'x11', 'x5']
+depth:11 var_num:9 simpified: ~x11|x5|(~x7|(x6&(~x12|(~x10&(~x8|(~x4&(~x6|(~x1&(~x10|~x12)))))))))
+['and', 'x8', 'x5']
+depth:1 var_num:2 simpified: x5&x8
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x12', 'x1', 'or', 'x9', 'x1', 'x5', 'x7', 'x4', 'x11', 'x9', 'x1', 'x11', 'x2', 'x4']
+depth:9 var_num:7 simpified: x2|x4|(x11&(x1|(x9&(x11|(x4&(x7|(x5&(x1|x9))))))))
+['and', 'x4', 'x6']
+depth:1 var_num:2 simpified: x4&x6
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x1', 'x5', 'x7', 'x10', 'x9', 'x1', 'not', 'x7', 'x1', 'x10', 'x4', 'x9', 'x1', 'x12', 'x1']
+depth:14 var_num:7 simpified: x1&(x12|(x1&(x9|(x4&(x10|(x1&(~x7|(x1&(x9|(x10&(x7|(x5&(x1|x4)))))))))))))
+['and', 'x3', 'x3']
+depth:0 var_num:1 simpified: x3
+['and', 'x3', 'x4']
+depth:1 var_num:2 simpified: x3&x4
+['and', 'x1', 'and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x11', 'x4', 'x7', 'x2', 'x7', 'x2', 'or', 'x7', 'not', 'x10', 'x4', 'x1', 'x2', 'x3']
+depth:8 var_num:6 simpified: x1&~x2&x3&(~x4&((x10&~x7)|(~x2&(~x7|(~x2&(~x4|~x7))))))
+['not', 'not', 'x5']
+depth:0 var_num:1 simpified: x5
+['or', 'x1', 'x12']
+depth:1 var_num:2 simpified: x1|x12
+['or', 'x4', 'x6']
+depth:1 var_num:2 simpified: x4|x6
+['or', 'x7', 'x9']
+depth:1 var_num:2 simpified: x7|x9
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x3', 'x1', 'x2', 'x6', 'x1', 'x12', 'x7', 'x4', 'x11', 'x1', 'x12', 'x11']
+depth:10 var_num:8 simpified: x11|x12|(x1&(x11|(x4&(x7|(x12&(x1|(x6&(x2|(x1&x3)))))))))
+['and', 'not', 'x12', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x1', 'x12', 'x6', 'x7', 'x3', 'x4', 'x1', 'x10', 'x7', 'x6']
+depth:11 var_num:8 simpified: ~x12&(x6|(x7&(x10|(x1&(x4|(x3&(x7|(x6&(x12|(x1&x9))))))))))
+['or', 'and', 'or', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'x1', 'x5', 'x2', 'x4', 'x7', 'x6', 'x1', 'x12', 'x1', 'x8', 'x11', 'x4', 'x7']
+depth:10 var_num:9 simpified: x7|(x4&(x11|(x8&(x1|~x12|(~x6|(~x4&~x7&(~x2|(~x1&~x5))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x3', 'or', 'not', 'x1', 'x2', 'x5', 'x1', 'x5', 'x2', 'x8', 'x12', 'x5', 'x4', 'x7']
+depth:11 var_num:8 simpified: x7&(x4|(x5&(x12|(x8&(x2|(x5&(x1|(x5&(~x1|x2|x3)))))))))
+['or', 'x2', 'x1']
+depth:1 var_num:2 simpified: x1|x2
+['or', 'and', 'not', 'x8', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x11', 'x12', 'or', 'and', 'x4', 'x5', 'and', 'x12', 'x3', 'x11', 'x3', 'x5', 'x2', 'x5', 'x6', 'x1', 'x7']
+depth:11 var_num:10 simpified: x7|(x1&~x8&(x6|(x5&(x2|(x5&(x3|(x11&((x12&x3)|(x12&(x11|x4))|(x4&x5)))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x5', 'x11', 'x2', 'x7', 'x8', 'x1', 'x7', 'x2', 'x1', 'x7', 'x5', 'x2', 'x9', 'x10', 'x9']
+depth:15 var_num:9 simpified: x9&(x10|(x9&(x2|(x5&(x7|(x1&(x2|(x7&(x1|(x8&(x7|(x2&(x11|(x4&x5))))))))))))))
+['or', 'not', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x3', 'x11', 'and', 'x4', 'x5', 'not', 'x4', 'x3', 'x7', 'x1', 'x7', 'x10', 'x9', 'x10', 'x9', 'x6']
+depth:3 var_num:3 simpified: x6|(~x10&~x9)
+['or', 'x11', 'x12']
+depth:1 var_num:2 simpified: x11|x12
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x5', 'or', 'and', 'or', 'and', 'x5', 'x2', 'x5', 'x7', 'not', 'x4', 'x4', 'x7', 'x5', 'x12', 'x4', 'x10', 'x12']
+depth:9 var_num:6 simpified: x12&(x10|(x4&(x12|(x5&(x7|(x4&((x1&x5)|(x5&x7))))))))
+['not', 'x1']
+depth:1 var_num:1 simpified: ~x1
+['or', 'x6', 'x1']
+depth:1 var_num:2 simpified: x1|x6
+['or', 'x2', 'x10']
+depth:1 var_num:2 simpified: x10|x2
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x4', 'x5', 'x7', 'x2', 'x10', 'x5', 'x10', 'x8', 'x1', 'x2', 'x4', 'x5', 'x8', 'not', 'x1']
+depth:14 var_num:7 simpified: ~x1|(x8&(x5|(x4&(x2|(x1&(x8|(x10&(x5|(x10&(x2|(x7&(x5|(x1&x4)))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x8', 'x4', 'x10', 'x9', 'x1', 'x7', 'x6', 'x12', 'x9', 'x4', 'x1', 'x4']
+depth:13 var_num:9 simpified: x4&(x1|(x4&(x9|(x12&(x6|(x7&(x1|(x9&(x10|(x4&(x8|(x1&x2))))))))))))
+['and', 'x3', 'x7']
+depth:1 var_num:2 simpified: x3&x7
+['not', 'or', 'x1', 'and', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'x4', 'x10', 'x3', 'x4', 'or', 'and', 'or', 'x2', 'x4', 'x12', 'x9', 'x10', 'x7', 'x5', 'not', 'x4', 'x9', 'x5']
+depth:11 var_num:9 simpified: ~x1&(~x5|(~x9&(x4|(~x5&(~x7|(~x10&~x9&(~x12|(~x2&~x4))&(~x4|(~x3&(~x10|~x4)))))))))
+['not', 'or', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x10', 'x2', 'x7', 'x2', 'or', 'x7', 'x2', 'x1', 'x11', 'x2', 'x1', 'x12', 'x1', 'x9', 'x5', 'x8', 'x1']
+depth:16 var_num:10 simpified: ~x4&(~x1|(~x8&(~x5|(~x9&(~x1|(~x12&(~x1|(~x2&(~x11|(~x1&((~x2&~x7)|(~x2&(~x7|(~x10&~x2))))))))))))))
+['or', 'x6', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x10', 'x5', 'x3', 'x5', 'x4', 'not', 'x4', 'x8', 'x11', 'x3', 'x4', 'x11', 'x5']
+depth:12 var_num:7 simpified: x6|(x5&(x11|(x4&(x3|(x11&(x8|(~x4&(x5&(x3|(x5&(x10|x4)))))))))))
+['or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x7', 'x4', 'x7', 'x5', 'x11', 'x9', 'x1', 'x12', 'x3', 'x9', 'x1', 'x8', 'x5', 'x1', 'x5']
+depth:12 var_num:9 simpified: ~x1|x5|(~x8|(~x1&(~x9|(~x3&(~x12|(~x1&(~x9|(~x11&(~x5|(~x4&~x7))))))))))
+['and', 'x10', 'x1']
+depth:1 var_num:2 simpified: x1&x10
+['or', 'x10', 'x6']
+depth:1 var_num:2 simpified: x10|x6
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x2', 'not', 'x5', 'x5', 'x1', 'x12', 'not', 'or', 'and', 'or', 'x7', 'x5', 'x12', 'x8', 'x11', 'x5', 'x1', 'x7', 'x3', 'x5']
+depth:10 var_num:8 simpified: x3|x5|(x7&(x1|(x5&(x11|(~x8&(x12|(x1&(x5|(x2|x7))))&(~x12|(~x5&~x7)))))))
+['and', 'x12', 'x12']
+depth:0 var_num:1 simpified: x12
+['not', 'x11']
+depth:1 var_num:1 simpified: ~x11
+['and', 'x8', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x4', 'x2', 'x7', 'x5', 'x11', 'x7', 'x9', 'x12', 'x1', 'x12', 'x10', 'x6', 'x1', 'x8']
+depth:12 var_num:10 simpified: x8&(x1|(x6&(x10|(x12&(x1|(x12&(x9|(x7&(x11|(x5&(x2|x7)))))))))))
+['and', 'and', 'or', 'x3', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'and', 'x12', 'not', 'x8', 'x1', 'x5', 'x4', 'x4', 'x10', 'x1', 'x9', 'x7', 'x4', 'x8', 'x7', 'x1']
+depth:8 var_num:7 simpified: x1&x7&(x3|(x8&(x4|(x7&(x9|(x1&(x10|x4)))))))
+['or', 'and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x1', 'x4', 'x10', 'x8', 'x12', 'x7', 'x5', 'x7', 'x2', 'x11', 'x2', 'x7', 'x3']
+depth:13 var_num:11 simpified: x3|(~x2&x7&(~x11|(~x2&(~x7|(~x5&(~x7|(~x12&(~x8|(~x10&(~x4|(~x1&~x9)))))))))))
+['or', 'x12', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'and', 'or', 'x9', 'or', 'and', 'x9', 'x7', 'x1', 'x4', 'x9', 'x5', 'x9', 'x1', 'x12', 'x7', 'x2', 'x3', 'x7']
+depth:13 var_num:8 simpified: x12|(x7&(x3|(x2&(x7|(x12&(x1|(x9&(x5|(x9&(~x4|(~x1&~x9)))))))))))
+['not', 'x12']
+depth:1 var_num:1 simpified: ~x12
+['or', 'x8', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x4', 'x2', 'x11', 'x9', 'x1', 'x6', 'x1', 'x3', 'x5', 'not', 'x10', 'x5']
+depth:10 var_num:10 simpified: x10|x5|x8|(~x3|(~x1&(~x6|(~x1&(~x9|(~x11&(~x2|(~x4&~x9))))))))
+['not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x7', 'x2', 'x1', 'x2', 'x12', 'x3', 'x4', 'x1', 'x4', 'x6', 'x11']
+depth:12 var_num:8 simpified: ~x11|(~x6&(~x4|(~x1&(~x4|(~x3&(~x12|(~x2&(~x1|(~x2&(~x4|~x7))))))))))
+['and', 'x8', 'not', 'x5']
+depth:2 var_num:2 simpified: ~x5&x8
+['not', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x5', 'x1', 'x2', 'x3', 'x5', 'x2', 'x12', 'x2', 'x1', 'x12', 'x10', 'x1', 'x3']
+depth:13 var_num:7 simpified: x3&(x1|(x10&(x12|(x1&(x2|(x12&(x2|(x5&(x3|(x2&(x1|(x5&x9))))))))))))
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'or', 'and', 'or', 'and', 'or', 'x12', 'x10', 'not', 'x1', 'x5', 'x1', 'x5', 'x4', 'x7', 'x12', 'x11', 'x12', 'x9', 'x2', 'x6']
+depth:12 var_num:10 simpified: x2&x6&(x9|(x12&(x11|(x12&(x7|(~x4&~x5&(~x1|(~x5&(x1|(~x10&~x12))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x3', 'x5', 'x4', 'and', 'x9', 'x5', 'x10', 'x4', 'x5', 'x12', 'x1', 'x8', 'x1', 'not', 'x10']
+depth:11 var_num:8 simpified: ~x10&(x1|(x8&(x1|(x12&(x5|(x4&(x10|(x5&x9&(x4|(x3&x5))))))))))
+['or', 'x11', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x7', 'x1', 'x5', 'x10', 'x4', 'x11', 'x8', 'x4', 'x5', 'x6', 'x10']
+depth:12 var_num:9 simpified: x11|(x10&(x6|(x5&(x4|(x8&(x11|(x4&(x10|(x5&(x1|(x7&x9)))))))))))
+['not', 'and', 'x10', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'and', 'x1', 'x8', 'x7', 'x2', 'x4', 'or', 'and', 'x1', 'x2', 'x10', 'x11', 'not', 'x5', 'x8', 'x1', 'x12']
+depth:12 var_num:9 simpified: ~x10|(~x12&(~x1|(~x8&(x5|(~x11&((~x10&(~x1|~x2))|(~x4&(~x2|(~x7&(~x1|~x8))))))))))
+['not', 'x12']
+depth:1 var_num:1 simpified: ~x12
+['and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x12', 'x7', 'x10', 'x12', 'x3', 'x7', 'x9', 'x7', 'x4', 'x11', 'x3']
+depth:12 var_num:8 simpified: x3&(~x11|(~x4&(~x7|(~x9&(~x7|(~x3&(~x12|(~x10&(~x7|(~x1&~x12))))))))))
+['not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x1', 'x7', 'x5', 'x11', 'x9', 'x1', 'x7', 'x3', 'not', 'x2', 'x1', 'x5', 'x9', 'x10', 'x12']
+depth:15 var_num:9 simpified: ~x12|(~x10&(~x9|(~x5&(~x1|(x2&(~x3|(~x7&(~x1|(~x9&(~x11|(~x5&(~x7|(~x1&~x9)))))))))))))
+['or', 'x7', 'x8']
+depth:1 var_num:2 simpified: x7|x8
+['and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x7', 'x5', 'x7', 'x2', 'x5', 'x7', 'x2', 'x1', 'x11', 'x10', 'x7', 'not', 'x4', 'x11']
+depth:14 var_num:7 simpified: x11&(x4|(~x7&(~x10|(~x11&(~x1|(~x2&(~x7|(~x5&(~x2|(~x7&(~x5|(~x2&~x7))))))))))))
+['not', 'x11']
+depth:1 var_num:1 simpified: ~x11
+['or', 'x1', 'x6']
+depth:1 var_num:2 simpified: x1|x6
+['not', 'not', 'and', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x10', 'x7', 'x9', 'x1', 'x2', 'x11', 'x2', 'x12', 'x1', 'x5', 'x2', 'x4', 'x7', 'x9', 'x6', 'x2']
+depth:13 var_num:10 simpified: x2&x6&(x7|x9|(x4&(x2|(x5&(x1|(x12&(x2|(x11&(x2|(x1&(x9|(x10&x7))))))))))))
+['and', 'or', 'and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x2', 'or', 'and', 'or', 'x4', 'x11', 'x5', 'x8', 'x4', 'x6', 'x9', 'x8', 'x6', 'x12', 'x5', 'x2', 'x7']
+depth:14 var_num:9 simpified: x7&(x2|(x5&(~x12|(~x6&(~x8|(~x9&(~x6|(~x4&((~x2&~x4)|(~x8&(~x5|(~x11&~x4))))))))))))
+['not', 'x11']
+depth:1 var_num:1 simpified: ~x11
+['and', 'x9', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x3', 'x5', 'x8', 'not', 'x8', 'x4', 'x9', 'x11', 'x1', 'x12', 'x6', 'x1', 'x5', 'x6', 'x3']
+depth:12 var_num:9 simpified: x3&x9&(x6|(x5&(x1|(x6&(x12|(x1&(x11|(x9&(x4|(~x8&(x3&x5)))))))))))
+['or', 'x2', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x7', 'x8', 'x7', 'x6', 'x12', 'x1', 'x12', 'x1', 'x11', 'x5', 'x10', 'x5', 'x2', 'x3']
+depth:12 var_num:9 simpified: x2|(x3&(x2|(x5&(x10|(x5&(x11|(x1&(x12|(x1&(x12|(x6&x7)))))))))))
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x12', 'x6', 'x9', 'x3', 'x4', 'x1', 'x4', 'x2', 'x6', 'x8', 'x9', 'x5', 'x7', 'x10', 'x9']
+depth:14 var_num:11 simpified: x9|(x10&(x7|(x5&(x9|(x8&(x6|(x2&(x4|(x1&(x4|(x3&(x9|(x12&x6)))))))))))))
+['or', 'x3', 'x11']
+depth:1 var_num:2 simpified: x11|x3
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x5', 'x4', 'x11', 'x5', 'x2', 'x12', 'x3', 'x1', 'x7', 'x5', 'x8', 'x1', 'x5', 'x6', 'x12', 'x3']
+depth:16 var_num:10 simpified: ~x3&(~x12|(~x6&(~x5|(~x1&(~x8|(~x5&(~x7|(~x1&(~x3|(~x12&(~x2|(~x5&(~x11|(~x4&x5))))))))))))))
+['or', 'x12', 'x8']
+depth:1 var_num:2 simpified: x12|x8
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x5', 'x1', 'x7', 'x1', 'x7', 'x2', 'x11', 'x9', 'x10', 'not', 'x4', 'x7', 'x4', 'x5', 'x12']
+depth:13 var_num:9 simpified: x12|x5|(x4&(x7|(~x4&(x10|(x9&(x11|(x2&(x7|(x1&(x7|(x1&(x2|x5))))))))))))
+['not', 'or', 'x1', 'x4']
+depth:2 var_num:2 simpified: ~x1&~x4
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x10', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x1', 'x3', 'x11', 'x5', 'x4', 'x5', 'x9', 'x10', 'x12', 'x7', 'x2', 'x5', 'x9', 'not', 'x11']
+depth:15 var_num:10 simpified: ~x11|(x9&(x5|(x2&(x7|(x12&(x10|(x9&(x10|(x5&(x4|(x5&(x11|(x3&(x1|x9))))))))))))))
+['or', 'x6', 'x12']
+depth:1 var_num:2 simpified: x12|x6
+['or', 'x2', 'x3']
+depth:1 var_num:2 simpified: x2|x3
+['and', 'or', 'x6', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'or', 'and', 'x12', 'x1', 'x4', 'x7', 'x4', 'x11', 'x2', 'or', 'x2', 'x1', 'x3', 'x5', 'x1', 'x5', 'x9', 'x7']
+depth:10 var_num:9 simpified: x7&(x6|x9|(x5&(x1|(x5&(x3|((x1|x2)&(x2|(x11&(x4|x7)))))))))
+['and', 'x6', 'x4']
+depth:1 var_num:2 simpified: x4&x6
+['not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x5', 'x12', 'x1', 'x4', 'x5', 'x1', 'x8', 'x2', 'x8', 'or', 'x5', 'x3', 'x1', 'x12', 'x1']
+depth:14 var_num:7 simpified: ~x1|(~x12&(~x1|(~x3&~x5&(~x8|(~x2&(~x8|(~x1&(~x5|(~x4&(~x1|(~x12&(~x1|~x5))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'or', 'and', 'or', 'x2', 'x5', 'x4', 'x7', 'x12', 'x8', 'x1', 'x2', 'x4', 'x10', 'not', 'x8', 'x5', 'x6']
+depth:12 var_num:10 simpified: x6&(x5|(~x8&(x10|(x4&(x2|(x1&(x8|(x12&(x7|x9|(x4&(x2|x5)))))))))))
+['or', 'x3', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x4', 'x2', 'x1', 'x8', 'x1', 'x7', 'x5', 'x8', 'x5', 'x7', 'x5', 'x10', 'x2', 'x7']
+depth:15 var_num:8 simpified: x3|(~x7&(~x2|(~x10&(~x5|(~x7&(~x5|(~x8&(~x5|(~x7&(~x1|(~x8&(~x1|(~x2&x4)))))))))))))
+['or', 'or', 'x10', 'x2', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'and', 'x12', 'x3', 'x4', 'x5', 'x3', 'x2', 'x4', 'x11', 'x5', 'x8', 'x4']
+depth:12 var_num:9 simpified: x10|x2|(x4&(x8|(x5&(x11|(x4&(x2|(x3&(x5|(x4&(x9|(x12&x3)))))))))))
+['and', 'x5', 'x8']
+depth:1 var_num:2 simpified: x5&x8
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x1', 'x5', 'x8', 'x1', 'x7', 'x12', 'x8', 'x2', 'x12', 'x4', 'x9', 'x10', 'not', 'x1', 'x5', 'x1', 'x3']
+depth:16 var_num:10 simpified: x3&(x1|(x5&(~x1|(x10&(x9|(x4&(x12|(x2&(x8|(x12&(x7|(x1&(x8|(x5&(x1|x9)))))))))))))))
+['and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x4', 'x1', 'x2', 'x3', 'x12', 'x11', 'x12', 'x11', 'x2', 'x1', 'x8', 'x1', 'x3', 'x1']
+depth:14 var_num:7 simpified: x1&~x3&(~x8&(~x1|(~x2&(~x11|(~x12&(~x11|(~x12&(~x3|(~x2&(~x1|(~x4&(~x1|~x2))))))))))))
+['and', 'not', 'x12', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x4', 'x11', 'x10', 'x12', 'x3', 'x10', 'x1', 'x12', 'x9', 'x1', 'x7', 'x9', 'x1', 'x3']
+depth:16 var_num:9 simpified: ~x12&(~x3|(~x1&(~x9|(~x7&(~x1|(~x9&(~x12|(~x1&(~x10|(~x3&(~x12|(~x10&(~x11|(~x2&~x4))))))))))))))
+['and', 'x5', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x10', 'x5', 'not', 'x8', 'x4', 'x11', 'x3', 'x12', 'x3', 'x5', 'x8']
+depth:1 var_num:2 simpified: x5&x8
+['and', 'and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x2', 'x5', 'x1', 'x7', 'x6', 'x11', 'x9', 'x8', 'x10', 'x7', 'x9', 'x5', 'x1', 'x2', 'x11', 'x10', 'x2']
+depth:14 var_num:9 simpified: x10&~x11&x2&(~x1&(~x5|(~x9&(~x7|(~x10&(~x8|(~x9&(~x11|(~x6&(~x7|(~x1&(~x2|~x5))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x4', 'not', 'or', 'x5', 'x4', 'x1', 'x6', 'x10', 'x5', 'not', 'x4', 'x2', 'x1', 'x2', 'x11']
+depth:12 var_num:7 simpified: x11&(x2|(x1&(x2|(~x4&(x5|(x10&(x6|(x1&((x1&x4)|(~x4&~x5))))))))))
+['or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x11', 'x1', 'x5', 'x7', 'x2', 'x5', 'x8', 'x9', 'x7', 'x5', 'x8', 'x4', 'x1', 'x5', 'x4']
+depth:15 var_num:8 simpified: x4|(x5&(x1|x4|(x8&(x5|(x7&(x9|(~x8&(~x5|(~x2&(~x7|(~x5&(~x1|(~x11&~x2)))))))))))))
+['or', 'x11', 'x2']
+depth:1 var_num:2 simpified: x11|x2
+['not', 'x5']
+depth:1 var_num:1 simpified: ~x5
+['and', 'x10', 'x4']
+depth:1 var_num:2 simpified: x10&x4
+['and', 'or', 'x3', 'x9', 'and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x6', 'x4', 'x5', 'x10', 'x4', 'or', 'and', 'or', 'and', 'x11', 'x1', 'x2', 'x10', 'x1', 'x2', 'x4', 'x11', 'x4']
+depth:8 var_num:9 simpified: ~x11&x4&(~x2&((~x1&(~x10|(~x2&(~x1|~x11))))|(~x4&(~x10|(~x5&(~x4|~x6))))))&(x3|x9)
+['and', 'x9', 'x10']
+depth:1 var_num:2 simpified: x10&x9
+['or', 'and', 'x11', 'x1', 'not', 'x2']
+depth:2 var_num:3 simpified: ~x2|(x1&x11)
+['or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'not', 'or', 'x12', 'x4', 'x3', 'x1', 'x5', 'x8', 'x1', 'x11', 'x10', 'x9', 'x1', 'x9', 'x6', 'x9', 'x5', 'x1']
+depth:5 var_num:4 simpified: x1|(x5&(x9|(x6&(x1|x9))))
+['or', 'not', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x12', 'x9', 'x1', 'x2', 'x11', 'x10', 'x8', 'x9', 'x12', 'x8', 'x4', 'x7', 'x1', 'x5', 'not', 'x1']
+depth:1 var_num:1 simpified: ~x1
+['and', 'x10', 'x4']
+depth:1 var_num:2 simpified: x10&x4
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x9', 'or', 'x7', 'x2', 'x1', 'x4', 'x10', 'x4', 'x10', 'x9', 'x11', 'x2', 'x1', 'x3', 'x12', 'x9']
+depth:14 var_num:9 simpified: x9&(x12|(x3&(x1|(x2&(x11|(x9&(x10|(x4&(x10|(x4&(x1|((x2|x7)&(x7|x9)))))))))))))
+['not', 'x11']
+depth:1 var_num:1 simpified: ~x11
+['and', 'x5', 'not', 'x4']
+depth:2 var_num:2 simpified: ~x4&x5
+['and', 'x4', 'x10']
+depth:1 var_num:2 simpified: x10&x4
+['not', 'x4']
+depth:1 var_num:1 simpified: ~x4
+['or', 'x11', 'x7']
+depth:1 var_num:2 simpified: x11|x7
+['not', 'x3']
+depth:1 var_num:1 simpified: ~x3
+['and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'or', 'and', 'or', 'x2', 'x7', 'x6', 'x7', 'x2', 'x9', 'x3', 'x7', 'x2', 'x1', 'x5', 'x12', 'x11', 'x9', 'x1', 'x11', 'x5']
+depth:18 var_num:9 simpified: x5&(~x11|(~x1&(~x9|(~x11&(~x12|(~x5&(~x1|(~x2&(~x7|(~x3&(~x9|(~x2&(~x1|(~x7&(~x6|(~x2&~x7))))))))))))))))
+['or', 'x5', 'x10']
+depth:1 var_num:2 simpified: x10|x5
+['or', 'x10', 'x8']
+depth:1 var_num:2 simpified: x10|x8
+['and', 'not', 'x12', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x10', 'x9', 'x1', 'x12', 'x3', 'x7', 'x1', 'x4', 'x2', 'x12', 'x9', 'x6', 'x9', 'x1', 'x4', 'x11']
+depth:17 var_num:10 simpified: ~x12&(x11|(x4&(x1|(x9&(x6|(x9&(x12|(x2&(x4|(x1&(x7|(x3&(x12|(x1&(~x10|x9)))))))))))))))
+['not', 'and', 'or', 'x2', 'x4', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x10', 'x7', 'x3', 'not', 'x1', 'x8', 'x6', 'x3', 'x12', 'x11', 'x9', 'x2', 'x6', 'x1']
+depth:14 var_num:11 simpified: (~x1&(~x6|(~x2&(~x9|(~x11&(~x12|(~x3&(~x6|(~x8&(x1|(~x3&(~x10|~x7))))))))))))|(~x2&~x4)
+['not', 'or', 'x3', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x4', 'x1', 'x7', 'x10', 'x4', 'x8', 'or', 'and', 'or', 'x1', 'x3', 'x7', 'x1', 'x3', 'x7', 'x3', 'x9', 'x1', 'x4', 'x6']
+depth:16 var_num:8 simpified: ~x3&(~x6|(~x4&(~x1|(~x9&(~x3|(~x7&(~x3|(~x1&(~x7|(~x1&~x3))&(~x8|(~x4&(~x10|(~x7&(~x1|(~x4&~x9))))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x10', 'x7', 'x2', 'x1', 'x2', 'x7', 'x2', 'not', 'x4', 'x3', 'x5', 'x1']
+depth:11 var_num:7 simpified: x1&(x5|(x3&(~x4|(x2&(x7|(x2&(x1|(x2&(x7|(x10&x5))))))))))
+['not', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x7', 'x2', 'x4', 'x1', 'x2', 'x1', 'x2', 'x11', 'x2', 'x9', 'x12', 'x1', 'x12']
+depth:1 var_num:1 simpified: ~x12
+['or', 'x2', 'x7']
+depth:1 var_num:2 simpified: x2|x7
+['and', 'and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x10', 'x12', 'x1', 'x4', 'x8', 'x6', 'x2', 'x1', 'x3', 'x7', 'x2', 'x9', 'x1', 'x3']
+depth:12 var_num:10 simpified: x1&x3&~x9&(~x2|(~x7&(~x3|(~x1&(~x2|(~x6&(~x8|(~x4&(~x1|(x10&~x12))))))))))
+['not', 'x10']
+depth:1 var_num:1 simpified: ~x10
+['or', 'x3', 'x3']
+depth:0 var_num:1 simpified: x3
+['or', 'x8', 'x5']
+depth:1 var_num:2 simpified: x5|x8
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x1', 'x3', 'and', 'x1', 'x9', 'or', 'x5', 'x7', 'x4', 'not', 'x4', 'x10', 'x5', 'x8']
+depth:8 var_num:8 simpified: x8|(x5&(x10|(~x4&((x5|x7)&((x1&x9)|(x3&(x1|x9)))))))
+['and', 'x10', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x12', 'x10', 'x2', 'or', 'and', 'x4', 'x1', 'x6', 'x8', 'x1', 'x3', 'x5', 'x4', 'x10', 'x7', 'x2']
+depth:13 var_num:10 simpified: x10&(~x2|(~x7&(~x10|(~x4&(~x5|(~x3&(~x1|(~x8&((~x2&(~x10|~x12))|(~x6&(~x1|~x4)))))))))))
+['and', 'x11', 'x3']
+depth:1 var_num:2 simpified: x11&x3
+['or', 'x7', 'x10']
+depth:1 var_num:2 simpified: x10|x7
+['or', 'x5', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x11', 'x4', 'x3', 'x5', 'x11', 'x12', 'not', 'x10', 'x1', 'x2', 'x1', 'x3', 'x7', 'x3', 'not', 'x6', 'x3', 'x11']
+depth:16 var_num:10 simpified: x5|(x11&(x3|(~x6&(x3|(x7&(x3|(x1&(x2|(x1&(~x10|(x12&(x11|(x5&(x3|(x11&x4)))))))))))))))
+['and', 'x9', 'x3']
+depth:1 var_num:2 simpified: x3&x9
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x5', 'x1', 'x3', 'x8', 'x4', 'and', 'x1', 'x5', 'x4', 'x11', 'x8', 'x1', 'x7', 'x5']
+depth:12 var_num:7 simpified: x5&(x7|(x1&(x8|(x11&(x4|(x1&x5&(x4|(x8&(x3|(x1&(x4|x5)))))))))))
+['or', 'x4', 'not', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x1', 'x12', 'x1', 'x5', 'x8', 'x1', 'x3', 'x9', 'x2', 'x1', 'x7', 'x3', 'x5', 'x3', 'x11']
+depth:3 var_num:4 simpified: ~x11|x4|(~x3&~x5)
+['or', 'x8', 'x10']
+depth:1 var_num:2 simpified: x10|x8
+['and', 'and', 'or', 'x3', 'or', 'and', 'or', 'and', 'not', 'and', 'or', 'x4', 'x12', 'not', 'x10', 'x1', 'x5', 'x4', 'or', 'x4', 'x1', 'x7', 'x2']
+depth:2 var_num:5 simpified: x2&x7&(x1|x3|x4)
+['and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'and', 'x9', 'x4', 'x5', 'x8', 'x1', 'x5', 'x7', 'x2', 'x9', 'x1', 'x7', 'x10', 'x8', 'x12']
+depth:15 var_num:10 simpified: x12&(x8|(x10&(x7|(~x1&(~x9|(~x2&(~x7|(~x5&(~x1|(~x8&(~x5|(~x3&(~x4|~x9)))))))))))))
+['and', 'x4', 'x3']
+depth:1 var_num:2 simpified: x3&x4
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'not', 'x4', 'x1', 'x5', 'x1', 'x5', 'x10', 'x1', 'x6', 'x10', 'x4', 'x10']
+depth:12 var_num:6 simpified: x10|(x4&(x10|(x6&(x1|(x10&(x5|(x1&(x5|(x1&(~x4|x7))))))))))
+['and', 'x3', 'or', 'x5', 'and', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'x7', 'or', 'x7', 'x12', 'x3', 'x5', 'x6', 'x12', 'x1', 'and', 'x1', 'x5', 'x4', 'and', 'not', 'x1', 'x11', 'x5', 'x2']
+depth:7 var_num:6 simpified: x3&(x5|(x2&(x5|(~x1&x11&(x4|(x1&x5))))))
+['or', 'x10', 'x10']
+depth:0 var_num:1 simpified: x10
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x3', 'x10', 'x5', 'x4', 'x10', 'x4', 'x1', 'x2', 'x1', 'x7', 'x1', 'x5', 'x7']
+depth:13 var_num:7 simpified: x7&(x5|(x1&(x7|(x1&(x2|(x1&(x4|(x10&(x4|(x5&(x10|(x3&x4))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'x5', 'x1', 'or', 'x1', 'x8', 'x1', 'x12', 'x4', 'x7', 'x1', 'x7', 'x2', 'x5', 'x2']
+depth:8 var_num:6 simpified: x2&(x5|(x2&(x7|(x1&(x7|(x4&(x1|x12)))))))
+['or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'and', 'or', 'not', 'x12', 'x1', 'x8', 'x6', 'x2', 'x11', 'x9', 'x12', 'x4', 'x5', 'x5', 'x10', 'x9']
+depth:2 var_num:3 simpified: x9|(x10&x5)
+['or', 'and', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'or', 'x4', 'and', 'or', 'x1', 'x2', 'x7', 'x1', 'x7', 'x10', 'x12', 'or', 'x12', 'x1', 'x9', 'x1', 'x8', 'x7', 'x9', 'x5', 'x1']
+depth:13 var_num:9 simpified: x1|(x5&x9&(x7|x8|(x1&(x9|((x1|x12)&(x12|(x10&(x7|(x1&~x4&(~x7|(~x1&~x2)))))))))))
+['and', 'x9', 'x11']
+depth:1 var_num:2 simpified: x11&x9
+['and', 'or', 'and', 'not', 'x4', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x8', 'x10', 'x1', 'x10', 'x2', 'not', 'or', 'x4', 'not', 'x4', 'x3', 'x5', 'x2', 'x4', 'x7', 'x2', 'x3', 'x10']
+depth:12 var_num:8 simpified: x10&(x3|(~x4&(x2|(x7&(x4|(x2&(x5|(x2&x3&(x10|(x1&(x10|x8)))))))))))
+['and', 'x9', 'not', 'and', 'or', 'and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x9', 'or', 'and', 'x12', 'or', 'x1', 'x5', 'x1', 'x2', 'x4', 'x11', 'x12', 'x7', 'x10', 'x6']
+depth:10 var_num:10 simpified: x9&(~x6|(~x10&(x12|~x7|(x11&(x4|(x2&(x1|(x12&(x1|x5))|(x5&x9))))))))
+['and', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'not', 'x2', 'not', 'and', 'x1', 'x5', 'x3', 'x12', 'x9', 'x8', 'or', 'x4', 'x4', 'x9', 'x11']
+depth:7 var_num:9 simpified: x11&x9&(x4|x8|(x9&(x12|(x3&(~x1|~x2|~x5)))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'or', 'x12', 'not', 'x7', 'x5', 'not', 'x4', 'x2', 'x7', 'x1', 'x2', 'x4', 'x9', 'x12', 'x10', 'x7', 'x3']
+depth:15 var_num:9 simpified: x3&(x7|(x10&(x12|(x9&(x4|(x2&(x1|(x7&(x2|(~x4&(x5|(x1&(x12|~x7)))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x8', 'x1', 'x3', 'x9', 'x6', 'x5', 'x10', 'x7', 'x2', 'x4', 'x1', 'x2', 'x1', 'x2', 'x5', 'x1']
+depth:16 var_num:10 simpified: x1&(x5|(x2&(x1|(x2&(x1|(x4&(x2|(x7&(x10|(x5&(x6|(x9&(x3|(x1&(x4|x8)))))))))))))))
+['and', 'x3', 'or', 'x6', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x1', 'x2', 'x6', 'x1', 'x4', 'x11', 'x2', 'x4', 'x11', 'x1', 'x9', 'x5']
+depth:12 var_num:8 simpified: x3&(x6|(x5&(x9|(x1&(x11|(x4&(x2|(x11&(x4|(x1&(x2|x6)))))))))))
+['or', 'or', 'x2', 'and', 'or', 'x1', 'x3', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'or', 'and', 'x4', 'x5', 'x11', 'x1', 'x12', 'x3', 'x1', 'x2', 'x12', 'x4', 'x8']
+depth:9 var_num:8 simpified: x2|x8|(x4&(x1|x3)&(x12|(x2&(x1|(x3&(x12|(x1&(x11|x5))))))))
+['and', 'and', 'x5', 'x9', 'and', 'x1', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x5', 'x2', 'x7', 'x10', 'not', 'x4', 'or', 'and', 'or', 'x1', 'x7', 'x2', 'x12', 'x10', 'x8']
+depth:8 var_num:9 simpified: x1&x5&x8&x9&(x10|((x12|(x2&(x1|x7)))&(~x4|(x10&(x7|(x2&(x5|x9)))))))
+['or', 'x4', 'x10']
+depth:1 var_num:2 simpified: x10|x4
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'and', 'or', 'and', 'x12', 'x7', 'x2', 'x11', 'x9', 'x4', 'x11', 'x2', 'x8', 'x1', 'x9', 'x1', 'x8', 'x1', 'x3']
+depth:13 var_num:9 simpified: ~x3&(~x1|(~x8&(~x1|(~x9&(~x1|(~x8&(~x2|(~x11&(~x4|(x11&~x9&(x2|(x12&x7))))))))))))
+['and', 'x3', 'x1']
+depth:1 var_num:2 simpified: x1&x3
+['or', 'x2', 'not', 'not', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x12', 'not', 'x5', 'x1', 'x10', 'x9', 'x12', 'x2', 'or', 'x3', 'x1', 'x10', 'x2']
+depth:10 var_num:7 simpified: x2|(~x10|(~x1&~x3&(~x2|(~x12&(~x9|(~x10&(~x1|(~x12&x5))))))))
+['and', 'x11', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'or', 'and', 'or', 'and', 'or', 'x4', 'and', 'x10', 'x12', 'not', 'x4', 'x7', 'x2', 'x8', 'x2', 'x5', 'x6', 'x9', 'x1', 'x8', 'x5']
+depth:6 var_num:7 simpified: x11&x5&(x8|(x1&(x9|(x6&(x2|x5)))))
+['not', 'x12']
+depth:1 var_num:1 simpified: ~x12
+['or', 'x11', 'x4']
+depth:1 var_num:2 simpified: x11|x4
+['and', 'x3', 'x3']
+depth:0 var_num:1 simpified: x3
+['and', 'and', 'x8', 'or', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'x7', 'x12', 'x2', 'x4', 'x1', 'x10', 'x6', 'x2', 'x1', 'x12', 'x6', 'x4', 'x1']
+depth:12 var_num:8 simpified: x1&x8&(x4|x6|(x12&(x1|(x2&(x6|(~x10&(~x1|(~x4&(~x2|(~x12&~x7))))))))))
+['or', 'x6', 'x2']
+depth:1 var_num:2 simpified: x2|x6
+['or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x5', 'x9', 'x1', 'x7', 'x1', 'x12', 'x3', 'x5', 'x10', 'x2', 'x5', 'x4', 'x10']
+depth:12 var_num:9 simpified: x10|(x4&x5&(x2|(x10&(x5|(x3&(x12|(x1&(x7|(x1&(~x5|x9))))))))))
+['and', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x4', 'not', 'x7', 'x1', 'x2', 'x5', 'x4', 'x8', 'x12', 'x9', 'x8']
+depth:1 var_num:2 simpified: x8&x9
+['or', 'x6', 'x5']
+depth:1 var_num:2 simpified: x5|x6
+['or', 'x2', 'x6']
+depth:1 var_num:2 simpified: x2|x6
+['and', 'x9', 'x5']
+depth:1 var_num:2 simpified: x5&x9
+['not', 'x9']
+depth:1 var_num:1 simpified: ~x9
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x1', 'x4', 'or', 'and', 'x10', 'x1', 'x2', 'x5', 'x1', 'x7', 'x3', 'x11', 'x7', 'x1', 'x5']
+depth:12 var_num:8 simpified: ~x5&(~x1|(~x7&(~x11|(~x3&(~x7|(~x1&(~x5|(~x2&(~x1|~x10)&(~x4|(~x1&~x2))))))))))
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x5', 'x3', 'x1', 'x9', 'x7', 'x4', 'x1', 'x10', 'x5', 'x12', 'x8', 'not', 'x9']
+depth:12 var_num:9 simpified: ~x9|(x8&(x12|(x5&(x10|(x1&(x4|(x7&(x9|(x1&(x3|(x4&x5)))))))))))
+['not', 'x3']
+depth:1 var_num:1 simpified: ~x3
+['not', 'x2']
+depth:1 var_num:1 simpified: ~x2
+['and', 'x3', 'x3']
+depth:0 var_num:1 simpified: x3
+['not', 'x8']
+depth:1 var_num:1 simpified: ~x8
+['or', 'x1', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'or', 'x2', 'x12', 'x1', 'x2', 'x11', 'x9', 'x8', 'or', 'not', 'or', 'and', 'or', 'x11', 'x2', 'not', 'x2', 'x6', 'x5', 'x1', 'x2']
+depth:1 var_num:2 simpified: x1|x2
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'x12', 'x8', 'x2', 'x7', 'x5', 'x1', 'x12', 'x1', 'x12', 'x11', 'x9', 'x8', 'x9', 'x7']
+depth:14 var_num:8 simpified: x7&(x9|(x8&(x9|(x11&(x12|(x1&(x12|(x1&(x5|(~x7&(~x2|(~x12&~x8))))))))))))
+['or', 'x4', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'or', 'x5', 'x7', 'x1', 'x2', 'or', 'x9', 'x11', 'x4', 'x7', 'x1', 'x12', 'x10', 'x8']
+depth:9 var_num:10 simpified: x4|x8|(x10&(x12|(x1&(x7|(x4&(x11|x9|(x2&(x1|x5))))))))
+['and', 'x2', 'or', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x8', 'x6', 'not', 'x10', 'x9', 'x1', 'x9', 'x12', 'x4', 'x10', 'x7', 'x5', 'x2', 'x11', 'x1', 'x12']
+depth:16 var_num:11 simpified: x2&(x12|(x1&(x11|~x2|(~x5&(~x7|(~x10&(~x4|(~x12&(~x9|(~x1&(~x9|(x10&(~x6|(~x4&~x8))))))))))))))
+['and', 'x10', 'or', 'and', 'or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x7', 'x5', 'not', 'x6', 'x4', 'x1', 'x11', 'or', 'x12', 'x11', 'x9', 'x2', 'x1', 'x2', 'x3']
+depth:6 var_num:7 simpified: x10&(x3|(x2&(x1|(x2&x9&(x11|x12)))))
+['and', 'x6', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x5', 'x2', 'x1', 'x12', 'x11', 'x5', 'x9', 'x1', 'x5', 'not', 'x4', 'x1', 'x2', 'x7']
+depth:14 var_num:9 simpified: x6&(x7|(x2&(x1|(~x4&(x5|(x1&(x9|(x5&(x11|(x12&(x1|(x2&~x5))))))))))))
+['and', 'x8', 'x2']
+depth:1 var_num:2 simpified: x2&x8
+['and', 'x9', 'x7']
+depth:1 var_num:2 simpified: x7&x9
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x10', 'x8', 'x10', 'x12', 'not', 'x12', 'x4', 'x11', 'x5', 'x12', 'x1', 'x8', 'x1', 'x2', 'x6', 'x9']
+depth:12 var_num:10 simpified: x9&(x6|(x2&(x1|(x8&(x1|(x12&(x5|(x11&(x4|(~x12&(x10&x8)))))))))))
+['or', 'x11', 'x4']
+depth:1 var_num:2 simpified: x11|x4
+['and', 'x2', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'or', 'and', 'x7', 'x2', 'x1', 'x11', 'x1', 'x7', 'x1', 'x8', 'x12', 'x4', 'x5', 'x8', 'x6', 'x2']
+depth:0 var_num:1 simpified: x2
+['and', 'not', 'x9', 'x8']
+depth:2 var_num:2 simpified: x8&~x9
+['or', 'x3', 'or', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x8', 'x11', 'x1', 'x5', 'x3', 'x2', 'x4', 'x10', 'x9', 'x5', 'x10', 'x5', 'x3']
+depth:1 var_num:2 simpified: x3|x4
+['not', 'x1']
+depth:1 var_num:1 simpified: ~x1
+['not', 'x12']
+depth:1 var_num:1 simpified: ~x12
+['and', 'x9', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x11', 'x10', 'x4', 'x12', 'x6', 'x11', 'x3', 'x2', 'x10', 'x12', 'x10']
+depth:11 var_num:9 simpified: x10&x9&(x12|(x10&(x2|(x3&(x11|(x6&(x12|(x4&(x10|(x1&x11))))))))))
+['and', 'x8', 'x3']
+depth:1 var_num:2 simpified: x3&x8
+['or', 'x8', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'or', 'and', 'x12', 'x5', 'x11', 'x1', 'x3', 'x12', 'x3', 'x7', 'x10', 'x12', 'x6', 'x9', 'x1']
+depth:14 var_num:10 simpified: ~x1|x8|(~x9&(~x6|(~x12&(~x10|(~x7&(~x3|(~x12&(~x3|(~x1&(~x5|(~x11&(~x12|~x5))))))))))))
+['and', 'x2', 'x5']
+depth:1 var_num:2 simpified: x2&x5
+['or', 'x12', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x1', 'x4', 'x2', 'x7', 'x5', 'x1', 'x7', 'x6', 'x5', 'x2', 'x1']
+depth:10 var_num:7 simpified: x1|x12|x2|(x5&(x6|(x7&(x1|(x5&(x7|(x2&(x4|(x1&x5)))))))))
+['or', 'x5', 'x8']
+depth:1 var_num:2 simpified: x5|x8
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'and', 'not', 'x1', 'x5', 'x1', 'x12', 'x3', 'x4', 'x4', 'x7', 'x8', 'x6', 'x1', 'x2', 'not', 'x4', 'x11']
+depth:7 var_num:7 simpified: x11|(~x4&(x2|(x1&(x6|(x8&(x4|x7))))))
+['or', 'and', 'x11', 'x2', 'x5']
+depth:2 var_num:3 simpified: x5|(x11&x2)
+['or', 'x2', 'x12']
+depth:1 var_num:2 simpified: x12|x2
+['and', 'x11', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x12', 'not', 'x2', 'x6', 'x7', 'x2', 'x4', 'x11', 'x12', 'x8', 'x2', 'x1', 'x7']
+depth:12 var_num:8 simpified: x11&x7&(x1|(x2&(x8|(x12&(x11|(x4&(x2|(x7&(x6|(x12&~x2))))))))))
+['or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x1', 'x8', 'x11', 'x2', 'x1', 'x7', 'x5', 'x1', 'x4', 'x10', 'x1', 'x7', 'x4', 'x7', 'x9']
+depth:16 var_num:9 simpified: x9|(x7&(x4|(x7&(x1|(~x10&(~x4|(~x1&(~x5|(~x7&(~x1|(~x2&(~x11|(~x8&(~x1|~x5))))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'or', 'x2', 'x4', 'x7', 'x1', 'x12', 'x7', 'x2', 'not', 'x1', 'x6', 'x5', 'x9']
+depth:10 var_num:8 simpified: x9&(x5|(x6&(~x1|(x2&(x7|(x12&(x1|(x7&(x2|x4|x9)))))))))
+['not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x12', 'x10', 'x4', 'x5', 'x8', 'x4', 'x9', 'x1', 'x4', 'not', 'x10', 'x4', 'x5', 'x6', 'x1', 'x3', 'x2', 'x10']
+depth:17 var_num:10 simpified: ~x10|(~x2&(~x3|(~x1&(~x6|(~x5&(~x4|(x10&(~x4|(~x1&(~x9|(~x4&(~x8|(~x5&(~x4|(~x10&~x12)))))))))))))))
+['or', 'x5', 'x5']
+depth:0 var_num:1 simpified: x5
+['or', 'x10', 'x3']
+depth:1 var_num:2 simpified: x10|x3
+['and', 'x10', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x12', 'x1', 'x2', 'x5', 'x7', 'x4', 'x11', 'x12', 'x2', 'x1']
+depth:10 var_num:8 simpified: x1&x10&(x2|(x12&(x11|(x4&(x7|(x5&(x2|(x1&(x12|x4)))))))))
+['or', 'x1', 'and', 'not', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'x11', 'x2', 'x7', 'x4', 'or', 'and', 'not', 'x2', 'x9', 'x1', 'x8', 'x7', 'x12', 'x6', 'x1', 'x2', 'x11', 'x5']
+depth:12 var_num:10 simpified: x1|(x5&(~x11|(~x1&~x2&(~x6|(~x12&(~x7|(~x1&~x8&(x2|~x9)&(~x4|(~x7&(~x11|~x2))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x1', 'x7', 'x5', 'x9', 'x12', 'x3', 'not', 'x10', 'x4', 'x1', 'x2', 'x1', 'x9']
+depth:12 var_num:9 simpified: x9&(x1|(x2&(x1|(x4&(~x10|(x3&(x12|(x9&(x5|(x7&(x1|x5)))))))))))
+['not', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x9', 'x2', 'x11', 'x12', 'x8', 'x4', 'x6', 'x7', 'x3', 'x1', 'x10', 'x5', 'x1']
+depth:13 var_num:12 simpified: ~x1|(~x10&~x5&(~x1|(~x3&(~x7|(~x6&(~x4|(~x8&(~x12|(~x11&(~x2|(~x7&~x9)))))))))))
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x12', 'not', 'x9', 'x12', 'x5', 'or', 'x8', 'x6', 'x4', 'x1', 'x7', 'x5', 'not', 'x8', 'x1', 'x4']
+depth:8 var_num:7 simpified: x1&x4&(~x8|(x5&(x7|(x1&(x4|((x12|x5)&(x6|x8)))))))
+['or', 'x11', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'and', 'or', 'x9', 'and', 'or', 'not', 'x4', 'x10', 'x1', 'x5', 'x7', 'x4', 'x9', 'x7', 'x5', 'x9', 'x10', 'x1']
+depth:8 var_num:7 simpified: x1|x11|(x10&(x9|(x5&(x7|(x9&(x4|(x5&x7)))))))
+['and', 'or', 'and', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x12', 'and', 'or', 'and', 'x7', 'x2', 'x4', 'x1', 'x7', 'x4', 'x8', 'x11', 'x9', 'x1', 'x4', 'x11']
+depth:1 var_num:2 simpified: x11&x4
+['and', 'or', 'x3', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x5', 'x6', 'x2', 'x5', 'x6', 'x9', 'x5', 'x1', 'x8', 'x4']
+depth:7 var_num:7 simpified: x4&(x3|(x8&(x1|(x5&(x9|(x5&x6))))))
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x1', 'x8', 'x4', 'x9', 'not', 'or', 'and', 'or', 'x12', 'x3', 'x4', 'x12', 'x11', 'x8', 'x1', 'x5', 'x1']
+depth:1 var_num:2 simpified: x1|x5
+['or', 'x4', 'x3']
+depth:1 var_num:2 simpified: x3|x4
+['and', 'x4', 'x3']
+depth:1 var_num:2 simpified: x3&x4
+['or', 'x8', 'x10']
+depth:1 var_num:2 simpified: x10|x8
+['and', 'and', 'not', 'x3', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x4', 'x1', 'x8', 'not', 'x10', 'x1', 'x4', 'x2', 'x1', 'x5', 'x1']
+depth:2 var_num:2 simpified: x1&~x3
+['or', 'x10', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'and', 'or', 'x5', 'and', 'or', 'and', 'or', 'x10', 'x9', 'x7', 'x12', 'not', 'x6', 'x4', 'x1', 'x2', 'x1', 'x8', 'x4', 'x9', 'x4']
+depth:2 var_num:3 simpified: x10|(x4&x9)
+['and', 'x9', 'x1']
+depth:1 var_num:2 simpified: x1&x9
+['and', 'and', 'x5', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x10', 'x2', 'x10', 'x9', 'x3', 'x4', 'x10', 'x5', 'not', 'x5', 'x1', 'x3', 'x5', 'x4', 'x1', 'x3']
+depth:12 var_num:6 simpified: x3&x4&x5&(x1|(x4&(x5|(x3&(x1|(x5&(~x10&(~x4|(~x3&(~x10|~x9))))))))))
+['or', 'x11', 'x1']
+depth:1 var_num:2 simpified: x1|x11
+['and', 'and', 'or', 'x5', 'x6', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x5', 'x2', 'x4', 'x2', 'x11', 'x10', 'not', 'x4', 'x3']
+depth:7 var_num:8 simpified: x3&~x4&(x10|(x11&(x2|(x4&(x2|(x1&x5))))))&(x5|x6)
+['and', 'x3', 'and', 'and', 'or', 'and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x8', 'x2', 'x7', 'not', 'x8', 'x4', 'x2', 'x12', 'x1', 'x12', 'x2', 'not', 'x6']
+depth:10 var_num:8 simpified: x2&x3&~x6&(x12|(x1&(~x2|(~x4&(x8|(~x7&(~x2|(~x4&~x8))))))))
+['and', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x3', 'x12', 'x6', 'x2', 'x1', 'x4', 'x10', 'x6', 'not', 'x10', 'x12', 'x10', 'x9', 'x5', 'x4']
+depth:14 var_num:9 simpified: x4&(x5|(x9&(x10|(x12&(~x10|(x6&(x10|(x4&(x1|(x2&(x6|(x12&~x3))))))))))))
+['or', 'x4', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x6', 'x1', 'x9', 'x5', 'x10', 'x1', 'x8', 'x10', 'x12', 'x4', 'x7']
+depth:1 var_num:2 simpified: x4|x7
+['and', 'or', 'x10', 'x12', 'x11']
+depth:2 var_num:3 simpified: x11&(x10|x12)
+['or', 'x8', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x2', 'x7', 'x12', 'x9', 'x7', 'x2', 'x4', 'x11', 'x10', 'x9', 'x3', 'x7', 'x3', 'x5', 'x4', 'x5']
+depth:16 var_num:10 simpified: x5|x8|(x4&(x5|(x3&(x7|(x3&(x9|(x10&(x11|(x4&(x2|(x7&(x9|(x12&(~x2|x7))))))))))))))
+['and', 'x3', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x3', 'x11', 'x2', 'x4', 'x8', 'x9', 'x6', 'x5', 'x2', 'x5']
+depth:11 var_num:9 simpified: x3&~x5&(~x2|(~x5&(~x6|(~x9&(~x8|(~x4&(~x2|(~x11&(~x1|~x3)))))))))
+['and', 'x12', 'x10']
+depth:1 var_num:2 simpified: x10&x12
+['not', 'x6']
+depth:1 var_num:1 simpified: ~x6
+['and', 'x3', 'x5']
+depth:1 var_num:2 simpified: x3&x5
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x5', 'x1', 'x2', 'x6', 'x11', 'x4', 'x11', 'x9', 'x5', 'x9', 'x10', 'x1', 'x6', 'x1']
+depth:15 var_num:8 simpified: ~x1&(~x6|(~x1&(~x10|(~x9&(~x5|(~x9&(~x11|(~x4&(~x11|(~x6&(~x2|(~x1&(~x4|~x5)))))))))))))
+['or', 'and', 'x8', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x8', 'x4', 'x9', 'x5', 'x7', 'x5', 'x1', 'x8', 'x11', 'x4', 'x1', 'x2', 'x5', 'x7']
+depth:15 var_num:8 simpified: x7|(x8&(x5|(x2&(x1|(x4&(x11|(~x8&(~x1|(~x5&(~x7|(~x5&(~x9|(~x4&~x8)))))))))))))
+['or', 'x4', 'x12']
+depth:1 var_num:2 simpified: x12|x4
+['or', 'x6', 'x9']
+depth:1 var_num:2 simpified: x6|x9
+['not', 'not', 'x1']
+depth:0 var_num:1 simpified: x1
+['and', 'x2', 'x10']
+depth:1 var_num:2 simpified: x10&x2
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x2', 'x5', 'x9', 'x5', 'x11', 'not', 'x2', 'x7', 'x5', 'x11', 'x10', 'x3']
+depth:11 var_num:7 simpified: x3&(x10|(x11&(x5|(x7&(~x2|(x11&(x5|(x9&(x5|(x2&x9))))))))))
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x3', 'x4', 'x11', 'x4', 'x8', 'x11', 'x8', 'x5', 'x12', 'x5', 'not', 'x1', 'x7']
+depth:13 var_num:8 simpified: ~x7&(x1|(~x5&(~x12|(~x5&(~x8|(~x11&(~x8|(~x4&(~x11|(~x4&(~x1|~x3)))))))))))
+['or', 'x1', 'x8']
+depth:1 var_num:2 simpified: x1|x8
+['and', 'x8', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x4', 'x5', 'x2', 'x3', 'x10', 'x12', 'x2', 'x1', 'x2', 'x4', 'x2', 'x12', 'x5', 'x12', 'x9', 'x1', 'x10']
+depth:18 var_num:9 simpified: x8&(x10|(~x1&(~x9|(~x12&(~x5|(~x12&(~x2|(~x4&(~x2|(~x1&(~x2|(~x12&(~x10|(~x3&(~x2|(x4&~x5))))))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x4', 'x4', 'x2', 'x5', 'not', 'x10', 'x12', 'x7', 'x10', 'x4', 'x11', 'x4']
+depth:9 var_num:7 simpified: x4&(x11|(x4&(x10|(x7&(x12|(~x10&(x5|(x2&x4))))))))
+['or', 'x11', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x10', 'x4', 'x7', 'x5', 'x11', 'x9', 'x2', 'x1', 'x5', 'x11', 'x10', 'x1', 'x12', 'x3']
+depth:13 var_num:10 simpified: x11|x3|(x12&(x1|(x10&(x11|(x5&(x1|(x2&(x9|(x11&(x5|(x7&(x10|x4))))))))))))
+['or', 'and', 'x5', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x6', 'not', 'x5', 'x7', 'x2', 'x11', 'x5', 'not', 'x10', 'x1', 'x3', 'x12', 'x3']
+depth:12 var_num:10 simpified: (x3&(x12|(x3&(x1|(~x10&(x5|(x11&(x2|(x7&(~x5|x6))))))))))|(x4&x5)
+['and', 'x10', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x6', 'x10', 'x8', 'x5', 'x8', 'x11', 'x1', 'x3', 'x11', 'x3', 'x12']
+depth:12 var_num:9 simpified: x10&(x12|(x3&(x11|(x3&(x1|(x11&(x8|(x5&(x8|(x10&(x6|x9)))))))))))
+['or', 'x7', 'x12']
+depth:1 var_num:2 simpified: x12|x7
+['or', 'x1', 'not', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x9', 'x1', 'x5', 'x4', 'x2', 'x1', 'x3', 'x2', 'not', 'x2', 'x1', 'x9', 'x5', 'x10', 'x3', 'x5']
+depth:13 var_num:7 simpified: x1|~x5|(~x3&(~x10|(~x5&~x9&(~x1|(x2&(~x3&(~x1|(~x2&(~x4|(~x5&(~x1|x9)))))))))))
+['and', 'x3', 'x9']
+depth:1 var_num:2 simpified: x3&x9
+['and', 'x11', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'x9', 'and', 'x12', 'x1', 'x7', 'x4', 'x3', 'x1', 'x6', 'x12', 'x4', 'x5', 'x9', 'x5']
+depth:11 var_num:9 simpified: x11&(x5|(x9&(x5|(x4&(x12|(x6&(x1|x3|(x4&(x7|(x1&x12&x9))))))))))
+['or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x6', 'x10', 'x8', 'x1', 'x10', 'x6', 'x7', 'x4', 'x9', 'x2', 'x9', 'x10', 'x3', 'x12']
+depth:14 var_num:11 simpified: x12|~x3|(~x10&(~x9|(~x2&(~x9|(~x4&(~x7|(~x6&(~x10|(~x1&(~x8|(~x10&(~x5|~x6))))))))))))
+['and', 'x11', 'x1']
+depth:1 var_num:2 simpified: x1&x11
+['or', 'x2', 'and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x4', 'x7', 'x2', 'x1', 'x5', 'x8', 'x9', 'x2', 'x7', 'x1', 'x5', 'x1']
+depth:12 var_num:7 simpified: x2|(x1&~x5&(~x7&(~x2|(~x9&(~x8|(~x5&(~x1|(~x2&(~x7|(~x4&~x5))))))))))
+['or', 'x4', 'x3']
+depth:1 var_num:2 simpified: x3|x4
+['or', 'not', 'x8', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x11', 'x1', 'x2', 'not', 'or', 'x6', 'x10', 'x9', 'x1', 'x4', 'x7', 'x5', 'x3', 'x7', 'x2', 'x12', 'x3', 'x4']
+depth:14 var_num:12 simpified: x4|~x8|(x3&(x12|(x2&(x7|(x3&(x5|(x7&(x4|(x1&(x9|(~x10&~x6&(x2|(x1&x11)))))))))))))
+['or', 'x10', 'x6']
+depth:1 var_num:2 simpified: x10|x6
+['and', 'not', 'not', 'x5', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'and', 'or', 'and', 'x1', 'x4', 'x11', 'x4', 'x9', 'x12', 'x5', 'x1', 'x2', 'x11', 'x9', 'x1']
+depth:11 var_num:7 simpified: x5&(x1|x9|(x11&(x2|(x1&(x5|(x12&(x9|(x1&x4&(x11|(x1&x4))))))))))
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x4', 'and', 'x4', 'x1', 'x2', 'x7', 'x2', 'x5', 'x1', 'x11', 'x4', 'x3', 'x5']
+depth:8 var_num:7 simpified: x3|x5|(x4&(x11|(x1&(x5|(x2&(x7|(x1&x2&x4)))))))
+['not', 'x11']
+depth:1 var_num:1 simpified: ~x11
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'and', 'or', 'and', 'x6', 'or', 'x4', 'x10', 'x11', 'x2', 'x1', 'x7', 'x2', 'x9', 'x2', 'x5', 'x8', 'x1', 'x7', 'x8']
+depth:14 var_num:10 simpified: x8&(x7|(x1&(x8|(x5&(x2|(x9&(x2|(x7&(x1|(x2&x5&(x11|(x6&(x10|x4)))))))))))))
+['or', 'x1', 'x5']
+depth:1 var_num:2 simpified: x1|x5
+['and', 'or', 'x8', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x5', 'and', 'x5', 'x1', 'x7', 'x4', 'x7', 'x4', 'x9', 'or', 'and', 'x1', 'x3', 'x9', 'x5']
+depth:3 var_num:5 simpified: x5&(x8|x9|(x1&x3))
+['not', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x2', 'x10', 'x2', 'x3', 'x9', 'x1', 'x8', 'x4', 'x5', 'x1']
+depth:10 var_num:8 simpified: ~x1|(~x4&~x5&(~x8|(~x1&(~x9|(~x3&(~x2|(~x10&(~x2|~x4))))))))
+['and', 'x12', 'x11']
+depth:1 var_num:2 simpified: x11&x12
+['and', 'x12', 'x1']
+depth:1 var_num:2 simpified: x1&x12
+['not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x4', 'x7', 'x4', 'x5', 'x12', 'x11', 'x9', 'x3', 'x5', 'x8', 'x9', 'x5', 'x12', 'x3', 'x5', 'x4']
+depth:17 var_num:8 simpified: ~x4|(~x5&(~x3|(~x12&(~x5|(~x9&(~x8|(~x5&(~x3|(~x9&(~x11|(~x12&(~x5|(~x4&(~x7|(~x4&~x9)))))))))))))))
+['and', 'or', 'x4', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x7', 'not', 'x4', 'x2', 'x1', 'x5', 'not', 'x8', 'x1', 'x8', 'x1', 'x8', 'x1', 'x10', 'x7', 'x9', 'x1']
+depth:16 var_num:8 simpified: x1&(x4|~x9|(~x7&(~x10|(~x1&(~x8|(~x1&(~x8|(~x1&(x8|(~x5&(~x1|(~x2&(x4|(~x7&~x9))))))))))))))
+['or', 'x11', 'x12']
+depth:1 var_num:2 simpified: x11|x12
+['and', 'x6', 'or', 'x2', 'x9']
+depth:2 var_num:3 simpified: x6&(x2|x9)
+['and', 'x4', 'not', 'x4']
+depth:0 var_num:0 simpified: 0
+['or', 'not', 'x6', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x1', 'x7', 'x4', 'x11', 'x5', 'x8', 'x12', 'x1', 'x5', 'x1', 'x2', 'x10']
+depth:11 var_num:11 simpified: x10|x2|~x6|(x1&(x5|(x1&(x12|(x8&(x5|(x11&(x4|(x7&(x1|x3))))))))))
+['or', 'x2', 'x7']
+depth:1 var_num:2 simpified: x2|x7
+['and', 'x9', 'and', 'x6', 'x4']
+depth:1 var_num:3 simpified: x4&x6&x9
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x1', 'and', 'not', 'x2', 'x1', 'x10', 'x1', 'x3', 'x11', 'x9', 'x5', 'x10', 'x4', 'x1', 'x2']
+depth:12 var_num:8 simpified: x2&(x1|(x4&(x10|(x5&(x9|(x11&(x3|(x1&(x10|(x1&~x2))))))))))
+['and', 'x9', 'x1']
+depth:1 var_num:2 simpified: x1&x9
+['and', 'x12', 'x1']
+depth:1 var_num:2 simpified: x1&x12
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x9', 'x1', 'x5', 'x2', 'x3', 'x11', 'x3', 'x2', 'x12', 'x11', 'x8', 'x11', 'x1', 'x11', 'x2', 'not', 'x5', 'x4']
+depth:18 var_num:9 simpified: ~x4&(x5|(~x2&(~x11|(~x1&(~x11|(~x8&(~x11|(~x12&(~x2|(~x3&(~x11|(~x3&(~x2|(~x5&(~x1|(~x2&~x9))))))))))))))))
+['and', 'x11', 'x4']
+depth:1 var_num:2 simpified: x11&x4
+['not', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x8', 'x2', 'x5', 'not', 'x8', 'x1', 'x5', 'x2', 'x1', 'x2', 'x12', 'not', 'and', 'x11', 'x9', 'x1', 'x5', 'x9']
+depth:14 var_num:7 simpified: ~x9|(~x1&~x5&((x11&x9)|(~x12&(~x2|(~x1&(~x2|(~x5&(~x1|(x8&(~x5|(~x2&(~x1|~x8))))))))))))
+['and', 'x5', 'x11']
+depth:1 var_num:2 simpified: x11&x5
+['or', 'or', 'or', 'and', 'or', 'not', 'x3', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x6', 'x4', 'x5', 'x1', 'x2', 'x1', 'x11', 'x10', 'x12', 'x4', 'x9', 'x2', 'x8']
+depth:13 var_num:11 simpified: x2|x8|x9|(x4&(~x3|(~x12&(~x10|(~x11&(~x1|(~x2&(~x1|(~x5&(~x4|(~x5&~x6)))))))))))
+['or', 'x5', 'x3']
+depth:1 var_num:2 simpified: x3|x5
+['not', 'not', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x1', 'x7', 'x5', 'x9', 'x1', 'x7', 'x2', 'x1', 'x12', 'x10', 'x12', 'x4', 'x8']
+depth:13 var_num:9 simpified: x4&x8&(x12|(x10&(x12|(x1&(x2|(~x7&(~x1|(~x9&(~x5|(~x7&(~x1|~x5)))))))))))
+['or', 'x3', 'or', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x4', 'x5', 'x4', 'x11', 'x8', 'x4', 'x10', 'x12', 'x11', 'x8', 'x9']
+depth:9 var_num:8 simpified: x3|x8|x9|(~x11&(~x12|(~x10&(~x4|(~x8&(~x11|(~x4&~x5)))))))
+['or', 'x7', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x7', 'x2', 'x4', 'x1', 'x12', 'x5', 'x8', 'x1', 'x7']
+depth:0 var_num:1 simpified: x7
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x2', 'x4', 'x5', 'x2', 'x5', 'not', 'x5', 'x8', 'x7', 'x8', 'x1', 'x2', 'x9', 'x5']
+depth:10 var_num:7 simpified: x5&(x9|(x2&(x1|(x8&(x7|(x8&(~x5|(x2|(x4&x5)))))))))
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x7', 'x8', 'not', 'x2', 'x11', 'x5', 'x10', 'x12', 'x2', 'x1', 'x2', 'x1', 'x7', 'x4']
+depth:13 var_num:9 simpified: x4&x7&(x1|(x2&(x1|(x2&(x12|(~x10&(~x5|(~x11&(x2|(~x8&(~x1|~x7)))))))))))
+['or', 'not', 'x8', 'x5']
+depth:2 var_num:2 simpified: x5|~x8
+['and', 'x3', 'x3']
+depth:0 var_num:1 simpified: x3
+['or', 'x2', 'x1']
+depth:1 var_num:2 simpified: x1|x2
+['or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x7', 'x1', 'x5', 'x7', 'x10', 'x2', 'x4', 'not', 'x3', 'x11', 'x5', 'not', 'x1', 'x2', 'x10', 'x12', 'x3', 'x7', 'x3']
+depth:16 var_num:9 simpified: x3|(x7&(x3|(~x12&(~x10|(~x2&(x1|(~x11&~x5&(x3|(~x4&(~x2|(~x10&(~x7|(~x5&(~x1|~x7))))))))))))))
+['not', 'x11']
+depth:1 var_num:1 simpified: ~x11
+['and', 'x3', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'and', 'x1', 'or', 'x12', 'not', 'x4', 'x7', 'x2', 'x10', 'x8', 'or', 'x1', 'x2', 'x1', 'x4', 'x11', 'not', 'x2', 'x4']
+depth:4 var_num:5 simpified: x3&(~x2|x4|(x11&(x1|x4)))
+['and', 'x2', 'x4']
+depth:1 var_num:2 simpified: x2&x4
+['or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'and', 'or', 'x5', 'x4', 'x5', 'x8', 'x7', 'x12', 'x2', 'x11', 'x7', 'x2', 'x7', 'x12', 'x9', 'x1', 'x5']
+depth:12 var_num:8 simpified: x5|(x1&(x12|x9|(x7&(x2|(x7&(x11|(x2&(x12|(x7&(~x5|x8))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x4', 'x2', 'x7', 'x4', 'x11', 'x5', 'not', 'x9', 'x11', 'x9', 'x8', 'x12', 'x11', 'x4', 'x4']
+depth:0 var_num:1 simpified: x4
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x5', 'x2', 'x1', 'x8', 'x1', 'x8', 'x5', 'x7', 'x9', 'not', 'x5', 'x12', 'x9', 'x10', 'x12']
+depth:14 var_num:8 simpified: x12&(x10|(x9&(x12|(~x5&(x9|(x7&(x5|(x8&(x1|(x8&(x1|(x2&(x5|x7)))))))))))))
+['and', 'and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'or', 'and', 'x7', 'x2', 'not', 'x7', 'x5', 'x2', 'x3', 'x7', 'x2', 'x1', 'x2', 'x9', 'x1', 'x7', 'x2', 'x12']
+depth:12 var_num:8 simpified: x12&x2&~x7&(~x1|(~x9&(~x2|(~x1&(~x2|(~x7&(~x3|(~x2&(~x5|(~x2&~x4&x7))))))))))
+['or', 'x8', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x4', 'x8', 'x9', 'x10', 'x4', 'x11', 'x5', 'x4', 'x1', 'x7', 'x1', 'x11']
+depth:12 var_num:8 simpified: x11|x8|(x1&(x7|(x1&(x4|(x5&(x11|(x4&(x10|(x9&(~x4|x8))))))))))
+['and', 'x3', 'x4']
+depth:1 var_num:2 simpified: x3&x4
+['not', 'x6']
+depth:1 var_num:1 simpified: ~x6
+['or', 'and', 'x6', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x7', 'x9', 'x12', 'x4', 'x7', 'x4', 'x10', 'x4', 'x11', 'x3', 'x5', 'x1', 'x2', 'x4']
+depth:14 var_num:11 simpified: x4|(x6&(x2|(x1&(x5|(x3&(x11|(x4&(x10|(x4&(x7|(x4&(x12|(x7&x9)))))))))))))
+['or', 'x7', 'or', 'not', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x11', 'x12', 'x10', 'x9', 'x4', 'x7', 'x8', 'x1', 'x11', 'x9', 'x7', 'x10', 'x5']
+depth:0 var_num:0 simpified: 1
+['or', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x7', 'x1', 'x10', 'x4', 'x11', 'x9', 'x5', 'x8', 'x1', 'x11', 'x9', 'x8', 'x5']
+depth:13 var_num:9 simpified: x5|(x8&(~x11|x9|(~x1&(~x8|(~x5&(~x9|(~x11&(~x4|(~x10&(~x1|(~x3&~x7)))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'or', 'and', 'or', 'x4', 'x4', 'x1', 'x2', 'x1', 'x7', 'x2', 'x1', 'x8', 'x9', 'x8', 'x1', 'x7', 'x2', 'x12', 'x4', 'x12']
+depth:14 var_num:7 simpified: x12&(x4|(x12&(x2|(x7&(x1|(x8&(x9|(x8&(x1|(x2&(x7|(x1&~x2&~x4))))))))))))
+['and', 'x11', 'x9']
+depth:1 var_num:2 simpified: x11&x9
+['and', 'x8', 'x6']
+depth:1 var_num:2 simpified: x6&x8
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x5', 'x6', 'x10', 'x2', 'x5', 'x7', 'x10', 'x8', 'x10', 'x12', 'x5']
+depth:12 var_num:8 simpified: ~x5&(~x12|(~x10&(~x8|(~x10&(~x7|(~x5&(~x2|(~x10&(~x6|(~x4&~x5))))))))))
+['or', 'and', 'or', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x5', 'x12', 'x6', 'x1', 'x9', 'x10', 'x9', 'x5', 'not', 'x2', 'x1', 'x7', 'x2', 'x3', 'x4']
+depth:14 var_num:10 simpified: x4|(x3&(x2|x7|(~x1&(x2|(~x5&(~x9|(~x10&(~x9|(~x1&(~x6|(~x12&(~x5|~x9))))))))))))
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x10', 'x1', 'x7', 'x2', 'x4', 'and', 'x9', 'x8', 'x1', 'x5', 'x8', 'x6', 'x12', 'x5', 'x1', 'x2']
+depth:13 var_num:10 simpified: x2|(x1&(x5|(x12&(x6|(x8&(x5|(x1&((x4&(x2|(x7&(x1|x10))))|(x8&x9)))))))))
+['or', 'x6', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'or', 'and', 'x7', 'x2', 'x11', 'x9', 'x5', 'x10', 'x1', 'x10', 'x9', 'not', 'x9', 'x4', 'x10', 'x11', 'not', 'x7']
+depth:11 var_num:10 simpified: x11|x6|~x7|(x10&(x4|(~x9&(x10&(x1|(x10&(x5|(x9&(x11|x3|(x2&x7))))))))))
+['or', 'or', 'x3', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x10', 'x4', 'x11', 'x2', 'not', 'x1', 'x5', 'x1', 'x5', 'x1', 'x2', 'x3', 'x7', 'x9', 'x5', 'x10', 'x5']
+depth:1 var_num:3 simpified: x10|x3|x5
+['or', 'x11', 'x5']
+depth:1 var_num:2 simpified: x11|x5
+['or', 'x11', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x7', 'x2', 'x7', 'x4', 'x1', 'x8', 'x4', 'x12', 'x3', 'x7', 'x5', 'x12']
+depth:12 var_num:9 simpified: x11|x12|(x5&(x7|(x3&(x12|(x4&(x8|(x1&(x4|(x7&(x2|(x1&x7)))))))))))
+['and', 'x6', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x12', 'x7', 'x1', 'x4', 'x5', 'x10', 'x1', 'x11', 'x10', 'x5', 'not', 'x8']
+depth:10 var_num:9 simpified: x6&(~x8|(x5&(x10|x11|(x1&(x10|(x5&(x4|(x1&(x12|x7)))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'and', 'or', 'x2', 'x1', 'x12', 'x10', 'x4', 'x11', 'x10', 'x4', 'x2', 'not', 'not', 'x2', 'x4', 'x5', 'x4']
+depth:3 var_num:3 simpified: x4&(x5|(x2&x4))
+['and', 'x10', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x6', 'x5', 'x4', 'x12', 'x2', 'x4', 'x4', 'x9', 'x10']
+depth:0 var_num:1 simpified: x10
+['and', 'and', 'or', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x12', 'x1', 'x7', 'x9', 'x1', 'x10', 'x12', 'not', 'x11', 'x2', 'x5', 'not', 'x9', 'x1']
+depth:12 var_num:9 simpified: x1&~x9&(x4|(x5&(x2|(~x11&(x12|(x10&(x1|(x9&(x7|(x1&(x12|x4)))))))))))
+['not', 'x2']
+depth:1 var_num:1 simpified: ~x2
+['not', 'or', 'x3', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x12', 'x8', 'x2', 'x6', 'x10', 'x1', 'x2', 'x1', 'x7', 'x3']
+depth:1 var_num:1 simpified: ~x3
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x6', 'x10', 'x9', 'x5', 'not', 'x7', 'x10', 'x9', 'x1', 'x9', 'x1', 'x3', 'x5', 'x8', 'x7', 'x2', 'x3']
+depth:15 var_num:9 simpified: x3&(x2|(x7&(x8|(x5&(x3|(x1&(x9|(x1&(x9|(x10&(~x7|(x5&(x9|(x10&x6))))))))))))))
+['and', 'x11', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x7', 'x9', 'x12', 'x5', 'x10', 'x4', 'x8', 'x7', 'x9', 'x7', 'x4', 'x1']
+depth:12 var_num:9 simpified: x1&x11&(x4|(x7&(x9|(x7&(x8|(x4&(x10|(x5&(x12|(x9&(x1|x7)))))))))))
+['and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x4', 'x2', 'x1', 'x2', 'x6', 'x8', 'x1', 'x12', 'x2', 'or', 'x5', 'x7', 'x2', 'x8', 'x4']
+depth:14 var_num:8 simpified: x4&(~x8|(~x2&((~x2&(~x12|(~x1&(~x8|(~x6&(~x2|(~x1&(~x2|(~x4&~x5)))))))))|(~x5&~x7))))
+['and', 'x3', 'x5']
+depth:1 var_num:2 simpified: x3&x5
+['and', 'not', 'and', 'or', 'or', 'and', 'or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x12', 'x2', 'x12', 'x3', 'x5', 'x4', 'x7', 'x4', 'x9', 'x1', 'x5', 'x4', 'x1', 'x11']
+depth:7 var_num:6 simpified: x11&(~x1|(~x4&~x5&(~x1|(~x9&(~x4|~x7)))))
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x3', 'x9', 'x5', 'x12', 'x10', 'x5', 'x1', 'x2', 'x7', 'x2', 'x7', 'x8', 'x4', 'x2', 'x4']
+depth:1 var_num:2 simpified: x2&x4
+['or', 'not', 'x10', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x1', 'or', 'and', 'x1', 'x4', 'x7', 'x9', 'x1', 'x9', 'x4', 'x11', 'x3', 'x1', 'x3', 'x9', 'x2', 'x11']
+depth:14 var_num:9 simpified: ~x10|x11|(x2&(x9|(x3&(x1|(x3&(x11|(x4&(x9|(x1&(x9|((x1|x5)&(x7|(x1&x4)))))))))))))
+['or', 'x3', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'and', 'or', 'and', 'or', 'x2', 'x7', 'x8', 'x4', 'x1', 'x11', 'x1', 'x2', 'x8', 'x6', 'x1', 'x9', 'x2']
+depth:11 var_num:9 simpified: x2|x3|(x9&(x1|x6|(x8&(x2|(x1&(x11|(x1&(x4|(x8&(x2|x7))))))))))
+['or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'and', 'or', 'and', 'or', 'and', 'x12', 'x1', 'x7', 'x10', 'x3', 'x12', 'x1', 'x3', 'x2', 'x1', 'x7', 'x3', 'x1', 'x3', 'x12', 'x5']
+depth:3 var_num:4 simpified: x5|(x12&(x1|x3))
+['and', 'not', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x3', 'x1', 'x7', 'x2', 'x11', 'x4', 'x5', 'x1', 'x9', 'x3', 'x7', 'x2', 'not', 'x4']
+depth:12 var_num:8 simpified: ~x2&~x4&(~x7|(~x3&~x9&(~x1|(~x5&(~x4|(~x11&(~x2|(~x7&(~x1|(~x3&~x5))))))))))
+['and', 'and', 'x10', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x8', 'or', 'x1', 'x3', 'x5', 'x1', 'x3', 'x11', 'x5', 'x4', 'x12']
+depth:8 var_num:8 simpified: x10&x12&x4&(x5|(x11&(x3|(x1&(x5|((x1|x3)&(x4|x8)))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x11', 'x4', 'x2', 'x7', 'not', 'x8', 'x1', 'x4', 'x2', 'x1', 'x9', 'x1', 'x2', 'not', 'x1', 'x10', 'x4', 'x12']
+depth:15 var_num:9 simpified: x12&(x4|(x10&(~x1|(x2&(x1|(x9&(x1|(x2&(x4|(x1&(~x8|(x7&(x2|(x11&x4))))))))))))))
+['not', 'and', 'x1', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x5', 'or', 'and', 'x5', 'x11', 'x8', 'x4', 'x3', 'x1', 'x12', 'x5', 'x10', 'x12', 'x6', 'x2', 'x10']
+depth:12 var_num:10 simpified: ~x1|~x10|(~x2&(~x6|(~x10&~x12&(~x5|(~x12&(~x1|(~x3&(~x4|(~x8&(~x11|~x5)&(~x4|~x5))))))))))
+['and', 'x2', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'not', 'x12', 'x1', 'and', 'x6', 'x4', 'x11', 'x4', 'x1', 'x7', 'x5', 'x1', 'x4']
+depth:11 var_num:8 simpified: x2&x4&(x1|(x5&(x7|(x1&(x4|(x11&((x1&(~x12|x4))|(x4&x6))))))))
+['and', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x3', 'x9', 'x1', 'x4', 'x6', 'or', 'x7', 'x5', 'x8', 'x12', 'x4', 'x2', 'x4', 'x9']
+depth:1 var_num:3 simpified: x2&x4&x9
+['and', 'and', 'x9', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'and', 'x1', 'x5', 'x2', 'x7', 'x10', 'x8', 'x5', 'x11', 'x1', 'x12', 'x4', 'x5']
+depth:11 var_num:10 simpified: x5&x9&(x4|(x12&(x1|(x11&(x5|(x8&(x10|(x7&(x2|(x1&x4&x5))))))))))
+['and', 'x8', 'or', 'x4', 'x2']
+depth:2 var_num:3 simpified: x8&(x2|x4)
+['not', 'x6']
+depth:1 var_num:1 simpified: ~x6
+['or', 'x3', 'x3']
+depth:0 var_num:1 simpified: x3
+['and', 'x1', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x2', 'x5', 'x10', 'x2', 'x11', 'x2', 'x9', 'x1', 'x4', 'x11', 'x3', 'x5']
+depth:11 var_num:8 simpified: x1&x5&(x3|(x11&(x4|(x1&(x9|(x2&(x11|(x2&(x10|(x2&x5))))))))))
+['and', 'x5', 'x11']
+depth:1 var_num:2 simpified: x11&x5
+['and', 'x8', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'or', 'and', 'x4', 'x5', 'and', 'or', 'x8', 'x6', 'x5', 'x8', 'x1', 'x2', 'x6', 'x2', 'not', 'x2', 'x10', 'x7', 'x2', 'x4']
+depth:13 var_num:9 simpified: x8&(x4|(x2&(x7|(x10&(~x2|(x6|(x2&(x1|(x8&(x9|(x4&x5)|(x5&(x6|x8))))))))))))
+['or', 'x1', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'or', 'x10', 'x4', 'x10', 'x5', 'x4', 'x2', 'x4', 'x11', 'x4', 'x10', 'x9', 'x2', 'x5', 'x9', 'x10']
+depth:12 var_num:7 simpified: x1|(x10&(x9|(x5&(x2|(x9&(x10|(x4&(x11|(x4&(x2|(x4&x5)))))))))))
+['and', 'x4', 'x9']
+depth:1 var_num:2 simpified: x4&x9
+['or', 'x12', 'x5']
+depth:1 var_num:2 simpified: x12|x5
+['or', 'x7', 'or', 'x2', 'and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x9', 'x10', 'x1', 'x12', 'x8', 'or', 'x3', 'x7', 'x12', 'x1', 'x5', 'x11', 'x3', 'x5', 'x3']
+depth:15 var_num:11 simpified: x2|x7|(x3&(~x5|(~x3&(~x11|(~x5&(~x1|(~x12&((~x3&~x7)|(~x8&(~x12|(~x1&(~x10|(~x4&~x9)))))))))))))
+['not', 'x12']
+depth:1 var_num:1 simpified: ~x12
+['not', 'and', 'x4', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'and', 'or', 'and', 'or', 'not', 'x8', 'x1', 'and', 'or', 'not', 'x11', 'x9', 'x7', 'x1', 'x7', 'x9', 'x1', 'x2', 'x1', 'x4', 'x1', 'x11', 'x1', 'x2', 'x3']
+depth:12 var_num:7 simpified: ~x4|(~x3&(~x2|(~x1&(~x11|(~x1&(~x4|(~x1&(~x2|(~x1&(~x7|~x9))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x10', 'x7', 'x3', 'x7', 'x2', 'x10', 'x4', 'x5', 'x4', 'x11', 'x2', 'x3', 'x5']
+depth:12 var_num:7 simpified: x5&(x3|(x2&(x11|(x4&(x5|(x4&(x10|(x2&(x7|(x3&(x10|x7)))))))))))
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x10', 'x4', 'x11', 'not', 'x5', 'x2', 'x8', 'x4', 'x11', 'x9', 'x1', 'x12']
+depth:11 var_num:9 simpified: x12|(x1&(x9|(x11&(x4|(x8&(x2|(~x5&(x11|(~x10&x4)))))))))
+['and', 'or', 'and', 'x4', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x7', 'x5', 'x2', 'x7', 'x5', 'x11', 'x10', 'x7', 'x12', 'x1', 'x2']
+depth:10 var_num:8 simpified: x2&(x1|(x12&x4&(x10|x7|(x11&(x5|(x7&(x2|(x5&(x1|x7)))))))))
+['or', 'x12', 'or', 'x2', 'and', 'x1', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x2', 'x11', 'x4', 'x11', 'x1', 'x2', 'not', 'x6', 'x4', 'x8', 'x1', 'x4']
+depth:13 var_num:8 simpified: x12|x2|(x1&(x4|(x1&(x8|(x4&(~x6|(x2&(x1|(x11&(x4|(x11&(x2|x7))))))))))))
+['or', 'not', 'x9', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x2', 'x6', 'x12', 'x3', 'x5', 'x1', 'x10', 'x12', 'x1', 'x3', 'x5', 'x8', 'x2', 'x4']
+depth:14 var_num:10 simpified: ~x9|(x4&(x2|(x8&(x5|(x3&(x1|(x12&(x10|(x1&(x5|(x3&(x12|(x2&x6)))))))))))))
+['and', 'x1', 'x12']
+depth:1 var_num:2 simpified: x1&x12
+['or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'x1', 'x7', 'x3', 'and', 'or', 'not', 'x10', 'not', 'x1', 'x2', 'x11', 'x1', 'x12', 'not', 'x12', 'x2', 'x7', 'x4']
+depth:10 var_num:8 simpified: x4|(x7&(x2|(~x12&(x1|(x11&((x2&(~x1|~x10))|(x3&(x1|x7))))))))
+['and', 'not', 'x6', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x11', 'x2', 'x4', 'x9', 'x12', 'x9', 'x2', 'x7', 'x12', 'x2', 'x8', 'x9', 'x8', 'x10', 'x1']
+depth:16 var_num:11 simpified: ~x6&(x1|(x10&(x8|(x9&(x8|(x2&(x12|(x7&(x2|(x9&(x12|(x9&(x4|(x2&(x11|x5)))))))))))))))
+['not', 'x8']
+depth:1 var_num:1 simpified: ~x8
+['or', 'and', 'x8', 'x9', 'x3']
+depth:2 var_num:3 simpified: x3|(x8&x9)
+['or', 'x5', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x10', 'x9', 'x8', 'x2', 'x3', 'x5', 'not', 'x3', 'x7', 'x10', 'x12', 'x3', 'x2', 'x10', 'x5']
+depth:0 var_num:1 simpified: x5
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x6', 'x8', 'x1', 'x3', 'x7', 'x10', 'x8', 'x9', 'x5', 'x1']
+depth:10 var_num:9 simpified: x1&(x5|(x9&(x8|(x10&(x7|(x3&(x1|(x8&(x2|x6)))))))))
+['and', 'x4', 'or', 'x1', 'x8']
+depth:2 var_num:3 simpified: x4&(x1|x8)
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x11', 'x4', 'x11', 'x4', 'x10', 'x5', 'x1', 'x11', 'x5', 'x1', 'x8', 'x7', 'x9', 'x1', 'x7', 'x1']
+depth:1 var_num:2 simpified: x1&x7
+['not', 'x10']
+depth:1 var_num:1 simpified: ~x10
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x5', 'x12', 'x10', 'x12', 'x1', 'x5', 'x10', 'x12', 'x6', 'x1', 'x4', 'x7', 'x2']
+depth:14 var_num:9 simpified: ~x2&(~x7|(~x4&(~x1|(~x6&(~x12|(~x10&(~x5|(~x1&(~x12|(~x10&(~x12|(~x3&~x5))))))))))))
+['and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x2', 'x4', 'x11', 'x9', 'x3', 'x4', 'x2', 'x1', 'x5', 'x7', 'x4', 'x5', 'not', 'x10', 'x12', 'x5', 'x1', 'x2']
+depth:17 var_num:10 simpified: x2&(x1|(~x5&(~x12|(x10&(~x5|(~x4&(~x7|(~x5&(~x1|(~x2&(~x4|(~x3&(~x9|(~x11&(~x2|~x4)))))))))))))))
+['or', 'x3', 'and', 'x5', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x11', 'x12', 'x5', 'x1', 'not', 'x1', 'x11', 'x9', 'x1', 'x7', 'x2', 'x9', 'x5']
+depth:12 var_num:8 simpified: x3|(x5&(x9|(x2&(x7|(x1&(x9|(x11&(~x1|(x5|(x12&(x11|x2)))))))))))
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x10', 'x5', 'x7', 'x4', 'x11', 'x5', 'x8', 'x7', 'x2', 'x5', 'x8', 'x9', 'x1', 'x4']
+depth:13 var_num:9 simpified: x1|x4|(x9&(x8|(x5&(x2|(x7&(x8|(x5&(x11|(x4&(x7|(x5&(x10|x2))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x4', 'x5', 'x7', 'x2', 'x7', 'x2', 'x1', 'x11', 'x9', 'x12', 'x3', 'x1', 'x2', 'x9', 'x1', 'x8', 'x4']
+depth:17 var_num:10 simpified: x4&(x8|(x1&(x9|(x2&(x1|(x3&(x12|(x9&(x11|(x1&(x2|(x7&(x2|(x7&(x5|(x1&x4))))))))))))))))
+['and', 'x1', 'x7']
+depth:1 var_num:2 simpified: x1&x7
+['or', 'not', 'x4', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x12', 'or', 'x1', 'x10', 'x5', 'x11', 'x3', 'x10', 'x12', 'x5', 'x1', 'x2', 'x4', 'x1', 'x2', 'x3']
+depth:14 var_num:9 simpified: ~x4|(x2&x3&(x1|(x4&(x2|(x1&(x5|(x12&(x10|(x3&(x11|(x5&(x1|x10|(x12&x9)))))))))))))
+['and', 'x5', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x4', 'x1', 'x7', 'x2', 'x11', 'x1', 'x10', 'x9', 'x2', 'x1', 'x2', 'x7']
+depth:13 var_num:8 simpified: x5&(x7|(x2&(x1|(x2&(x9|(x10&(x1|(x11&(x2|(x7&(x1|(x4&x5))))))))))))
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x6', 'x4', 'x1', 'x7', 'x5', 'not', 'or', 'x11', 'x1', 'x8', 'x1', 'x7', 'x1', 'x2', 'x5', 'x11', 'x7', 'x4', 'x11']
+depth:17 var_num:8 simpified: ~x11&(~x4|(~x7&(~x11|(~x5&(~x2|(~x1&(~x7|(~x1&(~x8|((x1|x11)&(~x5|(~x7&(~x1|(~x4&(~x1|~x6)))))))))))))))
+['or', 'and', 'x3', 'x12', 'x5']
+depth:2 var_num:3 simpified: x5|(x12&x3)
+['and', 'x2', 'x10']
+depth:1 var_num:2 simpified: x10&x2
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x7', 'x2', 'x7', 'x4', 'x11', 'x5', 'x1', 'x4', 'x2', 'x1', 'x9', 'x11', 'x1', 'x2']
+depth:13 var_num:7 simpified: x1|x2|(x11&(x9|(x1&(x2|(x4&(x1|(x5&(x11|(x4&(x7|(x2&(x4|x7))))))))))))
+['and', 'or', 'x1', 'x5', 'x12']
+depth:2 var_num:3 simpified: x12&(x1|x5)
+['and', 'x4', 'x6']
+depth:1 var_num:2 simpified: x4&x6
+['and', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x3', 'or', 'not', 'x6', 'x12', 'x4', 'x5', 'x4', 'not', 'x1', 'x5', 'x4', 'x7', 'x5']
+depth:1 var_num:2 simpified: x5&x7
+['and', 'x4', 'not', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x10', 'x4', 'x7', 'x4', 'x2', 'x1', 'x2', 'x7', 'x10', 'x4', 'x1', 'x2', 'x1']
+depth:2 var_num:2 simpified: ~x1&x4
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'and', 'or', 'not', 'and', 'or', 'x3', 'x4', 'x5', 'x1', 'x4', 'x7', 'x1', 'x2', 'x7', 'x10', 'x5', 'x8', 'x1', 'x12', 'x3']
+depth:14 var_num:9 simpified: ~x3&(~x12|(~x1&(~x8|(~x5&(~x10|(~x7&(~x2|(~x1&(~x7|(x4&(x1|~x5|(~x3&~x4))))))))))))
+['or', 'x6', 'and', 'x3', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x5', 'x1', 'x3', 'x1', 'x7', 'x3', 'x7', 'x4']
+depth:9 var_num:6 simpified: x6|(x3&x4&(x7|(x3&(x7|(x1&(x3|(x1&(x4|x5))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x5', 'x8', 'x7', 'x4', 'x5', 'x8', 'x4', 'x1', 'x2', 'x7', 'x3', 'x7', 'x8', 'x4']
+depth:14 var_num:8 simpified: x4&(x8|(x7&(x3|(x7&(x2|(x1&(x4|(x8&(x5|(x4&(x7|(x8&(x5|x9)))))))))))))
+['or', 'x8', 'x6']
+depth:1 var_num:2 simpified: x6|x8
+['or', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x11', 'x1', 'x4', 'x9', 'x3', 'and', 'x7', 'x10', 'x5', 'x4', 'x1', 'x5', 'x4']
+depth:0 var_num:1 simpified: x4
+['or', 'x12', 'x10']
+depth:1 var_num:2 simpified: x10|x12
+['or', 'x2', 'x4']
+depth:1 var_num:2 simpified: x2|x4
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x1', 'x4', 'x10', 'x2', 'x6', 'x1', 'x8', 'x5', 'x9', 'x1', 'x12', 'x10', 'x5', 'x12']
+depth:14 var_num:10 simpified: x12&(x5|(x10&(x12|(x1&(x9|(x5&(x8|(x1&(x6|(x2&(x10|(x4&(x1|x3)))))))))))))
+['or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x7', 'x1', 'x3', 'x5', 'x8', 'x4', 'x2', 'x1', 'x5', 'x4', 'x2', 'x10', 'x1', 'x12', 'x3']
+depth:15 var_num:9 simpified: ~x12|x3|(~x1&(~x10|(~x2&(~x4|(~x5&(~x1|(~x2&(~x4|(~x8&(~x5|(~x3&(~x1|(~x4&~x7)))))))))))))
+['and', 'x8', 'not', 'x3']
+depth:2 var_num:2 simpified: ~x3&x8
+['and', 'x2', 'not', 'x6']
+depth:2 var_num:2 simpified: x2&~x6
+['and', 'and', 'or', 'and', 'x4', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x5', 'x10', 'x9', 'x5', 'x4', 'x5', 'x1', 'x2', 'x11', 'x5', 'x12', 'x5']
+depth:1 var_num:2 simpified: x12&x5
+['and', 'and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x10', 'x8', 'x5', 'x4', 'x9', 'x5', 'x1', 'x12', 'x9', 'or', 'x2', 'x4', 'x2', 'x6', 'x8']
+depth:12 var_num:9 simpified: ~x2&x6&x8&((~x2&~x4)|(~x9&(~x12|(~x1&(~x5|(~x9&(~x4|(~x5&(~x8|(~x1&~x10))))))))))
+['not', 'x9']
+depth:1 var_num:1 simpified: ~x9
+['and', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x4', 'x1', 'x12', 'x11', 'x9', 'x1', 'x7', 'x2', 'x1', 'x7', 'x2', 'x1', 'x2']
+depth:13 var_num:8 simpified: x2&x4&(x1|(x2&(x7|(x1&(x2|(x7&(x1|(x9&(x11|(x12&(x1|(x4&x5))))))))))))
+['not', 'x10']
+depth:1 var_num:1 simpified: ~x10
+['and', 'or', 'x8', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x5', 'x6', 'x1', 'x5', 'x8', 'x1', 'x9', 'x2', 'x11', 'x1', 'x2', 'x1', 'x8']
+depth:0 var_num:1 simpified: x8
+['and', 'x3', 'and', 'not', 'x2', 'x6']
+depth:2 var_num:3 simpified: ~x2&x3&x6
+['or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x5', 'or', 'and', 'or', 'x10', 'x5', 'x2', 'x7', 'x2', 'x9', 'x4', 'x2', 'x7', 'x2', 'x1', 'x7', 'x10', 'x9', 'x7']
+depth:15 var_num:7 simpified: x7|~x9|(~x10&(~x7|(~x1&(~x2|(~x7&(~x2|(~x4&(~x9|(~x2&((~x4&~x5)|(~x7&(~x2|(~x10&~x5)))))))))))))
+['and', 'x6', 'x3']
+depth:1 var_num:2 simpified: x3&x6
+['and', 'or', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x5', 'x10', 'x12', 'x10', 'x3', 'x4', 'x7', 'x2', 'x6']
+depth:10 var_num:8 simpified: x6&(x4|(x2&(x7|(x4&(x3|(x10&(x12|(x10&(x3|x5)))))))))
+['or', 'x5', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x2', 'x1', 'x8', 'x4', 'x1', 'x2', 'x5', 'x4', 'x8', 'x9', 'x2', 'x1', 'x9']
+depth:13 var_num:7 simpified: x5|~x9|(~x1&(~x2|(~x9&(~x8|(~x4&(x5|(x2&(x1|(x4&(x8|(x1&(x2|x7))))))))))))
+['and', 'or', 'x1', 'x3', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x10', 'x9', 'and', 'or', 'x5', 'or', 'and', 'or', 'x9', 'x1', 'x9', 'x5', 'x12', 'not', 'x2', 'x1', 'x12', 'x1']
+depth:7 var_num:7 simpified: x1&(x12|(x1&(~x2|(x12&(x5|x9)&(x9|(x10&x4))))))
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x10', 'x8', 'x9', 'x1', 'x2', 'x4', 'x1', 'x5', 'x3', 'x9', 'x12', 'x9', 'x4']
+depth:11 var_num:9 simpified: x4&x9&(x12|(x9&(x3|(x5&(x1|(x4&(x2|(x1&(x9|(x10&x8))))))))))
+['not', 'or', 'x1', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x2', 'x1', 'x4', 'x7', 'x9', 'not', 'or', 'x2', 'x1', 'x2', 'x1', 'x7', 'x4', 'x5', 'x2', 'x6', 'x11']
+depth:15 var_num:8 simpified: ~x1&(~x11|(~x6&(~x2|(~x5&(~x4|(~x7&(~x1|(~x2&(x1|(~x9&(~x7|(~x4&(~x1|~x2)))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x7', 'x4', 'x7', 'x5', 'x11', 'x1', 'x3', 'x4', 'x7', 'x5', 'x2', 'x11', 'x4', 'x11']
+depth:14 var_num:7 simpified: x11&(x4|(x11&(x2|(x5&(x7|(x4&(x3|(x1&(x11|(x5&(x7|(x4&(x5|x7)))))))))))))
+['and', 'x8', 'x2']
+depth:1 var_num:2 simpified: x2&x8
+['or', 'or', 'and', 'x4', 'x2', 'x5', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x2', 'x1', 'x12', 'x5', 'x10', 'x12', 'x5', 'x1', 'x4', 'x9', 'x11', 'x4', 'x2']
+depth:11 var_num:8 simpified: x2|x5|(x4&(x11|(x9&(x4|(x1&(x5|(x12&(x10|(x5&(x1|x12))))))))))
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x10', 'x8', 'x4', 'or', 'x12', 'x7', 'x4', 'x11', 'not', 'x8', 'x5', 'x1', 'x12', 'x1', 'x7']
+depth:12 var_num:8 simpified: x7|(x1&(x12|(x1&(x5|(~x8&(x11|(x4&(x12|x7|(x4&(~x10|x8))))))))))
+['not', 'x1']
+depth:1 var_num:1 simpified: ~x1
+['not', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x1', 'and', 'or', 'and', 'or', 'x10', 'x8', 'x9', 'x6', 'x3', 'x7', 'x5', 'x12', 'x5', 'x1', 'x2', 'x12', 'x3', 'x1', 'x2']
+depth:15 var_num:11 simpified: x2|(x1&(x3|(x12&(x2|(x1&(x5|(x12&(x5|(x7&((x1&x4)|(x3&(x6|(x9&(x10|x8))))))))))))))
+['and', 'x6', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x12', 'or', 'and', 'x11', 'x2', 'x4', 'x1', 'x12', 'x9', 'not', 'x12', 'x5', 'x1', 'x10', 'x4', 'x1']
+depth:13 var_num:9 simpified: x6&(x1|(x4&(x10|(x1&(x5|(~x12&(x9|(x12&(x1|(x12&(x4|(x11&x2))))))))))))
+['and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x7', 'x12', 'x3', 'x7', 'x9', 'x5', 'not', 'x9', 'x10', 'x9', 'x5', 'x11', 'x12', 'x3']
+depth:14 var_num:8 simpified: x3&(~x12|(~x11&(~x5|(~x9&(~x10|(x9&(~x5|(~x9&(~x7|(~x3&(~x12|(~x4&~x7))))))))))))
+['or', 'x7', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x12', 'x10', 'x12', 'x1', 'x2', 'x1', 'x12', 'x1', 'x7', 'x2', 'x1', 'x7', 'x6', 'x7', 'x1', 'x12', 'x11', 'x9', 'x12']
+depth:18 var_num:8 simpified: x7|(x12&(~x11|x9|(~x12&(~x1|(~x7&(~x6|(x1&~x7&(x2|(x7&(x1|(x12&(x1|(x2&(x1|(x12&(x10|(x12&x9)))))))))))))))))
+['not', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x11', 'x1', 'x7', 'not', 'or', 'x5', 'x10', 'x12', 'x10', 'x8', 'x10', 'x9', 'x4', 'x1', 'x3', 'x9']
+depth:11 var_num:9 simpified: ~x9|(~x3&(~x1|(~x4&~x9&(~x10|(~x8&(~x10|(~x12&(x10|x5|(~x1&~x7)))))))))
+['and', 'x11', 'not', 'x6']
+depth:2 var_num:2 simpified: x11&~x6
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'or', 'x4', 'x5', 'not', 'x1', 'x8', 'x6', 'not', 'x10', 'x3', 'x4', 'x1', 'x7', 'x2', 'x1', 'x7', 'x2']
+depth:14 var_num:10 simpified: x2&(x7|(x1&(x2|(x7&(x1|(x4&(x3|(~x10&(x6|(x8&(~x1|(x9&(x4|x5)))))))))))))
+['or', 'x12', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x10', 'x5', 'x8', 'x1', 'x9', 'x3', 'x7', 'x2', 'x1', 'x9', 'x2', 'x1', 'x2']
+depth:14 var_num:9 simpified: x12|(x2&(x1|(x2&(x9|(x1&(x2|(x7&(x3|(x9&(x1|(x8&(x5|(x1&x10)))))))))))))
+['and', 'x12', 'x10']
+depth:1 var_num:2 simpified: x10&x12
+['or', 'x7', 'x3']
+depth:1 var_num:2 simpified: x3|x7
+['and', 'not', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x11', 'x1', 'x2', 'x12', 'x11', 'x9', 'x2', 'x7', 'x5', 'x12', 'x9', 'x1', 'x6', 'x5']
+depth:15 var_num:8 simpified: x5&(x6|(x1&(x9|(x12&(x5|(x7&(x2|(x9&(x11|(x12&(x2|(x1&(x11|(x1&x2))))))))))))))
+['not', 'x11']
+depth:1 var_num:1 simpified: ~x11
+['or', 'or', 'or', 'x4', 'x4', 'and', 'x3', 'or', 'and', 'or', 'or', 'and', 'or', 'x5', 'x3', 'x5', 'x11', 'x10', 'and', 'or', 'x5', 'x1', 'x7', 'x9', 'x1']
+depth:5 var_num:8 simpified: x1|x4|(x3&(x9|(x7&(x1|x5)&(x10|x11|x5))))
+['or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x11', 'x1', 'x2', 'x4', 'x4', 'x7', 'x8', 'or', 'x2', 'x5', 'x4', 'x12', 'x1', 'x2', 'x7', 'x2', 'x6', 'x4', 'x1']
+depth:12 var_num:8 simpified: x1|~x4|(~x6&(~x2|(~x7&(~x2|(~x1&(~x12|(~x4&((~x2&~x5)|(~x8&(~x4|~x7))))))))))
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x8', 'x7', 'x4', 'x2', 'x4', 'not', 'x11', 'x1', 'x10', 'x12', 'x11', 'not', 'x4', 'x1', 'x11']
+depth:13 var_num:8 simpified: x11|(x1&(~x4|(x11&(x12|(x10&(x1|(~x11&(x4|(x2&(x4|(x7&~x8)))))))))))
+['or', 'x11', 'x5']
+depth:1 var_num:2 simpified: x11|x5
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x1', 'x7', 'not', 'x6', 'not', 'x5', 'x4', 'x12', 'x6', 'x4', 'x1', 'x10', 'x5', 'x4', 'x10', 'x12']
+depth:14 var_num:7 simpified: x12&(x10|(x4&(x5|(x10&(x1|(x4&(x6|(x12&(x4|(~x5&(~x6|(x7&(x1|x4)))))))))))))
+['and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x4', 'x10', 'x5', 'x1', 'x12', 'x6', 'or', 'x4', 'x12', 'x5', 'x3', 'x1', 'x8', 'x1', 'x12', 'x3', 'x11', 'x4', 'x7']
+depth:17 var_num:10 simpified: x7&(~x4|(~x11&(~x3|(~x12&(~x1|(~x8&(~x1|(~x3&(~x5|(~x12&~x4&(~x6|(~x12&(~x1|(~x5&(~x10|x4)))))))))))))))
+['or', 'x3', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x1', 'x12', 'x3', 'x5', 'x6', 'x12', 'x8', 'x6', 'x11', 'x4', 'x5', 'not', 'x4', 'x7', 'x2']
+depth:15 var_num:10 simpified: x3|(x2&(x7|(~x4&(x5|(x4&(x11|(x6&(x8|(x12&(x6|(x5&(x3|(x12&(x1|x2))))))))))))))
+['not', 'x10']
+depth:1 var_num:1 simpified: ~x10
+['not', 'x12']
+depth:1 var_num:1 simpified: ~x12
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x5', 'x6', 'x11', 'x3', 'x7', 'x2', 'x1', 'x3', 'x7', 'x1', 'x5', 'x12', 'x10']
+depth:13 var_num:10 simpified: x10&(x12|(x5&(x1|(x7&(x3|(x1&(x2|(x7&(x3|(x11&(x6|(x4&x5))))))))))))
+['or', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x1', 'and', 'or', 'and', 'x10', 'x1', 'and', 'or', 'x10', 'x5', 'x1', 'x3', 'x2', 'x7', 'x3', 'x9', 'x5', 'x9', 'x5', 'x4', 'x2']
+depth:12 var_num:8 simpified: x2|(x4&(x5|~x9|(~x9|(~x3&(~x7|(~x2&(~x3|(~x1&~x4)|((~x1|~x10)&(~x1|(~x10&~x5))))))))))
+['and', 'and', 'or', 'x10', 'x5', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x1', 'x5', 'x1', 'x12', 'x1', 'x9', 'or', 'x9', 'x3', 'x5', 'x7', 'not', 'x8']
+depth:4 var_num:6 simpified: ~x8&(x10|x5)&(x7|(x5&(x3|x9)))
+['and', 'and', 'x12', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x7', 'x4', 'x5', 'x1', 'x12', 'x4', 'x9', 'x11', 'x5', 'x4', 'x10', 'x3']
+depth:12 var_num:9 simpified: x12&x3&(x10|(x4&(x5|(x11&(x9|(x4&(x12|(x1&(x5|(x4&(x3|x7)))))))))))
+['or', 'x4', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x7', 'x2', 'x5', 'x1', 'x4', 'x11', 'x2', 'x4', 'x10', 'x4', 'x7', 'x2', 'x1', 'x8']
+depth:13 var_num:8 simpified: x1|x4|x8|(x2&(x7|(x4&(x10|(x4&(x2|(x11&(x4|(x1&(x5|(x2&(x1|x7))))))))))))
+['or', 'x11', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x7', 'x2', 'x10', 'x9', 'x12', 'x1', 'x7', 'x5', 'x2', 'not', 'x4', 'x7', 'x1', 'x5', 'x1']
+depth:13 var_num:9 simpified: x11|(x1&(x5|(x1&(x7|(~x4&(x2|(x5&(x7|(x1&(x12|(x9&(x10|x2))))))))))))
+['or', 'x5', 'x11']
+depth:1 var_num:2 simpified: x11|x5
+['and', 'x8', 'x9']
+depth:1 var_num:2 simpified: x8&x9
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x3', 'and', 'or', 'and', 'or', 'x8', 'x11', 'x5', 'x1', 'x4', 'x1', 'x5', 'x10', 'x12', 'x4', 'x7', 'x12', 'x1', 'x2']
+depth:14 var_num:10 simpified: x2&(x1|(x12&(x7|(x4&(x12|(x10&(x5|(x1&(~x3|(x4&(x1|(x5&(x11|x8)))))))))))))
+['and', 'x11', 'x8']
+depth:1 var_num:2 simpified: x11&x8
+['and', 'x10', 'x10']
+depth:0 var_num:1 simpified: x10
+['or', 'x4', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x8', 'x7', 'x1', 'x8', 'x1', 'x8', 'x1', 'x5', 'x10', 'x2', 'x4', 'x3', 'x7', 'x3', 'x2']
+depth:15 var_num:8 simpified: x2|x4|(x3&(x7|(x3&(x4|(~x2&(~x10|(~x5&(~x1|(~x8&(~x1|(~x8&(~x1|(~x7&~x8)))))))))))))
+['or', 'and', 'x10', 'x8', 'or', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x5', 'x2', 'x5', 'x11', 'x9', 'x1', 'x5', 'x9', 'not', 'x4', 'x2', 'x7', 'x12', 'x1', 'x2', 'x4']
+depth:15 var_num:10 simpified: x4|(x10&x8)|(x2&(x1|~x12|(~x7&(~x2|(x4&(~x9|(~x5&(~x1|(~x9&(~x11|(~x5&(~x2|(~x5&~x9)))))))))))))
+['or', 'and', 'x6', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x4', 'x3', 'x5', 'x7', 'x2', 'x12', 'x5', 'x4', 'x5', 'x11', 'x1']
+depth:12 var_num:10 simpified: x1|(x6&(x11|(x5&(x4|(x5&(x12|(x2&(x7|(x5&(x3|(x4&x9)))))))))))
+['and', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x10', 'x5', 'x4', 'x11', 'x2', 'not', 'x4', 'x8', 'x9', 'not', 'x5', 'x3', 'x7']
+depth:9 var_num:9 simpified: x3&x7&(~x5|x9|(x8&(~x4|(x2&(x11|(x4&(x5|(x10&x9))))))))
+['or', 'x6', 'x2']
+depth:1 var_num:2 simpified: x2|x6
+['and', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x6', 'x7', 'x5', 'x3', 'x5', 'x4', 'x7', 'x5', 'x4', 'x4', 'x7', 'x5', 'x8', 'x6', 'x1', 'x2']
+depth:5 var_num:7 simpified: x1&x2&(x6|~x8|(~x5&(~x4|~x7)))
+['or', 'x4', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x3', 'x5', 'and', 'x4', 'x11', 'x2', 'x6', 'or', 'x5', 'and', 'x3', 'x9', 'x4']
+depth:0 var_num:0 simpified: 1
+['not', 'x2']
+depth:1 var_num:1 simpified: ~x2
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'or', 'and', 'x4', 'not', 'x10', 'x2', 'x7', 'x1', 'x2', 'x10', 'x6', 'x12', 'x8', 'x4', 'x10', 'x9', 'x1']
+depth:14 var_num:9 simpified: x1&(x9|(x10&(x4|(x8&(x12|(x6&(x10|(x2&(x1|(x7&(x1|x2|(~x10&x4))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x8', 'or', 'and', 'not', 'or', 'and', 'or', 'and', 'not', 'x8', 'x1', 'x5', 'not', 'x9', 'x2', 'x12', 'x3', 'x7', 'x2', 'x1', 'x10', 'x9', 'x7', 'x12']
+depth:13 var_num:9 simpified: x12&(x7|(x9&(x10|(x1&(x2|(x7&(x3|~x8|(x12&~x2&(x9|(~x5&(~x1|x8)))))))))))
+['not', 'x8']
+depth:1 var_num:1 simpified: ~x8
+['or', 'x10', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'x4', 'x2', 'and', 'or', 'x5', 'x2', 'x8', 'not', 'x1', 'x5', 'x6', 'x12', 'x9', 'x11', 'x10']
+depth:9 var_num:10 simpified: x10|(x11&(x9|(x12&(x6|(x5&(~x1|(x2&x4)|(x8&(x2|x5))))))))
+['and', 'x8', 'x10']
+depth:1 var_num:2 simpified: x10&x8
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'or', 'and', 'x9', 'x12', 'x3', 'x9', 'x8', 'x7', 'x9', 'x10', 'x8', 'x2', 'x1', 'x2']
+depth:11 var_num:9 simpified: x2&(x1|(x2&(x8|(x10&(x9|(x7&(x8|(x9&(x3|x4|(x12&x9))))))))))
+['and', 'x11', 'x10']
+depth:1 var_num:2 simpified: x10&x11
+['and', 'x10', 'x6']
+depth:1 var_num:2 simpified: x10&x6
+['or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x4', 'x5', 'x1', 'x12', 'x1', 'x12', 'x5', 'x1', 'x7', 'x4', 'x7']
+depth:0 var_num:1 simpified: x7
+['or', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x5', 'x6', 'x5', 'x10', 'x12', 'x5', 'x1', 'x12', 'x11', 'x12', 'x6', 'x5', 'not', 'x9', 'x5', 'x1']
+depth:16 var_num:8 simpified: x4|(x1&(x5|(~x9&(x5|(x6&(x12|(x11&(x12|(x1&(x5|(x12&(x10|(x5&(x6|(x5&x9)))))))))))))))
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x9', 'x1', 'x2', 'x6', 'x12', 'not', 'x7', 'x2', 'x1', 'x2', 'x5', 'x1', 'x5']
+depth:12 var_num:8 simpified: x5|(x1&(x5|(x2&(x1|(x2&(~x7|(x12&(x6|(x2&(x1|(x4&x9)))))))))))
+['and', 'or', 'x6', 'x10', 'and', 'or', 'and', 'or', 'not', 'x2', 'x9', 'or', 'and', 'x4', 'x11', 'not', 'or', 'not', 'x4', 'x11', 'x5', 'not', 'x12']
+depth:5 var_num:7 simpified: ~x12&(x10|x6)&(x5|(x4&(~x2|x9)))
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x5', 'x1', 'x10', 'x5', 'x11', 'x9', 'x5', 'not', 'not', 'x8', 'x4', 'x5', 'x4', 'x7']
+depth:11 var_num:8 simpified: x4|x7|(x5&(x4|(x8&(x5|(x9&(x11|(x5&(x10|(x1&(x5|x7))))))))))
+['and', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'x4', 'and', 'or', 'x1', 'x4', 'x9', 'x5', 'x11', 'x9', 'x7', 'x2', 'x1', 'x2']
+depth:1 var_num:2 simpified: x1&x2
+['not', 'x6']
+depth:1 var_num:1 simpified: ~x6
+['or', 'x12', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x7', 'x10', 'x9', 'or', 'x6', 'x11', 'x9', 'x8', 'x10', 'x5', 'x3', 'x9', 'x1', 'x8', 'x2']
+depth:13 var_num:11 simpified: x12|x2|~x8|(~x1&(~x9|(~x3&(~x5|(~x10&(~x8|(~x9&((~x11&~x6)|(~x9&(~x10|(~x2&~x7)))))))))))
+['or', 'or', 'and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'or', 'not', 'x2', 'and', 'or', 'x7', 'x4', 'x1', 'x6', 'x2', 'x5', 'x4', 'x11', 'x9', 'x12', 'x6', 'x1']
+depth:13 var_num:9 simpified: x1|x6|(x12&(~x9|(~x11&(~x4|(~x5&(~x2|(~x6&(~x4|(x2&(~x1|(~x4&~x7)))))))))))
+['or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x8', 'x5', 'x6', 'x9', 'or', 'and', 'or', 'x7', 'x2', 'x7', 'not', 'x4', 'x9', 'x10', 'x5', 'x8']
+depth:8 var_num:8 simpified: x8|(x10&x5&(x9|((~x4|x7)&(x9|(x6&(x5|(x1&x8)))))))
+['and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x10', 'x4', 'x3', 'x5', 'x6', 'x12', 'x2', 'x9', 'x2', 'x1', 'x2', 'x5', 'x9', 'x12', 'x3']
+depth:14 var_num:9 simpified: ~x12&x3&(~x9|(~x5&(~x2|(~x1&(~x2|(~x9&(~x2|(~x12&(~x6|(~x5&(~x3|(~x10&~x4))))))))))))
+['and', 'or', 'and', 'x1', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x2', 'x11', 'or', 'x12', 'x4', 'x5', 'x1', 'x4', 'x9', 'x10', 'x5', 'x1', 'x2', 'x10', 'x12']
+depth:13 var_num:8 simpified: x12&(x10|(x1&(x2|(x1&(x5|(x10&(x9|(x4&(x1|(x5&(x12|x4|(x11&x2))))))))))))
+['or', 'x3', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x2', 'x1', 'x6', 'x5', 'x2', 'x7', 'x10', 'x11', 'x2', 'x3']
+depth:0 var_num:1 simpified: x3
+['and', 'x11', 'or', 'x3', 'x12']
+depth:2 var_num:3 simpified: x11&(x12|x3)
+['and', 'x6', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x3', 'x7', 'not', 'x4', 'x5', 'x1', 'x12', 'x10', 'x9', 'x2', 'x5', 'x11', 'x4', 'x7', 'x2', 'x1', 'x8']
+depth:15 var_num:11 simpified: x6&x8&(x1|(x2&(x7|(x4&(x11|(x5&(x2|(x9&(x10|(x12&(x1|(x5&(~x4|x7)))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x1', 'x8', 'x2', 'not', 'x7', 'x2', 'x10', 'x2', 'x7', 'x4', 'x2', 'x7']
+depth:11 var_num:6 simpified: x7&(x2|(x4&(x7|(x2&(x10|(x2&(~x7|(x2&(~x1|x8)))))))))
+['or', 'x11', 'x1']
+depth:1 var_num:2 simpified: x1|x11
+['and', 'x6', 'x9']
+depth:1 var_num:2 simpified: x6&x9
+['not', 'x11']
+depth:1 var_num:1 simpified: ~x11
+['or', 'x1', 'x5']
+depth:1 var_num:2 simpified: x1|x5
+['and', 'x8', 'or', 'and', 'x1', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x11', 'x1', 'x7', 'x6', 'x8', 'x12', 'x8', 'not', 'x4', 'not', 'x10', 'x3', 'x7', 'x4']
+depth:14 var_num:10 simpified: x8&(x4|(x1&(x7|(x3&(~x10|(~x4&(x8|(x12&(x8|(x6&(x7|(x1&(x11|x9)))))))))))))
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'x12', 'x4', 'x9', 'x6', 'x7', 'x2', 'x1', 'x7', 'x5', 'not', 'x10', 'x7', 'x5', 'x7']
+depth:1 var_num:2 simpified: x5&x7
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x1', 'x8', 'or', 'and', 'x1', 'x12', 'x4', 'x8', 'x4', 'x5', 'x3', 'x7', 'x9', 'x3', 'x2', 'x12']
+depth:12 var_num:9 simpified: x12&(x2|(x3&(x9|(x7&(x3|(x5&(x4|(x8&(x4|(x1&x12)|(x8&(x1|x4)))))))))))
+['not', 'and', 'x11', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x1', 'x5', 'not', 'x10', 'x4', 'x12', 'x6', 'x1', 'x2', 'x7', 'x1', 'x7', 'x2', 'x1']
+depth:15 var_num:9 simpified: ~x11|(~x1&(~x2|(~x7&(~x1|(~x7&(~x2|(~x1&(~x6|(~x12&(~x4|(x10&(~x5|(~x1&~x2)))))))))))))
+['and', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'x1', 'or', 'and', 'or', 'and', 'x9', 'and', 'x5', 'x2', 'x9', 'x1', 'x5', 'x8', 'x4', 'x3', 'not', 'x2', 'x5', 'x1', 'x2']
+depth:1 var_num:2 simpified: x1&x2
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x9', 'x1', 'x12', 'x2', 'x7', 'x4', 'x11', 'x9', 'x5', 'x2', 'x7', 'x5']
+depth:12 var_num:8 simpified: x5&(x7|(x2&(x5|(x9&(x11|(x4&(x7|(x2&(x12|(x1&(x5|x9)))))))))))
+['or', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'not', 'or', 'and', 'x2', 'x7', 'x1', 'x12', 'x7', 'x3', 'x1', 'x5', 'x3', 'x7', 'x1', 'x10', 'x3', 'x5', 'x8']
+depth:12 var_num:8 simpified: x5|x8|(x3&(x10|(x1&(x3|x7|(x5&(x1|(~x3&(~x7|(~x12&(x1|(x2&x7)))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x12', 'x7', 'x5', 'x8', 'x5', 'x4', 'x11', 'x10', 'x8', 'x7', 'x2', 'x4', 'x1', 'x8']
+depth:15 var_num:9 simpified: x8&(x1|(x4&(x2|(x7&(x8|(x10&(x11|(x4&(x5|(x8&(x5|(x7&(x12|(x1&x2))))))))))))))
+['and', 'or', 'x5', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x4', 'x7', 'x9', 'x10', 'x7', 'x12', 'not', 'x10', 'x9', 'x2', 'x4', 'x5', 'x8', 'x1']
+depth:13 var_num:9 simpified: x1&(x4|x5)&(x8|(x5&(x4|(x2&(x9|(~x10&(x12|(x7&(x10|(x9&(x7|(x1&x4))))))))))))
+['or', 'x7', 'x4']
+depth:1 var_num:2 simpified: x4|x7
+['not', 'x9']
+depth:1 var_num:1 simpified: ~x9
+['and', 'x5', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x10', 'x4', 'x9', 'and', 'x5', 'x12', 'x5', 'x12', 'x3', 'not', 'x3', 'x9', 'or', 'x4', 'x5', 'x8']
+depth:6 var_num:6 simpified: x5&(x8|((x4|x5)&(x9|(~x3&(x12&x5)))))
+['and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x2', 'x12', 'x6', 'not', 'x10', 'x4', 'x8', 'x9', 'x8', 'x1', 'x7', 'x2', 'x7', 'x12', 'not', 'x3', 'x7', 'x8', 'x6']
+depth:15 var_num:10 simpified: x6&(x7|x8|(~x3&(x12|(x7&(x2|(x7&(x1|(x8&(x9|(x8&(x4|(~x10&(x6|(x12&x2))))))))))))))
+['or', 'x2', 'or', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x1', 'x2', 'x7', 'x3', 'x4', 'x2', 'x12', 'x8', 'x1', 'x8', 'x4']
+depth:1 var_num:2 simpified: x2|x4
+['or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x3', 'x12', 'x2', 'x1', 'x4', 'x11', 'x1', 'x5', 'x10', 'x11', 'x9', 'x7', 'x10', 'x4']
+depth:14 var_num:10 simpified: x4|(x10&(x7|(~x9&(~x11|(~x10&(~x5|(~x1&(~x11|(~x4&(~x1|(~x2&(~x12|~x3))))))))))))
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x5', 'and', 'or', 'and', 'x5', 'x8', 'x1', 'x7', 'not', 'x7', 'x1', 'x11', 'x9', 'not', 'x4', 'x7', 'x8', 'x10']
+depth:10 var_num:9 simpified: x10|x8|(x7&(~x4|(x9&(x11|(x1&(~x7|((x1|(x5&x8))&(x2|x5))))))))
+['or', 'x7', 'x9']
+depth:1 var_num:2 simpified: x7|x9
+['or', 'x1', 'x4']
+depth:1 var_num:2 simpified: x1|x4
+['and', 'not', 'x6', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x9', 'x1', 'x8', 'or', 'and', 'or', 'x7', 'x5', 'x11', 'x3', 'x5', 'x2', 'x10', 'x9', 'x1', 'x4']
+depth:11 var_num:11 simpified: ~x6&(x4|(x1&(x9|(x10&(x2|(x5&(x3|(x11&(x5|x7))|(x8&(x1|(x5&x9))))))))))
+['and', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x12', 'x3', 'x1', 'x5', 'x6', 'x5', 'x1', 'x2', 'x7', 'x9', 'x1', 'x12', 'x5']
+depth:11 var_num:8 simpified: x12&x5&(x1|(x9&(x2|x7|(x1&(x5|(x6&(x5|(x1&(x3|(x12&x9))))))))))
+['and', 'x12', 'x5']
+depth:1 var_num:2 simpified: x12&x5
+['and', 'x9', 'x5']
+depth:1 var_num:2 simpified: x5&x9
+['or', 'x10', 'x2']
+depth:1 var_num:2 simpified: x10|x2
+['not', 'not', 'x3']
+depth:0 var_num:1 simpified: x3
+['or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'and', 'or', 'x4', 'x11', 'x1', 'x12', 'x5', 'not', 'x1', 'x12', 'x11', 'x9', 'x2', 'x12', 'x4', 'x2', 'x5', 'x1', 'x7']
+depth:14 var_num:8 simpified: ~x1|x7|(~x5&(~x2|(~x4&(~x12|(~x2&(~x9|(~x11&(~x12|(x1&(~x5|(~x12&(~x1|~x4))))))))))))
+['and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x7', 'x3', 'x7', 'x2', 'x7', 'x2', 'x1', 'x6', 'x10', 'x12', 'x2']
+depth:12 var_num:7 simpified: x2&(~x12|(~x10&(~x6|(~x1&(~x2|(~x7&(~x2|(~x7&(~x3|(~x1&~x7))))))))))
+['or', 'not', 'x12', 'x10']
+depth:2 var_num:2 simpified: x10|~x12
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'and', 'or', 'and', 'x7', 'x2', 'x12', 'x9', 'x4', 'x1', 'x3', 'x11', 'x10', 'not', 'x4', 'x3', 'x4', 'x6', 'x1']
+depth:13 var_num:10 simpified: x1&(x6|(x4&(x3|(~x4&(x10|(x11&(x3|(x1&(x4|(x1&x9&(x12|(x2&x7))))))))))))
+['or', 'and', 'x11', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'or', 'and', 'or', 'x7', 'x2', 'x4', 'x1', 'x2', 'x4', 'x5', 'x10', 'x7', 'x12', 'x5', 'x4', 'x3', 'x10']
+depth:15 var_num:9 simpified: x10|(x11&(x3|(x4&(x5|(x12&(x7|(x10&(x5|(x4&(x2|(x5&(x1|(x4&(x2|x7))))))))))))))
+['not', 'x3']
+depth:1 var_num:1 simpified: ~x3
+['and', 'or', 'and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x9', 'x1', 'x5', 'x1', 'x12', 'not', 'or', 'x4', 'x2', 'x6', 'x12', 'x5', 'x1', 'x2', 'x12']
+depth:9 var_num:6 simpified: x12&(x2|(x1&(~x5|(~x12&(~x6|((~x1|~x12)&(x2|x4)))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x12', 'x1', 'x8', 'x10', 'x12', 'x11', 'x9', 'x1', 'x3', 'x2', 'x10', 'x9', 'x7', 'x5', 'x1', 'x2', 'x1']
+depth:16 var_num:10 simpified: x1&(x2|(x1&(x5|(x7&(x9|(x10&(x2|(x3&(x1|(x9&(x11|(x12&(x10|(x8&(x1|x12)))))))))))))))
+['or', 'x6', 'or', 'x2', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'or', 'x5', 'or', 'x10', 'x5', 'x7', 'x12', 'x1', 'x2', 'x4', 'x12', 'x5', 'x1', 'x2', 'x10', 'x6']
+depth:1 var_num:2 simpified: x2|x6
+['or', 'x1', 'x7']
+depth:1 var_num:2 simpified: x1|x7
+['and', 'x4', 'x12']
+depth:1 var_num:2 simpified: x12&x4
+['not', 'x4']
+depth:1 var_num:1 simpified: ~x4
+['or', 'or', 'x3', 'x8', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x11', 'and', 'x1', 'x5', 'x11', 'x5', 'x6', 'x1', 'x12', 'x1', 'x5', 'x1', 'x7', 'x2', 'x10']
+depth:12 var_num:10 simpified: x10|x3|x8|(x2&(x7|(x1&(x5|(x1&(x12|(x1&(x6|(x5&(x11|(x1&x5)))))))))))
+['or', 'or', 'x5', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x7', 'x2', 'x8', 'x9', 'x7', 'not', 'x1', 'x8', 'x10', 'x9', 'or', 'x11', 'x10', 'x3']
+depth:10 var_num:9 simpified: x10|x11|x3|x5|(x9&(x10|(x8&(~x1|(x7&(x9|(x8&(x2|~x7))))))))
+['and', 'x11', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x2', 'not', 'x1', 'x12', 'not', 'x1', 'x5', 'x4', 'x7', 'x2', 'x4', 'x5', 'x6', 'x1', 'x2']
+depth:14 var_num:8 simpified: x11&(x2|(x1&(x6|(x5&(x4|(x2&(x7|(x4&(x5|(~x1&(x12|(~x1&x2))))))))))))
+['and', 'x5', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'x5', 'x10', 'or', 'x7', 'x4', 'x5', 'x8', 'x4', 'x11', 'x10', 'x1', 'x12', 'x1', 'x5']
+depth:0 var_num:1 simpified: x5
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'or', 'x5', 'x10', 'x2', 'x12', 'x4', 'x11', 'x5', 'x2', 'x7', 'x2', 'x8', 'x1', 'x8']
+depth:12 var_num:10 simpified: x8&(x1|(x8&(x2|(x7&(x2|(x5&(x11|(x4&(x12|(x2&(x10|x5|x9)))))))))))
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x1', 'or', 'x5', 'x6', 'x12', 'x11', 'x8', 'x4', 'x5', 'x10', 'x4', 'x2', 'x1']
+depth:10 var_num:9 simpified: x1|x2|(x4&(x10|(x5&(x4|(x8&(x11|(x12&(x5|x6|(x1&x4)))))))))
+['or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x7', 'x9', 'x1', 'x3', 'x7', 'x2', 'x7', 'x10', 'x9', 'x8', 'x1', 'x7']
+depth:10 var_num:7 simpified: x7|(x1&(x8|x9|(x10&(x7|(x2&(x7|(x3&(x1|(x7&x9)))))))))
+['or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'x2', 'or', 'and', 'or', 'x1', 'x12', 'x6', 'x1', 'x12', 'x4', 'x7', 'x10', 'x12', 'x11', 'x3', 'x9', 'x5']
+depth:11 var_num:11 simpified: x5|(x9&(x3|(x11&(x10|x12|(x7&(x4|(x12&(x1|x2|(x6&(x1|x12))))))))))
+['and', 'x4', 'x6']
+depth:1 var_num:2 simpified: x4&x6
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x4', 'x11', 'x8', 'x2', 'x1', 'x5', 'x1', 'x8', 'x1', 'x7', 'not', 'or', 'x7', 'x2', 'x1']
+depth:11 var_num:7 simpified: x1|(~x2&~x7&(x1&(x8|(x1&(x5|(x1&(x2|(x8&(x11|(x4&x5))))))))))
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x7', 'x3', 'not', 'x3', 'x7', 'x2', 'x7', 'x4', 'x9', 'x1', 'x5', 'not', 'x9', 'x1', 'x2']
+depth:12 var_num:7 simpified: x2|(x1&(~x9|(x5&(x1|(x9&(x4|(x7&(x2|(x7&(~x3|(x5|x7)))))))))))
+['not', 'x4']
+depth:1 var_num:1 simpified: ~x4
+['and', 'not', 'x8', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x7', 'x2', 'x1', 'x12', 'or', 'x6', 'x10', 'x3', 'x7', 'x2', 'x1', 'x3', 'x7', 'x2', 'x11']
+depth:14 var_num:9 simpified: ~x8&(x11|(x2&(x7|(x3&(x1|(x2&(x7|(x3&(x10|x6|(x12&(x1|(x2&(x3|x7)))))))))))))
+['and', 'x5', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x6', 'x1', 'x2', 'x7', 'x2', 'x4', 'x7', 'x2', 'x7', 'x1', 'x4']
+depth:11 var_num:6 simpified: ~x4&x5&(~x1|(~x7&(~x2|(~x7&(~x4|(~x2&(~x7|(~x2&(~x1|x6)))))))))
+['not', 'x3']
+depth:1 var_num:1 simpified: ~x3
+['not', 'x3']
+depth:1 var_num:1 simpified: ~x3
+['and', 'x12', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'or', 'and', 'or', 'x9', 'x1', 'x9', 'x1', 'x4', 'x5', 'x4', 'x6', 'x2', 'x5', 'x1']
+depth:8 var_num:7 simpified: x1&x12&(x5|(x2&(x6|(x4&(x5|(x4&(x1|x9)))))))
+['or', 'and', 'x5', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x12', 'x6', 'x2', 'or', 'and', 'x12', 'x11', 'x1', 'x11', 'x8', 'x6', 'x2', 'x1', 'x4']
+depth:11 var_num:8 simpified: x4|(x5&(x1|(x2&(x6|(x8&(x11|((x1|(x11&x12))&(x2|(~x12&x6)))))))))
+['or', 'x6', 'x12']
+depth:1 var_num:2 simpified: x12|x6
+['or', 'x7', 'x8']
+depth:1 var_num:2 simpified: x7|x8
+['and', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x5', 'x8', 'x2', 'x1', 'x3', 'not', 'x5', 'x8', 'x6', 'x10', 'x5', 'x12']
+depth:11 var_num:9 simpified: x12&x4&(x5|(x10&(x6|(x8&(~x5|(x3&(x1|(x2&(x8|(x1&x5))))))))))
+['and', 'x6', 'x3']
+depth:1 var_num:2 simpified: x3&x6
+['or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x5', 'x11', 'x5', 'x1', 'x4', 'x3', 'x7', 'x2', 'not', 'x1', 'x8', 'x5', 'x3', 'x1', 'x7', 'x5', 'x4']
+depth:17 var_num:8 simpified: x4|(~x5&(~x7|(~x1&(~x3|(~x5&(~x8|(x1&(~x2|(~x7&(~x3|(~x4&(~x1|(~x5&(~x11|(~x2&~x5)))))))))))))))
+['and', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x10', 'x12', 'x5', 'x9', 'x11', 'x4', 'x3', 'x9', 'x4', 'x11', 'x3', 'x1']
+depth:10 var_num:8 simpified: x1&x3&(x11|x4|(x9&(x3|(x4&(x11|(x9&(x5|(x12&(x1|x10)))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x7', 'x9', 'x1', 'x7', 'x2', 'not', 'x1', 'x12', 'x1', 'x4', 'x2', 'x9', 'x1', 'x2', 'x12', 'x2', 'x10']
+depth:15 var_num:7 simpified: x10&(x2|(x12&(x2|(x1&(x9|(x2&(x4|(x1&(x12|(~x1&(x2|(x7&(x1|(x7&x9))))))))))))))
+['and', 'x1', 'x5']
+depth:1 var_num:2 simpified: x1&x5
+['not', 'x10']
+depth:1 var_num:1 simpified: ~x10
+['and', 'not', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x2', 'x5', 'x10', 'x5', 'x9', 'x5', 'x1', 'x7', 'x6', 'x5', 'x4', 'x1', 'x5']
+depth:11 var_num:8 simpified: ~x1&~x4&x5&(~x6&(~x7|(~x1&(~x5|(~x9&(~x5|(~x10&(~x5|(~x2&~x7)))))))))
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x1', 'x2', 'x7', 'x2', 'x3', 'x9', 'x8', 'x5', 'x3', 'x4', 'x9', 'x11', 'x1']
+depth:14 var_num:9 simpified: ~x1&(~x11|(~x9&(~x4|(~x3&(~x5|(~x8&(~x9|(~x3&(~x2|(~x7&(~x2|(~x1&~x9))))))))))))
+['or', 'x1', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x12', 'x4', 'x5', 'x6', 'or', 'x12', 'x9', 'x11', 'x3', 'x7', 'x5', 'x2', 'x1', 'x8']
+depth:14 var_num:11 simpified: x1|(x8&(x1|(x2&(x5|(x7&(x3|(x11&(x12|x9|(x6&(x5|(x4&(x12|(x1&x2)))))))))))))
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x1', 'x11', 'x5', 'x7', 'x3', 'x7', 'x10', 'x1', 'x7', 'x1', 'x12', 'x1', 'x5', 'x11']
+depth:14 var_num:7 simpified: x11|(x5&(x1|(x12&(x1|(x7&(x1|(x10&(x7|(x3&(x7|(x5&(~x1|x11))))))))))))
+['and', 'x2', 'x6']
+depth:1 var_num:2 simpified: x2&x6
+['and', 'and', 'x10', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'not', 'x2', 'x10', 'x12', 'x8', 'x6', 'x5', 'x6', 'x4', 'x5', 'x6', 'x7', 'x10']
+depth:13 var_num:8 simpified: x10&(x7|(x6&(x5|(x4&(x6|(x5&(x6|(x8&(x12|(x10&(~x2|x4)))))))))))
+['and', 'x12', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'and', 'x1', 'x3', 'x7', 'x2', 'x10', 'x9', 'x5', 'x1', 'x12', 'not', 'x11']
+depth:2 var_num:2 simpified: ~x11&x12
+['or', 'x5', 'x3']
+depth:1 var_num:2 simpified: x3|x5
+['not', 'x5']
+depth:1 var_num:1 simpified: ~x5
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x1', 'x2', 'x7', 'x8', 'x1', 'x12', 'x4', 'x8', 'x7', 'x9', 'x2', 'x11', 'x7', 'x8']
+depth:14 var_num:8 simpified: x8&(x7|(x11&(x2|(x9&(x7|(x8&(x4|(x12&(x1|(x8&(x7|(x2&(x1|x4)))))))))))))
+['not', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x4', 'x1', 'x3', 'x5', 'x8', 'x2', 'x1', 'x12', 'x2', 'x11', 'x1', 'x2', 'x9', 'x3']
+depth:14 var_num:9 simpified: x3&(x9|(x2&(x1|(x11&(x2|(x12&(x1|(x2&(x8|(x5&(x3|(x1&(x3|x4)))))))))))))
+['or', 'x1', 'x10']
+depth:1 var_num:2 simpified: x1|x10
+['and', 'x6', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x4', 'x3', 'x4', 'x5', 'x1', 'x10', 'not', 'x5', 'x8', 'x1', 'x5']
+depth:10 var_num:7 simpified: x5&x6&(x1|(x8&(~x5|(x10&(x1|(x5&(x4|(x3&(x1|x4)))))))))
+['and', 'x1', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'and', 'or', 'x10', 'x3', 'x10', 'not', 'x10', 'x1', 'x10', 'x8', 'x1', 'x12', 'x4', 'x5', 'x6', 'x11', 'x2', 'x9']
+depth:13 var_num:10 simpified: x1&x9&(x2|(x11&(x6|(x5&(x4|(x12&(x1|(x8&(x10|(x1&(~x10|x4)))))))))))
+['and', 'x9', 'x6']
+depth:1 var_num:2 simpified: x6&x9
+['or', 'x5', 'x5']
+depth:0 var_num:1 simpified: x5
+['or', 'x1', 'not', 'x8']
+depth:2 var_num:2 simpified: x1|~x8
+['and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x2', 'x1', 'x7', 'x9', 'or', 'x8', 'x12', 'x4', 'x12', 'x10', 'x2', 'x5', 'x1']
+depth:10 var_num:9 simpified: x1&(x2|x5|(x10&(x12|(x4&(x12|x8|(x9&(x7|(x1&(x2|x4)))))))))
+['not', 'x10']
+depth:1 var_num:1 simpified: ~x10
+['not', 'x1']
+depth:1 var_num:1 simpified: ~x1
+['and', 'x5', 'x10']
+depth:1 var_num:2 simpified: x10&x5
+['and', 'x5', 'and', 'or', 'and', 'and', 'or', 'and', 'x4', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'or', 'x5', 'x4', 'x1', 'x12', 'x11', 'x6', 'x9', 'not', 'x9', 'x10', 'x5', 'x2', 'x3', 'x5']
+depth:9 var_num:10 simpified: x5&(x3|(x2&x5&(x10|(x4&~x9&(x6&(x11|(x12&(x1|x5))))))))
+['or', 'x3', 'x9']
+depth:1 var_num:2 simpified: x3|x9
+['and', 'x1', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x11', 'x10', 'x1', 'x12', 'x10', 'or', 'and', 'x6', 'x4', 'x1', 'and', 'not', 'x3', 'or', 'x2', 'x7', 'x5']
+depth:9 var_num:10 simpified: x1&(x5|(~x3&(x1|(x10&(x12|(x1&(x10|(x11&x4)))))|(x4&x6))&(x2|x7)))
+['and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x8', 'x1', 'x5', 'x7', 'x4', 'x11', 'x1', 'x4', 'x11', 'x3', 'x7', 'x5']
+depth:13 var_num:8 simpified: x5&(~x7|(~x3&(~x11|(~x4&(~x1|(~x11&(~x4|(~x7&(~x5|(~x1&(~x8|~x9)))))))))))
+['and', 'and', 'or', 'and', 'x4', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x12', 'x4', 'or', 'and', 'x1', 'x11', 'x9', 'x4', 'x5', 'x12', 'x11', 'x10', 'x12']
+depth:9 var_num:7 simpified: x10&x12&(x11|(x4&(x12|(x5&(x4|((x4|(x12&x5))&(x9|(x1&x11))))))))
+['or', 'and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x6', 'x1', 'x6', 'x10', 'x12', 'x10', 'x9', 'x5', 'x9', 'x5', 'x3', 'x7', 'x3', 'x7', 'x10', 'x1']
+depth:14 var_num:8 simpified: x1|(x10&~x7&(~x3|(~x7&(~x3|(~x5&(~x9|(~x5&(~x9|(~x10&(~x12|(~x10&(~x1|~x6))))))))))))
+['or', 'x6', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x5', 'not', 'x9', 'x11', 'x12', 'x1', 'x5', 'x11', 'x5', 'x1', 'x5', 'x3', 'x7', 'x2', 'x1', 'x2', 'x7']
+depth:18 var_num:9 simpified: x6|(~x7&(~x2|(~x1&(~x2|(~x7&(~x3|(~x5&(~x1|(~x5&(~x11|(~x5&(~x1|(~x12&(~x11|(x9&(~x1|~x5))))))))))))))))
+['not', 'x12']
+depth:1 var_num:1 simpified: ~x12
+['and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'or', 'not', 'x10', 'x12', 'x4', 'x5', 'x1', 'x2', 'x7', 'x12', 'x3', 'x5']
+depth:8 var_num:8 simpified: x5&(x12|x3|(x7&(x2|(x1&(x5|(x10&~x12&x4))))))
+['and', 'x11', 'x5']
+depth:1 var_num:2 simpified: x11&x5
+['and', 'not', 'or', 'and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x3', 'and', 'x4', 'or', 'x2', 'x4', 'x5', 'x6', 'x9', 'x4', 'x1', 'x2', 'x1', 'x7', 'x5', 'not', 'x10', 'x9']
+depth:11 var_num:9 simpified: x10&x9&(~x5|(x7&(x1|(x2&(x1|(x4&(x9|(x6&(x5|(x3&x4))))))))))
+['not', 'x9']
+depth:1 var_num:1 simpified: ~x9
+['not', 'and', 'not', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x5', 'x8', 'x10', 'x3', 'x11', 'x2', 'x12', 'x5', 'x6', 'x5']
+depth:0 var_num:0 simpified: 1
+['or', 'not', 'x3', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x10', 'x12', 'x1', 'x8', 'x11', 'x9', 'x10', 'x7', 'x2', 'x12', 'x3', 'x7', 'x5']
+depth:13 var_num:11 simpified: ~x3|x5|(x7&(x3|(x12&(x2|(x7&(x10|(x9&(x11|(x8&(x1|(x12&(x10|x4))))))))))))
+['and', 'x2', 'x8']
+depth:1 var_num:2 simpified: x2&x8
+['and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'and', 'or', 'x3', 'x1', 'x2', 'x1', 'x4', 'x11', 'x5', 'not', 'x11', 'x9', 'x3', 'x4', 'x10']
+depth:8 var_num:7 simpified: x10&~x4&(~x3|(~x9&(x11|(~x5&(~x11|(~x1&~x4))))))
+['not', 'x12']
+depth:1 var_num:1 simpified: ~x12
+['and', 'x12', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'or', 'and', 'x6', 'x10', 'x4', 'x3', 'x5', 'x8', 'x9', 'x1', 'x5', 'x1', 'x10', 'x4', 'x1', 'x3', 'x12', 'x1']
+depth:17 var_num:9 simpified: x12&(x1|(~x3&(~x1|(~x4&(~x10|(~x1&(~x5|(~x1&(~x9|(~x8&(~x5|(~x3&(~x9|(~x4&(~x10|~x6)))))))))))))))
+['or', 'x2', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x12', 'not', 'x4', 'x10', 'x9', 'x1', 'x4', 'x1', 'x2', 'x1', 'x2', 'x1', 'x2', 'x12', 'x7']
+depth:3 var_num:3 simpified: x2|(x7&(x12|x2))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x3', 'x7', 'x4', 'x5', 'x8', 'x5', 'or', 'and', 'or', 'not', 'x7', 'x2', 'x12', 'x5', 'x8', 'x10']
+depth:9 var_num:8 simpified: x10&(x8|((x5|(x12&(x2|~x7)))&(x5|(x8&(x5|(x4&(x7|(x3&x4))))))))
+['and', 'x3', 'x8']
+depth:1 var_num:2 simpified: x3&x8
+['or', 'x1', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x5', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x8', 'x10', 'x4', 'x7', 'x5', 'x1', 'x12', 'x11', 'x2', 'x3', 'x7', 'x2', 'x7', 'x5', 'x8', 'x1']
+depth:15 var_num:10 simpified: x1|(x8&(x5|(x7&(x2|(~x5&(x3|x7|(x2&(x11|(x12&(x1|(x5&(x7|(x4&(x10|x8))))))))))))))
+['and', 'and', 'or', 'x4', 'or', 'and', 'or', 'and', 'or', 'not', 'x2', 'x12', 'and', 'or', 'and', 'or', 'and', 'x12', 'x1', 'x11', 'x5', 'x4', 'x6', 'x1', 'x4', 'x1', 'x12', 'x10']
+depth:2 var_num:4 simpified: x10&x12&(x1|x4)
+['and', 'or', 'x1', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x7', 'x2', 'x6', 'x10', 'x12', 'x11', 'x9', 'x1', 'x12', 'x5', 'x8']
+depth:13 var_num:10 simpified: x8&(x1|~x5|(~x12&(~x1|(~x9&(~x11|(~x12&(~x10|(~x6&(~x2|(~x7&(~x1|~x2)))))))))))
+['or', 'or', 'and', 'x4', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x1', 'and', 'or', 'x12', 'x1', 'x5', 'x8', 'not', 'x7', 'x2', 'x11', 'x9', 'x8', 'x1', 'x2']
+depth:9 var_num:9 simpified: x1|x2|(x4&x8&(~x11|x9|(~x2&(x7|(~x8&(~x5|(~x1&~x12)|(~x1&~x4)))))))
+['or', 'x6', 'or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'x1', 'x5', 'x8', 'x1', 'x2', 'x12', 'x3', 'x7', 'x3', 'x5', 'x9', 'x1', 'x8', 'x1', 'x11']
+depth:2 var_num:4 simpified: x11|x6|(x1&x8)
+['or', 'x5', 'x2']
+depth:1 var_num:2 simpified: x2|x5
+['or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x9', 'x5', 'x7', 'x10', 'x3', 'x1', 'x4', 'x1', 'x4', 'x11', 'x2', 'x1', 'x5', 'x8', 'x2', 'x7']
+depth:13 var_num:9 simpified: x7|(x2&(x5|x8|(x1&(x2|(x11&(x4|(x1&(x4|(x1&(x3|(x10&(x5|x7))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x12', 'x1', 'x3', 'x7', 'x9', 'x1', 'x10', 'x9', 'x10', 'x7', 'not', 'x5', 'x2', 'x9', 'not', 'x11', 'x5']
+depth:14 var_num:9 simpified: x5&(~x11|(x9&(x2|(~x5&(x7|(x10&(x9|(x10&(x1|(x9&(x7|(x3&(x1|x12)))))))))))))
+['or', 'x11', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'or', 'x7', 'x2', 'x1', 'x10', 'x11', 'x9', 'or', 'and', 'x12', 'not', 'x1', 'x5', 'not', 'x3', 'x2', 'x3', 'x5', 'x8']
+depth:10 var_num:9 simpified: x11|(x8&(x5|(x3&(x2|(~x3&(x5|(~x1&x12)|(x9&(x11|(x1&x10)))))))))
+['and', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x10', 'x12', 'x7', 'x2', 'not', 'x5', 'x2', 'x4', 'x10', 'x8', 'x1', 'x12', 'x1', 'x12', 'x7']
+depth:1 var_num:2 simpified: x12&x7
+['or', 'x12', 'x8']
+depth:1 var_num:2 simpified: x12|x8
+['or', 'x11', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'and', 'or', 'and', 'x5', 'x2', 'x7', 'not', 'x4', 'x1', 'x2', 'x1', 'x7', 'x4', 'not', 'x4', 'x2', 'x1']
+depth:3 var_num:5 simpified: x1|x11|x2|(~x4&(x1&x7))
+['and', 'x11', 'not', 'x4']
+depth:2 var_num:2 simpified: x11&~x4
+['and', 'x4', 'x3']
+depth:1 var_num:2 simpified: x3&x4
+['and', 'not', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x1', 'x2', 'x12', 'x1', 'x2', 'x9', 'x8', 'x5', 'x7', 'x9', 'x7', 'x8', 'not', 'x1', 'x5']
+depth:13 var_num:7 simpified: ~x1&x5&(x8|(x7&(x9|(x7&(x5|(x8&(x9|(x2&(x1|(x12&(x2|(x1&x9))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'or', 'or', 'and', 'or', 'and', 'x1', 'x7', 'x2', 'x10', 'x2', 'x4', 'x7', 'x9', 'x1', 'x5', 'x2', 'x10', 'x7', 'not', 'x5']
+depth:11 var_num:7 simpified: ~x5&(x7|(x10&(x2|(x5&(x1|(x9&(x2|x4|x7|(x10&(x2|(x1&x7))))))))))
+['or', 'x11', 'x6']
+depth:1 var_num:2 simpified: x11|x6
+['not', 'x3']
+depth:1 var_num:1 simpified: ~x3
+['or', 'and', 'or', 'x5', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x10', 'x7', 'x9', 'x1', 'x10', 'x7', 'x2', 'x4', 'x7', 'x2', 'x1', 'x2', 'x1', 'x7', 'x3', 'x5']
+depth:15 var_num:8 simpified: x5|(x3&(x5|x7|(x1&(x2|(x1&(x2|(x7&(x4|(x2&(x7|(x10&(x1|(x9&(x10|x7))))))))))))))
+['and', 'x3', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'or', 'and', 'or', 'x5', 'x4', 'x7', 'x9', 'x11', 'x1', 'x3', 'x7', 'x2', 'x1', 'x12', 'x5']
+depth:12 var_num:9 simpified: x3&(x5|(x12&(x1|(x2&(x7|(x3&(x1|(x11&(x3|x9|(x7&(x4|x5)))))))))))
+['and', 'x5', 'not', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'and', 'or', 'x5', 'not', 'and', 'or', 'and', 'or', 'x2', 'x1', 'x12', 'x1', 'x5', 'x9', 'x12', 'x1', 'x2', 'x5', 'x4', 'x1', 'x7', 'x2']
+depth:10 var_num:7 simpified: x5&(~x2|(~x1&~x7&(~x4|(~x5&(~x2|(~x1&(~x12|(~x4&~x9))))))))
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x2', 'x1', 'x2', 'x1', 'x4', 'x11', 'x1', 'x10', 'x1', 'x7', 'x8', 'x4', 'x5']
+depth:13 var_num:8 simpified: x5|(x4&(x8|(x7&(x1|(x10&(x1|(x11&(x4|(x1&(x2|(x1&(x2|x7))))))))))))
+['or', 'x11', 'x4']
+depth:1 var_num:2 simpified: x11|x4
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'or', 'and', 'or', 'and', 'or', 'not', 'x4', 'x11', 'x4', 'x1', 'x12', 'x5', 'x10', 'x5', 'x6', 'x8', 'x10', 'x5', 'x1']
+depth:11 var_num:8 simpified: x1&x5&(x10|(x8&(x6|(x5&(x10|(x4&(x5|(x12&(x1|(x11&x4))))))))))
+['or', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x10', 'or', 'and', 'or', 'and', 'or', 'x7', 'x2', 'x5', 'x2', 'x11', 'x10', 'x1', 'x11', 'x9', 'x11', 'x10', 'x9', 'x5', 'x12']
+depth:11 var_num:8 simpified: x12|x5|x9|(x10&(x11|(x9&(x11|(x1&(x10|(x11&(x2|(x5&(x2|x7))))))))))
+['and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x12', 'x2', 'x7', 'x3', 'x11', 'x5', 'x9', 'x10', 'x7', 'x5']
+depth:9 var_num:9 simpified: x5&(x10|x7|(x9&(x5|(x11&(x3|(x7&(x2|(x1&x12))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'not', 'x5', 'x10', 'x9', 'x4', 'x2', 'x1', 'x2', 'x6', 'x9', 'x5', 'x12', 'x7', 'x3']
+depth:14 var_num:10 simpified: x3&(x7|(x12&(x5|(x9&(x6|(x2&(x1|(x2&(x4|(x9&(x10|(x4&~x5))))))))))))
+['not', 'x9']
+depth:1 var_num:1 simpified: ~x9
+['or', 'and', 'or', 'x5', 'and', 'or', 'and', 'or', 'and', 'or', 'or', 'not', 'x4', 'x1', 'and', 'or', 'and', 'x9', 'x1', 'x5', 'x10', 'x8', 'x9', 'x5', 'not', 'x4', 'x10', 'x4', 'x1']
+depth:12 var_num:6 simpified: x1|(x4&(x5|(x10&(~x4|(x5&(x9|(x8&(x1|~x4|(x10&(x5|(x1&x9)))))))))))
+['not', 'x9']
+depth:1 var_num:1 simpified: ~x9
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x11', 'or', 'x7', 'x5', 'not', 'x2', 'x1', 'x4', 'x7', 'not', 'x8', 'x10', 'x7', 'x2', 'x1', 'x9', 'x5', 'not', 'x11', 'x3']
+depth:16 var_num:10 simpified: ~x3&(x11|(~x5&(~x9|(~x1&(~x2|(~x7&(~x10|(x8&(~x7|(~x4&(~x1|(x2&(~x11|(~x5&~x7))))))))))))))
+['and', 'x5', 'x12']
+depth:1 var_num:2 simpified: x12&x5
+['and', 'x9', 'x6']
+depth:1 var_num:2 simpified: x6&x9
+['not', 'x5']
+depth:1 var_num:1 simpified: ~x5
+['or', 'x11', 'x7']
+depth:1 var_num:2 simpified: x11|x7
+['not', 'x3']
+depth:1 var_num:1 simpified: ~x3
+['and', 'x10', 'x5']
+depth:1 var_num:2 simpified: x10&x5
+['or', 'x7', 'or', 'or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x2', 'x4', 'x10', 'x1', 'x2', 'x4', 'x9', 'x6', 'x1', 'x2', 'x11']
+depth:9 var_num:8 simpified: x11|x2|x7|(x1&x6&(x9|(x4&(x2|(x1&(x10|(x4&(x2|x7))))))))
+['and', 'x1', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x5', 'or', 'x10', 'x12', 'x3', 'x9', 'x4', 'x11', 'x2', 'x4', 'x7', 'x10', 'x8', 'x6']
+depth:12 var_num:12 simpified: x1&x6&(x8|(x10&(x7|(x4&(x2|(x11&(x4|(x9&(x3|((x10|x12)&(x4|x5)))))))))))
+['or', 'x1', 'x12']
+depth:1 var_num:2 simpified: x1|x12
+['not', 'and', 'x4', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x8', 'x6', 'x10', 'x3', 'x7', 'x4', 'x5', 'x2', 'x8', 'x11', 'x9', 'x7']
+depth:13 var_num:10 simpified: ~x4|(~x7&(~x9|(~x11&(~x8|(~x2&(~x5|(~x4&(~x7|(~x3&(~x10|(~x6&x8)))))))))))
+['and', 'x8', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'x3', 'x10', 'x12', 'x11', 'x4', 'x3', 'x9', 'x1', 'x12', 'x3', 'x5', 'x1']
+depth:12 var_num:9 simpified: x1&x8&(x5|(x3&(x12|(x1&(x9|(~x3&(~x4|(~x11&(~x12|(~x10&~x3))))))))))
+['or', 'x12', 'or', 'x5', 'x8']
+depth:1 var_num:3 simpified: x12|x5|x8
+['and', 'x12', 'or', 'and', 'x6', 'x1', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x2', 'or', 'x4', 'x2', 'not', 'x12', 'x9', 'x1', 'x11', 'x5', 'x1', 'and', 'x1', 'x5', 'x10']
+depth:12 var_num:9 simpified: x12&((x1&x6)|(x10&((x1&x5)|(x1&(x5|(x11&(x1|(x9&(~x12|((x2|x4)&(x2|x5)))))))))))
+['and', 'x6', 'x1']
+depth:1 var_num:2 simpified: x1&x6
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x1', 'x5', 'x9', 'x12', 'x1', 'x5', 'x6', 'x3', 'x7', 'x9', 'x3', 'x2', 'x4']
+depth:13 var_num:9 simpified: x4&(x2|(x3&(x9|(x7&(x3|(x6&(x5|(x1&(x12|(x9&(x5|(x1&x4))))))))))))
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x4', 'or', 'x9', 'x7', 'x4', 'x10', 'x5', 'not', 'x12', 'x9', 'x1', 'x5', 'x1', 'x10']
+depth:10 var_num:8 simpified: x1&x10&(x5|(x1&(x9|(~x12&(x5|(x10&(x4|((x3|x4)&(x7|x9)))))))))
+['or', 'x5', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'not', 'and', 'or', 'x5', 'x10', 'not', 'x8', 'x5', 'and', 'x3', 'x1', 'not', 'x9', 'x1', 'x2', 'x10', 'x3', 'x12', 'x9', 'x3']
+depth:9 var_num:7 simpified: x5|(x3&(x9|(~x12&(~x3|(~x10&(~x2|(~x1&x9)))))))
+['and', 'x8', 'and', 'and', 'not', 'and', 'or', 'and', 'x4', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x7', 'x3', 'x1', 'x2', 'x6', 'x12', 'x9', 'or', 'x2', 'x1', 'x4', 'x1', 'x12', 'x3', 'x2']
+depth:4 var_num:6 simpified: x2&x3&x8&(~x12|(~x1&~x4))
+['and', 'or', 'x2', 'x10', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x4', 'x11', 'x2', 'x1', 'x4', 'x8', 'or', 'and', 'x11', 'x2', 'x5', 'x4', 'x3']
+depth:8 var_num:9 simpified: x3&(x10|x2)&(x4|x5|(x11&x2)|(x8&(x4|(x1&(x2|(x11&(x4|x9)))))))
+['and', 'x10', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x7', 'x2', 'x1', 'x8', 'x1', 'x8', 'or', 'and', 'x4', 'x11', 'not', 'x1', 'x9', 'x3', 'x2']
+depth:8 var_num:8 simpified: x10&(x2|(x3&(~x1|x9|(x11&x4)|(x8&(x1|(x8&(x1|x2)))))))
+['or', 'not', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x4', 'x9', 'x7', 'x2', 'x8', 'x1', 'x7', 'x5', 'x8', 'not', 'x2', 'x10', 'x6', 'x10', 'x4', 'x10', 'x9', 'x7']
+depth:17 var_num:9 simpified: x7|(x9&(x10|(x4&(x10|(x6&(x10|(~x2&(x8|(x5&(x7|(x1&(x8|(x2&(x7|(x9&(x4|x7))))))))))))))))
+['or', 'x2', 'not', 'x6']
+depth:2 var_num:2 simpified: x2|~x6
+['or', 'and', 'or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x12', 'x6', 'or', 'x6', 'x7', 'x2', 'x9', 'x1', 'x4', 'x9', 'x6', 'x9', 'x10', 'x5', 'x8', 'x4']
+depth:11 var_num:9 simpified: x4|(x8&(x5|(x10&x9&(x6|(x9&(x4|(x1&(x9|(x2&(x6|x7))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x4', 'or', 'and', 'x9', 'not', 'x4', 'x1', 'x5', 'x8', 'x2', 'x5', 'x4', 'x2', 'x7', 'not', 'x3']
+depth:12 var_num:8 simpified: ~x3&(x7|(x2&(x4|(x5&(x2|(x8&(x5|((x1|(~x4&x9))&(x4|(x1&x2))))))))))
+['or', 'x12', 'x2']
+depth:1 var_num:2 simpified: x12|x2
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'or', 'x9', 'x4', 'x11', 'x3', 'x7', 'x10', 'x9', 'x7', 'x1', 'x4', 'x7']
+depth:10 var_num:7 simpified: x7&(x4|(x1&(x7|(x9&(x10|(x7&(x3|(x11&(x4|x9)))))))))
+['or', 'and', 'x1', 'x4', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x11', 'x5', 'x3', 'x7', 'x2', 'x7', 'x1', 'x5', 'x2', 'x3', 'x2', 'x11', 'x2', 'x12', 'x3', 'x1']
+depth:15 var_num:7 simpified: x1|(x3&(x12|(x2&(x11|(x2&(x3|(x2&(x5|(x1&(x7|(x2&(x7|(x3&(x11|x5))))))))))))))
+['and', 'not', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x10', 'x12', 'x1', 'x2', 'not', 'or', 'and', 'x6', 'x2', 'x8', 'x4', 'x3', 'x5', 'x7', 'x3', 'x1', 'x12']
+depth:10 var_num:11 simpified: ~x1&x12&x3&(x7|(x5&(x3|(x4&((x2&(x1|(x12&(x10|x9))))|(~x8&(~x2|~x6)))))))
+['not', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'or', 'and', 'or', 'x7', 'x2', 'x1', 'x8', 'x1', 'x9', 'x2', 'x1', 'x11', 'x2', 'x1', 'x12', 'x4', 'x9', 'x4']
+depth:1 var_num:1 simpified: ~x4
+['and', 'or', 'x10', 'x3', 'x5']
+depth:2 var_num:3 simpified: x5&(x10|x3)
+['not', 'x9']
+depth:1 var_num:1 simpified: ~x9
+['not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'or', 'x12', 'x8', 'x11', 'x5', 'x8', 'x4', 'x11', 'x4', 'x5', 'x7', 'x10', 'x1', 'x12', 'x3', 'x4']
+depth:15 var_num:10 simpified: ~x4|(~x3&(~x12|(~x1&(~x10|(~x7&(~x5|(~x4&(~x11|(~x4&(~x8|(~x5&(~x11|(~x12&~x8&~x9)))))))))))))
+['or', 'x4', 'x3']
+depth:1 var_num:2 simpified: x3|x4
+['and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x8', 'x4', 'x8', 'not', 'x4', 'x2', 'x7', 'x2', 'x1', 'x3', 'x4', 'x9', 'x1', 'x2', 'not', 'x10', 'x4']
+depth:12 var_num:8 simpified: ~x10&x4&(x2|(x1&(x9|(x4&(x3|(x1&(x2|(x7&(x2|(~x4&x8))))))))))
+['or', 'x2', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x5', 'x4', 'x1', 'x3', 'x12', 'not', 'x1', 'x12', 'x1', 'x11', 'x9', 'x5', 'x8', 'x1', 'x6']
+depth:14 var_num:10 simpified: x2|(~x6&(~x1|(~x8&(~x5|(~x9&(~x11|(~x1&(~x12|(x1&(~x12|(~x3&(~x1|~x4))))))))))))
+['and', 'x2', 'x3']
+depth:1 var_num:2 simpified: x2&x3
+['and', 'x11', 'not', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x10', 'x2', 'x10', 'x2', 'x1', 'x5', 'x12', 'x1', 'x4', 'x7', 'x2', 'x1', 'x12', 'x6', 'x5']
+depth:12 var_num:8 simpified: x11&(~x5|(~x12&~x6&(~x1|(~x2&(~x7|(~x4&(~x1|(~x12&(~x5|(~x1&~x2))))))))))
+['or', 'x2', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'or', 'and', 'not', 'or', 'and', 'x2', 'x6', 'x2', 'x7', 'x4', 'x11', 'x2', 'x5', 'x10', 'x12', 'not', 'x10', 'x3']
+depth:11 var_num:9 simpified: x2|(x3&(~x10|(x12&(x10|(x5&(x2|(x11&(x1|x4|(~x2&x7)))))))))
+['not', 'and', 'x12', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'and', 'or', 'and', 'or', 'x5', 'or', 'x7', 'x12', 'x1', 'x2', 'x7', 'x2', 'x1', 'x4', 'x5', 'x2', 'x1', 'x3']
+depth:11 var_num:7 simpified: ~x1|~x12|~x3|(~x2&(~x5|(~x4&(~x1|(~x2&(~x4|~x7|(~x2&(~x1|(~x12&~x5&~x7)))))))))
+['or', 'x5', 'x6']
+depth:1 var_num:2 simpified: x5|x6
+['and', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x10', 'x7', 'x4', 'x9', 'x7', 'x10', 'x12', 'x4', 'x4', 'x9', 'x12', 'x11']
+depth:1 var_num:4 simpified: x11&x12&x4&x9
+['or', 'x4', 'x10']
+depth:1 var_num:2 simpified: x10|x4
+['and', 'not', 'x5', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x11', 'x9', 'x12', 'x2', 'x1', 'x8', 'x1', 'x2', 'x1', 'x11', 'x1']
+depth:12 var_num:8 simpified: ~x5&(x1|(x11&(x1|(x2&(x1|(x8&(x1|(x2&(x12|(x9&(x11|x4)))))))))))
+['or', 'and', 'or', 'x5', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x6', 'x4', 'x3', 'x7', 'x9', 'x8', 'x5', 'not', 'x11', 'x5', 'x1', 'x3']
+depth:11 var_num:9 simpified: x3|(x1&(x5|(~x11&(x5|(x8&(x9|(x7&(x3|(x4&(x5|x6))))))))))
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x4', 'x1', 'x7', 'x10', 'x12', 'x1', 'x12', 'x1', 'x2', 'x6', 'x5', 'x11']
+depth:12 var_num:9 simpified: x11|(x5&(x6|(x2&(x1|(x12&(x1|(x12&(x10|(x7&(x1|~x4))))))))))
+['or', 'or', 'x3', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x7', 'x2', 'x8', 'x6', 'x2', 'x4', 'x5', 'x1', 'x2', 'x1', 'x2', 'x7', 'x2', 'x6']
+depth:2 var_num:4 simpified: x3|x6|(x2&x7)
+['and', 'x6', 'x2']
+depth:1 var_num:2 simpified: x2&x6
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x9', 'x12', 'x1', 'x12', 'x9', 'x2', 'x12', 'x2', 'x7', 'x10', 'x12', 'x1', 'x2', 'x1']
+depth:15 var_num:6 simpified: ~x1&(~x2|(~x1&(~x12|(~x10&(~x7|(~x2&(~x12|(~x2&(~x9|(~x12&(~x1|(~x12&(~x1|~x9)))))))))))))
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x10', 'x1', 'x12', 'x3', 'x2', 'x5', 'x1', 'x7', 'x2', 'x10', 'x9', 'x5', 'x11', 'x10', 'x9']
+depth:15 var_num:9 simpified: ~x9&(~x10|(~x11&(~x5|(~x9&(~x10|(~x2&(~x7|(~x1&(~x5|(~x2&(~x3|(~x12&(~x1|~x10)))))))))))))
+['and', 'x6', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x7', 'x10', 'x8', 'x4', 'x2', 'x6', 'x12', 'x9', 'x5', 'x1', 'x2', 'x7', 'x2', 'x4']
+depth:2 var_num:3 simpified: x6&(x2|x4)
+['or', 'and', 'x6', 'or', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x2', 'x4', 'x7', 'x2', 'x12', 'x11', 'x1', 'x5', 'x10', 'x5', 'x3', 'x4', 'x7', 'x2']
+depth:14 var_num:10 simpified: x2|(x6&(x7|(x4&(x3|(x5&(x10|(~x5&(~x1|(~x11&(~x12|(~x2&(~x4|~x7))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x4', 'x11', 'x1', 'x8', 'x4', 'x12', 'x5', 'x2', 'x9', 'x5', 'not', 'x2', 'x5', 'x4']
+depth:13 var_num:8 simpified: x4&(x5|(~x2&(x5|(x9&(x2|(x5&(x12|(x4&(x8|(x1&(x11|(x1&x4))))))))))))
+['and', 'x9', 'x2']
+depth:1 var_num:2 simpified: x2&x9
+['and', 'x10', 'x6']
+depth:1 var_num:2 simpified: x10&x6
+['not', 'x8']
+depth:1 var_num:1 simpified: ~x8
+['or', 'x6', 'x5']
+depth:1 var_num:2 simpified: x5|x6
+['and', 'and', 'or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x10', 'x4', 'x12', 'x5', 'x1', 'x8', 'x4', 'x6', 'x5', 'x8', 'x10', 'x4']
+depth:10 var_num:8 simpified: x10&x4&(x8|(x5&x6&(x4|(x8&(x1|(x5&(x12|(x4&(x10|x2)))))))))
+['and', 'or', 'x3', 'x4', 'and', 'or', 'and', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'not', 'x1', 'x2', 'x12', 'x9', 'x1', 'x5', 'x10', 'x4', 'x11', 'not', 'x2', 'x6', 'x10', 'x5', 'x3', 'x7']
+depth:15 var_num:11 simpified: x7&(x3|x4)&(x3|(x5&(x10|(~x6&(x2|(~x11&(~x4|(~x10&(~x5|(~x1&(~x9|(~x12&(x1|~x2)))))))))))))
+['and', 'x1', 'x10']
+depth:1 var_num:2 simpified: x1&x10
+['and', 'x2', 'x8']
+depth:1 var_num:2 simpified: x2&x8
+['or', 'x5', 'or', 'x6', 'x4']
+depth:1 var_num:3 simpified: x4|x5|x6
+['and', 'not', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x2', 'x1', 'x7', 'x2', 'x9', 'x8', 'or', 'x5', 'x1', 'x8', 'x5', 'x12', 'x4', 'x1', 'x7', 'x10', 'x5']
+depth:14 var_num:9 simpified: x10&x5&(x7|(x1&(x4|(x12&(x5|(x8&(x1|x5|(x8&(x9|(x2&(x7|(x1&(x2|x7)))))))))))))
+['or', 'x6', 'x5']
+depth:1 var_num:2 simpified: x5|x6
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x2', 'x12', 'x10', 'x9', 'x10', 'x12', 'x4', 'x1', 'x5', 'x12', 'x3', 'x10', 'x4', 'x3']
+depth:13 var_num:8 simpified: x3&(x4|(x10&(x3|(x12&(x5|(x1&(x4|(x12&(x10|(x9&(x10|(x12&x2))))))))))))
+['and', 'x10', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x3', 'x4', 'and', 'x11', 'x4', 'x1', 'x7', 'x2', 'x5', 'x10', 'x12', 'x9', 'x5', 'x2', 'x4']
+depth:14 var_num:10 simpified: x10&(x4|(x2&(x5|(x9&(x12|(x10&(x5|(x2&(x7|(x1&((x11&x4)|(x4&(x1|x3)))))))))))))
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x5', 'not', 'x10', 'x5', 'x11', 'x2', 'x1', 'x9', 'x8', 'x12', 'x5', 'x9']
+depth:12 var_num:9 simpified: ~x9&(~x5|(~x12&(~x8|(~x9&(~x1|(~x2&(~x11|(~x5&(x10|(~x4&~x5))))))))))
+['or', 'x8', 'or', 'x6', 'x1']
+depth:1 var_num:3 simpified: x1|x6|x8
+['and', 'x6', 'x12']
+depth:1 var_num:2 simpified: x12&x6
+['and', 'or', 'and', 'and', 'or', 'and', 'or', 'and', 'and', 'or', 'and', 'x5', 'x12', 'not', 'x10', 'x12', 'x11', 'x2', 'x4', 'x11', 'x5', 'x12', 'x7', 'x2']
+depth:9 var_num:7 simpified: x2&(x7|(x12&x5&(x11|(x4&(x2|(x11&x12&(~x10|(x12&x5))))))))
+['or', 'x5', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x5', 'x8', 'x4', 'x4', 'x11', 'x7', 'x10', 'x3', 'x4', 'x7', 'x2', 'x5', 'x6', 'x8']
+depth:11 var_num:9 simpified: x5|x8|(~x6&(~x5|(~x2&(~x7|(~x4&(~x3|(~x10&(~x7|(~x11&~x4)))))))))
+['and', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x7', 'x5', 'x9', 'x10', 'x4', 'x1', 'x12', 'x9', 'x12', 'x2', 'x7', 'not', 'x10', 'not', 'x4']
+depth:11 var_num:8 simpified: ~x10&~x4&(x2|x7|(x12&(x9|(x12&(x1|(x4&(x10|(x9&(x5|(x1&x7))))))))))
+['and', 'x5', 'and', 'x3', 'x12']
+depth:1 var_num:3 simpified: x12&x3&x5
+['and', 'x6', 'x2']
+depth:1 var_num:2 simpified: x2&x6
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x1', 'x7', 'x2', 'or', 'x2', 'x11', 'x9', 'x4', 'x5', 'x4', 'x7', 'x2', 'x10', 'x3', 'x10']
+depth:1 var_num:2 simpified: x10|x3
+['or', 'x1', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x2', 'x10', 'x7', 'x4', 'x5', 'x8', 'x1', 'x2', 'not', 'x10', 'x2', 'x1', 'x2', 'x6', 'x3']
+depth:15 var_num:9 simpified: x1|~x3|(~x6&(~x2|(~x1&(~x2|(x10&(~x2|(~x1&(~x8|(~x5&(~x4|(~x7&(~x10|(~x2&~x5)))))))))))))
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x2', 'x7', 'x4', 'x7', 'not', 'x4', 'x11', 'x5', 'x8', 'x2', 'x1', 'x9', 'x1', 'x2', 'x6', 'x1']
+depth:14 var_num:9 simpified: x1|(x6&(x2|(x1&(x9|(x1&(x2|(x8&(x5|(x11&(~x4|(x7&(x4|(x2&x7)))))))))))))
+['not', 'x9']
+depth:1 var_num:1 simpified: ~x9
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'x8', 'x9', 'x12', 'x7', 'not', 'x9', 'x1', 'x12', 'not', 'x10', 'not', 'x1', 'x10']
+depth:10 var_num:7 simpified: x10&(~x1|(~x10&(x12|(x1&(~x9|(x7&(x12|(x9&(x4|x8)))))))))
+['or', 'x2', 'or', 'and', 'or', 'x3', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x2', 'x1', 'x6', 'or', 'not', 'x4', 'x2', 'x3', 'x5', 'x4', 'x10', 'x5', 'x8', 'x1']
+depth:11 var_num:9 simpified: x1|x2|(x8&(x3|x5|(x10&(x4|(x5&(x3|((x2|~x4)&(x6|(x1&(x2|x7))))))))))
+['or', 'x6', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'not', 'or', 'and', 'or', 'and', 'x7', 'x5', 'x1', 'x7', 'x10', 'x12', 'x5', 'x1', 'x10', 'x7', 'x4', 'x10', 'x1']
+depth:14 var_num:7 simpified: x6|(x1&(x10|(x4&(x7|(x10&(x1|(x5&(x12|(x1&~x10&(~x7|(~x1&(~x5|~x7))))))))))))
+['and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x10', 'x4', 'x7', 'x2', 'x10', 'x12', 'not', 'x10', 'x9', 'x5', 'x8', 'x1', 'x3', 'x1', 'x12', 'x4', 'x5', 'x8']
+depth:16 var_num:10 simpified: ~x5&x8&(~x4|(~x12&(~x1|(~x3&(~x1|(~x8&(~x5|(~x9&(x10|(~x12&(~x10|(~x2&(~x7|(~x10&~x4))))))))))))))
+['or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x2', 'not', 'x1', 'x5', 'x7', 'x9', 'x5', 'x12', 'x10', 'x9', 'x2', 'x1', 'x7', 'x8', 'x3', 'x7', 'x2']
+depth:16 var_num:10 simpified: x2|~x7|(~x3&(~x8|(~x7&(~x1|(~x2&(~x9|(~x10&(~x12|(~x5&(~x9|(~x7&(~x5|(x1&(~x2|~x4))))))))))))))
+['or', 'x1', 'x10']
+depth:1 var_num:2 simpified: x1|x10
+['or', 'or', 'x7', 'or', 'and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'or', 'and', 'or', 'x5', 'x1', 'x2', 'x4', 'x6', 'x2', 'x4', 'x9', 'x4', 'x7', 'x2', 'x1', 'x8']
+depth:9 var_num:7 simpified: x1|x7|x8|(x2&(~x7|(~x4&(~x9|(~x4&(~x2|(~x4&~x6)))))))
+['and', 'or', 'x2', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x1', 'x12', 'x7', 'not', 'x3', 'x9', 'x5', 'x4', 'x11', 'not', 'x10', 'x8', 'x10', 'x4']
+depth:11 var_num:11 simpified: x4&(x10|x2|(x8&(~x10|(x11&(x4|(x5&(x9|(~x3&(x7|(x1&x12))))))))))
+['and', 'x5', 'and', 'not', 'and', 'x1', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x9', 'x1', 'x7', 'x2', 'x6', 'x12', 'x9', 'x10', 'x4', 'x11']
+depth:11 var_num:10 simpified: x11&x5&(~x1|(~x4&(~x10|(~x9&(~x12|(~x6&(~x2|(~x7&(~x1|~x9)))))))))
+['and', 'x6', 'x9']
+depth:1 var_num:2 simpified: x6&x9
+['or', 'x10', 'x3']
+depth:1 var_num:2 simpified: x10|x3
+['or', 'x3', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x4', 'x8', 'x6', 'x5', 'not', 'x1', 'x2', 'x10', 'x1', 'not', 'x10', 'x7', 'x5', 'x4']
+depth:11 var_num:9 simpified: x3|x4|x5|(x7&(~x10|(x1&(x10|(x2&(~x1|(x5&(x6|(x8&(x4|x7))))))))))
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'x1', 'x5', 'x2', 'not', 'x9', 'x7', 'x10', 'x12', 'x6', 'not', 'x9', 'x10', 'x12', 'x1', 'x2']
+depth:12 var_num:8 simpified: ~x2&(~x1|(~x12&(~x10|(x9&(~x6|(~x12&(~x10|(~x7&(x9|(~x2&~x5))))))))))
+['not', 'x12']
+depth:1 var_num:1 simpified: ~x12
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x5', 'x3', 'x5', 'x4', 'x11', 'x10', 'x9', 'x5', 'x3', 'x7', 'x1', 'x12']
+depth:13 var_num:9 simpified: ~x12&(~x1|(~x7&(~x3|(~x5&(~x9|(~x10&(~x11|(~x4&(~x5|(~x3&(~x1|~x5)))))))))))
+['not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'or', 'and', 'or', 'and', 'or', 'x10', 'x2', 'x6', 'x12', 'x6', 'x10', 'x11', 'x5', 'x8', 'x11', 'x2', 'x1', 'x5', 'x7', 'x2']
+depth:16 var_num:10 simpified: ~x2&(~x7|(~x5&(~x1|(~x2&(~x11|(~x8&(~x5|(~x11&(~x4|(~x10&(~x6|(~x12&(~x6|(~x10&~x2))))))))))))))
+['and', 'x2', 'x7']
+depth:1 var_num:2 simpified: x2&x7
+['or', 'or', 'x5', 'x11', 'and', 'or', 'or', 'and', 'or', 'x5', 'and', 'or', 'and', 'or', 'x1', 'or', 'not', 'x8', 'x4', 'x9', 'x6', 'x10', 'x7', 'x2', 'x5', 'x4']
+depth:10 var_num:10 simpified: x11|x5|(x4&(x2|x5|(x7&(x5|(x10&(x6|(x9&(x1|x4|~x8))))))))
+['and', 'x10', 'or', 'and', 'or', 'x1', 'and', 'or', 'and', 'or', 'and', 'x3', 'x2', 'x10', 'x12', 'or', 'and', 'or', 'and', 'or', 'x8', 'or', 'and', 'x1', 'not', 'x11', 'x10', 'x5', 'x6', 'x12', 'x4', 'x2', 'x1', 'x12']
+depth:2 var_num:3 simpified: x10&(x1|x12)
+['or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x12', 'x2', 'x7', 'x2', 'x5', 'x8', 'x4', 'x4', 'x11', 'x5']
+depth:2 var_num:3 simpified: x5|(x11&x4)
+['or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x1', 'x7', 'x4', 'x7', 'x2', 'x7', 'x2', 'x10', 'x8', 'x2', 'x3', 'x11', 'x12']
+depth:13 var_num:10 simpified: x12|(x11&(x3|(x2&(x8|(x10&(x2|(x7&(x2|(x7&(x4|(x7&(x1|x9))))))))))))
+['or', 'x1', 'or', 'x11', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x7', 'x2', 'x6', 'x10', 'x7', 'x10', 'x12', 'x4', 'x6', 'x8']
+depth:11 var_num:10 simpified: x1|x11|(x8&(x6|(x4&(x12|(x10&(x7|(x10&(x6|(x2&(x3|x7))))))))))
+['or', 'x8', 'x2']
+depth:1 var_num:2 simpified: x2|x8
+['and', 'or', 'x10', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x1', 'x4', 'or', 'x4', 'x11', 'x9', 'x3', 'x7', 'x2', 'x1', 'x8', 'x1', 'x2', 'x8', 'not', 'x4', 'x2']
+depth:12 var_num:9 simpified: x2&(x10|~x4|(x8&(x2|(x1&(x8|(x1&(x2|(x7&(x3|(x9&(x11|x4)))))))))))
+['not', 'x10']
+depth:1 var_num:1 simpified: ~x10
+['or', 'x7', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x1', 'x12', 'x11', 'x9', 'x1', 'x7', 'x2', 'x1', 'x3', 'x7', 'x12', 'x11', 'x1', 'x2']
+depth:15 var_num:7 simpified: x7|(x2&(x1|(x11&(x12|(x7&(x3|(x1&(x2|(x7&(x1|(x9&(x11|(x12&(x1|x2))))))))))))))
+['and', 'and', 'x1', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x6', 'and', 'or', 'x7', 'x2', 'x10', 'x5', 'x1', 'x9', 'x6', 'x12', 'x4', 'x9', 'x5', 'x4', 'x5', 'x1']
+depth:12 var_num:9 simpified: x1&x5&(x4|(x5&(x9|(x4&(x12|(x6&(x9|(x1&(x5|(x10&x6&(x2|x7)))))))))))
+['or', 'not', 'or', 'and', 'or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'or', 'x9', 'x10', 'x4', 'x11', 'x9', 'not', 'x7', 'x2', 'x1', 'x5', 'x11', 'x2', 'x3', 'x5', 'x3']
+depth:13 var_num:9 simpified: x3|(~x5&(~x3|(~x2&(~x11|~x5|(~x1&(~x2|(x7&(~x9|(~x11&(~x4|(~x10&~x5&~x9)))))))))))
+['and', 'not', 'x4', 'not', 'x6']
+depth:2 var_num:2 simpified: ~x4&~x6
+['not', 'not', 'x8']
+depth:0 var_num:1 simpified: x8
+['and', 'x3', 'x2']
+depth:1 var_num:2 simpified: x2&x3
+['or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'x1', 'x3', 'x12', 'x1', 'x3', 'x7', 'not', 'x9', 'not', 'x5', 'x2', 'x9', 'x12', 'x11', 'x5', 'not', 'x9']
+depth:11 var_num:8 simpified: ~x9|(x5&(x11|x12|(x9&(x2|(~x5&(x7|~x9|(x3&(x1|(x12&(x1|x3))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'not', 'x4', 'x9', 'x5', 'x8', 'x7', 'x6', 'x9', 'x5', 'x4', 'x5', 'x1', 'x9', 'x8']
+depth:13 var_num:7 simpified: x8&(x9|(x1&(x5|(x4&(x5|(x9&(x6|(x7&(x8|(x5&(~x4|x9)))))))))))
+['and', 'and', 'or', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x10', 'x5', 'x7', 'x6', 'x4', 'x8', 'x9', 'x1', 'x4', 'x5', 'x7', 'x2', 'x1', 'x2', 'x3']
+depth:14 var_num:10 simpified: x2&x3&(x1|(x2&(~x5|x7|(~x4&(~x1|(~x9&(~x8|(~x4&(~x6|(~x7&(~x5|(~x10&~x2))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x2', 'x3', 'x7', 'x9', 'x7', 'x4', 'x1', 'x6', 'x3', 'x4', 'x9', 'x1', 'x10', 'x7']
+depth:13 var_num:8 simpified: x7&(x10|(x1&(x9|(x4&(x3|(x6&(x1|(x4&(x7|(x9&(x7|(x2&x3))))))))))))
+['or', 'x7', 'or', 'and', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x5', 'or', 'and', 'or', 'x7', 'x2', 'x10', 'x4', 'x1', 'x2', 'x1', 'x5', 'x4', 'x8', 'x7', 'x2', 'x1', 'x12']
+depth:11 var_num:8 simpified: x12|x7|(x1&x2&(x7|x8|(x4&(x5|(x1&(x2|(x1&(x4|x5|(x10&(x2|x7))))))))))
+['and', 'x11', 'x2']
+depth:1 var_num:2 simpified: x11&x2
+['or', 'x11', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x7', 'x2', 'x9', 'x8', 'x5', 'not', 'x3', 'x7', 'not', 'or', 'x1', 'x5', 'x1', 'x2', 'x1', 'x12']
+depth:12 var_num:10 simpified: x11|x12|(x1&(x2|(x1&((~x1&~x5)|(x7&(~x3|(x5&(x8|(x9&(x2|(x4&x7)))))))))))
+['and', 'x2', 'or', 'x10', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x7', 'x3', 'x4', 'x5', 'x3', 'x6', 'x9', 'x1', 'x2', 'x4', 'x1']
+depth:14 var_num:9 simpified: x2&(x10|(~x1&(~x4|(~x2&(~x1|(~x9&(~x6|(~x3&(~x5|(~x4&(~x3|(~x2&~x7))))))))))))
+['and', 'not', 'x4', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x8', 'x5', 'x4', 'x11', 'x9', 'x10', 'x2', 'x5', 'x1', 'x2', 'x5', 'not', 'x1', 'x11', 'x1']
+depth:14 var_num:8 simpified: ~x4&(x1|(x11&(~x1|(x5&(x2|(x1&(x5|(x2&(x10|(x9&(x11|(x4&(x5|x8)))))))))))))
+['and', 'x8', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x4', 'x11', 'x12', 'x5', 'x7', 'x5', 'x7', 'x4', 'x7', 'x6']
+depth:2 var_num:4 simpified: x6&x8&(x4|x7)
+['and', 'x11', 'x12']
+depth:1 var_num:2 simpified: x11&x12
+['or', 'or', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'or', 'and', 'x8', 'x10', 'x4', 'not', 'x10', 'x4', 'x3', 'x1', 'x3', 'x9', 'x5', 'x8', 'x6', 'x9', 'x6']
+depth:8 var_num:7 simpified: x6|x9|(~x8|(~x5&(~x9|(~x3&(~x1|(~x3&~x4))))))
+['not', 'x8']
+depth:1 var_num:1 simpified: ~x8
+['and', 'x9', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x7', 'x2', 'x7', 'x9', 'x4', 'x7', 'x4', 'x1', 'x11', 'x2', 'x1', 'x2', 'x7', 'x2', 'x10']
+depth:13 var_num:7 simpified: ~x10&x9&(~x2|(~x7&(~x2|(~x1&(~x2|(~x11&(~x1|(~x4&(~x7|(~x4&(~x7|~x9)))))))))))
+['and', 'x3', 'or', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x9', 'x7', 'x4', 'x11', 'x8', 'x4', 'x11', 'or', 'x8', 'not', 'x3', 'x10', 'x1', 'x4', 'x2', 'x12', 'x5']
+depth:14 var_num:11 simpified: x3&(x5|(x12&(x2|~x4|(~x1&(~x10|(x3&~x8&(~x11|(~x4&(~x8|(~x11&(~x4|(~x7&~x9))))))))))))
+['or', 'x7', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x4', 'x4', 'x9', 'or', 'and', 'x11', 'or', 'not', 'x3', 'x12', 'x2', 'x9', 'x1', 'x7', 'x5', 'not', 'x8', 'not', 'x8', 'x1']
+depth:2 var_num:3 simpified: x1|x7|~x8
+['and', 'x11', 'x8']
+depth:1 var_num:2 simpified: x11&x8
+['and', 'x12', 'x4']
+depth:1 var_num:2 simpified: x12&x4
+['or', 'and', 'or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x3', 'x7', 'x5', 'x4', 'x1', 'x12', 'x8', 'x9', 'x12', 'x3', 'x5', 'x6', 'x5', 'x10']
+depth:13 var_num:10 simpified: x10|(x5&(x6|(~x3&(~x12|(~x9&(~x8|(~x12&(~x1|(~x4&(~x5|(~x3&~x7)))))))))))
+['and', 'x10', 'or', 'and', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'x4', 'or', 'and', 'or', 'and', 'or', 'not', 'x2', 'x1', 'x5', 'x2', 'x7', 'x9', 'or', 'x10', 'x4', 'x12', 'x10', 'not', 'x6', 'x12', 'x3', 'x5']
+depth:14 var_num:10 simpified: x10&(x5|(x3&(~x12|(x6&(~x10|(~x12&((~x10&~x4)|(~x4&~x9&(~x7|(~x2&(~x5|(~x1&x2))))))))))))
+['and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x2', 'x7', 'x12', 'x10', 'not', 'x10', 'x4', 'x3', 'x9', 'x1', 'x7', 'x2', 'x5', 'x4']
+depth:11 var_num:9 simpified: x4&(x5|(x2&(x7|(x1&(x9|(x3&(x4|(~x10&(x12&(x2|x7))))))))))
+['or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'or', 'or', 'and', 'or', 'and', 'or', 'x3', 'x8', 'not', 'x10', 'not', 'x10', 'x9', 'x5', 'x12', 'x9', 'x6', 'x2', 'x1', 'x7', 'x5', 'x1', 'x8']
+depth:7 var_num:8 simpified: x1|x8|(x5&(x7|(x1&(x2|(x6&(x12|x5|x9))))))
+['and', 'or', 'x8', 'x6', 'and', 'or', 'or', 'and', 'not', 'not', 'or', 'and', 'or', 'x1', 'or', 'and', 'or', 'and', 'x1', 'x2', 'x1', 'x4', 'x10', 'x12', 'x3', 'x2', 'x7', 'x5', 'x6']
+depth:6 var_num:8 simpified: x6&(x5|x7|(x2&(x3|(x12&(x1|x10)))))
+['and', 'not', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x5', 'x1', 'x4', 'not', 'x9', 'x10', 'x5', 'x9', 'x10', 'x1', 'x12', 'x8', 'x6', 'x9', 'x7', 'x4', 'x5', 'x6', 'x11']
+depth:17 var_num:10 simpified: x11&~x6&(~x5|(~x4&(~x7|(~x9&(~x6|(~x8&(~x12|(~x1&(~x10|(~x9&(~x5|(~x10&(x9|(~x4&(~x1|~x5)))))))))))))))
+['or', 'not', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'x7', 'x12', 'not', 'x10', 'x4', 'not', 'x1', 'x7', 'x1', 'x11', 'x9', 'x8', 'x5', 'x11', 'x2', 'x12']
+depth:13 var_num:10 simpified: x12|~x2|(~x11&(~x5|(~x8&(~x9|(~x11&(~x1|(~x7&(x1|(~x4&(x10|(~x12&~x7)))))))))))
+['or', 'and', 'or', 'and', 'or', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x10', 'x12', 'x5', 'x4', 'x10', 'x4', 'not', 'x7', 'x2', 'x7', 'x2', 'x8', 'x6', 'x1', 'x7']
+depth:5 var_num:5 simpified: x7|(x1&(x6|(x8&(x2|x7))))
+['and', 'x3', 'x3']
+depth:0 var_num:1 simpified: x3
+['and', 'x1', 'x7']
+depth:1 var_num:2 simpified: x1&x7
+['not', 'x8']
+depth:1 var_num:1 simpified: ~x8
+['and', 'x11', 'x7']
+depth:1 var_num:2 simpified: x11&x7
+['and', 'x6', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x10', 'x4', 'x12', 'x1', 'x2', 'x7', 'x1', 'x4', 'x7', 'x3', 'x5', 'x9', 'x10', 'x4', 'x7', 'x10', 'x2', 'not', 'x8', 'x9', 'x7']
+depth:19 var_num:11 simpified: x6&x7&(x9|(~x8&(x2|(x10&(x7|(x4&(x10|(x9&(x5|(x3&(x7|(x4&(x1|(x7&(x2|(x1&(x12|(x10&x4))))))))))))))))))
