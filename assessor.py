@@ -8,6 +8,7 @@ from contextlib import nullcontext
 import random
 import sys
 
+#nanoGPT of Andrej Karpathy
 #export PYTHONPATH="${PYTHONPATH}:path/to/nanoGPT"
 import model
 from model import GPT, GPTConfig
@@ -63,41 +64,6 @@ def is_polish_normal_form(sequence):
 
     # Valid formula in Polish notation should leave exactly one operand on the stack
     return len(operand_stack) == 1
-
-def sample_sequence(model, length, start_token_id, temperature=1.0, top_p=None, vocab_size=10, no_single_var = False):
-    if top_p is not None and (top_p <= 0 or top_p >= 1):
-        raise ValueError(f"top_k must in (0, ]")
-    detached_tokens = None
-    while True:
-        if detached_tokens != None: print(f"too long: {[itos[t.item()] for t in detached_tokens[0]]}")
-        detached_tokens = torch.full((1, 1), start_token_id, dtype=torch.long, device=next(model.parameters()).device)
-        generated_logits = []
-        for idx in range(length - 1):
-            logits, loss = model(detached_tokens, targets = None)  #(batch_num, vocab_size)
-            logits = logits[0, -1, :].unsqueeze(0)
-            next_token_logits = logits / temperature
-
-            #if no_single_var, first generated token should not be a var
-            sm = F.softmax(next_token_logits, dim=-1)
-            #no start_token
-            sm[:, start_token_id] = 0
-            if (idx == 0 and no_single_var):
-                sm[:, 4:] = 0 #consider this by backward
-
-            if top_p is not None:
-                sorted_prob, sorted_idx = torch.sort(sm.squeeze(), descending=True)
-                cp = torch.cumsum(sorted_prob, dim=-1)  #cumulative_probs
-                sorted_prob[1:][cp[:-1] >= top_p] = 0
-                next_token = torch.multinomial(sorted_prob, num_samples=1)
-                next_token = sorted_idx[next_token].unsqueeze(0)
-            else:
-                next_token = torch.multinomial(sm, num_samples=1)  #(batch_size, 1)
-
-            detached_tokens = torch.cat((detached_tokens, next_token.detach()), dim = 1)
-            generated_logits.append(logits[0])
-
-            if is_polish_normal_form([itos[t.item()] for t in detached_tokens[0, 1:]]):
-                return detached_tokens[0], torch.stack(generated_logits, dim= 0)
 
 def build_tree(tokens):
     if not tokens:
@@ -158,6 +124,44 @@ def expression_depth(expr):
     # For any other type of expression, return 0 as a default (though this should not happen)
     return 0
 
+def sample_sequence(model, max_len, start_token_id, temperature=1.0, top_p=None, vocab_size=10, no_single_var = False):
+    if top_p is not None and (top_p <= 0 or top_p >= 1):
+        raise ValueError(f"top_k must in (0, ]")
+    detached_tokens = None
+    while True:
+        #generate tokens till either formula is complete in PNF. But if  max_len tokens generated, start again.
+        if detached_tokens != None: print(f"too long: {[itos[t.item()] for t in detached_tokens[0]]}")
+        detached_tokens = torch.full((1, 1), start_token_id, dtype=torch.long, device=next(model.parameters()).device)
+        generated_logits = []
+        for idx in range(max_len - 1):
+            logits, loss = model(detached_tokens, targets = None)  #(batch_num, vocab_size)
+            logits = logits[0, -1, :].unsqueeze(0)
+            next_token_logits = logits / temperature
+
+            #if no_single_var, first generated token should not be a var
+            sm = F.softmax(next_token_logits, dim=-1)
+            #no start_token
+            sm[:, start_token_id] = 0
+            if (idx == 0 and no_single_var):
+                sm[:, 4:] = 0 #consider this by backward
+
+            if top_p is not None:
+                sorted_prob, sorted_idx = torch.sort(sm.squeeze(), descending=True)
+                cp = torch.cumsum(sorted_prob, dim=-1)  #cumulative_probs
+                sorted_prob[1:][cp[:-1] >= top_p] = 0
+                next_token = torch.multinomial(sorted_prob, num_samples=1)
+                next_token = sorted_idx[next_token].unsqueeze(0)
+            else:
+                next_token = torch.multinomial(sm, num_samples=1)  #(batch_size, 1)
+
+            detached_tokens = torch.cat((detached_tokens, next_token.detach()), dim = 1)
+            generated_logits.append(logits[0])
+
+            if is_polish_normal_form([itos[t.item()] for t in detached_tokens[0, 1:]]):
+                return detached_tokens[0], torch.stack(generated_logits, dim= 0)
+
+
+#tokens
 itos = {0:"ST", 1:"and", 2:"or", 3:"not", 4:"x1", 5:"x2", 6:"x3", 7:"x4", 8:"x5", 9:"x6", 10:"x7", 11:"x8", 12:"x9", 13:"x10", 14:"x11", 15:"x12"}
 start_token_id = 0
 vocab_size = len(itos)
@@ -176,15 +180,14 @@ device = 'cpu' #current version tested only on cpu
 device_type = 'cuda' if 'cuda' in device else 'cpu' # for later use in torch.autocast
 optimizer = model.configure_optimizers(weight_decay, learning_rate, (beta1, beta2), device_type)
 
-# Parameters for inference
 temperature = 1 #0.7  # near 0 makes more deterministic
 top_p = 0.9 # Top-k filtering, should be less than the vocabulary size
 
 lasti = start = 0
 end = 10000000
 batch_loss = None
-pos_samples = []
-neg_samples = []
+hard_samples = []
+easy_samples = []
 
 total_w = 0
 min_depth = 4
@@ -210,7 +213,7 @@ if checkpoint:
     model.load_state_dict(checkpoint['model_state_dict'])
     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
-logf = 'output.txt'
+logf = 'output.txt'   #output file
 
 for i in range(start, end):
     if eval:
@@ -219,11 +222,12 @@ for i in range(start, end):
         model.train()
     ctx = torch.no_grad() if eval else nullcontext()
     with ctx:
+        #top_p deactivated in train mode to increae exploration
         tokens, tokens_logs = sample_sequence(model, block_size, start_token_id, temperature=temperature, top_p=top_p if eval else None, vocab_size=vocab_size, no_single_var=min_depth>=2)
         tokens = tokens[1:] #token ST was not generated
         tknst = [itos[t.item()] for t in tokens]
 
-        varn1 = len(set(s for s in tknst if s not in ['and', 'or', 'not']))
+        #formula simplfication
         nl = to_nested_list(tknst)
         nl = to_parenthesized_string(nl)
         algebra = boolean.BooleanAlgebra()
@@ -242,17 +246,18 @@ for i in range(start, end):
             f.write(f"{tknst}\n")
             f.write(f"depth:{depth} var_num:{varn2} simpified: {exp1}\n")
 
+        #2 rounds of training for each depth. In the first round, simply ignore formulas with depth mindepth-1, to avoid a shock.
         if min_depth > 1 and (depth == min_depth - 1) and not sec_round:
-            continue #to avoid a shock
+            continue
 
         hard = depth >= min_depth
 
-        t = []
+        t = []   #all tokens are rewarded/punishd if hard/easy
         if hard:
             for j in range(0, len(tokens)):
                 t.append(torch.zeros(vocab_size))
                 t[-1][tokens[j]] = 1.
-            w = depth - min_depth + 1
+            w = depth - min_depth + 1   #hard samples are weighted wrt their depth
             total_w += w
         else:
             for j in range(0, len(tokens)):
@@ -263,14 +268,14 @@ for i in range(start, end):
 
         loss = cross_entropy(input=tokens_logs, target=target)
         if hard:
-            pos_samples.append(w * loss)
+            hard_samples.append(w * loss)
         else:
-            neg_samples.append(loss)
+            easy_samples.append(loss)
 
-        if eval:
+        if eval:   #no training in eval mode
             if (i - lasti) > eval_num:
-                eval = False
-                if len(pos_samples) >= len(neg_samples):
+                eval = False   #end of eval, back to training
+                if len(hard_samples) >= len(easy_samples):  #high frequecy of hard samples in eval mode, increase the min_depth
                     torch.save({
                     'model_state_dict': model.state_dict(),
                     'optimizer_state_dict': optimizer.state_dict(),
@@ -284,15 +289,15 @@ for i in range(start, end):
                     with open(logf, 'a') as f:
                         f.write(f"min_depth = {min_depth}, {'sec_round' if sec_round else 'first_round'}, i = {i}\n")
                 lasti = i
-                pos_samples = []
-                neg_samples = []
+                hard_samples = []
+                easy_samples = []
                 total_w = 0
-        elif (total_w >= b_size):
-            p_batch_loss = sum(pos_samples)
-            n_batch_loss = sum(neg_samples if len(neg_samples) < total_w else random.sample(neg_samples, total_w))
-            p_batch_loss = p_batch_loss * torch.max(torch.tensor(1.0), 1.2 * n_batch_loss / p_batch_loss).item() #why 1.2?
+        elif (total_w >= b_size):   #a hard sample of weight w is counted w times
+            p_batch_loss = sum(hard_samples)
+            n_batch_loss = sum(easy_samples if len(easy_samples) < total_w else random.sample(easy_samples, total_w))
+            p_batch_loss = p_batch_loss * torch.max(torch.tensor(1.0), 1.2 * n_batch_loss / p_batch_loss).item() #wanna hard samples to have a bit more weight
             batch_loss = p_batch_loss + n_batch_loss
-            batch_loss = batch_loss / (2 * total_w)
+            batch_loss = batch_loss / (2 * total_w)   #hard + easy samples
 
             batch_loss.backward()
             optimizer.step()
@@ -301,10 +306,8 @@ for i in range(start, end):
             batch_loss = None
             lasti = i
 
-            eval = len(pos_samples) >= len(neg_samples)
+            eval = len(hard_samples) >= len(easy_samples)    #if half of samples are hard, run in eval mode (eventually increase min_depth)
 
-            pos_samples = []
-            neg_samples = []
+            hard_samples = []
+            easy_samples = []
             total_w = 0
-
-
