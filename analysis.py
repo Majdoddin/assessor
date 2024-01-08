@@ -4,6 +4,7 @@ import re
 import sys
 import numpy as np
 
+
 if len(sys.argv) < 2:
     print("Usage: python script.py inputfile")
     sys.exit(1)
@@ -48,18 +49,18 @@ plt.figure(figsize=(12, 6))
 # Histogram for Depth with percentages
 plt.subplot(1, 2, 1)
 plt.hist(depths, bins=range(min(depths), max(depths) + 1), color='skyblue', weights=np.ones(len(depths)) / len(depths))
-plt.title('Percentage Histogram of Depths')
+#plt.title('Percentage Histogram of Depths')
 plt.xlabel('Depth')
-plt.ylabel('Percentage')
+#plt.ylabel('Percentage')
 plt.xticks(range(min(depths), max(depths) + 1))  # Ensuring integer x-axis for depth
 plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'{int(y*100)}%'))  # Convert y-axis to percentage
 
 # Histogram for Variable Numbers with percentages
 plt.subplot(1, 2, 2)
 plt.hist(var_nums, bins=range(min(var_nums), max(var_nums) + 1), color='lightgreen', weights=np.ones(len(var_nums)) / len(var_nums))
-plt.title('Percentage Histogram of Variable Numbers')
+#plt.title('Percentage Histogram of Variable Numbers')
 plt.xlabel('Variable Number')
-plt.ylabel('Percentage')
+#plt.ylabel('Percentage')
 plt.xticks(range(min(var_nums), max(var_nums) + 1))  # Ensuring integer x-axis for variable numbers
 plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'{int(y*100)}%'))  # Convert y-axis to percentage
 
@@ -71,6 +72,41 @@ plt.show()
 sns.jointplot(x=depths, y=var_nums, kind="hex", color="purple")
 plt.xlabel('Depth')
 plt.ylabel('Variable Number')
-plt.suptitle('Joint Distribution of Depth and Variable Number', y=1.02)
+#plt.suptitle('Joint Distribution of Depth and Variable Number', y=1.02)
 plt.savefig('joint_dist.png')
+plt.show()
+
+
+num_operators = []
+num_binary_operators = []
+
+operator_regex = re.compile(r'[\&\|\~]')
+binary_operator_regex = re.compile(r'[\&\|]')
+
+with open(file_path, 'r') as file:
+    for line in file:
+        if 'depth:' in line and 'var_num:' in line:
+            simplified_formula = line.split('simpified:')[-1].strip()
+            operators = operator_regex.findall(simplified_formula)
+            binary_operators = binary_operator_regex.findall(simplified_formula)
+            num_operators.append(len(operators))
+            num_binary_operators.append(len(binary_operators))
+
+color = (0.122, 0.47, 0.706)
+
+fig, axs = plt.subplots(1, 2, figsize=(18, 6))
+
+axs[0].hist(num_operators, bins=range(min(num_operators), max(num_operators) + 1, 1), color=color, alpha=0.7)
+axs[0].set_xlabel('Number of Operators')
+
+axs[1].hist(num_binary_operators, bins=range(min(num_binary_operators), max(num_binary_operators) + 1, 1), color=color, alpha=0.7)
+axs[1].set_xlabel('Number of Binary Operators')
+
+for ax in axs:
+    ax.set_ylabel('')
+    ax.grid(False)
+    ax.title.set_visible(False)
+
+plt.tight_layout()
+plt.savefig('op_num.png')
 plt.show()
