@@ -1,4 +1,4 @@
-# assessor
+# Assessor
 Assessor, as an _adaptive colloquium_, generates challenging training samples for training of symbolic regression systems like [Boolformer](https://github.com/sdascoli/boolformer). Assessor plays the crucial role of self-play, as in [AlphaZero](https://arxiv.org/abs/1712.01815), yet is tailored to the asymmetry of symbolic regression: 👉 Crafting puzzles is simpler than solving them.
 
 The setup runs like a [GAN](https://arxiv.org/abs/1406.2661). Assessor, a transformer based on [nanoGPT](https://github.com/karpathy/nanogpt), generates Boolean formulas. The formulas are used to train a system, and are labeled easy if the trained system does it, otherwise hard. The Assessor is in turn trained using the labeled formulas to generate more challenging samples.
