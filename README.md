@@ -8,7 +8,7 @@ The project is young and moving quickly. Currently, the trained system is simula
 After just 330K iterations, Assessor generates formulas that, after simplification, 
 52.7% of them have both depth >= 6 and >= 6 variables:
 <p align='center'>
-<img src="assets/histogram.png" height="250" style="margin-right:20;" alt="percentage of formulas with depth and number of variables">  
+<img src="assets/histogram.png" height="250" style="margin-right:20;" alt="percentage of formulas with depth and number of variables"> <br> 
 <img src="assets/joint_dist.png"  height="250" alt="joint distribution with respect to depth and number of variables">
 </p>
 
