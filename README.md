@@ -3,15 +3,22 @@ Assessor, as an _adaptive colloquium_, generates challenging training samples fo
 
 The setup runs like a [GAN](https://arxiv.org/abs/1406.2661). Assessor, a transformer based on [nanoGPT](https://github.com/karpathy/nanogpt), generates Boolean formulas. The formulas are used to train a system, and are labeled easy if the trained system does it, otherwise hard. The Assessor is in turn trained using the labeled formulas to generate more challenging samples.
 
-The project is young and moving quickly. Currently, the trained system is simulated by a script that labels a formula as easy/hard, if after simplification, its depth is less/more than a given threshhold. As assessor learns to generate formulas with more depth, the threshhold is increased. 
-
-## Results
+The project is young and moving quickly. Currently, the trained system is simulated by a script that labels a formula as easy/hard, if after simplification, its depth is less/more than a given threshhold. As assessor learns to generate formulas with more depth, the threshhold is increased.
+## results
 After just 330K iterations, Assessor generates formulas that, after simplification, 
-52.7% of them have both depth >= 6 and >= 6 variables (for training log see [cwd/train_log.txt](cwd/train_log.txt))
+52.7% of them have both depth >= 6 and >= 6 variables:
+<p align='center'>
+<img src="assets/histogram.png" height="250" style="margin-right:20;" alt="percentage of formulas with depth and number of variables">  
+<img src="assets/joint_dist.png"  height="250" alt="joint distribution with respect to depth and number of variables">
+</p>
 
-<p align="center">
-  <img src="assets/histogram.png" height="250"  alt="percentage of formulas with depth and number of variables">
-  <img src="assets/joint_dist.png"  height="250"  alt="joint distribution with respect to depth and number of variables">
+Assessor has superior Gaussian distribution of number of operators _after simplification_, compared to decaying distribution of the krafted method currently employed by Boolformer, despite Assessor having severe restrictions: Assessor has upto just 200 tokens, and 12 variables, while Boolfomer has upto 1000 binary operators.
+<p><i>
+Assessor</i></br>
+<img src="assets/op_num.png" height="250"  alt="percentage of formulas with depth and number of variables">
+<i>Boolformer <a src='https://arxiv.org/abs/2309.12207'>Paper</a> - Fig. 8 </i>
+
+<img src="assets/fig-8-boolformer.png"  height="250"  width="500"  alt="joint distribution with respect to depth and number of variables">
 </p>
 
 ## run the model
@@ -49,7 +56,7 @@ You'll see each generated formula in Polish normal form, followed by its simplif
 ['or', 'and', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'or', 'and', 'x12', 'x4', 'x6', 'x12', 'x3', 'x4', 'x11', 'x5', 'x11', 'x7', 'x10', 'x4', 'x7', 'x10']
 depth:12 var_num:8 simpified: x10|(x4&x7&(x10|(x7&(x11|(x5&(x11|(x4&(x3|(x12&(x6|(x12&x4)))))))))))
 ```
-##show results:
+##analysis
 ```bash
 analysis.py cwd/output.txt
 ```

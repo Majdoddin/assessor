@@ -50,7 +50,7 @@ plt.figure(figsize=(12, 6))
 plt.subplot(1, 2, 1)
 plt.hist(depths, bins=range(min(depths), max(depths) + 1), color='skyblue', weights=np.ones(len(depths)) / len(depths))
 #plt.title('Percentage Histogram of Depths')
-plt.xlabel('Depth')
+plt.xlabel('Depth', fontsize=12)
 #plt.ylabel('Percentage')
 plt.xticks(range(min(depths), max(depths) + 1))  # Ensuring integer x-axis for depth
 plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'{int(y*100)}%'))  # Convert y-axis to percentage
@@ -59,7 +59,7 @@ plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'{int(y*100)
 plt.subplot(1, 2, 2)
 plt.hist(var_nums, bins=range(min(var_nums), max(var_nums) + 1), color='lightgreen', weights=np.ones(len(var_nums)) / len(var_nums))
 #plt.title('Percentage Histogram of Variable Numbers')
-plt.xlabel('Variable Number')
+plt.xlabel('Variable Number', fontsize=12)
 #plt.ylabel('Percentage')
 plt.xticks(range(min(var_nums), max(var_nums) + 1))  # Ensuring integer x-axis for variable numbers
 plt.gca().yaxis.set_major_formatter(plt.FuncFormatter(lambda y, _: f'{int(y*100)}%'))  # Convert y-axis to percentage
@@ -70,9 +70,10 @@ plt.show()
 
 # Creating a joint plot for both Depth and Variable Number
 sns.jointplot(x=depths, y=var_nums, kind="hex", color="purple")
-plt.xlabel('Depth')
-plt.ylabel('Variable Number')
+plt.xlabel('Depth', fontsize=12)
+plt.ylabel('Variable Number', fontsize=12)
 #plt.suptitle('Joint Distribution of Depth and Variable Number', y=1.02)
+plt.subplots_adjust(bottom=0.08, left=0.09)
 plt.savefig('joint_dist.png')
 plt.show()
 
@@ -97,10 +98,10 @@ color = (0.122, 0.47, 0.706)
 fig, axs = plt.subplots(1, 2, figsize=(18, 6))
 
 axs[0].hist(num_operators, bins=range(min(num_operators), max(num_operators) + 1, 1), color=color, alpha=0.7)
-axs[0].set_xlabel('Number of Operators')
+axs[0].set_xlabel('Number of Operators', fontsize=12)
 
 axs[1].hist(num_binary_operators, bins=range(min(num_binary_operators), max(num_binary_operators) + 1, 1), color=color, alpha=0.7)
-axs[1].set_xlabel('Number of Binary Operators')
+axs[1].set_xlabel('Number of Binary Operators', fontsize=12)
 
 for ax in axs:
     ax.set_ylabel('')
