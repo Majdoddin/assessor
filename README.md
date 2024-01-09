@@ -8,16 +8,15 @@ The project is young and moving quickly. Currently, the trained system is simula
 After just 330K iterations, Assessor generates formulas that, after simplification, 
 52.7% of them have both depth >= 6 and >= 6 variables:
 <p align='center'>
-<img src="assets/histogram.png" height="250" style="margin-right:20;" alt="percentage of formulas with depth and number of variables"> <br> 
+<img src="assets/histogram.png" height="250" style="margin-right:20;" alt="percentage of formulas with depth and number of variables"> <br>
 <img src="assets/joint_dist.png"  height="250" alt="joint distribution with respect to depth and number of variables">
 </p>
 
 Assessor has superior Gaussian distribution of number of operators _after simplification_, compared to decaying distribution of the krafted method currently employed by Boolformer, despite Assessor having severe restrictions: Assessor has upto just 200 tokens, and 12 variables, while Boolfomer has upto 1000 binary operators.
 <p><i>
 Assessor</i></br>
-<img src="assets/op_num.png" height="250"  alt="percentage of formulas with depth and number of variables">
-<i>Boolformer <a src='https://arxiv.org/abs/2309.12207'>Paper</a> - Fig. 8 </i>
-
+<img src="assets/op_num.png" height="250"  alt="percentage of formulas with depth and number of variables"><br>
+<i>Boolformer <a src='https://arxiv.org/abs/2309.12207'>Paper</a> - Fig. 8 </i><br>
 <img src="assets/fig-8-boolformer.png"  height="250"  width="500"  alt="joint distribution with respect to depth and number of variables">
 </p>
 
