@@ -25,10 +25,11 @@ def find_depth(node):
         return max_depth + 1
 
 #tokens
-itos = {0:"ST", 1:"and", 2:"or", 3:"not", 4:"x1", 5:"x2", 6:"x3", 7:"x4", 8:"x5", 9:"x6", 10:"x7", 11:"x8", 12:"x9", 13:"x10"}
-start_token_id = 0
+itos = {0:"ST", 1:"and", 2:"or", 3:"not", 4:"var", 5:"x1", 6:"x2", 7:"x3", 8:"x4", 9:"x5", 10:"x6", 11:"x7", 12:"x8", 13:"x9", 14:"x10"}
+start_tkn = 0
+var_tkn = 4
 vocab_size = len(itos)
-block_size=200
+block_size=100#200
 
 model_args = dict(n_layer=8, n_head=16, n_embd=512, block_size=block_size,
                 bias=False, vocab_size=vocab_size, dropout=0)    #dropout, for pretraining 0 is good, for finetuning try 0.1+
@@ -46,14 +47,14 @@ optimizer = model.configure_optimizers(weight_decay, learning_rate, (beta1, beta
 temperature = 1 #0.7  # near 0 makes more deterministic
 top_p = 0.9 # Top-p filtering, should be less than the vocabulary size
 
-lasti = start = 29554
+lasti = start = 0
 end = 10000000
 batch_loss = None
 hard_samples = []
 easy_samples = []
 
 total_w = 0
-min_opn = 3
+min_opn = 1
 b_size = 32 #*2
 
 eval = False
@@ -70,13 +71,13 @@ sec_round = False   #True iff checkpoint ends wiht 2
 # start = 0
 # end = eval_num = 10000
 
-checkpoint = 'state-opn-3-29553.pt' #'name_of_checkpoint.pt'
+#checkpoint = 'state-opn-3-29553.pt' #'name_of_checkpoint.pt'
 if checkpoint:
     checkpoint = torch.load(checkpoint)
     model.load_state_dict(checkpoint['model_state_dict'])
     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
-logf = 'output20.txt'   #output file
+logf = 'output21.txt'   #output file
 
 #The goal is to generate ever harder formulas for boolformer
 boolformer_noiseless = load_boolformer(mode='noiseless')
@@ -90,7 +91,7 @@ for i in range(start, end):
     ctx = torch.no_grad() if eval else nullcontext()
     with ctx:
         #top_p deactivated in train mode to increae exploration
-        tokens, tokens_logs = sample_sequence(model, block_size, itos, start_token_id, temperature=temperature, top_p=top_p if eval else None, vocab_size=vocab_size, no_single_var=min_opn>=2)
+        tokens, tokens_logs = sample_sequence(model, block_size, itos, start_tkn, var_tkn, temperature=temperature, top_p=top_p if eval else None, vocab_size=vocab_size, no_single_var=min_opn>=2)
         tokens = tokens[1:] #token ST was not generated
         tknst = [itos[t.item()] for t in tokens]
 
@@ -186,7 +187,7 @@ for i in range(start, end):
             eval = len(hard_samples) >= len(easy_samples) / 2   #if half of samples are hard, run in eval mode (eventually increase min_depth)
             if eval:
                 lasti = i
-            elif i - lasti > 10000:
+            elif i - lasti > 5000:
                 torch.save({
                     'model_state_dict': model.state_dict(),
                     'optimizer_state_dict': optimizer.state_dict(),
