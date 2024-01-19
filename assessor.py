@@ -165,14 +165,14 @@ def sample_sequence(model, max_len, itos, start_tkn, var_tkn, temperature=1.0, t
                     top_p_f(sm)
 
                 next_tkn = (var_tkn+1)+torch.multinomial(sm, num_samples=1)
-                #if it is an unused var, take the next unused var instead. 
+                #if it is an unused var, take the next unused var instead.
                 #makes more readable, but makes training harder
-                used_tkns  = [v for v in detached_tokens[0] if v > var_tkn]
-                if used_tkns:
-                    if next_tkn not in used_tkns:
-                        next_tkn = 1 + torch.tensor([max(used_tkns)])
-                else:
-                    next_tkn =  1 + torch.tensor([var_tkn])
+                # used_tkns  = [v for v in detached_tokens[0] if v > var_tkn]
+                # if used_tkns:
+                #     if next_tkn not in used_tkns:
+                #         next_tkn = 1 + torch.tensor([max(used_tkns)])
+                # else:
+                #     next_tkn =  1 + torch.tensor([var_tkn])
 
             detached_tokens = torch.cat((detached_tokens, next_tkn.unsqueeze(dim=0).detach()), dim = 1)
             generated_logits.append(logits[0])
