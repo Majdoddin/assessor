@@ -118,7 +118,7 @@ def expression_depth(expr):
     # For any other type of expression, return 0 as a default (though this should not happen)
     return 0
 
-def sample_sequence(model, max_len, itos, start_tkn, var_tkn, temperature=1.0, top_p=None, vocab_size=10, no_single_var = False):
+def sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=1.0, top_p=None, vocab_size=10, no_single_var = False):
     if top_p is not None and (top_p <= 0 or top_p >= 1):
         raise ValueError(f"top_k must in (0, ]")
     detached_tokens = None
@@ -127,7 +127,7 @@ def sample_sequence(model, max_len, itos, start_tkn, var_tkn, temperature=1.0, t
         if detached_tokens != None: print(f"too long.")
         detached_tokens = torch.full((1, 1), start_tkn, dtype=torch.long, device=next(model.parameters()).device)
         generated_logits = []
-        for idx in range(max_len - 1):
+        for idx in range(max_len):
             logits, loss = model(detached_tokens, targets = None)  #(batch_num, vocab_size)
             logits = logits[0, -1, :].unsqueeze(0)
             next_token_logits = logits / temperature

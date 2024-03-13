@@ -13,7 +13,7 @@ import boolean
 from contextlib import nullcontext
 import random
 import sys
-from assessor import sample_sequence, to_parenthesized_string, to_nested_list, expression_depth
+from assessor import sample_formula, to_parenthesized_string, to_nested_list, expression_depth
 
 #nanoGPT of Andrej Karpathy
 #export PYTHONPATH="${PYTHONPATH}:path/to/nanoGPT"
@@ -100,7 +100,7 @@ for i in range(start, end):
     ctx = torch.no_grad() if eval else nullcontext()
     with ctx:
         #top_p deactivated in train mode to increae exploration
-        tokens, tokens_logs = sample_sequence(model, block_size, itos, start_token_id, temperature=temperature, top_p=top_p if eval else None, vocab_size=vocab_size, no_single_var=min_depth>=2)
+        tokens, tokens_logs = sample_formula(model, block_size, itos, start_token_id, temperature=temperature, top_p=top_p if eval else None, vocab_size=vocab_size, no_single_var=min_depth>=2)
         tokens = tokens[1:] #token ST was not generated
         tknst = [itos[t.item()] for t in tokens]
         #formula simplfication
