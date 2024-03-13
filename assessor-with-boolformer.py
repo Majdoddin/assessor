@@ -1,4 +1,5 @@
 import torch
+from torch.nn.utils.rnn import pad_sequence
 from torch.nn.functional import cross_entropy
 import boolean
 from contextlib import nullcontext
@@ -13,6 +14,7 @@ from model import GPT, GPTConfig
 
 from itertools import product
 from assessor import *
+
 
 def find_depth(node):
     if not node.children:
@@ -84,6 +86,8 @@ boolformer_noiseless = load_boolformer(mode='noiseless')
 boolformer_noiseless.eval()
 max_len = 100  #< block_size - 1#30
 
+samples = []
+
 for i in range(start, end):
     if eval:
         model.eval()
@@ -92,7 +96,9 @@ for i in range(start, end):
     ctx = torch.no_grad() if eval else nullcontext()
     with ctx:
         #top_p deactivated in train mode to increae exploration
-        tokens, tokens_logs = sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=temperature, top_p=top_p if eval else None, vocab_size=vocab_size, no_single_var=min_opn>=2)
+        with torch.no_grad():
+            model.eval()
+            tokens, _ = sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=temperature, top_p=top_p if eval else None, vocab_size=vocab_size, no_single_var=min_opn>=2)
         tokens = tokens[1:] #remove token ST
         tknst = [itos[t.item()] for t in tokens]
 
@@ -134,33 +140,8 @@ for i in range(start, end):
             continue
 
         hard = opn >= min_opn
-
-        #trained to generate formulas with more operators (after simplificatoin)
-        #all tokens are rewarded/punishd if hard/easy
-        #for variable tokens, token var is also rewarded/punished
-        target = []
-        target = torch.full((len(tokens), vocab_size), 0. if hard else 1.)
-        for j in range(0, len(tokens)):
-                    #next = torch.full((vocab_size,), 0. if hard else 1.)
-                    target[j][tokens[j]] = 1. if hard else 0.
-                    #next[tokens[j]] = 1. if hard else 0.
-                    if tokens[j] > var_tkn:
-                        target[j][var_tkn] = 1. if hard else 0.
-        loss = cross_entropy(input=tokens_logs, target=target)
-        if hard:
-            # for j in range(0, len(tokens)):
-            #     next = torch.zeros(vocab_size)
-            #     next[tokens[j]] = 1.
-            #     if tokens[j] > var_tkn:
-            #         next[var_tkn] = 1.
-            #     t.append(next)
-            w = opn - min_opn + 1   #hard samples are weighted wrt their depth
-            total_w += w
-            #By eval only count is important
-            hard_samples.append(1 if eval else (w * loss))
-        else:
-            #To save memory. By eval only count is important
-            easy_samples.append(1 if eval else (None if (len([elem for elem in easy_samples if elem is not None]) > 1.1 * total_w) else loss)) #all later easy samples are discarded. or should we do it randomly?
+        samples = []
+        samples.append((tokens, opn))
 
         if eval:   #no training in eval mode
             if (i - lasti) > eval_num:
@@ -184,6 +165,38 @@ for i in range(start, end):
                 easy_samples = []
                 total_w = 0
         elif (total_w >= b_size):   #a hard sample of weight w is counted w times
+            max_len = max([s.size()[0] for s, _ in samples])
+            #fixme remove extra negative samples
+            xb = pad_sequence([s[:-1] for s, _ in samples], batch_first=True, padding_value=len(itos))
+            yb, _ = model(xb)
+
+            #reward formulas with more operators (after simplificatoin)
+            #all tokens are rewarded/punishd if hard/easy
+            #for variable tokens, token var is also rewarded/punished
+            target = torch.full((xb.size()[0], xb.size()[1], vocab_size+1), 0. if hard else 1.)
+            for j in range(0, len(tokens)):
+                        #next = torch.full((vocab_size,), 0. if hard else 1.)
+                        target[j][tokens[j]] = 1. if hard else 0.
+                        #next[tokens[j]] = 1. if hard else 0.
+                        if tokens[j] > var_tkn:
+                            target[j][var_tkn] = 1. if hard else 0.
+            loss = cross_entropy(input=tokens_logs, target=target)
+            if hard:
+                # for j in range(0, len(tokens)):
+                #     next = torch.zeros(vocab_size)
+                #     next[tokens[j]] = 1.
+                #     if tokens[j] > var_tkn:
+                #         next[var_tkn] = 1.
+                #     t.append(next)
+                w = opn - min_opn + 1   #hard samples are weighted wrt their depth
+                total_w += w
+                #By eval only count is important
+                hard_samples.append(1 if eval else (w * loss))
+            else:
+                #To save memory. By eval only count is important
+                easy_samples.append(1 if eval else (None if (len([elem for elem in easy_samples if elem is not None]) > 1.1 * total_w) else loss)) #all later easy samples are discarded. or should we do it randomly?
+
+
             eval = len(hard_samples) >= len(easy_samples) / 2   #if half of samples are hard, run in eval mode (eventually increase min_depth)
             easy_samples = [elem for elem in easy_samples if elem is not None]  #some
 
