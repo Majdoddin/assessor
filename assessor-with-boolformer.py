@@ -1,6 +1,6 @@
 import torch
 from torch.nn.utils.rnn import pad_sequence
-from torch.nn.functional import cross_entropy
+from torch.nn.functional import cross_entropy, binary_cross_entropy_with_logits
 import boolean
 from contextlib import nullcontext
 import random
@@ -31,6 +31,7 @@ itos = {0:"ST", 1:"and", 2:"or", 3:"not", 4:"var", 5:"x1", 6:"x2", 7:"x3", 8:"x4
 start_tkn = 0
 var_tkn = 4
 vocab_size = len(itos)
+padding_token = -1
 block_size=200
 
 model_args = dict(n_layer=8, n_head=16, n_embd=512, block_size=block_size,
@@ -165,22 +166,35 @@ for i in range(start, end):
                 easy_samples = []
                 total_w = 0
         elif (total_w >= b_size):   #a hard sample of weight w is counted w times
-            max_len = max([s.size()[0] for s, _ in samples])
+            #todo you can shuffle samples, keep so many neg as pos samples.
+            max_x_len = max([t.size()[0] for t, _ in samples])
             #fixme remove extra negative samples
-            xb = pad_sequence([s[:-1] for s, _ in samples], batch_first=True, padding_value=len(itos))
-            yb, _ = model(xb)
+            #remove the last tokens
+            xb = pad_sequence([s[:-1] for s, _ in samples], batch_first=True, padding_value=padding_token)   #b*max_s_len
+            logits, _ = model(xb)
 
             #reward formulas with more operators (after simplificatoin)
             #all tokens are rewarded/punishd if hard/easy
             #for variable tokens, token var is also rewarded/punished
-            target = torch.full((xb.size()[0], xb.size()[1], vocab_size+1), 0. if hard else 1.)
-            for j in range(0, len(tokens)):
-                        #next = torch.full((vocab_size,), 0. if hard else 1.)
-                        target[j][tokens[j]] = 1. if hard else 0.
-                        #next[tokens[j]] = 1. if hard else 0.
-                        if tokens[j] > var_tkn:
-                            target[j][var_tkn] = 1. if hard else 0.
-            loss = cross_entropy(input=tokens_logs, target=target)
+            targets = []
+            w = torch.ones(len(samples))
+            for l, tokens, opn in enumerate(samples):
+                hard = opn >= min_opn
+                target = torch.full((max_x_len, vocab_size+1), 0. if hard else 1.)
+                for j in range(0, len(tokens)):
+                            #next = torch.full((vocab_size,), 0. if hard else 1.)
+                            target[j][tokens[j]] = 1. if hard else 0.
+                            #next[tokens[j]] = 1. if hard else 0.
+                            if tokens[j] > var_tkn:
+                                target[j][var_tkn] = 1. if hard else 0.
+                targets.append(target)
+                w[l] *= opn - min_opn + 1
+            targets = torch.stack(targets)
+
+            loss = binary_cross_entropy_with_logits(input=logits, target=target, weight=w)
+            mask = (xb != padding_token).float()
+            loss *= mask.unsqueeze(-1)
+            loss = loss.sum() / mask.sum()
             if hard:
                 # for j in range(0, len(tokens)):
                 #     next = torch.zeros(vocab_size)
