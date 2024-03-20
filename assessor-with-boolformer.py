@@ -30,8 +30,8 @@ def find_depth(node):
 itos = {0:"ST", 1:"and", 2:"or", 3:"not", 4:"var", 5:"x1", 6:"x2", 7:"x3", 8:"x4", 9:"x5", 10:"x6", 11:"x7", 12:"x8", 13:"x9", 14:"x10"}
 start_tkn = 0
 var_tkn = 4
+#one for padding token
 vocab_size = len(itos)
-padding_token = -1
 block_size=200
 
 model_args = dict(n_layer=8, n_head=16, n_embd=512, block_size=block_size,
@@ -58,7 +58,7 @@ easy_samples = []
 
 total_w = 0
 min_opn = 3
-b_size = 32 #*2 (hard and easy samples)
+b_size = 16 #32 #*2 (hard and easy samples)
 
 eval = False
 eval_num = 200
@@ -88,7 +88,9 @@ boolformer_noiseless.eval()
 max_len = 100  #< block_size - 1#30
 
 samples = []
-
+algebra = boolean.BooleanAlgebra()
+t = algebra.parse(u'True', simplify=False)
+f = algebra.parse(u'False', simplify=False)
 for i in range(start, end):
     if eval:
         model.eval()
@@ -99,11 +101,10 @@ for i in range(start, end):
         #top_p deactivated in train mode to increae exploration
         with torch.no_grad():
             model.eval()
-            tokens, _ = sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=temperature, top_p=top_p if eval else None, vocab_size=vocab_size, no_single_var=min_opn>=2)
-        tokens = tokens[1:] #remove token ST
-        tknst = [itos[t.item()] for t in tokens]
+            tokens, _ = sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=temperature, top_p=top_p if eval else None)
+        tknst = [itos[t.item()] for t in tokens[1:]]
 
-        algebra = boolean.BooleanAlgebra()
+
 
         #parsing the tokens
         nl = to_nested_list(tknst)
@@ -112,8 +113,6 @@ for i in range(start, end):
 
         #compute the output for all possible inputs
         smbs = list(exp1.symbols) #unsorted
-        t = algebra.parse(u'True', simplify=False)
-        f = algebra.parse(u'False', simplify=False)
         inputs = np.array(list(product([f, t], repeat=len(smbs))))
         outputs = np.array([exp1.subs({smbs[k]:inputs[j][k] for k in range(len(smbs))}).simplify() for j in range(len(inputs))])
         inputs = np.where(inputs == t, True, False)
@@ -121,6 +120,7 @@ for i in range(start, end):
 
         #smbs[i] is Xi for boolformer
         with torch.no_grad():
+            boolformer_noiseless.eval()
             pred_trees, error_arr, complexity_arr = boolformer_noiseless.fit([inputs], [outputs], verbose=False, beam_size=10, beam_type="search")
         opn = complexity_arr[0]  #number of ops in simplified formula
 
@@ -141,7 +141,6 @@ for i in range(start, end):
             continue
 
         hard = opn >= min_opn
-        samples = []
         samples.append((tokens, opn))
 
         if eval:   #no training in eval mode
@@ -165,60 +164,69 @@ for i in range(start, end):
                 hard_samples = []
                 easy_samples = []
                 total_w = 0
-        elif (total_w >= b_size):   #a hard sample of weight w is counted w times
-            #todo you can shuffle samples, keep so many neg as pos samples.
+        elif len(samples) >= b_size:#(total_w >= b_size):   #a hard sample of weight w is counted w times
+            #alternatively you can shuffle samples, keep so many neg as pos samples.
+            pos_n = sum([1 if s[1] >= min_opn else 0 for s in samples])
+            eval = pos_n >= len(samples) / 2   #if half of samples are hard, run in eval mode (eventually increase min_depth)
+            pnw = len(samples) / (2 * pos_n)
+
+
+
             max_x_len = max([t.size()[0] for t, _ in samples])
             #fixme remove extra negative samples
             #remove the last tokens
-            xb = pad_sequence([s[:-1] for s, _ in samples], batch_first=True, padding_value=padding_token)   #b*max_s_len
-            logits, _ = model(xb)
+            xb = pad_sequence([t[:-1] for t, _ in samples], batch_first=True, padding_value=start_tkn)   #b*(max_x_len-1)
+
+            logits, _ = model(idx = xb) #b*(max_x_len-1)*vocab_size
 
             #reward formulas with more operators (after simplificatoin)
             #all tokens are rewarded/punishd if hard/easy
             #for variable tokens, token var is also rewarded/punished
             targets = []
             w = torch.ones(len(samples))
-            for l, tokens, opn in enumerate(samples):
+            for l, (tokens, opn) in enumerate(samples):
                 hard = opn >= min_opn
-                target = torch.full((max_x_len, vocab_size+1), 0. if hard else 1.)
-                for j in range(0, len(tokens)):
+                target = torch.full((max_x_len-1, vocab_size), 0. if hard else 1.)
+                for j in range(len(tokens) -1):
                             #next = torch.full((vocab_size,), 0. if hard else 1.)
-                            target[j][tokens[j]] = 1. if hard else 0.
+                            target[j][tokens[j+1]] = 1. if hard else 0.
                             #next[tokens[j]] = 1. if hard else 0.
-                            if tokens[j] > var_tkn:
+                            if tokens[j+1] > var_tkn:
                                 target[j][var_tkn] = 1. if hard else 0.
                 targets.append(target)
-                w[l] *= opn - min_opn + 1
+                #balance pos/neg samples, reward pos samples with bigger operation numbers
+                if hard:
+                    w[l] *= (opn - min_opn + 1) * pnw
             targets = torch.stack(targets)
+            w = w.unsqueeze(1).unsqueeze(2)
 
-            loss = binary_cross_entropy_with_logits(input=logits, target=target, weight=w)
-            mask = (xb != padding_token).float()
+            loss = binary_cross_entropy_with_logits(input=logits, target=targets, weight=w, reduction = 'none')
+            mask = (xb != start_tkn).float()
+            mask[:, 0] = 1.0
             loss *= mask.unsqueeze(-1)
             loss = loss.sum() / mask.sum()
-            if hard:
-                # for j in range(0, len(tokens)):
-                #     next = torch.zeros(vocab_size)
-                #     next[tokens[j]] = 1.
-                #     if tokens[j] > var_tkn:
-                #         next[var_tkn] = 1.
-                #     t.append(next)
-                w = opn - min_opn + 1   #hard samples are weighted wrt their depth
-                total_w += w
-                #By eval only count is important
-                hard_samples.append(1 if eval else (w * loss))
-            else:
-                #To save memory. By eval only count is important
-                easy_samples.append(1 if eval else (None if (len([elem for elem in easy_samples if elem is not None]) > 1.1 * total_w) else loss)) #all later easy samples are discarded. or should we do it randomly?
+            # if hard:
+            #     # for j in range(0, len(tokens)):
+            #     #     next = torch.zeros(vocab_size)
+            #     #     next[tokens[j]] = 1.
+            #     #     if tokens[j] > var_tkn:
+            #     #         next[var_tkn] = 1.
+            #     #     t.append(next)
+            #     w = opn - min_opn + 1   #hard samples are weighted wrt their depth
+            #     total_w += w
+            #     #By eval only count is important
+            #     hard_samples.append(1 if eval else (w * loss))
+            # else:
+            #     #To save memory. By eval only count is important
+            #     easy_samples.append(1 if eval else (None if (len([elem for elem in easy_samples if elem is not None]) > 1.1 * total_w) else loss)) #all later easy samples are discarded. or should we do it randomly?
 
+            # easy_samples = [elem for elem in easy_samples if elem is not None]  #some
 
-            eval = len(hard_samples) >= len(easy_samples) / 2   #if half of samples are hard, run in eval mode (eventually increase min_depth)
-            easy_samples = [elem for elem in easy_samples if elem is not None]  #some
-
-            p_batch_loss = sum(hard_samples)
-            n_batch_loss = sum(easy_samples if len(easy_samples) < total_w else random.sample(easy_samples, total_w))
-            p_batch_loss = p_batch_loss * torch.max(torch.tensor(1.0), 1.2 * n_batch_loss / p_batch_loss).item() #wanna hard samples to have a bit more weight
-            batch_loss = p_batch_loss + n_batch_loss
-            batch_loss = batch_loss / (2 * total_w)   #hard + easy samples
+            # p_batch_loss = sum(hard_samples)
+            # n_batch_loss = sum(easy_samples if len(easy_samples) < total_w else random.sample(easy_samples, total_w))
+            # p_batch_loss = p_batch_loss * torch.max(torch.tensor(1.0), 1.2 * n_batch_loss / p_batch_loss).item() #wanna hard samples to have a bit more weight
+            # batch_loss = p_batch_loss + n_batch_loss
+            # batch_loss = batch_loss / (2 * total_w)   #hard + easy samples
 
             batch_loss.backward()
             optimizer.step()
