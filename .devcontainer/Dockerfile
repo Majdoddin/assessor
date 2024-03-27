@@ -19,7 +19,7 @@ RUN git clone --mirror https://github.com/Majdoddin/boolformer
 #RUN git clone --mirror https://github.com/Majdoddin/assessor.git
 RUN git clone --mirror https://github.com/karpathy/nanoGPT.git
 
-RUN mkdir assessor
+RUN "python3 -m venv .venv && . .venv/bin/activate && pip install -e /workspaces/boolformer"
 #COPY requirements.txt ./#
 
 

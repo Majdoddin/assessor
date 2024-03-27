@@ -5,7 +5,7 @@
         "context": ".."
     },
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/assessor,type=bind,consistency=delegated",
-    "workspaceFolder": "/workspaces/assessor",            
+    "workspaceFolder": "/workspaces/assessor",
     // "image": "your_dockerhub_username/your_repository:your_tag",
     // "runArgs": [
     //     "--gpus=all"
@@ -16,7 +16,7 @@
     },
     "extensions": ["ms-python.python"],
     "forwardPorts": [],
-    //"postCreateCommand": "pip install -r requirements.txt",
+    "postCreateCommand": "cd /workspaces/assessor && python3 -m venv .venv && . .venv/bin/activate && pip install -e /workspaces/boolformer",
     "remoteUser": "root"
     // "postStartCommand": "git pull origin main",
 }

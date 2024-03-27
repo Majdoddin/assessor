@@ -19,10 +19,10 @@
             "program": "${file}",
             "console": "integratedTerminal",
             "justMyCode": false,
-            "python": "${workspaceFolder}/.venv/bin/python3.11",
+            "python": "$workspaces/.venv/bin/python3.11",
             "cwd": "${workspaceFolder}/cwd",
             "env": {
-                "PYTHONPATH": "${env:PYTHONPATH}:/home/ruhollah/ai/atp/nanoGPT"
+                "PYTHONPATH": "${env:PYTHONPATH}:/workspaces/nanoGPT"
             }
         }
     ]
