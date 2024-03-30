@@ -16,7 +16,7 @@
     },
     "extensions": ["ms-python.python"],
     "forwardPorts": [],
-    "postCreateCommand": "cd /workspaces/assessor && python3 -m venv .venv && . .venv/bin/activate && pip install -e /workspaces/boolformer",
+    // "postCreateCommand": "cd /workspaces/assessor && python3 -m venv .venv && . .venv/bin/activate && pip install -e /workspaces/boolformer",
     "remoteUser": "root"
     // "postStartCommand": "git pull origin main",
 }

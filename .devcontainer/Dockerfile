@@ -12,14 +12,14 @@ RUN apt-get update && apt-get install -y \
     && rm -rf /var/lib/apt/lists/*
 
 # Install PyTorch and PyTorch Audio
-RUN pip install torch torchvision torchaudio -f https://download.pytorch.org/whl/cu113/torch_stable.html
+RUN pip install torch==2.0.0 -f https://download.pytorch.org/whl/cu117/torch_stable.html
 
 # Copy the requirements.txt file into the image
-RUN git clone --mirror https://github.com/Majdoddin/boolformer
-#RUN git clone --mirror https://github.com/Majdoddin/assessor.git
-RUN git clone --mirror https://github.com/karpathy/nanoGPT.git
+RUN git clone -b assessor  https://github.com/Majdoddin/boolformer
+RUN python3 -m venv .venv && . .venv/bin/activate && pip install -e /workspaces/boolformer
 
-RUN "python3 -m venv .venv && . .venv/bin/activate && pip install -e /workspaces/boolformer"
+RUN git clone https://github.com/karpathy/nanoGPT.git
+
 #COPY requirements.txt ./#
 
 
