@@ -13,12 +13,14 @@
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash",
         "terminal.integrated.cwd": "/workspaces/assessor/cwd",
+        "python.terminal.activateEnvInCurrentTerminal": true,
+        "python.defaultInterpreterPath": "/workspaces/.venv/bin/python"
     },
     "extensions": ["ms-python.python"],
     "forwardPorts": [],
     // "postCreateCommand": "cd /workspaces/assessor && python3 -m venv .venv && . .venv/bin/activate && pip install -e /workspaces/boolformer",
-    "remoteUser": "root"
-    // "postStartCommand": "git pull origin main",
+    "remoteUser": "root",
+    "postStartCommand": "cd /workspaces/boolformer && git checkout assessor && git pull origin assessor"
 }
 
 
