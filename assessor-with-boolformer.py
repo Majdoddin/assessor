@@ -19,11 +19,10 @@ from assessor import *
 import logging
 
 logging.basicConfig(filename='training.log', level=logging.DEBUG, format='%(message)s', filemode='a')
-
 logger = logging.getLogger(__name__)
 
 def find_depth(node):
-    if not node.children:
+    if not node.children: 
         return 1
     else:
         max_depth = 0
@@ -31,6 +30,9 @@ def find_depth(node):
             child_depth = find_depth(child)
             max_depth = max(max_depth, child_depth)
         return max_depth + 1
+
+device = 'cuda' if torch.cuda.is_available() else 'cpu'
+device_type = 'cuda' if 'cuda' in device else 'cpu' # for later use in torch.autocast
 
 #tokens
 itos = {0:"ST", 1:"and", 2:"or", 3:"not", 4:"var", 5:"x1", 6:"x2", 7:"x3", 8:"x4", 9:"x5", 10:"x6", 11:"x7", 12:"x8", 13:"x9", 14:"x10"}
@@ -44,15 +46,14 @@ model_args = dict(n_layer=8, n_head=16, n_embd=512, block_size=block_size,
                 bias=False, vocab_size=vocab_size, dropout=0)    #dropout, for pretraining 0 is good, for finetuning try 0.1+
 gptconf = GPTConfig(**model_args)
 model = GPT(gptconf)
+model.to(device)
 
 weight_decay = 1e-1
 learning_rate = 3 * 1e-3
 beta1 = 0.9
 beta2 = 0.95
-device = 'cuda' if torch.cuda.is_available() else 'cpu'
-device_type = 'cuda' if 'cuda' in device else 'cpu' # for later use in torch.autocast
-optimizer = model.configure_optimizers(weight_decay, learning_rate, (beta1, beta2), device_type)
 
+optimizer = model.configure_optimizers(weight_decay, learning_rate, (beta1, beta2), device_type)
 temperature = 1 #0.7  # near 0 makes more deterministic
 top_p = 0.9 # Top-p filtering, should be less than the vocabulary size
 

@@ -1,15 +1,15 @@
 {
     "name": "assessor",
-    "build": {
-        "dockerfile": "Dockerfile",
-        "context": ".."
-    },
+    // "build": {
+    //     "dockerfile": "Dockerfile",
+    //     "context": ".."
+    // },
     "workspaceMount": "source=${localWorkspaceFolder},target=/workspaces/assessor,type=bind,consistency=delegated",
     "workspaceFolder": "/workspaces/assessor",
-    // "image": "your_dockerhub_username/your_repository:your_tag",
-    // "runArgs": [
-    //     "--gpus=all"
-    // ],
+    "image": "majdoddin/dev-assessor:v1",
+    "runArgs": [
+        "--gpus=all"
+    ],
     "settings": {
         "terminal.integrated.shell.linux": "/bin/bash",
         "terminal.integrated.cwd": "/workspaces/assessor/cwd",
@@ -21,6 +21,6 @@
     // "postCreateCommand": "cd /workspaces/assessor && python3 -m venv .venv && . .venv/bin/activate && pip install -e /workspaces/boolformer",
     "remoteUser": "root",
     "postStartCommand": "cd /workspaces/boolformer && git checkout assessor && git pull origin assessor"
-}
+} 
 
 
