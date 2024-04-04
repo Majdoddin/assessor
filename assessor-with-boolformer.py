@@ -60,7 +60,7 @@ top_p = 0.9 # Top-p filtering, should be less than the vocabulary size
 batch_loss = None
 
 min_opn = 1
-batch_size = 16 #32 #*2 (hard and easy samples)
+batch_size = 128 #32 #*2 (hard and easy samples)
 
 checkpoint = None;#'state-opn-3-1.pt' #'name_of_checkpoint.pt'
 #uncomment to_test_a_checkpoint
@@ -75,9 +75,10 @@ if checkpoint:
     model.load_state_dict(checkpoint['model_state_dict'])
     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
-boolformer_noiseless = load_boolformer(mode='noiseless')
+boolformer_noiseless = load_boolformer(mode='noiseless', device=device)
+boolformer_noiseless.env.params.cpu = False
 boolformer_noiseless.eval()
-max_len = 100  #< block_size - 1
+max_len = 15  #< block_size - 1
 
 algebra = boolean.BooleanAlgebra()
 t = algebra.parse(u'True', simplify=False)
@@ -116,9 +117,11 @@ while True:
 
     #alternatively you can shuffle samples, keep so many neg as pos samples.
     pos_n = sum([1 if s >= min_opn else 0 for s in complexity_arr])
-    pnw = batch_size / (2 * pos_n)
+    if pos_n != 0:
+        pnw = batch_size / (2 * pos_n)
 
     max_x_len = max(t.size()[0] for t in tokenss)
+l    max_len = int(min(max_x_len * 1.2 , block_size - 1))
     #fixme remove extra negative samples
     #remove the last tokens
     xb = pad_sequence([t[:-1] for t in tokenss], batch_first=True, padding_value=start_tkn)   #b*(max_x_len-1)
@@ -142,8 +145,8 @@ while True:
         #balance pos/neg samples, reward pos samples with bigger operation numbers
         if hard:
             w[l] *= (complexity_arr[l] - min_opn +1) * pnw
-    targets = torch.stack(targets)
-    w = w.unsqueeze(1).unsqueeze(2)
+    targets = torch.stack(targets).to(device)
+    w = w.unsqueeze(1).unsqueeze(2).to(device)
 
     loss = binary_cross_entropy_with_logits(input=logits, target=targets, weight=w, reduction = 'none')
     mask = (xb != start_tkn).float()
