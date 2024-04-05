@@ -49,7 +49,7 @@ model = GPT(gptconf)
 model.to(device)
 
 weight_decay = 1e-1
-learning_rate = 3 * 1e-3
+learning_rate = 3 * 1e-4
 beta1 = 0.9
 beta2 = 0.95
 
@@ -60,7 +60,7 @@ top_p = 0.9 # Top-p filtering, should be less than the vocabulary size
 batch_loss = None
 
 min_opn = 1
-batch_size = 128 #32 #*2 (hard and easy samples)
+batch_size = 128 #128 #32 #*2 (hard and easy samples)
 
 checkpoint = None;#'state-opn-3-1.pt' #'name_of_checkpoint.pt'
 #uncomment to_test_a_checkpoint
@@ -76,7 +76,8 @@ if checkpoint:
     optimizer.load_state_dict(checkpoint['optimizer_state_dict'])
 
 boolformer_noiseless = load_boolformer(mode='noiseless', device=device)
-boolformer_noiseless.env.params.cpu = False
+if device_type == 'cuda':
+    boolformer_noiseless.env.params.cpu = False
 boolformer_noiseless.eval()
 max_len = 15  #< block_size - 1
 
@@ -86,6 +87,7 @@ f = algebra.parse(u'False', simplify=False)
 high_pos = 0
 batch_idx = 0
 while True:
+    batch_idx += 1
     tokenss, tknsts, inputs, outputs, targets = [None] * batch_size, [None] * batch_size, [None] * batch_size, [None] * batch_size, [None] * batch_size
     for j in range(batch_size):
         model.eval()
@@ -115,13 +117,15 @@ while True:
         ('boolformer failed\n' if error_arr[j] != 0.0 else f'op_n:{complexity_arr[j]} simplified: {pred_trees[0]} \n')
         for j in range(batch_size)))
 
-    #alternatively you can shuffle samples, keep so many neg as pos samples.
-    pos_n = sum([1 if s >= min_opn else 0 for s in complexity_arr])
-    if pos_n != 0:
-        pnw = batch_size / (2 * pos_n)
+    #keep the same number of negative samples, mask out the rest  
+    pos = [1 if s >= min_opn else 0 for s in complexity_arr]
+    pos_n = pos.count(1)
+    if pos_n == 0:
+            logger.info(f"Batch {batch_idx}, positive ratio: 0, max_len: {max_len}, min_opn: {min_opn}")
+            continue
 
     max_x_len = max(t.size()[0] for t in tokenss)
-l    max_len = int(min(max_x_len * 1.2 , block_size - 1))
+    max_len = int(min(max_x_len * 1.2 , block_size - 1))
     #fixme remove extra negative samples
     #remove the last tokens
     xb = pad_sequence([t[:-1] for t in tokenss], batch_first=True, padding_value=start_tkn)   #b*(max_x_len-1)
@@ -144,22 +148,32 @@ l    max_len = int(min(max_x_len * 1.2 , block_size - 1))
         targets[l] = target
         #balance pos/neg samples, reward pos samples with bigger operation numbers
         if hard:
-            w[l] *= (complexity_arr[l] - min_opn +1) * pnw
+            w[l] *= (complexity_arr[l] - min_opn +1) 
     targets = torch.stack(targets).to(device)
     w = w.unsqueeze(1).unsqueeze(2).to(device)
 
     loss = binary_cross_entropy_with_logits(input=logits, target=targets, weight=w, reduction = 'none')
+    #mask paddings
     mask = (xb != start_tkn).float()
     mask[:, 0] = 1.0
+    if pos_n < (batch_size / 2):
+        zero_idx = [i for i, x in enumerate(pos) if x == 0]
+        masked_neg_idx = sorted((random.sample(zero_idx, len(zero_idx) - pos_n)))
+        for idx in masked_neg_idx:
+            mask[idx] *= 0.0
+    
     loss *= mask.unsqueeze(-1)
-    loss = loss.sum() / mask.sum()
+    loss = loss.sum() / (mask.sum() * len(itos))
 
     loss.backward()
     optimizer.step()
     optimizer.zero_grad(set_to_none=True)
 
+    #two consequent batches high ratio of pos samples
     if pos_n >= batch_size / 2:
         high_pos += 1
+    else:
+        high_pos = 0 
     if high_pos == 2:
         torch.save({
             'model_state_dict': model.state_dict(),
@@ -167,7 +181,7 @@ l    max_len = int(min(max_x_len * 1.2 , block_size - 1))
             }, f'state-opn-{min_opn}.pt')
         min_opn += 1
         high_pos = 0
-    batch_idx += 1
-    logger.info(f"Batch {batch_idx}, positive ratio: {pos_n/batch_size:.2f}, min_opn: {min_opn}")
+    
+    logger.info(f"Batch {batch_idx}, positive ratio: {pos_n/batch_size:.2f}, loss: {loss:.2f}, max_len: {max_len}, min_opn: {min_opn}")
 
 xxx = 1
