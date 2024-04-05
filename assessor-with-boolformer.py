@@ -94,7 +94,7 @@ while True:
         model.eval()
         with torch.no_grad():
             #top_p deactivated in train mode to increae exploration
-            tokenss[j], _ = sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=temperature, top_p=top_p if eval else None)
+            tokenss[j] = sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=temperature, top_p=top_p if eval else None)
         tknsts[j] = [itos[t.item()] for t in tokenss[j][1:]]
 
         #parsing the tokens

@@ -30,35 +30,24 @@ def is_polish_normal_form(sequence):
     """
 
     # Stack to hold the count of operands needed for each operator
-    operand_stack = []
+    operand_stack = 0
 
     # Process the sequence in reverse order
     for token in reversed(sequence):
         if token in {"and", "or"}:
             # Binary operators require two operands
-            if len(operand_stack) >= 2:
-                # Pop two operands and push one as result of the binary operation
-                operand_stack.pop()
-                operand_stack.pop()
-                operand_stack.append(1)
-            else:
-                # Not enough operands for a binary operator
-                return False
+            # Pop two operands and push one as result of the binary operation
+            operand_stack -= 1
         elif token == "not":
             # Unary operator requires one operand
-            if operand_stack:
-                # Pop one operand and push one as result of the unary operation
-                operand_stack.pop()
-                operand_stack.append(1)
-            else:
-                # Not enough operands for a unary operator
-                return False
+            # Pop one operand and push one as result of the unary operation
+            operand_stack += 0
         else:
             # Variables and literals count as operands
-            operand_stack.append(1)
+            operand_stack += 1
 
     # Valid formula in Polish notation should leave exactly one operand on the stack
-    return len(operand_stack) == 1
+    return operand_stack
 
 def build_tree(tokens):
     if not tokens:
@@ -129,9 +118,12 @@ def sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=1.0, to
         del detached_tokens
         gc.collect()
         detached_tokens = torch.full((1, 1), start_tkn, dtype=torch.long, device=next(model.parameters()).device)
-        generated_logits = []
         for idx in range(max_len):
             #TODO remove single var formulas
+            opnum = is_polish_normal_form([itos[t.item()] for t in detached_tokens[0, 1:]])
+            if opnum == 1:
+                return detached_tokens[0]
+
             logits, loss = model(detached_tokens, targets = None)  #(batch_num, vocab_size)
             logits = logits[0, -1, :].unsqueeze(0)
             next_token_logits = logits / temperature
@@ -143,23 +135,25 @@ def sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=1.0, to
                 sorted_prob[1:][cp[:-1] >= top_p] = 0
                 for j in sorted_idx:
                     probs[sorted_idx[j]] = sorted_prob[j]
+            #num of operands need to complete the formula. opnum == 1 means formula is complete. opnum == 0: 1 operand.    
+            if -(opnum - 1) >=  max_len - len(detached_tokens[0]) - 1:
+                next_tkn = torch.tensor([var_tkn])
+            else:
+                #no two consecutive nots
+                if detached_tokens[0, -1].item() == 3:
+                    next_token_logits[0, 3] = float('-inf')
 
-            sm = next_token_logits[0, start_tkn+1:var_tkn+1]
-            #no two consecutive nots
-            if detached_tokens[0, -1].item() == 3:
-                sm[2] = float('-inf')
+                sm = F.softmax(next_token_logits[0, start_tkn+1:var_tkn+1], dim=-1)
+                #no start_token
+                #sm[:, start_tkn] = 0
+                #if no_single_var, first generated token should not be a var
+                # if (idx == 0 and no_single_var):
+                #     sm[:, var_tkn] = 0 #consider this by backward
 
-            sm = F.softmax(next_token_logits[0, start_tkn+1:var_tkn+1], dim=-1)
-            #no start_token
-            #sm[:, start_tkn] = 0
-            #if no_single_var, first generated token should not be a var
-            # if (idx == 0 and no_single_var):
-            #     sm[:, var_tkn] = 0 #consider this by backward
+                if top_p is not None:
+                    top_p_f(sm)
 
-            if top_p is not None:
-                top_p_f(sm)
-
-            next_tkn = (start_tkn+1) + torch.multinomial(sm, num_samples=1)   #index 1 is start_tkn
+                next_tkn = (start_tkn+1) + torch.multinomial(sm, num_samples=1)   #index 1 is start_tkn
 
             if (next_tkn.item() == var_tkn):
                 #FIXME if top_p remove vars with negligible prob
@@ -178,12 +172,7 @@ def sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=1.0, to
                 # else:
                 #     next_tkn =  1 + torch.tensor([var_tkn])
 
-            detached_tokens = torch.cat((detached_tokens, next_tkn.unsqueeze(dim=0).detach()), dim = 1)
-            generated_logits.append(logits[0])
-
-            if is_polish_normal_form([itos[t.item()] for t in detached_tokens[0, 1:]]):
-                return detached_tokens[0], torch.stack(generated_logits, dim= 0)
-        del generated_logits, logits
+            detached_tokens = torch.cat((detached_tokens, next_tkn.unsqueeze(dim=0).detach()), dim = 1)        
 
 
 
