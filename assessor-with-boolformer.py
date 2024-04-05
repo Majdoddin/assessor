@@ -49,7 +49,7 @@ model = GPT(gptconf)
 model.to(device)
 
 weight_decay = 1e-1
-learning_rate = 3 * 1e-4
+learning_rate = 6 * 1e-5
 beta1 = 0.9
 beta2 = 0.95
 
@@ -88,6 +88,7 @@ high_pos = 0
 batch_idx = 0
 while True:
     batch_idx += 1
+
     tokenss, tknsts, inputs, outputs, targets = [None] * batch_size, [None] * batch_size, [None] * batch_size, [None] * batch_size, [None] * batch_size
     for j in range(batch_size):
         model.eval()
@@ -183,5 +184,6 @@ while True:
         high_pos = 0
     
     logger.info(f"Batch {batch_idx}, positive ratio: {pos_n/batch_size:.2f}, loss: {loss:.2f}, max_len: {max_len}, min_opn: {min_opn}")
+    del loss, pred_trees, error_arr, complexity_arr,xb, logits, w, mask, tokenss, tknsts, inputs, outputs, targets
 
 xxx = 1

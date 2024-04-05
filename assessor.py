@@ -2,6 +2,7 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 import boolean
+import gc
 
 #nanoGPT of Andrej Karpathy
 #export PYTHONPATH="${PYTHONPATH}:path/to/nanoGPT"
@@ -125,6 +126,8 @@ def sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=1.0, to
     while True:
         #generate tokens till either formula is complete in PNF. But if  max_len tokens generated, start again.
         if detached_tokens != None: print(f"too long.")
+        del detached_tokens
+        gc.collect()
         detached_tokens = torch.full((1, 1), start_tkn, dtype=torch.long, device=next(model.parameters()).device)
         generated_logits = []
         for idx in range(max_len):
@@ -180,6 +183,7 @@ def sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=1.0, to
 
             if is_polish_normal_form([itos[t.item()] for t in detached_tokens[0, 1:]]):
                 return detached_tokens[0], torch.stack(generated_logits, dim= 0)
+        del generated_logits, logits
 
 
 
