@@ -37,7 +37,7 @@ dtype = 'bfloat16' if torch.cuda.is_available() and torch.cuda.is_bf16_supported
 ptdtype = {'float32': torch.float32, 'bfloat16': torch.bfloat16, 'float16': torch.float16}[dtype]
 ctx = nullcontext() if device_type == 'cpu' else torch.amp.autocast(device_type=device_type, dtype=ptdtype)
 
-grad_clip = 0.75 #1.0
+grad_clip = 1.0#1.0
 
 #tokens
 itos = {0:"ST", 1:"and", 2:"or", 3:"not", 4:"var", 5:"x1", 6:"x2", 7:"x3", 8:"x4", 9:"x5", 10:"x6", 11:"x7", 12:"x8", 13:"x9", 14:"x10"}
