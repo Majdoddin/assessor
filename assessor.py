@@ -118,11 +118,12 @@ def sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=1.0, to
         del detached_tokens
         gc.collect()
         detached_tokens = torch.full((1, 1), start_tkn, dtype=torch.long, device=next(model.parameters()).device)
+        too_long = False
         for idx in range(max_len):
             #TODO remove single var formulas
             opnum = is_polish_normal_form([itos[t.item()] for t in detached_tokens[0, 1:]])
             if opnum == 1:
-                return detached_tokens[0]
+                return detached_tokens[0], too_long
 
             logits, loss = model(detached_tokens, targets = None)  #(batch_num, vocab_size)
             logits = logits[0, -1, :].unsqueeze(0)
@@ -138,6 +139,7 @@ def sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=1.0, to
             #num of operands need to complete the formula. opnum == 1 means formula is complete. opnum == 0: 1 operand.    
             if -(opnum - 1) >=  max_len - len(detached_tokens[0]) - 1:
                 next_tkn = torch.tensor([var_tkn])
+                too_long = True
             else:
                 #no two consecutive nots
                 if detached_tokens[0, -1].item() == 3:

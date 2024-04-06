@@ -60,7 +60,7 @@ top_p = 0.9 # Top-p filtering, should be less than the vocabulary size
 batch_loss = None
 
 min_opn = 1
-batch_size = 128 #128 #32 #*2 (hard and easy samples)
+batch_size = 32 #128 #32 #*2 (hard and easy samples)
 
 checkpoint = None;#'state-opn-3-1.pt' #'name_of_checkpoint.pt'
 #uncomment to_test_a_checkpoint
@@ -89,12 +89,12 @@ batch_idx = 0
 while True:
     batch_idx += 1
 
-    tokenss, tknsts, inputs, outputs, targets = [None] * batch_size, [None] * batch_size, [None] * batch_size, [None] * batch_size, [None] * batch_size
+    tokenss, tknsts, inputs, outputs, targets, too_long = [None] * batch_size, [None] * batch_size, [None] * batch_size, [None] * batch_size, [None] * batch_size, [None] * batch_size
     for j in range(batch_size):
         model.eval()
         with torch.no_grad():
             #top_p deactivated in train mode to increae exploration
-            tokenss[j] = sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=temperature, top_p=top_p if eval else None)
+            tokenss[j], too_long[j] = sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=temperature, top_p=top_p if eval else None)
         tknsts[j] = [itos[t.item()] for t in tokenss[j][1:]]
 
         #parsing the tokens
@@ -126,7 +126,9 @@ while True:
             continue
 
     max_x_len = max(t.size()[0] for t in tokenss)
-    max_len = int(min(max_x_len * 1.2 , block_size - 1))
+    x_len = [t.size()[0] for id, t in enumerate(tokenss) if not too_long[id]]
+    if x_len:
+        max_len = int(min(max(max(x_len) * 1.3, max_len), block_size - 1))
     #fixme remove extra negative samples
     #remove the last tokens
     xb = pad_sequence([t[:-1] for t in tokenss], batch_first=True, padding_value=start_tkn)   #b*(max_x_len-1)
@@ -183,7 +185,7 @@ while True:
         min_opn += 1
         high_pos = 0
     
-    logger.info(f"Batch {batch_idx}, positive ratio: {pos_n/batch_size:.2f}, loss: {loss:.2f}, max_len: {max_len}, min_opn: {min_opn}")
+    logger.info(f"Batch {batch_idx}, positive ratio: {pos_n/batch_size:.2f}, loss: {loss:.2f}, not_too_long ratio: {len(x_len)/batch_size:.2f}, max_len: {max_len}, min_opn: {min_opn}")
     del loss, pred_trees, error_arr, complexity_arr,xb, logits, w, mask, tokenss, tknsts, inputs, outputs, targets
 
 xxx = 1
