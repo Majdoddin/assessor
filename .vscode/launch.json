@@ -22,7 +22,8 @@
             "python": "/workspaces/.venv/bin/python3",
             "cwd": "${workspaceFolder}/cwd",
             "env": {
-                "PYTHONPATH": "${env:PYTHONPATH}:/workspaces/nanoGPT"
+                "PYTHONPATH": "${env:PYTHONPATH}:/workspaces/nanoGPT",
+                "PYTORCH_CUDA_ALLOC_CONF": "garbage_collection_threshold:0.7,expandable_segments:True"
             }
         }
     ]
