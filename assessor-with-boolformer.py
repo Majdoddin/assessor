@@ -33,6 +33,11 @@ def find_depth(node):
 
 device = 'cuda' if torch.cuda.is_available() else 'cpu'
 device_type = 'cuda' if 'cuda' in device else 'cpu' # for later use in torch.autocast
+dtype = 'bfloat16' if torch.cuda.is_available() and torch.cuda.is_bf16_supported() else 'float32' # 'float32', 'bfloat16', or 'float16', the latter will auto implement a GradScaler
+ptdtype = {'float32': torch.float32, 'bfloat16': torch.bfloat16, 'float16': torch.float16}[dtype]
+ctx = nullcontext() if device_type == 'cpu' else torch.amp.autocast(device_type=device_type, dtype=ptdtype)
+
+grad_clip = 1.0
 
 #tokens
 itos = {0:"ST", 1:"and", 2:"or", 3:"not", 4:"var", 5:"x1", 6:"x2", 7:"x3", 8:"x4", 9:"x5", 10:"x6", 11:"x7", 12:"x8", 13:"x9", 14:"x10"}
@@ -49,7 +54,7 @@ model = GPT(gptconf)
 model.to(device)
 
 weight_decay = 1e-1
-learning_rate = 6 * 1e-5
+learning_rate = 6e-5
 beta1 = 0.9
 beta2 = 0.95
 
@@ -61,6 +66,7 @@ batch_loss = None
 
 min_opn = 1
 batch_size = 32 #128 #32 #*2 (hard and easy samples)
+gradient_accumulation_steps = 4
 
 checkpoint = None;#'state-opn-3-1.pt' #'name_of_checkpoint.pt'
 #uncomment to_test_a_checkpoint
@@ -80,21 +86,23 @@ if device_type == 'cuda':
     boolformer_noiseless.env.params.cpu = False
 boolformer_noiseless.eval()
 max_len = 15  #< block_size - 1
-
 algebra = boolean.BooleanAlgebra()
 t = algebra.parse(u'True', simplify=False)
 f = algebra.parse(u'False', simplify=False)
 high_pos = 0
 batch_idx = 0
-while True:
-    batch_idx += 1
+total_pos_n = 0
+x_len = []
 
+while True:
+    batch_idx += 1    
     tokenss, tknsts, inputs, outputs, targets, too_long = [None] * batch_size, [None] * batch_size, [None] * batch_size, [None] * batch_size, [None] * batch_size, [None] * batch_size
     for j in range(batch_size):
         model.eval()
         with torch.no_grad():
-            #top_p deactivated in train mode to increae exploration
-            tokenss[j], too_long[j] = sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=temperature, top_p=top_p if eval else None)
+            with ctx:
+                #top_p deactivated in train mode to increae exploration
+                tokenss[j], too_long[j] = sample_formula(model, max_len, itos, start_tkn, var_tkn, temperature=temperature, top_p=top_p if eval else None)
         tknsts[j] = [itos[t.item()] for t in tokenss[j][1:]]
 
         #parsing the tokens
@@ -109,32 +117,32 @@ while True:
         inputs[j] = np.where(inputs[j] == t, True, False)
         outputs[j] = np.where(outputs[j] == t, True, False)
     #smbs[i] is Xi for boolformer
+    torch.cuda.empty_cache()
     boolformer_noiseless.eval()
     with torch.no_grad():
-        pred_trees, error_arr, complexity_arr = boolformer_noiseless.fit(inputs, outputs, verbose=True, beam_size=10, beam_type="search")
-
+        with ctx:
+            pred_trees, error_arr, complexity_arr = boolformer_noiseless.fit(inputs, outputs, verbose=True, beam_size=10, beam_type="search")
+    torch.cuda.empty_cache()
     logger.info("\n".join(
         f"{tknsts[j]}\n" +
-        ('boolformer failed\n' if error_arr[j] != 0.0 else f'op_n:{complexity_arr[j]} simplified: {pred_trees[0]} \n')
+        ('boolformer failed\n' if error_arr[j] != 0.0 else f'op_n:{complexity_arr[j]} simplified: {pred_trees[j]}')
         for j in range(batch_size)))
 
     #keep the same number of negative samples, mask out the rest  
     pos = [1 if s >= min_opn else 0 for s in complexity_arr]
     pos_n = pos.count(1)
+
     if pos_n == 0:
             logger.info(f"Batch {batch_idx}, positive ratio: 0, max_len: {max_len}, min_opn: {min_opn}")
             continue
 
     max_x_len = max(t.size()[0] for t in tokenss)
-    x_len = [t.size()[0] for id, t in enumerate(tokenss) if not too_long[id]]
-    if x_len:
-        max_len = int(min(max(max(x_len) * 1.3, max_len), block_size - 1))
+    x_len += [t.size()[0] for id, t in enumerate(tokenss) if not too_long[id]]
+
     #fixme remove extra negative samples
     #remove the last tokens
     xb = pad_sequence([t[:-1] for t in tokenss], batch_first=True, padding_value=start_tkn)   #b*(max_x_len-1)
-    model.train()
-    logits, _ = model(idx = xb) #b*(max_x_len-1)*vocab_size
-
+    
     #reward formulas with more operators (after simplificatoin)
     #all tokens are rewarded/punishd if hard/easy
     #for variable tokens, token var is also rewarded/punished
@@ -155,7 +163,6 @@ while True:
     targets = torch.stack(targets).to(device)
     w = w.unsqueeze(1).unsqueeze(2).to(device)
 
-    loss = binary_cross_entropy_with_logits(input=logits, target=targets, weight=w, reduction = 'none')
     #mask paddings
     mask = (xb != start_tkn).float()
     mask[:, 0] = 1.0
@@ -164,28 +171,41 @@ while True:
         masked_neg_idx = sorted((random.sample(zero_idx, len(zero_idx) - pos_n)))
         for idx in masked_neg_idx:
             mask[idx] *= 0.0
-    
-    loss *= mask.unsqueeze(-1)
-    loss = loss.sum() / (mask.sum() * len(itos))
 
+    model.train()
+    with ctx:
+        logits, _ = model(idx = xb) #b*(max_x_len-1)*vocab_size
+        loss = binary_cross_entropy_with_logits(input=logits, target=targets, weight=w, reduction = 'none')
+        
+        loss *= mask.unsqueeze(-1)
+        loss = loss.sum() / (mask.sum() * len(itos))
     loss.backward()
-    optimizer.step()
-    optimizer.zero_grad(set_to_none=True)
+    total_pos_n += pos_n
+    if batch_idx % gradient_accumulation_steps == 0:    
+        if grad_clip != 0.0:
+            torch.nn.utils.clip_grad_norm_(model.parameters(), grad_clip)
+        optimizer.step()
+        optimizer.zero_grad(set_to_none=True)
 
-    #two consequent batches high ratio of pos samples
-    if pos_n >= batch_size / 2:
-        high_pos += 1
-    else:
-        high_pos = 0 
-    if high_pos == 2:
-        torch.save({
-            'model_state_dict': model.state_dict(),
-            'optimizer_state_dict': optimizer.state_dict(),
-            }, f'state-opn-{min_opn}.pt')
-        min_opn += 1
-        high_pos = 0
-    
-    logger.info(f"Batch {batch_idx}, positive ratio: {pos_n/batch_size:.2f}, loss: {loss:.2f}, not_too_long ratio: {len(x_len)/batch_size:.2f}, max_len: {max_len}, min_opn: {min_opn}")
-    del loss, pred_trees, error_arr, complexity_arr,xb, logits, w, mask, tokenss, tknsts, inputs, outputs, targets
+        #two consequent batches high ratio of pos samples
+        if total_pos_n >= (batch_size * gradient_accumulation_steps) / 2:
+            high_pos += 1
+        else:
+            high_pos = 0 
+        if high_pos == 2:
+            torch.save({
+                'model_state_dict': model.state_dict(),
+                'optimizer_state_dict': optimizer.state_dict(),
+                }, f'state-opn-{min_opn}.pt')
+            min_opn += 1
+            high_pos = 0
+            max_len = int(min(max(max(x_len) + 5, max_len), block_size - 1))        
+        logger.info(f"Batch {batch_idx // gradient_accumulation_steps}, total pos ratio: {total_pos_n / (batch_size * gradient_accumulation_steps):.2f}, loss: {loss:.2f}, not_too_long ratio: {len(x_len)/(batch_size * gradient_accumulation_steps):.2f}, max_len: {max_len}, min_opn: {min_opn}")
+        total_pos_n = 0
+        x_len = []
+    # else:
+    #     logger.info(f"Batch {batch_idx}, positive ratio: {pos_n/batch_size:.2f}, not_too_long ratio: {len(x_len)/batch_size:.2f}, max_len: {max_len}, min_opn: {min_opn}")
+    del loss, pred_trees, error_arr, complexity_arr, xb, logits, w, mask, tokenss, tknsts, inputs, outputs, targets, too_long
+    torch.cuda.empty_cache()
 
 xxx = 1
